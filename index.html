@@ -125,6 +125,15 @@ section{margin-top:44px;scroll-margin-top:16px}
 .tabs{display:inline-flex;gap:2px;margin:0 0 12px;padding:3px;background:var(--sunken);border:1px solid var(--border);border-radius:10px}
 .tabs button{font:inherit;font-size:13px;padding:5px 14px;border-radius:7px;border:0;background:transparent;color:var(--ink2);cursor:pointer}
 .tabs button[aria-pressed="true"]{background:var(--surface);color:var(--ink);font-weight:600;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.tabs button i{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:6px;vertical-align:1px}
+.risk{display:flex;gap:12px;align-items:flex-start;padding:12px 16px;border-radius:12px;margin-bottom:12px;border:1px solid var(--border)}
+.risk .dot{flex:none;width:12px;height:12px;border-radius:50%;margin-top:5px}
+.risk b{font-size:16px} .risk .d{font-size:13px;margin-left:6px}
+.risk .note{font-size:12px;color:var(--ink2);margin-top:3px}
+.risk.good{background:var(--good-bg);color:var(--good-ink)} .risk.good .dot{background:var(--good)}
+.risk.warn{background:var(--warn-bg);color:var(--warn-ink)} .risk.warn .dot{background:var(--warning)}
+.risk.crit{background:var(--crit-bg);color:var(--crit-ink)} .risk.crit .dot{background:var(--critical)}
+.risk.muted{background:var(--sunken);color:var(--ink2)} .risk.muted .dot{background:var(--muted)}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:14px}
 .tile{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 14px;box-shadow:var(--shadow)}
 .tile .k{font-size:12px;color:var(--ink2)}
@@ -210,6 +219,7 @@ footer a{color:var(--ink2)}
     </div>
     <div id="hotelBody">
       <div class="tabs" role="group" aria-label="체크인 선행일수" id="tabs"></div>
+      <div class="risk muted" id="hotelRisk"></div>
       <div class="tiles" id="tiles"></div>
       <div class="card" id="hotelAlertCard">
         <h3>호텔 지표 경보</h3>
@@ -287,6 +297,29 @@ const fx=(v,d=2,sign=false)=>v==null?'—':(sign&&v>0?'+':'')+v.toFixed(d);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const safeUrl=u=>/^https?:\/\//.test(u||'')?esc(u):'#';
 const LV_COLOR={1:'--good',2:'--warning',3:'--serious',4:'--critical'};
+/* 호텔 위험도: 비율(하얏트÷대조군)이 평소보다 오르거나 하얏트만 요금이 사라지면 위험. 내려가는 건 위험 신호 아님 */
+const RISK_COLOR={crit:'--critical',warn:'--warning',good:'--good',muted:'--muted'}, RISK_RANK={crit:3,warn:2,good:1,muted:0};
+const Z_WARN=1.5, MIN_ALL=7;
+function hotelRisk(o){
+  const s=D.series.filter(r=>r.offset===o), l=s.at(-1);
+  if(!l)return{k:'muted',t:'데이터 없음',d:''};
+  if(l.target_status==='no_rate'&&l.control_n>=2)return{k:'crit',t:'위험',d:'하얏트만 요금이 사라짐 (매진 가능)'};
+  if(l.target_status!=='ok')return{k:'muted',t:'판단 불가',d:'하얏트 검색 미검출'};
+  let z=l.z_ratio, basis='같은 요일 기준';
+  const h=s.slice(0,-1).map(r=>r.ratio).filter(v=>v!=null);
+  if(z==null&&h.length>=MIN_ALL){   // 같은 요일 표본이 모자라는 동안은 요일 구분 없이 임시 판단
+    const m=h.reduce((a,b)=>a+b,0)/h.length, sd=Math.sqrt(h.reduce((a,b)=>a+(b-m)**2,0)/h.length);
+    if(sd)z=(l.ratio-m)/sd, basis='임시 기준·요일 무시';
+  }
+  if(z==null)return{k:'muted',t:'판단 보류',d:`표본 쌓는 중 (${h.length}/${MIN_ALL}일)`};
+  const zs=`z ${fx(z,1,true)}, ${basis}`;
+  if(z>=D.config.z_alert)return{k:'crit',t:'위험',d:`하얏트만 평소보다 크게 비쌈 (${zs})`,z};
+  if(z>=Z_WARN)return{k:'warn',t:'주의',d:`평소보다 다소 비쌈 (${zs})`,z};
+  return{k:'good',t:'정상',d:z<0?`평소보다 쌈 — 위험 신호 아님 (${zs})`:`평소 범위 (${zs})`,z};
+}
+function hotelWorst(){
+  return D.config.offsets.map(o=>({o,...hotelRisk(o)})).reduce((a,b)=>RISK_RANK[b.k]>RISK_RANK[a.k]?b:a);
+}
 const CC={us_state:'US',uk_fcdo:'UK',canada:'CA',japan:'JP',germany:'DE',newzealand:'NZ',singapore:'SG',china:'CN',us_embassy:'US 서울'};
 const get=u=>fetch(u,{cache:'no-store'}).then(r=>{if(!r.ok)throw 0;return r.json()});
 let D=null,E=null,sel=1;
@@ -325,8 +358,10 @@ function hero(){
     cards.push(['sec-emb','대사관·여행경보',E.alerts.length?'--critical':LV_COLOR[lv]||'--muted',lv?`최고 ${lv}단계 · ${E.norm_labels[lv]}`:'—',`${ok.length}/${E.sources.length}개 출처 수집 · 주의 공지 ${E.counts.watch}건`]);
   }else cards.push(['sec-emb','대사관·여행경보','--muted','수집 전','']);
   if(D){
-    const o=D.config.offsets[0], s=D.series.filter(r=>r.offset===o), l=s.at(-1);
-    cards.push(['sec-hotel','남산 하얏트 가격',D.alerts.length?'--critical':'--good',l?.ratio!=null?`대조군 대비 ${fx(l.ratio)}배`:'요금 미확인',l?.z_ratio!=null?`D+${o} z-score ${fx(l.z_ratio,2,true)}`:`표본 쌓는 중 (${l?.history_n??0}/${D.config.min_history})`]);
+    const o=D.config.offsets[0], s=D.series.filter(r=>r.offset===o), l=s.at(-1), w=hotelWorst();
+    const k=D.alerts.length&&w.k!=='crit'?'crit':w.k;
+    cards.push(['sec-hotel','남산 하얏트 가격',RISK_COLOR[k],l?.ratio!=null?`대조군 대비 ${fx(l.ratio)}배`:'요금 미확인',
+      w.k==='muted'?`위험도 ${w.t} · ${w.d}`:`위험도 ${w.t} · D+${w.o} 기준 최고`]);
   }else cards.push(['sec-hotel','남산 하얏트 가격','--muted','수집 대기','검색 설정 점검 중']);
   if(N){
     const l=N.latest;
@@ -391,8 +426,8 @@ function initHotel(){
   const al=document.getElementById('alerts');
   al.innerHTML=D.alerts.length?D.alerts.map(a=>`<li><span style="color:var(--crit-ink);font-weight:600">⚠</span> ${esc(a)}</li>`).join(''):'<li style="color:var(--ink2)">경보 없음</li>';
   const tabs=document.getElementById('tabs');
-  tabs.innerHTML=D.config.offsets.map(o=>`<button data-o="${o}">체크인 D+${o}</button>`).join('');
-  tabs.onclick=e=>{const o=e.target.dataset.o;if(o){sel=+o;render()}};
+  tabs.innerHTML=D.config.offsets.map(o=>`<button data-o="${o}"><i style="background:var(${RISK_COLOR[hotelRisk(o).k]})"></i>체크인 D+${o}</button>`).join('');
+  tabs.onclick=e=>{const o=e.target.closest('button')?.dataset.o;if(o){sel=+o;render()}};
   allTable(); render();
   addEventListener('resize',()=>{clearTimeout(window._rt);window._rt=setTimeout(render,150)});
   matchMedia('(prefers-color-scheme: dark)').addEventListener('change',render);
@@ -404,7 +439,11 @@ function render(){
   [...document.querySelectorAll('#tabs button')].forEach(b=>b.setAttribute('aria-pressed',+b.dataset.o===sel));
   const s=series(sel), last=s[s.length-1];
   if(!last)return;
-  const zr=last.z_ratio, zc=last.z_control, za=D.config.z_alert;
+  const zr=last.z_ratio, zc=last.z_control, za=D.config.z_alert, rk=hotelRisk(sel);
+  const rb=document.getElementById('hotelRisk');
+  rb.className='risk '+rk.k;
+  rb.innerHTML=`<span class="dot"></span><div><b>D+${sel} 위험도 ${rk.t}</b><span class="d">${esc(rk.d)}</span>`+
+    `<div class="note">비율(하얏트 ÷ 대조군)이 평소보다 <b>오르면</b> 위험 신호입니다. 하얏트만 비싸지거나 요금이 사라지면 대량 예약 가능성이 있습니다. 내려가는 건 위험 신호가 아닙니다.</div></div>`;
   const zHint=v=>v==null?`표본 ${last.history_n}/${D.config.min_history} · 보류`:(v>=za?'⚠ 임계치 초과':'정상 범위');
   document.getElementById('tiles').innerHTML=[
     ['하얏트 최저가',won(last.target_price),last.target_status==='ok'?`체크인 D+${sel} (${WD[last.weekday]})`:(last.target_status==='no_rate'?'⚠ 요금 미노출':'검색 미검출')],
