@@ -56,7 +56,14 @@ def fetch_properties(check_in: dt.date):
     }
     r = requests.get("https://serpapi.com/search.json", params=params, timeout=60)
     r.raise_for_status()
-    return r.json().get("properties", [])
+    j = r.json()
+    if j.get("error"):
+        raise RuntimeError(f"SerpApi: {j['error']}")
+    props = j.get("properties", [])
+    if not props and j.get("name"):   # 검색어가 한 호텔로 좁혀지면 목록 대신 단일 호텔 응답이 온다
+        props = [j]
+    print(f"[{check_in}] 검색 결과 {len(props)}곳: " + ", ".join(p.get("name", "?") for p in props[:12]))
+    return props
 
 
 def match(props, hotel):
@@ -69,10 +76,11 @@ def match(props, hotel):
 
 
 def collect(today: dt.date, fetcher=fetch_properties):
-    rows = []
+    rows, names = [], set()
     for off in OFFSETS:
         ci = today + dt.timedelta(days=off)
         props = fetcher(ci)
+        names.update(p.get("name", "?") for p in props)
         for role, h in [("target", TARGET)] + [("control", c) for c in CONTROLS]:
             v = match(props, h)
             status = "missing" if v == "missing" else ("no_rate" if v is None else "ok")
@@ -82,6 +90,10 @@ def collect(today: dt.date, fetcher=fetch_properties):
                 "hotel": h["name"], "price": v if status == "ok" else None,
                 "status": status,
             })
+    if all(r["status"] == "missing" for r in rows):
+        # 검색어·응답 형식 문제. 빈 행을 누적 데이터에 남기지 않고 점검으로 넘긴다
+        raise RuntimeError(f"검색 결과에서 대상·대조군 호텔을 하나도 찾지 못함. 결과 {len(names)}곳: "
+                           + (", ".join(sorted(names)[:15]) or "없음"))
     return pd.DataFrame(rows)
 
 
