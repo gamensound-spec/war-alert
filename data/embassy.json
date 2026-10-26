@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-26T11:15+09:00",
+ "generated_at": "2026-10-26T16:14+09:00",
  "today": "2026-10-26",
  "recent_days": 30,
  "norm_labels": {
@@ -19,7 +19,12 @@
    "level_text": "Exercise Normal Precautions",
    "updated": "2025-05-28T09:00+09:00",
    "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.kor.html",
-   "changed": null
+   "changed": null,
+   "latest": {
+    "date": "2025-05-28T09:00+09:00",
+    "title": "South Korea - Level 1: Exercise Normal Precautions",
+    "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.kor.html"
+   }
   },
   {
    "source": "uk_fcdo",
@@ -30,7 +35,12 @@
    "level_text": "No FCDO travel warning",
    "updated": "2026-05-14T19:06+09:00",
    "url": "https://www.gov.uk/foreign-travel-advice/south-korea",
-   "changed": null
+   "changed": null,
+   "latest": {
+    "date": "2026-05-14T19:06+09:00",
+    "title": "Updated information about submitting e-Arrivals cards when arriving in Korea (‘Entry requirements’ page).",
+    "url": "https://www.gov.uk/foreign-travel-advice/south-korea"
+   }
   },
   {
    "source": "canada",
@@ -41,7 +51,12 @@
    "level_text": "Exercise normal security precautions",
    "updated": "2026-10-15T21:53+09:00",
    "url": "https://travel.gc.ca/destinations/south-korea",
-   "changed": null
+   "changed": null,
+   "latest": {
+    "date": "2026-10-15T21:53+09:00",
+    "title": "Natural disasters and climate section – added information on El Niño",
+    "url": "https://travel.gc.ca/destinations/south-korea"
+   }
   },
   {
    "source": "japan",
@@ -50,9 +65,14 @@
    "level": 0,
    "level_norm": 1,
    "level_text": "危険情報なし",
-   "updated": "2026-10-26T11:01+09:00",
+   "updated": "2026-10-26T15:55+09:00",
    "url": "https://www.anzen.mofa.go.jp/od/ryojiMail.html?countryCd=003",
-   "changed": null
+   "changed": null,
+   "latest": {
+    "date": "2026-10-23T14:21+09:00",
+    "title": "台風３０号（チャンパー）の接近",
+    "url": "https://www.anzen.mofa.go.jp/od/ryojiMailDetail.html?keyCd=168516"
+   }
   },
   {
    "source": "australia",
@@ -74,7 +94,12 @@
    "level_text": null,
    "updated": "2026-08-19T15:56+09:00",
    "url": "https://kr.usembassy.gov/category/alert/",
-   "changed": null
+   "changed": null,
+   "latest": {
+    "date": "2026-08-19T15:56+09:00",
+    "title": "Routine Message for U.S. Citizens: Nationwide Civil Defense Drill on August 20, 2026 (August 19, 2026)",
+    "url": "https://kr.usembassy.gov/081926-081926-nationwide-civil-defense-drill-on-august-20-2026/"
+   }
   }
  ],
  "recent": [
