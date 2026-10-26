@@ -275,7 +275,7 @@ footer a{color:var(--ink2)}
 
   <footer>
     <p>이 사이트는 공개된 정보를 자동으로 모은 참고용 지표이며, 정부의 공식 경보가 아닙니다. 실제 상황은 <a href="https://www.0404.go.kr" target="_blank" rel="noopener">외교부 해외안전여행</a>과 <a href="https://www.safekorea.go.kr" target="_blank" rel="noopener">국민재난안전포털</a>에서 확인하세요.</p>
-    <p>출처: 미 국무부 Travel Advisory · 영국 FCDO · 캐나다 Travel Advice · 일본 외무성 해외안전정보 · 호주 Smartraveller · 주한 미국대사관 · Google Hotels(SerpApi) · GDELT Project</p>
+    <p>출처: 미 국무부 Travel Advisory · 영국 FCDO · 캐나다 Travel Advice · 일본 외무성 해외안전정보 · 독일 외무부 · 주한 미국대사관 · Google Hotels(SerpApi) · GDELT Project</p>
   </footer>
 </div>
 
@@ -287,7 +287,7 @@ const fx=(v,d=2,sign=false)=>v==null?'—':(sign&&v>0?'+':'')+v.toFixed(d);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const safeUrl=u=>/^https?:\/\//.test(u||'')?esc(u):'#';
 const LV_COLOR={1:'--good',2:'--warning',3:'--serious',4:'--critical'};
-const CC={us_state:'US',uk_fcdo:'UK',canada:'CA',japan:'JP',australia:'AU',us_embassy:'US 서울'};
+const CC={us_state:'US',uk_fcdo:'UK',canada:'CA',japan:'JP',germany:'DE',us_embassy:'US 서울'};
 const get=u=>fetch(u,{cache:'no-store'}).then(r=>{if(!r.ok)throw 0;return r.json()});
 let D=null,E=null,sel=1;
 

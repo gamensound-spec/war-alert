@@ -1,7 +1,7 @@
 """
 주한 대사관·여행경보 모니터
 - 수집: 미 국무부 Travel Advisory, 영국 FCDO, 캐나다, 일본 외무성(위험정보·영사메일),
-        호주 Smartraveller, 주한 미국대사관 Alert RSS
+        독일 외무부, 주한 미국대사관 Alert RSS
 - 경보: 여행경보 단계 상승 / 공통 단계 3 이상 지속 / 새 공지에 철수·출국 권고 키워드
 - 주의: 새 공지에 북한·미사일·군사 등 키워드 (리포트에만 표시)
 - 출력: data/embassy.json(사이트용), data/embassy_state.json(직전 상태), data/embassy_log.csv(누적)
@@ -32,13 +32,15 @@ CRITICAL = re.compile("|".join([
     r"embassy (is |will be )?closed", r"closure of the (u\.s\. )?embassy",
     r"退避", r"出国(を|の)?(検討|勧告|推奨|お勧め)", r"早期(の)?(出国|帰国)", r"帰国(を|の)?(検討|勧告)",
     r"渡航(は)?(止め|中止)", r"大使館.{0,10}閉鎖", r"商用(便|定期便).{0,20}(運航|利用)",
+    r"evakuier", r"ausreise", r"verlassen sie (das land|südkorea|die republik korea)",
 ]), re.I)
 WATCH = re.compile("|".join([
     r"north korea", r"\bdprk\b", r"missile", r"military", r"nuclear", r"shelter",
     r"air raid", r"artillery", r"heightened tension", r"armistice",
     r"北朝鮮", r"ミサイル", r"核実験", r"核兵器", r"軍事", r"砲撃", r"武力", r"空襲", r"シェルター",
+    r"nordkorea", r"rakete", r"militär",
 ]), re.I)
-SUPPRESS = re.compile(r"drill|exercise|routine message|훈련|訓練|演習", re.I)   # 민방위훈련 등
+SUPPRESS = re.compile(r"drill|exercise|routine message|훈련|訓練|演習|übung", re.I)   # 민방위훈련 등
 GLOBAL = re.compile(r"worldwide caution", re.I)                                 # 한국 특정 아님
 
 
@@ -155,21 +157,31 @@ def src_japan():
             "items": items}
 
 
-AU_LEVELS = [("Do not travel", 4), ("Reconsider your need to travel", 3),
-             ("Exercise a high degree of caution", 2), ("Exercise normal safety precautions", 1)]
+DE_FLAGS = [  # (플래그, 공통 단계, 문구) — 심한 것부터. 부분 경고는 영국 'parts'와 같이 2단계
+    ("warning", 4, "Reisewarnung (여행 경고)"),
+    ("situationWarning", 3, "Von Reisen wird abgeraten (여행 자제 권고)"),
+    ("partialWarning", 2, "Teilreisewarnung (일부 지역 여행 경고)"),
+    ("situationPartWarning", 2, "Teilweise abgeraten (일부 지역 여행 자제)"),
+]
 
 
-def src_australia():
-    # 로컬 환경에서 접속 불가로 미검증. 페이지 문구에서 단계 문장을 찾는다.
-    url = "https://www.smartraveller.gov.au/destinations/asia/south-korea"
-    text = strip_tags(get(url).text)
-    i = text.lower().find("overall advice level")
-    scope = text[i:i + 400] if i >= 0 else text
-    found = [(scope.lower().find(p.lower()), p, n) for p, n in AU_LEVELS if p.lower() in scope.lower()]
-    if not found:
-        raise ValueError("단계 문구를 찾지 못함 (페이지 구조 변경 가능)")
-    _, p, n = min(found)
-    return {"level": n, "level_norm": n, "level_text": p, "updated": None, "url": url, "items": []}
+def src_germany():
+    # 호주 Smartraveller가 자동 접속을 받지 않아 독일 외무부 공개 API로 대체
+    lst = get("https://www.auswaertiges-amt.de/opendata/travelwarning").json()["response"]
+    cid = next(k for k, v in lst.items() if isinstance(v, dict) and v.get("countryCode") == "KR")
+    d = get(f"https://www.auswaertiges-amt.de/opendata/travelwarning/{cid}").json()["response"][cid]
+    lv, txt = 1, "Keine Reisewarnung (경고 없음)"
+    for key, n, t in DE_FLAGS:
+        if str(d.get(key)).lower() == "true":
+            lv, txt = n, t
+            break
+    upd = dt.datetime.fromtimestamp(int(d["lastModified"]), dt.timezone.utc)
+    url = f"https://www.auswaertiges-amt.de/de/service/laender/korearepublik-node/korearepubliksicherheit-{cid}"
+    note = re.sub(r"^Letzte Änderungen:\s*", "", (d.get("lastChanges") or "").strip())
+    # 본문은 늘 북한 언급이 있어 변경 메모만 키워드 분류
+    return {"level": lv, "level_norm": lv, "level_text": txt, "updated": iso(upd), "url": url,
+            "items": [{"id": d["lastModified"], "date": iso(upd), "title": note,
+                       "text": "", "url": url}] if note else []}
 
 
 def src_us_embassy():
@@ -190,7 +202,7 @@ SOURCES = [
     {"id": "uk_fcdo", "name": "영국 FCDO", "fn": src_uk},
     {"id": "canada", "name": "캐나다 여행경보", "fn": src_canada},
     {"id": "japan", "name": "일본 외무성 위험정보·영사메일", "fn": src_japan},
-    {"id": "australia", "name": "호주 Smartraveller", "fn": src_australia},
+    {"id": "germany", "name": "독일 외무부", "fn": src_germany},
     {"id": "us_embassy", "name": "주한 미국대사관 Alert", "fn": src_us_embassy},
 ]
 
