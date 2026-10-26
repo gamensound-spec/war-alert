@@ -1,5 +1,5 @@
 """
-일간 통합 리포트: 호텔 지표 + 대사관·여행경보를 한 통의 Gmail로 보낸다.
+일간 통합 리포트: 대사관·여행경보 + 호텔 지표 + 세계 언론 동향을 한 통의 Gmail로 보낸다.
 한 모듈이 실패해도 나머지는 그대로 보내고, 실패 사실을 본문에 적는다.
 """
 import re
@@ -8,6 +8,7 @@ import traceback
 
 import hotel_monitor
 import embassy_monitor
+import news_monitor
 
 
 def section(title, fn):
@@ -30,7 +31,8 @@ def hotel():
 
 def run(mail=True):
     today = dt.datetime.now(hotel_monitor.KST).date()
-    parts = [("대사관·여행경보", embassy_monitor.run), ("남산 하얏트 가격", hotel)]
+    parts = [("대사관·여행경보", embassy_monitor.run), ("남산 하얏트 가격", hotel),
+             ("세계 언론 동향", news_monitor.run)]
     alerts, fails, bodies = [], [], []
     for title, fn in parts:
         a, f, b = section(title, fn)

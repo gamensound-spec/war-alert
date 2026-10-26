@@ -82,6 +82,7 @@ section{margin-top:44px;scroll-margin-top:16px}
 .trust.high{background:var(--good-bg);color:var(--good-ink)}
 .trust.low{background:var(--warn-bg);color:var(--warn-ink)}
 .trust.none{background:var(--sunken);color:var(--muted)}
+.trust.mid{background:var(--sunken);color:var(--ink2);border:1px solid var(--border)}
 @media(max-width:560px){.sec-h{flex-wrap:wrap}.trust{order:3;margin-left:26px}}
 .card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;margin-bottom:14px;box-shadow:var(--shadow)}
 .card h3{font-size:14.5px;font-weight:600;margin:0 0 2px}
@@ -117,6 +118,7 @@ section{margin-top:44px;scroll-margin-top:16px}
 .chip{font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px;white-space:nowrap;justify-self:start}
 .chip.crit{background:var(--crit-bg);color:var(--crit-ink)}
 .chip.watch{background:var(--warn-bg);color:var(--warn-ink)}
+.chip.src-chip{background:var(--sunken);color:var(--ink2);font-weight:500}
 .note{font-size:12.5px;color:var(--muted);margin:10px 0 0}
 
 /* 호텔 */
@@ -250,16 +252,30 @@ footer a{color:var(--ink2)}
       <span class="num">03</span>
       <div class="grow">
         <h2>세계 언론 동향</h2>
-        <p>GDELT로 한반도 분쟁 관련 기사량과 논조를 추적할 예정입니다.</p>
+        <p>전 세계 뉴스 중 북한·한반도와 전쟁·미사일·공격·철수 단어가 함께 나온 기사의 비율입니다. 평소(직전 28일)보다 크게 늘면 신호로 봅니다.</p>
       </div>
-      <span class="trust none">준비 중</span>
+      <span class="trust mid">신뢰도 중간</span>
     </div>
-    <div class="empty"><b>다음 단계에서 연결합니다</b><span>기사량이 평소보다 급증하는지를 매일 비교합니다.</span></div>
+    <div id="newsBody">
+      <div class="tiles" id="newsTiles"></div>
+      <div class="card">
+        <h3>하루 기사 만 건당 관련 기사 <span class="sub" id="lblNews"></span></h3>
+        <div class="sub">GDELT가 모으는 기사량 자체가 날마다 달라서, 건수 대신 비율로 봅니다. 점선은 직전 28일 중앙값입니다.</div>
+        <div class="legend" id="legNews"></div>
+        <div class="chart" id="chNews"></div>
+      </div>
+      <div class="card">
+        <h3>최근 24시간 주요 기사</h3>
+        <div class="sub">GDELT 관련도 순. 제목은 원문 언어 그대로입니다.</div>
+        <ul class="feed news" id="newsList"></ul>
+      </div>
+      <p class="note">출처: GDELT Project DOC 2.0. z-score는 중앙값과 MAD로 계산합니다. <span id="newsRule"></span></p>
+    </div>
   </section>
 
   <footer>
     <p>이 사이트는 공개된 정보를 자동으로 모은 참고용 지표이며, 정부의 공식 경보가 아닙니다. 실제 상황은 <a href="https://www.0404.go.kr" target="_blank" rel="noopener">외교부 해외안전여행</a>과 <a href="https://www.safekorea.go.kr" target="_blank" rel="noopener">국민재난안전포털</a>에서 확인하세요.</p>
-    <p>출처: 미 국무부 Travel Advisory · 영국 FCDO · 캐나다 Travel Advice · 일본 외무성 해외안전정보 · 호주 Smartraveller · 주한 미국대사관 · Google Hotels(SerpApi)</p>
+    <p>출처: 미 국무부 Travel Advisory · 영국 FCDO · 캐나다 Travel Advice · 일본 외무성 해외안전정보 · 호주 Smartraveller · 주한 미국대사관 · Google Hotels(SerpApi) · GDELT Project</p>
   </footer>
 </div>
 
@@ -275,9 +291,11 @@ const CC={us_state:'US',uk_fcdo:'UK',canada:'CA',japan:'JP',australia:'AU',us_em
 const get=u=>fetch(u,{cache:'no-store'}).then(r=>{if(!r.ok)throw 0;return r.json()});
 let D=null,E=null,sel=1;
 
-Promise.allSettled([get('data/embassy.json'),get('data/metrics.json')]).then(([e,h])=>{
-  E=e.status==='fulfilled'?e.value:null; D=h.status==='fulfilled'?h.value:null;
+let N=null;
+Promise.allSettled([get('data/embassy.json'),get('data/metrics.json'),get('data/news.json')]).then(([e,h,n])=>{
+  E=e.status==='fulfilled'?e.value:null; D=h.status==='fulfilled'?h.value:null; N=n.status==='fulfilled'?n.value:null;
   hero();
+  N?news():empty('newsBody','언론 데이터를 기다리는 중입니다','다음 자동 수집 후 표시됩니다.');
   E?embassy():empty('embBody','아직 수집된 데이터가 없습니다','첫 자동 수집 후 표시됩니다.');
   D?initHotel():empty('hotelBody','호텔 가격 데이터를 기다리는 중입니다','검색 설정을 점검하고 있습니다. 수집이 시작되면 같은 요일 표본이 4개 쌓인 뒤부터 이상치를 판단합니다.');
 });
@@ -286,11 +304,11 @@ function empty(id,t,s){document.getElementById(id).innerHTML=`<div class="empty"
 
 /* ───── 오늘의 판단 ───── */
 function hero(){
-  const al=[...(E?.alerts||[]).map(a=>['대사관·여행경보',a]),...(D?.alerts||[]).map(a=>['호텔 가격',a])];
+  const al=[...(E?.alerts||[]).map(a=>['대사관·여행경보',a]),...(D?.alerts||[]).map(a=>['호텔 가격',a]),...(N?.alerts||[]).map(a=>['세계 언론',a])];
   const h=document.getElementById('hero');
-  const times=[E?.generated_at,D?.generated_at].filter(Boolean).sort();
+  const times=[E?.generated_at,D?.generated_at,N?.generated_at].filter(Boolean).sort();
   document.getElementById('updated').textContent=times.length?'최근 갱신 '+times.at(-1).replace('T',' ').slice(0,16):'아직 갱신 전';
-  if(!E&&!D){h.style.setProperty('--hero-c',css('--muted'));document.getElementById('verdict').textContent='데이터 수집 전';document.getElementById('lead').textContent='첫 자동 수집이 끝나면 오늘의 판단이 표시됩니다.';}
+  if(!E&&!D&&!N){h.style.setProperty('--hero-c',css('--muted'));document.getElementById('verdict').textContent='데이터 수집 전';document.getElementById('lead').textContent='첫 자동 수집이 끝나면 오늘의 판단이 표시됩니다.';}
   else if(al.length){
     h.style.setProperty('--hero-c',css('--critical'));
     document.getElementById('verdict').textContent=`경보 ${al.length}건`;
@@ -310,7 +328,11 @@ function hero(){
     const o=D.config.offsets[0], s=D.series.filter(r=>r.offset===o), l=s.at(-1);
     cards.push(['sec-hotel','남산 하얏트 가격',D.alerts.length?'--critical':'--good',l?.ratio!=null?`대조군 대비 ${fx(l.ratio)}배`:'요금 미확인',l?.z_ratio!=null?`D+${o} z-score ${fx(l.z_ratio,2,true)}`:`표본 쌓는 중 (${l?.history_n??0}/${D.config.min_history})`]);
   }else cards.push(['sec-hotel','남산 하얏트 가격','--muted','수집 대기','검색 설정 점검 중']);
-  cards.push(['sec-news','세계 언론 동향','--muted','준비 중','GDELT 연결 예정']);
+  if(N){
+    const l=N.latest;
+    cards.push(['sec-news','세계 언론 동향',N.alerts.length?'--critical':N.watch.length?'--warning':l.z==null?'--muted':'--good',
+      l.ratio!=null?`평소의 ${fx(l.ratio,1)}배`:`만 건당 ${fx(l.share,1)}`,l.z!=null?`${l.date.slice(5)} 기준 · z ${fx(l.z,1,true)}`:`기준선 쌓는 중 (${l.base_n}/${N.config.min_base}일)`]);
+  }else cards.push(['sec-news','세계 언론 동향','--muted','수집 대기','']);
   document.getElementById('ind').innerHTML=cards.map(([id,k,c,v,s])=>`<a href="#${id}"><div class="k"><span class="dot" style="background:var(${c})"></span>${k}</div><div class="v">${esc(v)}</div><div class="h">${esc(s)}</div></a>`).join('');
 }
 
@@ -333,6 +355,32 @@ function embassy(){
   document.getElementById('embRecent').innerHTML=E.recent.length?E.recent.map(r=>{
     const crit=r.severity==='critical';
     return `<li><span class="d mono">${esc(r.date.slice(0,10))}</span><span class="chip ${crit?'crit':'watch'}">${crit?'철수·출국':'주의'}</span><span class="t"><a href="${safeUrl(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a> <span class="s">· ${esc(r.source)}</span></span></li>`}).join(''):'<li style="display:block;color:var(--ink2)">해당 공지가 없습니다.</li>';
+}
+
+/* ───── 세계 언론 ───── */
+function news(){
+  const l=N.latest, c=N.config;
+  const hint=l.z==null?`기준선 ${l.base_n}/${c.min_base}일 · 보류`:N.alerts.length?'⚠ 급증':N.watch.length?'증가 · 주의':'정상 범위';
+  document.getElementById('newsTiles').innerHTML=[
+    ['관련 기사 (만 건당)',fx(l.share,1),`${l.date} · ${l.count.toLocaleString('ko-KR')}건`],
+    ['평소 (28일 중앙값)',fx(l.median,1),'직전 28일'],
+    ['평소 대비',l.ratio!=null?fx(l.ratio,2)+'배':'—',`경보 ${c.ratio_alert}배 이상`],
+    ['z-score',fx(l.z,2,true),hint],
+    ['논조',fx(l.tone,1,true),'0보다 낮을수록 부정적'],
+  ].map(([k,v,h])=>`<div class="tile"><div class="k">${k}</div><div class="v mono">${v}</div><div class="h">${h}</div></div>`).join('');
+  document.getElementById('newsRule').textContent=`z ${c.z_watch} 이상이면 주의, z ${c.z_alert} 이상이면서 평소의 ${c.ratio_alert}배 이상이면 경보입니다. 수집이 덜 된 당일은 빼고 전날까지로 판단합니다.`;
+  newsChart();
+  document.getElementById('newsList').innerHTML=N.articles.length?N.articles.map(a=>
+    `<li><span class="d mono">${esc((a.date||'').slice(5))}</span><span class="chip src-chip">${esc(a.country||a.language||'')}</span><span class="t"><a href="${safeUrl(a.url)}" target="_blank" rel="noopener">${esc(a.title)}</a> <span class="s">· ${esc(a.domain)}</span></span></li>`).join(''):'<li style="display:block;color:var(--ink2)">이번 수집에서 기사 목록을 받지 못했습니다.</li>';
+  addEventListener('resize',()=>{clearTimeout(window._nt);window._nt=setTimeout(newsChart,150)});
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change',newsChart);
+}
+function newsChart(){
+  const s=N.series.filter(d=>d.share!=null&&!d.partial), x=s.map(d=>d.date);
+  const ss=[{name:'만 건당 관련 기사',color:css('--s1'),values:s.map(d=>d.share)}];
+  document.getElementById('lblNews').textContent=`· 최근 ${s.length}일`;
+  legend('legNews',ss);
+  lineChart('chNews',x,ss,{fmt:v=>v.toFixed(1),ref:N.latest.median!=null?[{y:N.latest.median,label:'평소 '+N.latest.median.toFixed(1)}]:[],h:240});
 }
 
 /* ───── 호텔 ───── */
@@ -411,9 +459,10 @@ function lineChart(id,x,ss,o){
   ticks.forEach(t=>{g+=`<line x1="${m.l}" x2="${W-m.r}" y1="${Y(t)}" y2="${Y(t)}" stroke="${css('--grid')}" stroke-width="1"/><text x="${m.l-8}" y="${Y(t)+4}" text-anchor="end" font-size="11" fill="${css('--muted')}" class="mono">${o.fmt(t)}</text>`});
   (o.ref||[]).forEach(r=>{g+=`<line x1="${m.l}" x2="${W-m.r}" y1="${Y(r.y)}" y2="${Y(r.y)}" stroke="${css(r.alert?'--critical':'--axis')}" stroke-width="1.5" stroke-dasharray="${r.alert?'5 4':''}"/><text x="${W-m.r}" y="${Y(r.y)-5}" text-anchor="end" font-size="11" fill="${css(r.alert?'--crit-ink':'--muted')}">${r.label}</text>`});
   const step=Math.max(1,Math.ceil(n/Math.floor(iw/70)));
-  x.forEach((d,i)=>{if(i%step===0||i===n-1)g+=`<text x="${X(i)}" y="${H-6}" text-anchor="middle" font-size="11" fill="${css('--muted')}" class="mono">${d.slice(5)}</text>`});
+  x.forEach((d,i)=>{if((i%step===0&&n-1-i>=step*.6)||i===n-1)g+=`<text x="${X(i)}" y="${H-6}" text-anchor="middle" font-size="11" fill="${css('--muted')}" class="mono">${d.slice(5)}</text>`});
   ss.forEach(s=>{
     let p='',on=false; s.values.forEach((v,i)=>{if(v==null){on=false;return}p+=(on?'L':'M')+X(i).toFixed(1)+' '+Y(v).toFixed(1);on=true});
+    if(n<=3)s.values.forEach((v,i)=>{if(v!=null)g+=`<circle cx="${X(i)}" cy="${Y(v)}" r="3.5" fill="${s.color}" fill-opacity="${s.bold===false?.45:1}"/>`});
     g+=`<path d="${p}" fill="none" stroke="${s.color}" stroke-width="${s.bold===false?1.5:2}" stroke-opacity="${s.bold===false?.45:1}" stroke-dasharray="${s.dash?'5 4':''}" stroke-linejoin="round" stroke-linecap="round"/>`;
   });
   g+=`<line id="${id}-x" y1="${m.t}" y2="${m.t+ih}" stroke="${css('--axis')}" stroke-width="1" style="display:none"/><g id="${id}-dots"></g><rect x="${m.l}" y="${m.t}" width="${iw}" height="${ih}" fill="transparent"/></svg><div class="tip"></div>`;
