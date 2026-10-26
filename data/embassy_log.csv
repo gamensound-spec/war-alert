@@ -1,0 +1,7 @@
+date,source,level,level_norm,level_text,updated,error
+2026-10-26,us_state,1,1,Exercise Normal Precautions,2025-05-28T09:00+09:00,
+2026-10-26,uk_fcdo,1,1,No FCDO travel warning,2026-05-14T19:06+09:00,
+2026-10-26,canada,0,1,Exercise normal security precautions,2026-10-15T21:53+09:00,
+2026-10-26,japan,0,1,危険情報なし,2026-10-26T11:01+09:00,
+2026-10-26,australia,,,,,"ReadTimeout: HTTPSConnectionPool(host='www.smartraveller.gov.au', port=443): Read timed out. (read timeout=40)"
+2026-10-26,us_embassy,,,,2026-08-19T15:56+09:00,

@@ -1,0 +1,16 @@
+fetch_date,checkin,offset,weekday,role,hotel,price,status
+2026-10-26,2026-10-27,1,1,target,Grand Hyatt Seoul,,missing
+2026-10-26,2026-10-27,1,1,control,The Shilla Seoul,,missing
+2026-10-26,2026-10-27,1,1,control,Banyan Tree Seoul,,missing
+2026-10-26,2026-10-27,1,1,control,Four Seasons Seoul,,missing
+2026-10-26,2026-10-27,1,1,control,JW Marriott Seoul,,missing
+2026-10-26,2026-10-29,3,3,target,Grand Hyatt Seoul,,missing
+2026-10-26,2026-10-29,3,3,control,The Shilla Seoul,,missing
+2026-10-26,2026-10-29,3,3,control,Banyan Tree Seoul,,missing
+2026-10-26,2026-10-29,3,3,control,Four Seasons Seoul,,missing
+2026-10-26,2026-10-29,3,3,control,JW Marriott Seoul,,missing
+2026-10-26,2026-11-02,7,0,target,Grand Hyatt Seoul,,missing
+2026-10-26,2026-11-02,7,0,control,The Shilla Seoul,,missing
+2026-10-26,2026-11-02,7,0,control,Banyan Tree Seoul,,missing
+2026-10-26,2026-11-02,7,0,control,Four Seasons Seoul,,missing
+2026-10-26,2026-11-02,7,0,control,JW Marriott Seoul,,missing
