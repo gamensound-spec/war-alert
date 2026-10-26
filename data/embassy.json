@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-26T20:03+09:00",
+ "generated_at": "2026-10-26T23:26+09:00",
  "today": "2026-10-26",
  "recent_days": 30,
  "norm_labels": {
@@ -65,7 +65,7 @@
    "level": 0,
    "level_norm": 1,
    "level_text": "危険情報なし",
-   "updated": "2026-10-26T19:51+09:00",
+   "updated": "2026-10-26T23:10+09:00",
    "url": "https://www.anzen.mofa.go.jp/od/ryojiMail.html?countryCd=003",
    "changed": null,
    "latest": {
@@ -75,15 +75,56 @@
    }
   },
   {
-   "source": "australia",
-   "name": "호주 Smartraveller",
-   "error": "ReadTimeout: HTTPSConnectionPool(host='www.smartraveller.gov.au', port=443): Read timed out. (read timeout=40)",
+   "source": "germany",
+   "name": "독일 외무부",
+   "error": null,
+   "level": 1,
+   "level_norm": 1,
+   "level_text": "Keine Reisewarnung (경고 없음)",
+   "updated": "2026-10-13T19:08+09:00",
+   "url": "https://www.auswaertiges-amt.de/de/service/laender/korearepublik-node/korearepubliksicherheit-216132",
+   "changed": null,
+   "latest": {
+    "date": "2026-10-13T19:08+09:00",
+    "title": "Redaktionelle Änderungen",
+    "url": "https://www.auswaertiges-amt.de/de/service/laender/korearepublik-node/korearepubliksicherheit-216132"
+   }
+  },
+  {
+   "source": "newzealand",
+   "name": "뉴질랜드 SafeTravel",
+   "error": null,
+   "level": 1,
+   "level_norm": 1,
+   "level_text": "Exercise normal safety and security precautions",
+   "updated": "2024-12-15T21:00+09:00",
+   "url": "https://www.safetravel.govt.nz/destinations/south-korea",
+   "changed": null,
+   "latest": null
+  },
+  {
+   "source": "singapore",
+   "name": "싱가포르 외교부",
+   "error": null,
+   "level": 1,
+   "level_norm": 1,
+   "level_text": "No travel advisory",
+   "updated": null,
+   "url": "https://www.mfa.gov.sg/travelling-overseas/travel-advisories-notices-and-visa-information/republic-of-south-korea",
+   "changed": null,
+   "latest": null
+  },
+  {
+   "source": "china",
+   "name": "중국 외교부 안전 알림",
+   "error": null,
    "level": null,
    "level_norm": null,
    "level_text": null,
    "updated": null,
-   "url": null,
-   "changed": null
+   "url": "https://cs.mfa.gov.cn/aqtx/",
+   "changed": null,
+   "latest": null
   },
   {
    "source": "us_embassy",

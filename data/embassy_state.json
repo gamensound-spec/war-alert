@@ -52,7 +52,7 @@
   "level": 0,
   "level_norm": 1,
   "level_text": "危険情報なし",
-  "updated": "2026-10-26T19:51+09:00",
+  "updated": "2026-10-26T23:10+09:00",
   "url": "https://www.anzen.mofa.go.jp/od/ryojiMail.html?countryCd=003",
   "seen": [
    "168516",
@@ -167,5 +167,39 @@
    "https://kr.usembassy.gov/?p=44755",
    "https://kr.usembassy.gov/?p=44342"
   ]
+ },
+ "germany": {
+  "level": 1,
+  "level_norm": 1,
+  "level_text": "Keine Reisewarnung (경고 없음)",
+  "updated": "2026-10-13T19:08+09:00",
+  "url": "https://www.auswaertiges-amt.de/de/service/laender/korearepublik-node/korearepubliksicherheit-216132",
+  "seen": [
+   1791886104
+  ]
+ },
+ "newzealand": {
+  "level": 1,
+  "level_norm": 1,
+  "level_text": "Exercise normal safety and security precautions",
+  "updated": "2024-12-15T21:00+09:00",
+  "url": "https://www.safetravel.govt.nz/destinations/south-korea",
+  "seen": []
+ },
+ "singapore": {
+  "level": 1,
+  "level_norm": 1,
+  "level_text": "No travel advisory",
+  "updated": null,
+  "url": "https://www.mfa.gov.sg/travelling-overseas/travel-advisories-notices-and-visa-information/republic-of-south-korea",
+  "seen": []
+ },
+ "china": {
+  "level": null,
+  "level_norm": null,
+  "level_text": null,
+  "updated": null,
+  "url": "https://cs.mfa.gov.cn/aqtx/",
+  "seen": []
  }
 }
