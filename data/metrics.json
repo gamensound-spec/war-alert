@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-26T16:22+09:00",
+ "generated_at": "2026-10-26T20:04+09:00",
  "today": "2026-10-26",
  "config": {
   "z_alert": 2.5,
@@ -23,11 +23,11 @@
    "date": "2026-10-26",
    "offset": 1,
    "weekday": 1,
-   "target_price": 877248.0,
+   "target_price": 972976.0,
    "target_status": "ok",
-   "control_median": 1137984.0,
+   "control_median": 1176859.0,
    "control_n": 3,
-   "ratio": 0.7709,
+   "ratio": 0.8268,
    "z_ratio": null,
    "z_control": null,
    "history_n": 0
@@ -38,9 +38,9 @@
    "weekday": 3,
    "target_price": 862720.0,
    "target_status": "ok",
-   "control_median": 998561.5,
+   "control_median": 1037499.5,
    "control_n": 4,
-   "ratio": 0.864,
+   "ratio": 0.8315,
    "z_ratio": null,
    "z_control": null,
    "history_n": 0
@@ -49,11 +49,11 @@
    "date": "2026-10-26",
    "offset": 7,
    "weekday": 0,
-   "target_price": 1018338.0,
+   "target_price": 1018675.0,
    "target_status": "ok",
-   "control_median": 737473.5,
+   "control_median": 761274.0,
    "control_n": 4,
-   "ratio": 1.3808,
+   "ratio": 1.3381,
    "z_ratio": null,
    "z_control": null,
    "history_n": 0
@@ -65,7 +65,7 @@
    "checkin": "2026-10-27",
    "hotel": "Grand Hyatt Seoul",
    "role": "target",
-   "price": 877248.0,
+   "price": 972976.0,
    "status": "ok"
   },
   {
@@ -73,7 +73,7 @@
    "checkin": "2026-10-27",
    "hotel": "The Shilla Seoul",
    "role": "control",
-   "price": 1137473.0,
+   "price": 1176859.0,
    "status": "ok"
   },
   {
@@ -81,7 +81,7 @@
    "checkin": "2026-10-27",
    "hotel": "Banyan Tree Seoul",
    "role": "control",
-   "price": 1165069.0,
+   "price": 1475555.0,
    "status": "ok"
   },
   {
@@ -113,7 +113,7 @@
    "checkin": "2026-10-29",
    "hotel": "The Shilla Seoul",
    "role": "control",
-   "price": 965123.0,
+   "price": 1042999.0,
    "status": "ok"
   },
   {
@@ -145,7 +145,7 @@
    "checkin": "2026-11-02",
    "hotel": "Grand Hyatt Seoul",
    "role": "target",
-   "price": 1018338.0,
+   "price": 1018675.0,
    "status": "ok"
   },
   {
@@ -153,7 +153,7 @@
    "checkin": "2026-11-02",
    "hotel": "The Shilla Seoul",
    "role": "control",
-   "price": 708291.0,
+   "price": 749260.0,
    "status": "ok"
   },
   {
@@ -161,7 +161,7 @@
    "checkin": "2026-11-02",
    "hotel": "Banyan Tree Seoul",
    "role": "control",
-   "price": 674898.0,
+   "price": 675601.0,
    "status": "ok"
   },
   {
@@ -177,7 +177,7 @@
    "checkin": "2026-11-02",
    "hotel": "JW Marriott Seoul",
    "role": "control",
-   "price": 766656.0,
+   "price": 773288.0,
    "status": "ok"
   }
  ]

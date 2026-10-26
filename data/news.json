@@ -1,0 +1,717 @@
+{
+ "generated_at": "2026-10-26T20:09+09:00",
+ "query": "(\"north korea\" OR \"korean peninsula\") (war OR missile OR attack OR invasion OR evacuation OR troops)",
+ "config": {
+  "base_days": 28,
+  "min_base": 14,
+  "z_watch": 2.0,
+  "z_alert": 3.0,
+  "ratio_alert": 2.0
+ },
+ "alerts": [],
+ "watch": [
+  "기사량 증가: 평소의 2.4배 (z +2.6)"
+ ],
+ "latest": {
+  "date": "2026-10-24",
+  "share": 31.434,
+  "count": 244,
+  "tone": null,
+  "base_n": 28,
+  "median": 13.309,
+  "ratio": 2.36,
+  "z": 2.62
+ },
+ "series": [
+  {
+   "date": "2026-07-29",
+   "count": 113,
+   "total": 162086,
+   "share": 6.972,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-07-30",
+   "count": 158,
+   "total": 168455,
+   "share": 9.379,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-07-31",
+   "count": 186,
+   "total": 149894,
+   "share": 12.409,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-08-01",
+   "count": 130,
+   "total": 110262,
+   "share": 11.79,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-08-02",
+   "count": 54,
+   "total": 103171,
+   "share": 5.234,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-08-03",
+   "count": 98,
+   "total": 147538,
+   "share": 6.642,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-08-04",
+   "count": 174,
+   "total": 157631,
+   "share": 11.038,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-08-05",
+   "count": 302,
+   "total": 175970,
+   "share": 17.162,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-08-06",
+   "count": 293,
+   "total": 159186,
+   "share": 18.406,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-08-07",
+   "count": 125,
+   "total": 117971,
+   "share": 10.596,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-08-08",
+   "count": 133,
+   "total": 114555,
+   "share": 11.61,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-08-09",
+   "count": 173,
+   "total": 103098,
+   "share": 16.78,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-08-10",
+   "count": 192,
+   "total": 115167,
+   "share": 16.671,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-08-11",
+   "count": 309,
+   "total": 131138,
+   "share": 23.563,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-08-12",
+   "count": 320,
+   "total": 140458,
+   "share": 22.783,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-08-13",
+   "count": 326,
+   "total": 179907,
+   "share": 18.12,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-08-14",
+   "count": 193,
+   "total": 194350,
+   "share": 9.931,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-08-15",
+   "count": 220,
+   "total": 108259,
+   "share": 20.322,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-08-16",
+   "count": 380,
+   "total": 103863,
+   "share": 36.587,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-08-17",
+   "count": 904,
+   "total": 116203,
+   "share": 77.795,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-08-18",
+   "count": 653,
+   "total": 169174,
+   "share": 38.599,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-08-19",
+   "count": 642,
+   "total": 157610,
+   "share": 40.733,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-08-20",
+   "count": 650,
+   "total": 171970,
+   "share": 37.797,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-08-21",
+   "count": 472,
+   "total": 160721,
+   "share": 29.368,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-08-22",
+   "count": 149,
+   "total": 98241,
+   "share": 15.167,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-08-23",
+   "count": 127,
+   "total": 88414,
+   "share": 14.364,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-08-24",
+   "count": 191,
+   "total": 117661,
+   "share": 16.233,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-08-25",
+   "count": 138,
+   "total": 132186,
+   "share": 10.44,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-08-26",
+   "count": 135,
+   "total": 179831,
+   "share": 7.507,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-08-27",
+   "count": 128,
+   "total": 172877,
+   "share": 7.404,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-08-28",
+   "count": 169,
+   "total": 125894,
+   "share": 13.424,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-08-29",
+   "count": 54,
+   "total": 91911,
+   "share": 5.875,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-08-30",
+   "count": 90,
+   "total": 79465,
+   "share": 11.326,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-08-31",
+   "count": 78,
+   "total": 107519,
+   "share": 7.255,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-09-01",
+   "count": 88,
+   "total": 116481,
+   "share": 7.555,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-09-02",
+   "count": 101,
+   "total": 105316,
+   "share": 9.59,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-09-03",
+   "count": 72,
+   "total": 120602,
+   "share": 5.97,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-09-04",
+   "count": 95,
+   "total": 156481,
+   "share": 6.071,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-09-05",
+   "count": 43,
+   "total": 102774,
+   "share": 4.184,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-09-06",
+   "count": 42,
+   "total": 98645,
+   "share": 4.258,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-09-07",
+   "count": 246,
+   "total": 118079,
+   "share": 20.834,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-09-08",
+   "count": 114,
+   "total": 77318,
+   "share": 14.744,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-09-09",
+   "count": 127,
+   "total": 158938,
+   "share": 7.991,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-09-10",
+   "count": 125,
+   "total": 155062,
+   "share": 8.061,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-09-11",
+   "count": 118,
+   "total": 154253,
+   "share": 7.65,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-09-12",
+   "count": 195,
+   "total": 120863,
+   "share": 16.134,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-09-13",
+   "count": 20,
+   "total": 29203,
+   "share": 6.849,
+   "tone": null,
+   "partial": true
+  },
+  {
+   "date": "2026-09-20",
+   "count": 292,
+   "total": 105485,
+   "share": 27.682,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-09-21",
+   "count": 175,
+   "total": 108510,
+   "share": 16.128,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-09-22",
+   "count": 184,
+   "total": 105779,
+   "share": 17.395,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-09-23",
+   "count": 319,
+   "total": 149817,
+   "share": 21.293,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-09-24",
+   "count": 322,
+   "total": 155942,
+   "share": 20.649,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-09-25",
+   "count": 150,
+   "total": 58811,
+   "share": 25.505,
+   "tone": null,
+   "partial": true
+  },
+  {
+   "date": "2026-09-27",
+   "count": 88,
+   "total": 77392,
+   "share": 11.371,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-09-28",
+   "count": 272,
+   "total": 121105,
+   "share": 22.46,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-09-29",
+   "count": 602,
+   "total": 134919,
+   "share": 44.619,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-09-30",
+   "count": 193,
+   "total": 111356,
+   "share": 17.332,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-10-01",
+   "count": 168,
+   "total": 174731,
+   "share": 9.615,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-10-02",
+   "count": 136,
+   "total": 61712,
+   "share": 22.038,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-10-06",
+   "count": 2,
+   "total": 3958,
+   "share": 5.053,
+   "tone": null,
+   "partial": true
+  },
+  {
+   "date": "2026-10-08",
+   "count": 1,
+   "total": 678,
+   "share": 14.749,
+   "tone": null,
+   "partial": true
+  },
+  {
+   "date": "2026-10-10",
+   "count": 6,
+   "total": 1836,
+   "share": 32.68,
+   "tone": null,
+   "partial": true
+  },
+  {
+   "date": "2026-10-15",
+   "count": 92,
+   "total": 95273,
+   "share": 9.656,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-10-16",
+   "count": 104,
+   "total": 150288,
+   "share": 6.92,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-10-17",
+   "count": 93,
+   "total": 94046,
+   "share": 9.889,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-10-18",
+   "count": 40,
+   "total": 76163,
+   "share": 5.252,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-10-19",
+   "count": 138,
+   "total": 146057,
+   "share": 9.448,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-10-20",
+   "count": 248,
+   "total": 156425,
+   "share": 15.854,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-10-21",
+   "count": 190,
+   "total": 166970,
+   "share": 11.379,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-10-22",
+   "count": 147,
+   "total": 123805,
+   "share": 11.874,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-10-23",
+   "count": 114,
+   "total": 69302,
+   "share": 16.45,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-10-24",
+   "count": 244,
+   "total": 77623,
+   "share": 31.434,
+   "tone": null,
+   "partial": false
+  },
+  {
+   "date": "2026-10-25",
+   "count": 66,
+   "total": 31912,
+   "share": 20.682,
+   "tone": null,
+   "partial": true
+  },
+  {
+   "date": "2026-10-26",
+   "count": 6,
+   "total": 4483,
+   "share": 13.384,
+   "tone": null,
+   "partial": true
+  }
+ ],
+ "articles": [
+  {
+   "title": "Seoul  fabricated  landmine blast , North Korea tells UN in letter | Border Disputes News",
+   "url": "https://www.aljazeera.com/news/2026/10/26/seoul-fabricated-landmine-blast-north-korea-tells-un-in-letter",
+   "domain": "aljazeera.com",
+   "language": "English",
+   "country": "United States",
+   "date": "2026-10-26"
+  },
+  {
+   "title": "快評 》 金正恩訪陸 如何影響中美俄三方峰會 - 兩岸",
+   "url": "https://www.chinatimes.com/realtimenews/20261026001883-260409",
+   "domain": "chinatimes.com",
+   "language": "Chinese",
+   "country": "Taiwan",
+   "date": "2026-10-26"
+  },
+  {
+   "title": "Kim Jong Un reist nach Besuch in China zurück nach Nordkorea",
+   "url": "https://www.n-tv.de/politik/Kim-Jong-Un-reist-nach-Besuch-in-China-zurueck-nach-Nordkorea-id31455614.html",
+   "domain": "n-tv.de",
+   "language": "German",
+   "country": "Germany",
+   "date": "2026-10-25"
+  },
+  {
+   "title": "North Korean leader Kim Jong Un visits China to inaugurate a new cross - border bridge",
+   "url": "https://www.wvtm13.com/article/kim-jong-un-china-new-cross-border-bridge/74239967",
+   "domain": "wvtm13.com",
+   "language": "English",
+   "country": "United States",
+   "date": "2026-10-25"
+  },
+  {
+   "title": "Regimul Putin e acuzat că a trimis copii ucraineni într - o tabără de îndoctrinare din Coreea de Nord",
+   "url": "https://ziare.com/razboi-ucraina/rusia-coreea-de-nord-tabara-copii-ucraineni-2043684",
+   "domain": "ziare.com",
+   "language": "Romanian",
+   "country": "Romania",
+   "date": "2026-10-25"
+  },
+  {
+   "title": "與  전작권 조속 환수  野  안보 공백 우려 … 국방위 종감서 정면충돌 [ 국감 ]",
+   "url": "https://www.etoday.co.kr/news/view/2640104",
+   "domain": "etoday.co.kr",
+   "language": "Korean",
+   "country": "South Korea",
+   "date": "2026-10-26"
+  },
+  {
+   "title": "Κιμ Γιονγκ Ουν : Αιφνιδιαστική επίσκεψη στην Κίνα με μήνυμα στενότερης συνεργασίας – Η ιστορική αναφορά στον Πόλεμο της Κορέας",
+   "url": "https://newpost.gr/eidiseis/kim-giongk-oyn-aifnidiastiki-episkepsi-stin-kina-me-minyma-stenoteris-synergasias-i-istoriki-anafora-ston-polemo-tis-koreas/",
+   "domain": "newpost.gr",
+   "language": "Greek",
+   "country": "Greece",
+   "date": "2026-10-25"
+  },
+  {
+   "title": "Кім Чен Ин заявив про зміцнення зв  язків із Китаєм",
+   "url": "https://ua.korrespondent.net/world/4923162-kim-chen-yn-zaiavyv-pro-zmitsnennia-zviazkiv-iz-kytaiem",
+   "domain": "ua.korrespondent.net",
+   "language": "Ukrainian",
+   "country": "Ukraine",
+   "date": "2026-10-25"
+  },
+  {
+   "title": "Gamers can save 33 % on Call of Duty : Modern Warfare 4 in flash deal",
+   "url": "https://www.cambridge-news.co.uk/whats-on/shopping/gamers-can-save-33-call-34811682",
+   "domain": "cambridge-news.co.uk",
+   "language": "English",
+   "country": "United Kingdom",
+   "date": "2026-10-25"
+  },
+  {
+   "title": "Κιμ Γιονγκ Ουν : Επέστρεψε από την Κίνα έπειτα από επίσκεψη σε μνημείο για τον Πόλεμο της Κορέας",
+   "url": "https://www.sofokleousin.gr/epikairotita/diethni/kim-giongk-oun-epestrepse-apo-tin-kina-epeita-apo-episkepsi-se-mn",
+   "domain": "sofokleousin.gr",
+   "language": "Greek",
+   "country": "Greece",
+   "date": "2026-10-25"
+  },
+  {
+   "title": "Ο Κιμ Γιονγκ Ουν επισκέφθηκε την Κίνα αυθημερόν για να καταθέσει στεφάνι για τους πεσόντες στην Κορέα",
+   "url": "https://www.news247.gr/kosmos/o-kim-giongk-oun-episkefthike-tin-kina-afthimeron-gia-na-katathesei-stefani-gia-tous-pesontes-stin-korea/",
+   "domain": "news247.gr",
+   "language": "Greek",
+   "country": "Greece",
+   "date": "2026-10-25"
+  },
+  {
+   "title": "North Korea Kim Jong Un returns from China after war memorial visit , state media says",
+   "url": "https://bworldonline.com/world/2026/10/25/789015/north-koreas-kim-jong-un-returns-from-china-after-war-memorial-visit-state-media-says/",
+   "domain": "bworldonline.com",
+   "language": "English",
+   "country": "Philippines",
+   "date": "2026-10-25"
+  }
+ ]
+}
