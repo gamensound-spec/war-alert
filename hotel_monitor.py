@@ -25,7 +25,12 @@ CONTROLS = [
     {"name": "Four Seasons Seoul",  "keys": ["four seasons", "포시즌스"]},
     {"name": "JW Marriott Seoul",   "keys": ["jw marriott hotel seoul", "jw marriott seoul", "jw 메리어트 서울"]},
 ]
-SEARCH_QUERY = "Seoul 5 star hotels Namsan Yongsan"
+# 앞에서부터 검색해 5곳을 다 찾으면 멈춘다. 결과가 없거나 일부만 있으면 다음 검색어로 보충
+SEARCH_QUERIES = [
+    {"q": "5 star hotels in Seoul", "hotel_class": "5"},
+    {"q": "luxury hotels in Seoul"},
+    {"q": "hotels near Namsan Seoul"},
+]
 OFFSETS = [1, 3, 7]          # 체크인 선행일수 → 하루 3회, 월 약 90회 (무료 250회 이내)
 Z_ALERT = 2.5                # 이 이상이면 경보
 MIN_HISTORY = 4              # 같은 요일 표본이 이 수 미만이면 z-score 보류
@@ -41,18 +46,17 @@ KST = dt.timezone(dt.timedelta(hours=9))
 
 
 # ───────── 수집 ─────────
-def fetch_properties(check_in: dt.date):
+def search(check_in: dt.date, extra: dict):
     params = {
         "engine": "google_hotels",
-        "q": SEARCH_QUERY,
         "check_in_date": check_in.isoformat(),
         "check_out_date": (check_in + dt.timedelta(days=1)).isoformat(),
         "adults": 2,
         "currency": "KRW",
         "gl": "kr",
         "hl": "en",
-        "hotel_class": "5",
         "api_key": SERPAPI_KEY,
+        **extra,
     }
     r = requests.get("https://serpapi.com/search.json", params=params, timeout=60)
     r.raise_for_status()
@@ -62,7 +66,18 @@ def fetch_properties(check_in: dt.date):
     props = j.get("properties", [])
     if not props and j.get("name"):   # 검색어가 한 호텔로 좁혀지면 목록 대신 단일 호텔 응답이 온다
         props = [j]
-    print(f"[{check_in}] 검색 결과 {len(props)}곳: " + ", ".join(p.get("name", "?") for p in props[:12]))
+    print(f"[{check_in}] '{extra['q']}' 결과 {len(props)}곳: " + ", ".join(p.get("name", "?") for p in props[:20]))
+    if not props:
+        print(f"  응답 키: {sorted(j)} / search_information: {j.get('search_information')}")
+    return props
+
+
+def fetch_properties(check_in: dt.date):
+    props, hotels = [], [TARGET] + CONTROLS
+    for extra in SEARCH_QUERIES:
+        props += search(check_in, extra)
+        if all(match(props, h) != "missing" for h in hotels):
+            break
     return props
 
 
