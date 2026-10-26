@@ -125,6 +125,9 @@ section{margin-top:44px;scroll-margin-top:16px}
 .tabs{display:inline-flex;gap:2px;margin:0 0 12px;padding:3px;background:var(--sunken);border:1px solid var(--border);border-radius:10px}
 .tabs button{font:inherit;font-size:13px;padding:5px 14px;border-radius:7px;border:0;background:transparent;color:var(--ink2);cursor:pointer}
 .tabs button[aria-pressed="true"]{background:var(--surface);color:var(--ink);font-weight:600;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.tabs button{white-space:nowrap}
+@media(max-width:560px){.tabs{display:flex}.tabs button{flex:1;padding:6px 4px}.tabs .tw{display:none}
+  #tblHotels td:first-child{min-width:84px}#tblHotels td,#tblHotels th{font-size:12.5px;padding-left:4px;padding-right:4px}}
 .tabs button i{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:6px;vertical-align:1px}
 .risk{display:flex;gap:12px;align-items:flex-start;padding:12px 16px;border-radius:12px;margin-bottom:12px;border:1px solid var(--border)}
 .risk .dot{flex:none;width:12px;height:12px;border-radius:50%;margin-top:5px}
@@ -375,7 +378,7 @@ function hero(){
 function embassy(){
   document.getElementById('embDays').textContent=E.recent_days;
   document.getElementById('srcs').innerHTML=E.sources.map(s=>{
-    const lv=s.level_norm, feed=s.source==='us_embassy', c=LV_COLOR[lv];
+    const lv=s.level_norm, feed=s.level_norm==null, c=LV_COLOR[lv];
     const meter=feed?'':`<div class="meter" role="img" aria-label="공통 ${lv||'?'}단계 / 4">${[1,2,3,4].map(i=>`<i style="${lv&&i<=lv?`background:var(${c})`:''}"></i>`).join('')}</div>`;
     const chg=s.changed==='up'?'<span class="chg">▲ 상승</span>':s.changed==='down'?'<span class="chg" style="color:var(--good-ink)">▼ 하향</span>':'';
     let main;
@@ -426,7 +429,7 @@ function initHotel(){
   const al=document.getElementById('alerts');
   al.innerHTML=D.alerts.length?D.alerts.map(a=>`<li><span style="color:var(--crit-ink);font-weight:600">⚠</span> ${esc(a)}</li>`).join(''):'<li style="color:var(--ink2)">경보 없음</li>';
   const tabs=document.getElementById('tabs');
-  tabs.innerHTML=D.config.offsets.map(o=>`<button data-o="${o}"><i style="background:var(${RISK_COLOR[hotelRisk(o).k]})"></i>체크인 D+${o}</button>`).join('');
+  tabs.innerHTML=D.config.offsets.map(o=>`<button data-o="${o}"><i style="background:var(${RISK_COLOR[hotelRisk(o).k]})"></i><span class="tw">체크인 </span>D+${o}</button>`).join('');
   tabs.onclick=e=>{const o=e.target.closest('button')?.dataset.o;if(o){sel=+o;render()}};
   allTable(); render();
   addEventListener('resize',()=>{clearTimeout(window._rt);window._rt=setTimeout(render,150)});
@@ -464,7 +467,7 @@ function render(){
             {name:'대조군 중앙값',color:css('--ink2'),values:s.map(r=>r.control_median),dash:true}];
   document.getElementById('lblPrice').textContent=`· D+${sel}`;
   legend('legPrice',ps);
-  lineChart('chPrice',sd,ps,{fmt:won,h:220});
+  lineChart('chPrice',sd,ps,{fmt:won,axis:v=>Math.round(v/1e4).toLocaleString()+'만',h:220});
 
   const zs=[{name:'z(비율)',color:css('--s1'),values:s.map(r=>r.z_ratio)},
             {name:'z(대조군)',color:css('--ink2'),values:s.map(r=>r.z_control),dash:true}];
@@ -495,7 +498,7 @@ function lineChart(id,x,ss,o){
   const n=x.length, X=i=>m.l+(n<2?iw/2:i*iw/(n-1)), Y=v=>m.t+ih-(v-lo)/(hi-lo)*ih;
   const ticks=nice(lo,hi,4);
   let g=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${ss.map(s=>s.name).join(', ')} 추이">`;
-  ticks.forEach(t=>{g+=`<line x1="${m.l}" x2="${W-m.r}" y1="${Y(t)}" y2="${Y(t)}" stroke="${css('--grid')}" stroke-width="1"/><text x="${m.l-8}" y="${Y(t)+4}" text-anchor="end" font-size="11" fill="${css('--muted')}" class="mono">${o.fmt(t)}</text>`});
+  ticks.forEach(t=>{g+=`<line x1="${m.l}" x2="${W-m.r}" y1="${Y(t)}" y2="${Y(t)}" stroke="${css('--grid')}" stroke-width="1"/><text x="${m.l-8}" y="${Y(t)+4}" text-anchor="end" font-size="11" fill="${css('--muted')}" class="mono">${(o.axis||o.fmt)(t)}</text>`});
   (o.ref||[]).forEach(r=>{g+=`<line x1="${m.l}" x2="${W-m.r}" y1="${Y(r.y)}" y2="${Y(r.y)}" stroke="${css(r.alert?'--critical':'--axis')}" stroke-width="1.5" stroke-dasharray="${r.alert?'5 4':''}"/><text x="${W-m.r}" y="${Y(r.y)-5}" text-anchor="end" font-size="11" fill="${css(r.alert?'--crit-ink':'--muted')}">${r.label}</text>`});
   const step=Math.max(1,Math.ceil(n/Math.floor(iw/70)));
   x.forEach((d,i)=>{if((i%step===0&&n-1-i>=step*.6)||i===n-1)g+=`<text x="${X(i)}" y="${H-6}" text-anchor="middle" font-size="11" fill="${css('--muted')}" class="mono">${d.slice(5)}</text>`});
