@@ -26,7 +26,6 @@
 - 환경변수(GitHub Secrets): `SERPAPI_KEY`, `GMAIL_USER`, `GMAIL_APP_PASSWORD`, `MAIL_TO`.
 
 ## 결정 사항
-- 알림 채널은 Gmail (문자는 유료라 제외). 긴급 알림용 텔레그램 봇은 추후 검토.
 - Amadeus Self-Service API는 2026-07-17 종료되어 사용 불가 → SerpApi 선택.
 - 호텔 공식 사이트·OTA 직접 크롤링은 약관 위반 소지로 하지 않음.
 - Google Hotels는 객실 타입별 잔여를 주지 않아 스위트 체크는 미지원.
@@ -36,4 +35,3 @@
 - 첫 Actions 실행에서 GDELT 수집 확인 (로컬 IP는 테스트 중 429 제한에 걸려 실데이터 미검증)
 - 호텔: SerpApi 검색어 폴백 3개(SEARCH_QUERIES). 첫 검색어에서 5곳 다 찾는지 사용량으로 확인(무료 250회/월)
 - 호텔·언론 z-score는 표본이 쌓인 뒤(호텔 약 4주) 의미 있음
-- (선택) 텔레그램 긴급 알림

@@ -3,11 +3,6 @@ on:
   schedule:
     - cron: "47 23 * * *"   # 매일 KST 08:47
   workflow_dispatch:
-    inputs:
-      telegram_test:
-        description: "경보가 없어도 텔레그램으로 요약 보내기 (설정 확인용)"
-        type: boolean
-        default: false
 permissions:
   contents: write
 jobs:
@@ -24,9 +19,6 @@ jobs:
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           MAIL_TO: ${{ secrets.MAIL_TO }}
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          TELEGRAM_TEST: ${{ inputs.telegram_test }}
       - name: 누적 데이터 저장
         run: |
           git config user.name "bot"; git config user.email "bot@users.noreply.github.com"
