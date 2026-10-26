@@ -1,7 +1,7 @@
 """
 주한 대사관·여행경보 모니터
 - 수집: 미 국무부 Travel Advisory, 영국 FCDO, 캐나다, 일본 외무성(위험정보·영사메일),
-        독일 외무부, 주한 미국대사관 Alert RSS
+        독일 외무부, 뉴질랜드 SafeTravel, 싱가포르 외교부, 중국 외교부 안전 알림, 주한 미국대사관 Alert RSS
 - 경보: 여행경보 단계 상승 / 공통 단계 3 이상 지속 / 새 공지에 철수·출국 권고 키워드
 - 주의: 새 공지에 북한·미사일·군사 등 키워드 (리포트에만 표시)
 - 출력: data/embassy.json(사이트용), data/embassy_state.json(직전 상태), data/embassy_log.csv(누적)
@@ -33,14 +33,16 @@ CRITICAL = re.compile("|".join([
     r"退避", r"出国(を|の)?(検討|勧告|推奨|お勧め)", r"早期(の)?(出国|帰国)", r"帰国(を|の)?(検討|勧告)",
     r"渡航(は)?(止め|中止)", r"大使館.{0,10}閉鎖", r"商用(便|定期便).{0,20}(運航|利用)",
     r"evakuier", r"ausreise", r"verlassen sie (das land|südkorea|die republik korea)",
+    r"撤离", r"撤侨", r"尽快(回国|离开|离境|撤离)", r"暂勿前往", r"避免前往",
 ]), re.I)
 WATCH = re.compile("|".join([
     r"north korea", r"\bdprk\b", r"missile", r"military", r"nuclear", r"shelter",
     r"air raid", r"artillery", r"heightened tension", r"armistice",
     r"北朝鮮", r"ミサイル", r"核実験", r"核兵器", r"軍事", r"砲撃", r"武力", r"空襲", r"シェルター",
-    r"nordkorea", r"rakete", r"militär",
+    r"nordkorea", r"rakete", r"militär", r"defer (all )?non-essential travel",
+    r"朝鲜", r"半岛", r"导弹", r"军事", r"谨慎前往", r"安全防范",
 ]), re.I)
-SUPPRESS = re.compile(r"drill|exercise|routine message|훈련|訓練|演習|übung", re.I)   # 민방위훈련 등
+SUPPRESS = re.compile(r"drill|exercise|routine message|훈련|訓練|演習|演习|übung", re.I)   # 민방위훈련 등
 GLOBAL = re.compile(r"worldwide caution", re.I)                                 # 한국 특정 아님
 
 
@@ -184,6 +186,64 @@ def src_germany():
                        "text": "", "url": url}] if note else []}
 
 
+NZ_TEXT = {1: "Exercise normal safety and security precautions", 2: "Exercise increased caution",
+           3: "Avoid non-essential travel", 4: "Do not travel"}
+
+
+def src_newzealand():
+    url = "https://www.safetravel.govt.nz/destinations/south-korea"
+    m = re.search(r"id=\"js-advice-level-accordion\" data-content='(.*?)'", get(url).text, re.S)
+    adv = json.loads(html.unescape(m.group(1)))
+
+    def level(a):
+        n = re.search(r"level (\d) of 4", strip_tags(a.get("body")), re.I)
+        return int(n.group(1)) if n else next((k for k, v in NZ_TEXT.items() if v.lower() in a["title"].lower()), 1)
+
+    whole = next((a for a in adv if not a.get("regional")), adv[0])
+    lv = level(whole)
+    part = max((level(a) for a in adv if a.get("regional")), default=0)   # 일부 지역만 높으면 영국 'parts'처럼 2단계
+    upd = dt.datetime.strptime(whole["lastUpdated"], "%d %B %Y").replace(tzinfo=dt.timezone(dt.timedelta(hours=12)))
+    return {"level": lv, "level_norm": max(lv, 2) if part > lv else lv,
+            "level_text": whole["title"] + (" (일부 지역 상향)" if part > lv else ""),
+            "updated": iso(upd), "url": url, "items": []}
+
+
+SG_LEVELS = {"Travel page": (1, "No travel advisory"), "Travel page with travel notice": (2, "Travel Notice"),
+             "Travel page with travel advisory": (3, "Travel Advisory")}
+
+
+def src_singapore():
+    root = ET.fromstring(get("https://www.mfa.gov.sg/travelling-overseas/"
+                             "travel-advisories-notices-and-visa-information/rss.xml").content)
+    it = next(i for i in root.iter("item") if (i.findtext("title") or "").strip() == "South Korea")
+    url, pub = it.findtext("link"), it.findtext("pubDate")
+    cat = (it.findtext("category") or "").strip()
+    lv, txt = SG_LEVELS.get(cat, (2, cat))
+    upd = iso(parsedate_to_datetime(pub)) if pub else None
+    items = []
+    if lv > 1:   # 권고·공지가 붙었을 때만 본문을 읽어 키워드 분류
+        body = strip_tags(re.sub(r"(?s)<script.*?</script>|<style.*?</style>", "", get(url).text))
+        i = body.find(f"{txt} for")
+        items = [{"id": f"{cat}|{pub}", "date": upd, "title": f"{txt} for South Korea",
+                  "text": body[i:i + 1500] if i >= 0 else "", "url": url}]
+    return {"level": lv, "level_norm": lv, "level_text": txt, "updated": upd, "url": url, "items": items}
+
+
+def src_china():
+    # 중국 영사서비스망 '안전 알림'(전 세계 대상)에서 한반도 관련만. 단계 체계가 없어 공지 피드로 다룬다
+    base = "https://cs.mfa.gov.cn/aqtx/"
+    r = get(base)
+    r.encoding = "utf-8"
+    items = []
+    for href, ymd, title in re.findall(r'href="\./(\d{6}/t(\d{8})_\d+\.html)"[^>]*>(.*?)</a>', r.text):
+        title = strip_tags(title)
+        if re.search(r"韩国|朝鲜|半岛", title):
+            d = dt.datetime.strptime(ymd, "%Y%m%d").replace(tzinfo=KST)
+            items.append({"id": href, "date": iso(d), "title": title, "text": "", "url": base + href})
+    return {"level": None, "level_norm": None, "level_text": None,
+            "updated": max((i["date"] for i in items), default=None), "url": base, "items": items}
+
+
 def src_us_embassy():
     url = "https://kr.usembassy.gov/category/alert/"
     root = ET.fromstring(get("https://kr.usembassy.gov/category/alert/feed/").content)
@@ -203,6 +263,9 @@ SOURCES = [
     {"id": "canada", "name": "캐나다 여행경보", "fn": src_canada},
     {"id": "japan", "name": "일본 외무성 위험정보·영사메일", "fn": src_japan},
     {"id": "germany", "name": "독일 외무부", "fn": src_germany},
+    {"id": "newzealand", "name": "뉴질랜드 SafeTravel", "fn": src_newzealand},
+    {"id": "singapore", "name": "싱가포르 외교부", "fn": src_singapore},
+    {"id": "china", "name": "중국 외교부 안전 알림", "fn": src_china},
     {"id": "us_embassy", "name": "주한 미국대사관 Alert", "fn": src_us_embassy},
 ]
 

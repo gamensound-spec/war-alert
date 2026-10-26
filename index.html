@@ -12,7 +12,7 @@
   color-scheme:light;
   --page:#f4f3ef; --surface:#fdfdfb; --sunken:#eeede8; --ink:#141413; --ink2:#55534e; --muted:#8b8982;
   --grid:#e3e2db; --axis:#c6c5bb; --border:rgba(20,20,19,.09); --shadow:0 1px 2px rgba(20,20,19,.04),0 4px 16px rgba(20,20,19,.04);
-  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#8a5cd6;
   --good:#1f9d55; --warning:#e3a008; --serious:#e5702a; --critical:#d03b3b;
   --good-ink:#17703d; --warn-ink:#8a5d00; --crit-ink:#b02a2a;
   --good-bg:rgba(31,157,85,.09); --crit-bg:rgba(208,59,59,.08); --warn-bg:rgba(227,160,8,.10);
@@ -22,7 +22,7 @@
     color-scheme:dark;
     --page:#0f0f0e; --surface:#181817; --sunken:#121211; --ink:#f0efec; --ink2:#c3c2b7; --muted:#8b8982;
     --grid:#2a2a28; --axis:#3a3a37; --border:rgba(255,255,255,.08); --shadow:none;
-    --s1:#3987e5; --s2:#d95926; --s3:#199e70;
+    --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#9b72e3;
     --good:#2bb565; --warning:#e8ac1c; --serious:#ec8040; --critical:#e05252;
     --good-ink:#4cc97f; --warn-ink:#f0c048; --crit-ink:#f07a7a;
     --good-bg:rgba(43,181,101,.12); --crit-bg:rgba(224,82,82,.12); --warn-bg:rgba(232,172,28,.12);
@@ -32,7 +32,7 @@
   color-scheme:dark;
   --page:#0f0f0e; --surface:#181817; --sunken:#121211; --ink:#f0efec; --ink2:#c3c2b7; --muted:#8b8982;
   --grid:#2a2a28; --axis:#3a3a37; --border:rgba(255,255,255,.08); --shadow:none;
-  --s1:#3987e5; --s2:#d95926; --s3:#199e70;
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#9b72e3;
   --good:#2bb565; --warning:#e8ac1c; --serious:#ec8040; --critical:#e05252;
   --good-ink:#4cc97f; --warn-ink:#f0c048; --crit-ink:#f07a7a;
   --good-bg:rgba(43,181,101,.12); --crit-bg:rgba(224,82,82,.12); --warn-bg:rgba(232,172,28,.12);
@@ -275,7 +275,7 @@ footer a{color:var(--ink2)}
 
   <footer>
     <p>이 사이트는 공개된 정보를 자동으로 모은 참고용 지표이며, 정부의 공식 경보가 아닙니다. 실제 상황은 <a href="https://www.0404.go.kr" target="_blank" rel="noopener">외교부 해외안전여행</a>과 <a href="https://www.safekorea.go.kr" target="_blank" rel="noopener">국민재난안전포털</a>에서 확인하세요.</p>
-    <p>출처: 미 국무부 Travel Advisory · 영국 FCDO · 캐나다 Travel Advice · 일본 외무성 해외안전정보 · 독일 외무부 · 주한 미국대사관 · Google Hotels(SerpApi) · GDELT Project</p>
+    <p>출처: 미 국무부 Travel Advisory · 영국 FCDO · 캐나다 Travel Advice · 일본 외무성 해외안전정보 · 독일 외무부 · 뉴질랜드 SafeTravel · 싱가포르 외교부 · 중국 외교부 영사서비스망 · 주한 미국대사관 · Google Hotels(SerpApi) · GDELT Project</p>
   </footer>
 </div>
 
@@ -287,7 +287,7 @@ const fx=(v,d=2,sign=false)=>v==null?'—':(sign&&v>0?'+':'')+v.toFixed(d);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const safeUrl=u=>/^https?:\/\//.test(u||'')?esc(u):'#';
 const LV_COLOR={1:'--good',2:'--warning',3:'--serious',4:'--critical'};
-const CC={us_state:'US',uk_fcdo:'UK',canada:'CA',japan:'JP',germany:'DE',us_embassy:'US 서울'};
+const CC={us_state:'US',uk_fcdo:'UK',canada:'CA',japan:'JP',germany:'DE',newzealand:'NZ',singapore:'SG',china:'CN',us_embassy:'US 서울'};
 const get=u=>fetch(u,{cache:'no-store'}).then(r=>{if(!r.ok)throw 0;return r.json()});
 let D=null,E=null,sel=1;
 
@@ -345,7 +345,7 @@ function embassy(){
     const chg=s.changed==='up'?'<span class="chg">▲ 상승</span>':s.changed==='down'?'<span class="chg" style="color:var(--good-ink)">▼ 하향</span>':'';
     let main;
     if(s.error&&!lv) main=`<div class="lv">수집 실패</div><div class="orig" title="${esc(s.error)}">${/timed? ?out/i.test(s.error)?'사이트 응답 없음 (자동 접속 차단 추정)':'응답 형식 확인 필요'}</div>`;
-    else if(feed) main=`<div class="lv">공지 피드<small>단계 없음</small></div>`+(s.latest?`<div class="latest">${esc(s.latest.title)}</div>`:'');
+    else if(feed) main=`<div class="lv">공지 피드<small>단계 없음</small></div>`+(s.latest?`<div class="latest">${esc(s.latest.title)}</div>`:'<div class="latest">한국 관련 공지 없음</div>');
     else main=`<div class="lv">${lv}단계<small>${esc(E.norm_labels[lv])}</small></div><div class="orig">${esc(s.level_text)}</div>`+(s.latest&&s.latest.title!==s.level_text&&!s.latest.title.includes(' - Level')?`<div class="latest">최근 변경 · ${esc(s.latest.title)}</div>`:'');
     const date=feed&&s.latest?s.latest.date:s.updated;
     return `<div class="src${s.error?' fail':''}"><div class="src-h"><span class="cc">${CC[s.source]||''}</span>${esc(s.name)}${chg}</div>${meter}${main}`+
@@ -415,8 +415,8 @@ function render(){
   ].map(([k,v,h])=>`<div class="tile"><div class="k">${k}</div><div class="v mono">${v}</div><div class="h">${h}</div></div>`).join('');
 
   const dates=[...new Set(D.series.map(r=>r.date))].sort();
-  const cols=['--s1','--s2','--s3'];
-  const rs=D.config.offsets.map((o,i)=>{const m=new Map(series(o).map(r=>[r.date,r.ratio]));return{name:'D+'+o,color:css(cols[i%3]),values:dates.map(d=>m.get(d)??null),bold:o===sel}});
+  const cols=['--s1','--s2','--s3','--s4'];
+  const rs=D.config.offsets.map((o,i)=>{const m=new Map(series(o).map(r=>[r.date,r.ratio]));return{name:'D+'+o,color:css(cols[i%4]),values:dates.map(d=>m.get(d)??null),bold:o===sel}});
   legend('legRatio',rs);
   lineChart('chRatio',dates,rs,{fmt:v=>v.toFixed(2),ref:[{y:1,label:'1.0'}],h:240});
 

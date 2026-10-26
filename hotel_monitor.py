@@ -31,7 +31,7 @@ SEARCH_QUERIES = [
     {"q": "luxury hotels in Seoul"},
     {"q": "hotels near Namsan Seoul"},
 ]
-OFFSETS = [1, 3, 7]          # 체크인 선행일수 → 하루 3회, 월 약 90회 (무료 250회 이내)
+OFFSETS = [1, 3, 7, 14]      # 체크인 선행일수 → 하루 4회, 월 약 120회 (무료 250회 이내)
 Z_ALERT = 2.5                # 이 이상이면 경보
 MIN_HISTORY = 4              # 같은 요일 표본이 이 수 미만이면 z-score 보류
 DATA_FILE = "data/hotel_prices.csv"
