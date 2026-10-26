@@ -3,142 +3,264 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>남산 하얏트 지표</title>
+<title>전쟁 위험 지표</title>
+<meta name="description" content="공개된 여행경보·대사관 공지·호텔 가격으로 한반도 전쟁 위험 신호를 매일 집계합니다.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
   color-scheme:light;
-  --page:#f9f9f7; --surface:#fcfcfb; --ink:#0b0b0b; --ink2:#52514e; --muted:#898781;
-  --grid:#e1e0d9; --axis:#c3c2b7; --border:rgba(11,11,11,.10);
+  --page:#f4f3ef; --surface:#fdfdfb; --sunken:#eeede8; --ink:#141413; --ink2:#55534e; --muted:#8b8982;
+  --grid:#e3e2db; --axis:#c6c5bb; --border:rgba(20,20,19,.09); --shadow:0 1px 2px rgba(20,20,19,.04),0 4px 16px rgba(20,20,19,.04);
   --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a;
-  --good:#0ca30c; --warning:#fab219; --critical:#d03b3b; --good-ink:#006300; --crit-ink:#b02a2a;
+  --good:#1f9d55; --warning:#e3a008; --serious:#e5702a; --critical:#d03b3b;
+  --good-ink:#17703d; --warn-ink:#8a5d00; --crit-ink:#b02a2a;
+  --good-bg:rgba(31,157,85,.09); --crit-bg:rgba(208,59,59,.08); --warn-bg:rgba(227,160,8,.10);
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
     color-scheme:dark;
-    --page:#0d0d0d; --surface:#1a1a19; --ink:#f0efec; --ink2:#c3c2b7; --muted:#898781;
-    --grid:#2c2c2a; --axis:#383835; --border:rgba(255,255,255,.10);
-    --s1:#3987e5; --s2:#d95926; --s3:#199e70; --good-ink:#0ca30c; --crit-ink:#e66767;
+    --page:#0f0f0e; --surface:#181817; --sunken:#121211; --ink:#f0efec; --ink2:#c3c2b7; --muted:#8b8982;
+    --grid:#2a2a28; --axis:#3a3a37; --border:rgba(255,255,255,.08); --shadow:none;
+    --s1:#3987e5; --s2:#d95926; --s3:#199e70;
+    --good:#2bb565; --warning:#e8ac1c; --serious:#ec8040; --critical:#e05252;
+    --good-ink:#4cc97f; --warn-ink:#f0c048; --crit-ink:#f07a7a;
+    --good-bg:rgba(43,181,101,.12); --crit-bg:rgba(224,82,82,.12); --warn-bg:rgba(232,172,28,.12);
   }
 }
 :root[data-theme="dark"]{
   color-scheme:dark;
-  --page:#0d0d0d; --surface:#1a1a19; --ink:#f0efec; --ink2:#c3c2b7; --muted:#898781;
-  --grid:#2c2c2a; --axis:#383835; --border:rgba(255,255,255,.10);
-  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --good-ink:#0ca30c; --crit-ink:#e66767;
+  --page:#0f0f0e; --surface:#181817; --sunken:#121211; --ink:#f0efec; --ink2:#c3c2b7; --muted:#8b8982;
+  --grid:#2a2a28; --axis:#3a3a37; --border:rgba(255,255,255,.08); --shadow:none;
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70;
+  --good:#2bb565; --warning:#e8ac1c; --serious:#ec8040; --critical:#e05252;
+  --good-ink:#4cc97f; --warn-ink:#f0c048; --crit-ink:#f07a7a;
+  --good-bg:rgba(43,181,101,.12); --crit-bg:rgba(224,82,82,.12); --warn-bg:rgba(232,172,28,.12);
 }
 *{box-sizing:border-box}
-body{margin:0;background:var(--page);color:var(--ink);font:15px/1.55 "IBM Plex Sans KR",system-ui,sans-serif}
-.wrap{max-width:1080px;margin:0 auto;padding:28px 16px 64px}
-header{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:flex-end;justify-content:space-between;margin-bottom:8px}
-h1{font-size:22px;font-weight:600;margin:0;letter-spacing:-.01em}
-h2{font-size:15px;font-weight:600;margin:0 0 4px}
-.sub{color:var(--ink2);font-size:13px}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--page);color:var(--ink);font:15px/1.6 "IBM Plex Sans KR",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px 72px}
 .mono{font-family:"IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
-.badge{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;font-weight:600;font-size:14px;border:1px solid var(--border);background:var(--surface)}
-.dot{width:10px;height:10px;border-radius:50%}
-.note{font-size:12.5px;color:var(--ink2);border-left:2px solid var(--axis);padding:2px 0 2px 10px;margin:14px 0 22px}
-.tabs{display:flex;gap:6px;margin:0 0 14px;flex-wrap:wrap}
-.tabs button{font:inherit;font-size:13px;padding:6px 14px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--ink2);cursor:pointer}
-.tabs button[aria-pressed="true"]{background:var(--ink);color:var(--page);border-color:var(--ink)}
-.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-bottom:16px}
-.tile{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 14px}
+.muted{color:var(--muted)}
+
+/* 상단 바 */
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px 0 18px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:15px;letter-spacing:-.01em}
+.brand svg{flex:none}
+.top .meta{font-size:12.5px;color:var(--muted);text-align:right}
+
+/* 오늘의 판단 */
+.hero{position:relative;background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:28px 28px 24px;box-shadow:var(--shadow);overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0 auto 0 0;width:5px;background:var(--hero-c,var(--muted))}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.08em;color:var(--muted)}
+.verdict{display:flex;align-items:center;gap:14px;margin:6px 0 6px}
+.verdict h1{margin:0;font-size:clamp(26px,5vw,36px);font-weight:700;letter-spacing:-.02em;line-height:1.2}
+.pulse{width:14px;height:14px;border-radius:50%;background:var(--hero-c,var(--muted));flex:none;box-shadow:0 0 0 6px color-mix(in srgb,var(--hero-c,var(--muted)) 18%,transparent)}
+.hero p.lead{margin:0;color:var(--ink2);max-width:62ch}
+.hero-alerts{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:8px}
+.hero-alerts li{background:var(--crit-bg);border-radius:10px;padding:10px 12px;font-size:14px;color:var(--ink)}
+.hero-alerts b{color:var(--crit-ink);font-weight:600;margin-right:6px}
+.ind{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px}
+@media(max-width:760px){.ind{grid-template-columns:1fr}}
+.ind a{display:block;text-decoration:none;background:var(--sunken);border:1px solid var(--border);border-radius:12px;padding:14px 16px;transition:border-color .15s,transform .15s}
+.ind a:hover{border-color:var(--axis);transform:translateY(-1px)}
+.ind .k{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--ink2)}
+.ind .v{font-size:19px;font-weight:600;margin-top:4px;letter-spacing:-.01em}
+.ind .h{font-size:12px;color:var(--muted);margin-top:2px}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--muted);flex:none}
+
+/* 섹션 */
+section{margin-top:44px;scroll-margin-top:16px}
+.sec-h{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px}
+.num{font:500 12px "IBM Plex Mono",monospace;color:var(--muted);padding-top:5px}
+.sec-h h2{margin:0;font-size:20px;font-weight:600;letter-spacing:-.015em}
+.sec-h p{margin:2px 0 0;color:var(--ink2);font-size:13.5px;max-width:64ch}
+.sec-h .grow{flex:1;min-width:0}
+.trust{flex:none;font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px;white-space:nowrap;margin-top:2px}
+.trust.high{background:var(--good-bg);color:var(--good-ink)}
+.trust.low{background:var(--warn-bg);color:var(--warn-ink)}
+.trust.none{background:var(--sunken);color:var(--muted)}
+@media(max-width:560px){.sec-h{flex-wrap:wrap}.trust{order:3;margin-left:26px}}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;margin-bottom:14px;box-shadow:var(--shadow)}
+.card h3{font-size:14.5px;font-weight:600;margin:0 0 2px}
+.sub{color:var(--ink2);font-size:13px}
+
+/* 나라별 카드 */
+.srcs{display:grid;grid-template-columns:repeat(auto-fill,minmax(235px,1fr));gap:12px;margin-bottom:14px}
+.src{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:10px;box-shadow:var(--shadow);min-width:0}
+.src-h{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600}
+.cc{font:600 10.5px "IBM Plex Mono",monospace;letter-spacing:.04em;padding:2px 6px;border-radius:5px;background:var(--sunken);color:var(--ink2);border:1px solid var(--border)}
+.chg{margin-left:auto;font-size:11.5px;font-weight:600;color:var(--crit-ink)}
+.meter{display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
+.meter i{height:7px;border-radius:3px;background:var(--grid)}
+.lv{font-size:17px;font-weight:600;letter-spacing:-.01em}
+.lv small{font-size:12.5px;font-weight:400;color:var(--muted);margin-left:4px}
+.orig{font-size:12.5px;color:var(--ink2);line-height:1.45}
+.latest{font-size:12.5px;line-height:1.45;color:var(--ink2);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.foot{margin-top:auto;padding-top:8px;border-top:1px solid var(--grid);display:flex;justify-content:space-between;gap:8px;font-size:11.5px;color:var(--muted)}
+.foot a{color:var(--ink2);text-decoration:none}
+.foot a:hover{text-decoration:underline}
+.src.fail{background:transparent;border-style:dashed;box-shadow:none}
+.src.fail .lv{color:var(--muted)}
+
+/* 키워드 공지 타임라인 */
+.feed{list-style:none;margin:10px 0 0;padding:0}
+.feed li{display:grid;grid-template-columns:86px auto 1fr;gap:4px 12px;align-items:baseline;padding:10px 0;border-top:1px solid var(--grid);font-size:13.5px}
+.feed li:first-child{border-top:0}
+.feed .d{font-size:12px;color:var(--muted)}
+.feed .t a{text-decoration:none}
+.feed .t a:hover{text-decoration:underline}
+.feed .s{font-size:12px;color:var(--muted)}
+@media(max-width:560px){.feed li{grid-template-columns:auto 1fr}.feed .t{grid-column:1/-1}}
+.chip{font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.chip.crit{background:var(--crit-bg);color:var(--crit-ink)}
+.chip.watch{background:var(--warn-bg);color:var(--warn-ink)}
+.note{font-size:12.5px;color:var(--muted);margin:10px 0 0}
+
+/* 호텔 */
+.tabs{display:inline-flex;gap:2px;margin:0 0 12px;padding:3px;background:var(--sunken);border:1px solid var(--border);border-radius:10px}
+.tabs button{font:inherit;font-size:13px;padding:5px 14px;border-radius:7px;border:0;background:transparent;color:var(--ink2);cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--surface);color:var(--ink);font-weight:600;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:14px}
+.tile{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 14px;box-shadow:var(--shadow)}
 .tile .k{font-size:12px;color:var(--ink2)}
-.tile .v{font-size:22px;font-weight:500;margin-top:2px}
+.tile .v{font-size:21px;font-weight:500;margin-top:2px}
 .tile .h{font-size:11.5px;color:var(--muted);margin-top:2px}
-.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:16px}
-.alerts{list-style:none;margin:8px 0 0;padding:0}
-.alerts li{padding:8px 0;border-top:1px solid var(--grid);font-size:13.5px}
-.alerts li:first-child{border-top:0}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid2 .card{margin-bottom:0}
 @media(max-width:760px){.grid2{grid-template-columns:1fr}}
-.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--ink2);margin:6px 0 4px}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--ink2);margin:8px 0 4px}
 .legend i{display:inline-block;width:14px;height:2px;vertical-align:middle;margin-right:6px}
 .chart{position:relative}
 .chart svg{display:block;width:100%;height:auto;overflow:visible}
 .tip{position:absolute;pointer-events:none;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:8px 10px;font-size:12px;box-shadow:0 4px 14px rgba(0,0,0,.12);white-space:nowrap;display:none;z-index:2}
 .tip b{font-weight:600}
+.alerts{list-style:none;margin:6px 0 0;padding:0}
+.alerts li{padding:8px 0;border-top:1px solid var(--grid);font-size:13.5px}
+.alerts li:first-child{border-top:0}
 table{width:100%;border-collapse:collapse;font-size:13px}
-th,td{text-align:right;padding:7px 8px;border-bottom:1px solid var(--grid);white-space:nowrap}
+th,td{text-align:right;padding:8px;border-bottom:1px solid var(--grid);white-space:nowrap}
 td:first-child{white-space:normal}
 th:first-child,td:first-child{text-align:left}
-th{font-weight:500;color:var(--ink2);font-size:12px}
+th{font-weight:500;color:var(--muted);font-size:12px}
 details summary{cursor:pointer;color:var(--ink2);font-size:13px}
 .tablewrap{overflow-x:auto}
 .placeholder{color:var(--muted);font-size:13.5px}
-.empty{padding:40px 0;text-align:center;color:var(--ink2)}
+
+/* 빈 상태 */
+.empty{border:1px dashed var(--axis);border-radius:14px;padding:32px 20px;text-align:center;color:var(--ink2);background:transparent}
+.empty b{display:block;color:var(--ink);font-weight:600;margin-bottom:4px}
+.empty span{font-size:13px;color:var(--muted)}
+
+footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--grid);font-size:12.5px;color:var(--muted);display:grid;gap:8px}
+footer p{margin:0;max-width:78ch}
+footer a{color:var(--ink2)}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <header>
-    <div>
-      <h1>남산 그랜드 하얏트 가격 지표</h1>
-      <div class="sub">대조군 대비 비율 · 같은 체크인 요일 기준 z-score · <span id="updated" class="mono">—</span></div>
+  <div class="top">
+    <div class="brand">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="5.5" stroke="currentColor" stroke-width="1.6" opacity=".55"/><circle cx="12" cy="12" r="1.8" fill="currentColor"/></svg>
+      전쟁 위험 지표
     </div>
-    <div id="status" class="badge"><span class="dot"></span><span>불러오는 중</span></div>
-  </header>
-
-  <p class="note">하얏트가 미군 소개 거점이라는 전제는 확인된 사실이 아닙니다. 예약 건수가 아니라 공개 최저가를 대리 지표로 씁니다. 출처: Google Hotels (SerpApi 경유). z-score는 같은 요일 표본이 <span id="minh">4</span>개 이상 쌓인 뒤부터 계산됩니다.</p>
-
-  <div class="tabs" role="group" aria-label="체크인 선행일수" id="tabs"></div>
-
-  <div class="tiles" id="tiles"></div>
-
-  <div class="card">
-    <h2>오늘의 경보</h2>
-    <ul class="alerts" id="alerts"></ul>
+    <div class="meta">매일 오전 8:47 자동 갱신<br><span id="updated" class="mono">—</span></div>
   </div>
 
-  <div class="card">
-    <h2>하얏트 ÷ 대조군 중앙값</h2>
-    <div class="sub">1.0이면 대조군과 같은 가격. 선행일수별 일 단위 추이.</div>
-    <div class="legend" id="legRatio"></div>
-    <div class="chart" id="chRatio"></div>
+  <div class="hero" id="hero">
+    <div class="eyebrow">오늘의 판단</div>
+    <div class="verdict"><span class="pulse"></span><h1 id="verdict">불러오는 중</h1></div>
+    <p class="lead" id="lead">&nbsp;</p>
+    <ul class="hero-alerts" id="heroAlerts"></ul>
+    <div class="ind" id="ind"></div>
   </div>
 
-  <div class="grid2">
-    <div class="card">
-      <h2>가격 비교 <span class="sub" id="lblPrice"></span></h2>
-      <div class="legend" id="legPrice"></div>
-      <div class="chart" id="chPrice"></div>
-    </div>
-    <div class="card">
-      <h2>z-score <span class="sub" id="lblZ"></span></h2>
-      <div class="legend" id="legZ"></div>
-      <div class="chart" id="chZ"></div>
-    </div>
-  </div>
-
-  <div class="card">
-    <h2>오늘 호텔별 최저가 <span class="sub" id="lblHotels"></span></h2>
-    <div class="tablewrap"><table id="tblHotels"></table></div>
-  </div>
-
-  <div class="card">
-    <details>
-      <summary>전체 데이터 표 보기</summary>
-      <div class="tablewrap" style="margin-top:10px"><table id="tblAll"></table></div>
-    </details>
-  </div>
-
-  <div class="card" id="emb">
-    <header style="margin-bottom:4px">
-      <div>
+  <section id="sec-emb">
+    <div class="sec-h">
+      <span class="num">01</span>
+      <div class="grow">
         <h2>주한 대사관·여행경보</h2>
-        <div class="sub">각국 여행경보 단계와 대사관 공지 · <span id="embUpdated" class="mono">—</span></div>
+        <p>각국 정부가 자국민에게 내는 공식 경보입니다. 철수·출국 권고가 나오면 가장 확실한 신호로 봅니다.</p>
       </div>
-      <div id="embStatus" class="badge"><span class="dot"></span><span>불러오는 중</span></div>
-    </header>
-    <ul class="alerts" id="embAlerts"></ul>
-    <div class="tablewrap" style="margin-top:8px"><table id="tblEmb"></table></div>
-    <p class="note" style="margin:12px 0 14px">공통 단계(1~4)는 나라마다 다른 경보 체계를 대략 맞춘 값입니다. 일본은 위험정보 없음을 1로, 레벨1을 2로 봅니다. 출처별 원래 문구는 '원문 단계' 열에 있습니다.</p>
-    <h2 style="font-size:14px">최근 <span id="embDays">30</span>일 키워드 공지 <span class="sub" id="embCounts"></span></h2>
-    <ul class="alerts" id="embRecent"></ul>
-  </div>
+      <span class="trust high">신뢰도 높음</span>
+    </div>
+    <div id="embBody">
+      <div class="srcs" id="srcs"></div>
+      <div class="card">
+        <h3>최근 <span id="embDays">30</span>일 키워드 공지 <span class="sub" id="embCounts"></span></h3>
+        <div class="sub">새 공지 중 철수·출국 권고, 북한·미사일·군사 관련 단어가 들어간 것만 모았습니다. 훈련 안내는 뺍니다.</div>
+        <ul class="feed" id="embRecent"></ul>
+      </div>
+      <p class="note">단계는 나라마다 다른 경보 체계를 1~4로 대략 맞춘 값입니다. 일본은 '위험정보 없음'을 1단계, 레벨1을 2단계로 봅니다. 카드 아래 문구가 각국 원문입니다.</p>
+    </div>
+  </section>
 
-  <div class="card"><h2>세계 언론 동향</h2><p class="placeholder">다음 단계에서 연결 예정 (GDELT 한반도 분쟁 기사량)</p></div>
+  <section id="sec-hotel">
+    <div class="sec-h">
+      <span class="num">02</span>
+      <div class="grow">
+        <h2>남산 그랜드 하얏트 가격</h2>
+        <p>미군 소개 거점이라는 속설에 기댄 대리 지표입니다. 확인된 사실이 아니므로 참고로만 봅니다. 예약 건수 대신 공개 최저가를 대조군 호텔 4곳과 비교합니다.</p>
+      </div>
+      <span class="trust low">신뢰도 낮음</span>
+    </div>
+    <div id="hotelBody">
+      <div class="tabs" role="group" aria-label="체크인 선행일수" id="tabs"></div>
+      <div class="tiles" id="tiles"></div>
+      <div class="card" id="hotelAlertCard">
+        <h3>호텔 지표 경보</h3>
+        <ul class="alerts" id="alerts"></ul>
+      </div>
+      <div class="card">
+        <h3>하얏트 ÷ 대조군 중앙값</h3>
+        <div class="sub">1.0이면 대조군과 같은 가격입니다. 선행일수별 일 단위 추이.</div>
+        <div class="legend" id="legRatio"></div>
+        <div class="chart" id="chRatio"></div>
+      </div>
+      <div class="grid2" style="margin-bottom:14px">
+        <div class="card">
+          <h3>가격 비교 <span class="sub" id="lblPrice"></span></h3>
+          <div class="legend" id="legPrice"></div>
+          <div class="chart" id="chPrice"></div>
+        </div>
+        <div class="card">
+          <h3>z-score <span class="sub" id="lblZ"></span></h3>
+          <div class="legend" id="legZ"></div>
+          <div class="chart" id="chZ"></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>오늘 호텔별 최저가 <span class="sub" id="lblHotels"></span></h3>
+        <div class="tablewrap"><table id="tblHotels"></table></div>
+      </div>
+      <div class="card">
+        <details>
+          <summary>전체 데이터 표 보기</summary>
+          <div class="tablewrap" style="margin-top:10px"><table id="tblAll"></table></div>
+        </details>
+      </div>
+      <p class="note">출처: Google Hotels (SerpApi 경유). z-score는 같은 체크인 요일 표본이 <span id="minh">4</span>개 이상 쌓인 뒤부터 계산하고, <span id="zth">2.5</span> 이상이면 경보로 봅니다.</p>
+    </div>
+  </section>
+
+  <section id="sec-news">
+    <div class="sec-h">
+      <span class="num">03</span>
+      <div class="grow">
+        <h2>세계 언론 동향</h2>
+        <p>GDELT로 한반도 분쟁 관련 기사량과 논조를 추적할 예정입니다.</p>
+      </div>
+      <span class="trust none">준비 중</span>
+    </div>
+    <div class="empty"><b>다음 단계에서 연결합니다</b><span>기사량이 평소보다 급증하는지를 매일 비교합니다.</span></div>
+  </section>
+
+  <footer>
+    <p>이 사이트는 공개된 정보를 자동으로 모은 참고용 지표이며, 정부의 공식 경보가 아닙니다. 실제 상황은 <a href="https://www.0404.go.kr" target="_blank" rel="noopener">외교부 해외안전여행</a>과 <a href="https://www.safekorea.go.kr" target="_blank" rel="noopener">국민재난안전포털</a>에서 확인하세요.</p>
+    <p>출처: 미 국무부 Travel Advisory · 영국 FCDO · 캐나다 Travel Advice · 일본 외무성 해외안전정보 · 호주 Smartraveller · 주한 미국대사관 · Google Hotels(SerpApi)</p>
+  </footer>
 </div>
 
 <script>
@@ -146,54 +268,82 @@ const WD=['월','화','수','목','금','토','일'];
 const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
 const won=v=>v==null?'—':'₩'+Math.round(v).toLocaleString('ko-KR');
 const fx=(v,d=2,sign=false)=>v==null?'—':(sign&&v>0?'+':'')+v.toFixed(d);
-let D=null, sel=1;
-
-fetch('data/metrics.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw 0;return r.json()})
- .then(j=>{D=j;sel=j.config.offsets[0];init()})
- .catch(()=>{document.getElementById('emb').insertAdjacentHTML('beforebegin','<p class="empty">아직 수집된 데이터가 없습니다. 첫 수집 후 표시됩니다.</p>');setStatus(null)});
-
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const safeUrl=u=>/^https?:\/\//.test(u||'')?esc(u):'#';
-const LV_COLOR={1:'--good',2:'--warning',3:'--critical',4:'--critical'};
+const LV_COLOR={1:'--good',2:'--warning',3:'--serious',4:'--critical'};
+const CC={us_state:'US',uk_fcdo:'UK',canada:'CA',japan:'JP',australia:'AU',us_embassy:'US 서울'};
+const get=u=>fetch(u,{cache:'no-store'}).then(r=>{if(!r.ok)throw 0;return r.json()});
+let D=null,E=null,sel=1;
 
-fetch('data/embassy.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw 0;return r.json()}).then(embassy)
- .catch(()=>{document.getElementById('tblEmb').outerHTML='<p class="placeholder">아직 수집된 데이터가 없습니다.</p>';badge('embStatus','--muted','데이터 없음')});
+Promise.allSettled([get('data/embassy.json'),get('data/metrics.json')]).then(([e,h])=>{
+  E=e.status==='fulfilled'?e.value:null; D=h.status==='fulfilled'?h.value:null;
+  hero();
+  E?embassy():empty('embBody','아직 수집된 데이터가 없습니다','첫 자동 수집 후 표시됩니다.');
+  D?initHotel():empty('hotelBody','호텔 가격 데이터를 기다리는 중입니다','검색 설정을 점검하고 있습니다. 수집이 시작되면 같은 요일 표본이 4개 쌓인 뒤부터 이상치를 판단합니다.');
+});
 
-function badge(id,c,t){const el=document.getElementById(id);el.querySelector('.dot').style.background=`var(${c})`;el.lastElementChild.textContent=t}
+function empty(id,t,s){document.getElementById(id).innerHTML=`<div class="empty"><b>${t}</b><span>${s}</span></div>`}
 
-function embassy(E){
-  document.getElementById('embUpdated').textContent='갱신 '+E.generated_at.replace('T',' ');
+/* ───── 오늘의 판단 ───── */
+function hero(){
+  const al=[...(E?.alerts||[]).map(a=>['대사관·여행경보',a]),...(D?.alerts||[]).map(a=>['호텔 가격',a])];
+  const h=document.getElementById('hero');
+  const times=[E?.generated_at,D?.generated_at].filter(Boolean).sort();
+  document.getElementById('updated').textContent=times.length?'최근 갱신 '+times.at(-1).replace('T',' ').slice(0,16):'아직 갱신 전';
+  if(!E&&!D){h.style.setProperty('--hero-c',css('--muted'));document.getElementById('verdict').textContent='데이터 수집 전';document.getElementById('lead').textContent='첫 자동 수집이 끝나면 오늘의 판단이 표시됩니다.';}
+  else if(al.length){
+    h.style.setProperty('--hero-c',css('--critical'));
+    document.getElementById('verdict').textContent=`경보 ${al.length}건`;
+    document.getElementById('lead').textContent='평소와 다른 신호가 잡혔습니다. 아래 내용과 원문 출처를 확인하세요.';
+    document.getElementById('heroAlerts').innerHTML=al.map(([s,a])=>`<li><b>${esc(s)}</b>${esc(a)}</li>`).join('');
+  }else{
+    h.style.setProperty('--hero-c',css('--good'));
+    document.getElementById('verdict').textContent='특이 동향 없음';
+    document.getElementById('lead').textContent='각국 여행경보와 대사관 공지, 호텔 가격에서 평소와 다른 신호가 없습니다.';
+  }
+  const cards=[];
+  if(E){
+    const ok=E.sources.filter(s=>!s.error), lv=Math.max(0,...ok.map(s=>s.level_norm||0));
+    cards.push(['sec-emb','대사관·여행경보',E.alerts.length?'--critical':LV_COLOR[lv]||'--muted',lv?`최고 ${lv}단계 · ${E.norm_labels[lv]}`:'—',`${ok.length}/${E.sources.length}개 출처 수집 · 주의 공지 ${E.counts.watch}건`]);
+  }else cards.push(['sec-emb','대사관·여행경보','--muted','수집 전','']);
+  if(D){
+    const o=D.config.offsets[0], s=D.series.filter(r=>r.offset===o), l=s.at(-1);
+    cards.push(['sec-hotel','남산 하얏트 가격',D.alerts.length?'--critical':'--good',l?.ratio!=null?`대조군 대비 ${fx(l.ratio)}배`:'요금 미확인',l?.z_ratio!=null?`D+${o} z-score ${fx(l.z_ratio,2,true)}`:`표본 쌓는 중 (${l?.history_n??0}/${D.config.min_history})`]);
+  }else cards.push(['sec-hotel','남산 하얏트 가격','--muted','수집 대기','검색 설정 점검 중']);
+  cards.push(['sec-news','세계 언론 동향','--muted','준비 중','GDELT 연결 예정']);
+  document.getElementById('ind').innerHTML=cards.map(([id,k,c,v,s])=>`<a href="#${id}"><div class="k"><span class="dot" style="background:var(${c})"></span>${k}</div><div class="v">${esc(v)}</div><div class="h">${esc(s)}</div></a>`).join('');
+}
+
+/* ───── 대사관·여행경보 ───── */
+function embassy(){
   document.getElementById('embDays').textContent=E.recent_days;
-  const n=E.alerts.length;
-  n?badge('embStatus','--critical','⚠ 경보 '+n+'건'):badge('embStatus','--good','✓ 이상 없음');
-  document.getElementById('embAlerts').innerHTML=n?E.alerts.map(a=>`<li><span style="color:var(--crit-ink);font-weight:600">⚠</span> ${esc(a)}</li>`).join(''):'';
-  document.getElementById('tblEmb').innerHTML='<tr><th>출처</th><th>공통 단계</th><th style="text-align:left">원문 단계</th><th>본문 갱신</th><th>상태</th></tr>'+
-    E.sources.map(s=>{
-      const lv=s.level_norm, dot=lv?`<span class="dot" style="display:inline-block;margin-right:6px;background:var(${LV_COLOR[lv]})"></span>`:'';
-      const st=s.error?`<span style="color:var(--crit-ink)" title="${esc(s.error)}">수집 실패</span>`:s.changed==='up'?'<span style="color:var(--crit-ink);font-weight:600">▲ 상승</span>':s.changed==='down'?'▼ 하향':'정상';
-      return `<tr><td><a href="${safeUrl(s.url)}" target="_blank" rel="noopener" style="color:inherit">${esc(s.name)}</a></td>`+
-        `<td>${lv?dot+'<span class="mono">'+lv+'</span> '+esc(E.norm_labels[lv]):'<span style="color:var(--muted)">'+(s.source==='us_embassy'?'공지 피드':'—')+'</span>'}</td>`+
-        `<td style="text-align:left;white-space:normal">${esc(s.level_text)||'—'}</td><td class="mono">${s.updated?esc(s.updated.slice(0,10)):'—'}</td><td>${st}</td></tr>`}).join('');
-  document.getElementById('embCounts').textContent=`· 철수·출국 ${E.counts.critical}건 / 주의 ${E.counts.watch}건`;
+  document.getElementById('srcs').innerHTML=E.sources.map(s=>{
+    const lv=s.level_norm, feed=s.source==='us_embassy', c=LV_COLOR[lv];
+    const meter=feed?'':`<div class="meter" role="img" aria-label="공통 ${lv||'?'}단계 / 4">${[1,2,3,4].map(i=>`<i style="${lv&&i<=lv?`background:var(${c})`:''}"></i>`).join('')}</div>`;
+    const chg=s.changed==='up'?'<span class="chg">▲ 상승</span>':s.changed==='down'?'<span class="chg" style="color:var(--good-ink)">▼ 하향</span>':'';
+    let main;
+    if(s.error&&!lv) main=`<div class="lv">수집 실패</div><div class="orig" title="${esc(s.error)}">${/timed? ?out/i.test(s.error)?'사이트 응답 없음 (자동 접속 차단 추정)':'응답 형식 확인 필요'}</div>`;
+    else if(feed) main=`<div class="lv">공지 피드<small>단계 없음</small></div>`+(s.latest?`<div class="latest">${esc(s.latest.title)}</div>`:'');
+    else main=`<div class="lv">${lv}단계<small>${esc(E.norm_labels[lv])}</small></div><div class="orig">${esc(s.level_text)}</div>`+(s.latest&&s.latest.title!==s.level_text&&!s.latest.title.includes(' - Level')?`<div class="latest">최근 변경 · ${esc(s.latest.title)}</div>`:'');
+    const date=feed&&s.latest?s.latest.date:s.updated;
+    return `<div class="src${s.error?' fail':''}"><div class="src-h"><span class="cc">${CC[s.source]||''}</span>${esc(s.name)}${chg}</div>${meter}${main}`+
+      `<div class="foot"><span class="mono">${date?(feed?'최근 공지 ':'갱신 ')+esc(date.slice(0,10)):s.error?'수집 실패':''}</span><a href="${safeUrl(s.url)}" target="_blank" rel="noopener">원문 ↗</a></div></div>`;
+  }).join('');
+  document.getElementById('embCounts').textContent=`· 철수·출국 ${E.counts.critical}건 · 주의 ${E.counts.watch}건`;
   document.getElementById('embRecent').innerHTML=E.recent.length?E.recent.map(r=>{
     const crit=r.severity==='critical';
-    return `<li><span style="font-weight:600;color:var(${crit?'--crit-ink':'--ink2'})">${crit?'철수·출국':'주의'}</span> <span class="mono" style="color:var(--muted)">${esc(r.date.slice(0,10))}</span> ${esc(r.source)} · <a href="${safeUrl(r.url)}" target="_blank" rel="noopener" style="color:inherit">${esc(r.title)}</a></li>`}).join(''):'<li style="color:var(--ink2)">해당 공지 없음</li>';
+    return `<li><span class="d mono">${esc(r.date.slice(0,10))}</span><span class="chip ${crit?'crit':'watch'}">${crit?'철수·출국':'주의'}</span><span class="t"><a href="${safeUrl(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a> <span class="s">· ${esc(r.source)}</span></span></li>`}).join(''):'<li style="display:block;color:var(--ink2)">해당 공지가 없습니다.</li>';
 }
 
-function setStatus(alert){
-  const el=document.getElementById('status');
-  const [c,t]=alert==null?['--muted','데이터 없음']:alert?['--critical','⚠ 경보 '+D.alerts.length+'건']:['--good','✓ 이상 없음'];
-  el.querySelector('.dot').style.background=`var(${c})`; el.lastElementChild.textContent=t;
-}
-
-function init(){
-  document.getElementById('updated').textContent='갱신 '+D.generated_at.replace('T',' ');
+/* ───── 호텔 ───── */
+function initHotel(){
   document.getElementById('minh').textContent=D.config.min_history;
-  setStatus(D.alerts.length>0);
+  document.getElementById('zth').textContent=D.config.z_alert;
+  sel=D.config.offsets[0];
   const al=document.getElementById('alerts');
-  al.innerHTML=D.alerts.length?D.alerts.map(a=>`<li><span style="color:var(--crit-ink);font-weight:600">⚠</span> ${a}</li>`).join(''):'<li style="color:var(--ink2)">✓ 경보 없음</li>';
+  al.innerHTML=D.alerts.length?D.alerts.map(a=>`<li><span style="color:var(--crit-ink);font-weight:600">⚠</span> ${esc(a)}</li>`).join(''):'<li style="color:var(--ink2)">경보 없음</li>';
   const tabs=document.getElementById('tabs');
-  tabs.innerHTML=D.config.offsets.map(o=>`<button data-o="${o}">D+${o}</button>`).join('');
+  tabs.innerHTML=D.config.offsets.map(o=>`<button data-o="${o}">체크인 D+${o}</button>`).join('');
   tabs.onclick=e=>{const o=e.target.dataset.o;if(o){sel=+o;render()}};
   allTable(); render();
   addEventListener('resize',()=>{clearTimeout(window._rt);window._rt=setTimeout(render,150)});
@@ -205,6 +355,7 @@ function series(o){return D.series.filter(r=>r.offset===o)}
 function render(){
   [...document.querySelectorAll('#tabs button')].forEach(b=>b.setAttribute('aria-pressed',+b.dataset.o===sel));
   const s=series(sel), last=s[s.length-1];
+  if(!last)return;
   const zr=last.z_ratio, zc=last.z_control, za=D.config.z_alert;
   const zHint=v=>v==null?`표본 ${last.history_n}/${D.config.min_history} · 보류`:(v>=za?'⚠ 임계치 초과':'정상 범위');
   document.getElementById('tiles').innerHTML=[
@@ -237,7 +388,7 @@ function render(){
   const hs=D.latest_hotels.filter(h=>h.offset===sel);
   document.getElementById('lblHotels').textContent=hs.length?`· 체크인 ${hs[0].checkin}`:'';
   document.getElementById('tblHotels').innerHTML='<tr><th>호텔</th><th>구분</th><th>최저가</th><th>상태</th></tr>'+
-    hs.map(h=>`<tr><td>${h.hotel}</td><td>${h.role==='target'?'대상':'대조군'}</td><td class="mono">${won(h.price)}</td><td>${{ok:'정상',no_rate:'⚠ 요금 미노출',missing:'미검출'}[h.status]}</td></tr>`).join('');
+    hs.map(h=>`<tr><td>${esc(h.hotel)}</td><td>${h.role==='target'?'대상':'대조군'}</td><td class="mono">${won(h.price)}</td><td>${{ok:'정상',no_rate:'⚠ 요금 미노출',missing:'미검출'}[h.status]}</td></tr>`).join('');
 }
 
 function legend(id,ss){document.getElementById(id).innerHTML=ss.map(s=>`<span><i style="background:${s.color};${s.dash?'background:repeating-linear-gradient(90deg,'+s.color+' 0 4px,transparent 4px 7px)':''}"></i>${s.name}</span>`).join('')}

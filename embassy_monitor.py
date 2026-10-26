@@ -248,8 +248,10 @@ def evaluate(results, state, today):
                       "updated": r["updated"], "url": r["url"],
                       "seen": ([i["id"] for i in r["items"]] + [x for x in prev.get("seen", [])
                                if x not in {i["id"] for i in r["items"]}])[:SEEN_MAX]}
+        latest = max(r["items"], key=lambda i: i["date"] or "", default=None)
         rows.append({"source": sid, "name": name, "error": None, "level": r["level"], "level_norm": r["level_norm"],
-                     "level_text": r["level_text"], "updated": r["updated"], "url": r["url"], "changed": changed})
+                     "level_text": r["level_text"], "updated": r["updated"], "url": r["url"], "changed": changed,
+                     "latest": {k: latest[k] for k in ("date", "title", "url")} if latest else None})
 
     # 같은 제목(영사메일 1보·2보 중복 등)은 한 번만
     uniq, keys = [], set()
