@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>남산 하얏트 지표</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:light;
+  --page:#f9f9f7; --surface:#fcfcfb; --ink:#0b0b0b; --ink2:#52514e; --muted:#898781;
+  --grid:#e1e0d9; --axis:#c3c2b7; --border:rgba(11,11,11,.10);
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a;
+  --good:#0ca30c; --warning:#fab219; --critical:#d03b3b; --good-ink:#006300; --crit-ink:#b02a2a;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --page:#0d0d0d; --surface:#1a1a19; --ink:#f0efec; --ink2:#c3c2b7; --muted:#898781;
+    --grid:#2c2c2a; --axis:#383835; --border:rgba(255,255,255,.10);
+    --s1:#3987e5; --s2:#d95926; --s3:#199e70; --good-ink:#0ca30c; --crit-ink:#e66767;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --page:#0d0d0d; --surface:#1a1a19; --ink:#f0efec; --ink2:#c3c2b7; --muted:#898781;
+  --grid:#2c2c2a; --axis:#383835; --border:rgba(255,255,255,.10);
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --good-ink:#0ca30c; --crit-ink:#e66767;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);font:15px/1.55 "IBM Plex Sans KR",system-ui,sans-serif}
+.wrap{max-width:1080px;margin:0 auto;padding:28px 16px 64px}
+header{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:flex-end;justify-content:space-between;margin-bottom:8px}
+h1{font-size:22px;font-weight:600;margin:0;letter-spacing:-.01em}
+h2{font-size:15px;font-weight:600;margin:0 0 4px}
+.sub{color:var(--ink2);font-size:13px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;font-weight:600;font-size:14px;border:1px solid var(--border);background:var(--surface)}
+.dot{width:10px;height:10px;border-radius:50%}
+.note{font-size:12.5px;color:var(--ink2);border-left:2px solid var(--axis);padding:2px 0 2px 10px;margin:14px 0 22px}
+.tabs{display:flex;gap:6px;margin:0 0 14px;flex-wrap:wrap}
+.tabs button{font:inherit;font-size:13px;padding:6px 14px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--ink2);cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--ink);color:var(--page);border-color:var(--ink)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-bottom:16px}
+.tile{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 14px}
+.tile .k{font-size:12px;color:var(--ink2)}
+.tile .v{font-size:22px;font-weight:500;margin-top:2px}
+.tile .h{font-size:11.5px;color:var(--muted);margin-top:2px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:16px}
+.alerts{list-style:none;margin:8px 0 0;padding:0}
+.alerts li{padding:8px 0;border-top:1px solid var(--grid);font-size:13.5px}
+.alerts li:first-child{border-top:0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:760px){.grid2{grid-template-columns:1fr}}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--ink2);margin:6px 0 4px}
+.legend i{display:inline-block;width:14px;height:2px;vertical-align:middle;margin-right:6px}
+.chart{position:relative}
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.tip{position:absolute;pointer-events:none;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:8px 10px;font-size:12px;box-shadow:0 4px 14px rgba(0,0,0,.12);white-space:nowrap;display:none;z-index:2}
+.tip b{font-weight:600}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{text-align:right;padding:7px 8px;border-bottom:1px solid var(--grid);white-space:nowrap}
+td:first-child{white-space:normal}
+th:first-child,td:first-child{text-align:left}
+th{font-weight:500;color:var(--ink2);font-size:12px}
+details summary{cursor:pointer;color:var(--ink2);font-size:13px}
+.tablewrap{overflow-x:auto}
+.placeholder{color:var(--muted);font-size:13.5px}
+.empty{padding:40px 0;text-align:center;color:var(--ink2)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>남산 그랜드 하얏트 가격 지표</h1>
+      <div class="sub">대조군 대비 비율 · 같은 체크인 요일 기준 z-score · <span id="updated" class="mono">—</span></div>
+    </div>
+    <div id="status" class="badge"><span class="dot"></span><span>불러오는 중</span></div>
+  </header>
+
+  <p class="note">하얏트가 미군 소개 거점이라는 전제는 확인된 사실이 아닙니다. 예약 건수가 아니라 공개 최저가를 대리 지표로 씁니다. 출처: Google Hotels (SerpApi 경유). z-score는 같은 요일 표본이 <span id="minh">4</span>개 이상 쌓인 뒤부터 계산됩니다.</p>
+
+  <div class="tabs" role="group" aria-label="체크인 선행일수" id="tabs"></div>
+
+  <div class="tiles" id="tiles"></div>
+
+  <div class="card">
+    <h2>오늘의 경보</h2>
+    <ul class="alerts" id="alerts"></ul>
+  </div>
+
+  <div class="card">
+    <h2>하얏트 ÷ 대조군 중앙값</h2>
+    <div class="sub">1.0이면 대조군과 같은 가격. 선행일수별 일 단위 추이.</div>
+    <div class="legend" id="legRatio"></div>
+    <div class="chart" id="chRatio"></div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h2>가격 비교 <span class="sub" id="lblPrice"></span></h2>
+      <div class="legend" id="legPrice"></div>
+      <div class="chart" id="chPrice"></div>
+    </div>
+    <div class="card">
+      <h2>z-score <span class="sub" id="lblZ"></span></h2>
+      <div class="legend" id="legZ"></div>
+      <div class="chart" id="chZ"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>오늘 호텔별 최저가 <span class="sub" id="lblHotels"></span></h2>
+    <div class="tablewrap"><table id="tblHotels"></table></div>
+  </div>
+
+  <div class="card">
+    <details>
+      <summary>전체 데이터 표 보기</summary>
+      <div class="tablewrap" style="margin-top:10px"><table id="tblAll"></table></div>
+    </details>
+  </div>
+
+  <div class="card" id="emb">
+    <header style="margin-bottom:4px">
+      <div>
+        <h2>주한 대사관·여행경보</h2>
+        <div class="sub">각국 여행경보 단계와 대사관 공지 · <span id="embUpdated" class="mono">—</span></div>
+      </div>
+      <div id="embStatus" class="badge"><span class="dot"></span><span>불러오는 중</span></div>
+    </header>
+    <ul class="alerts" id="embAlerts"></ul>
+    <div class="tablewrap" style="margin-top:8px"><table id="tblEmb"></table></div>
+    <p class="note" style="margin:12px 0 14px">공통 단계(1~4)는 나라마다 다른 경보 체계를 대략 맞춘 값입니다. 일본은 위험정보 없음을 1로, 레벨1을 2로 봅니다. 출처별 원래 문구는 '원문 단계' 열에 있습니다.</p>
+    <h2 style="font-size:14px">최근 <span id="embDays">30</span>일 키워드 공지 <span class="sub" id="embCounts"></span></h2>
+    <ul class="alerts" id="embRecent"></ul>
+  </div>
+
+  <div class="card"><h2>세계 언론 동향</h2><p class="placeholder">다음 단계에서 연결 예정 (GDELT 한반도 분쟁 기사량)</p></div>
+</div>
+
+<script>
+const WD=['월','화','수','목','금','토','일'];
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const won=v=>v==null?'—':'₩'+Math.round(v).toLocaleString('ko-KR');
+const fx=(v,d=2,sign=false)=>v==null?'—':(sign&&v>0?'+':'')+v.toFixed(d);
+let D=null, sel=1;
+
+fetch('data/metrics.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw 0;return r.json()})
+ .then(j=>{D=j;sel=j.config.offsets[0];init()})
+ .catch(()=>{document.getElementById('emb').insertAdjacentHTML('beforebegin','<p class="empty">아직 수집된 데이터가 없습니다. 첫 수집 후 표시됩니다.</p>');setStatus(null)});
+
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const safeUrl=u=>/^https?:\/\//.test(u||'')?esc(u):'#';
+const LV_COLOR={1:'--good',2:'--warning',3:'--critical',4:'--critical'};
+
+fetch('data/embassy.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw 0;return r.json()}).then(embassy)
+ .catch(()=>{document.getElementById('tblEmb').outerHTML='<p class="placeholder">아직 수집된 데이터가 없습니다.</p>';badge('embStatus','--muted','데이터 없음')});
+
+function badge(id,c,t){const el=document.getElementById(id);el.querySelector('.dot').style.background=`var(${c})`;el.lastElementChild.textContent=t}
+
+function embassy(E){
+  document.getElementById('embUpdated').textContent='갱신 '+E.generated_at.replace('T',' ');
+  document.getElementById('embDays').textContent=E.recent_days;
+  const n=E.alerts.length;
+  n?badge('embStatus','--critical','⚠ 경보 '+n+'건'):badge('embStatus','--good','✓ 이상 없음');
+  document.getElementById('embAlerts').innerHTML=n?E.alerts.map(a=>`<li><span style="color:var(--crit-ink);font-weight:600">⚠</span> ${esc(a)}</li>`).join(''):'';
+  document.getElementById('tblEmb').innerHTML='<tr><th>출처</th><th>공통 단계</th><th style="text-align:left">원문 단계</th><th>본문 갱신</th><th>상태</th></tr>'+
+    E.sources.map(s=>{
+      const lv=s.level_norm, dot=lv?`<span class="dot" style="display:inline-block;margin-right:6px;background:var(${LV_COLOR[lv]})"></span>`:'';
+      const st=s.error?`<span style="color:var(--crit-ink)" title="${esc(s.error)}">수집 실패</span>`:s.changed==='up'?'<span style="color:var(--crit-ink);font-weight:600">▲ 상승</span>':s.changed==='down'?'▼ 하향':'정상';
+      return `<tr><td><a href="${safeUrl(s.url)}" target="_blank" rel="noopener" style="color:inherit">${esc(s.name)}</a></td>`+
+        `<td>${lv?dot+'<span class="mono">'+lv+'</span> '+esc(E.norm_labels[lv]):'<span style="color:var(--muted)">'+(s.source==='us_embassy'?'공지 피드':'—')+'</span>'}</td>`+
+        `<td style="text-align:left;white-space:normal">${esc(s.level_text)||'—'}</td><td class="mono">${s.updated?esc(s.updated.slice(0,10)):'—'}</td><td>${st}</td></tr>`}).join('');
+  document.getElementById('embCounts').textContent=`· 철수·출국 ${E.counts.critical}건 / 주의 ${E.counts.watch}건`;
+  document.getElementById('embRecent').innerHTML=E.recent.length?E.recent.map(r=>{
+    const crit=r.severity==='critical';
+    return `<li><span style="font-weight:600;color:var(${crit?'--crit-ink':'--ink2'})">${crit?'철수·출국':'주의'}</span> <span class="mono" style="color:var(--muted)">${esc(r.date.slice(0,10))}</span> ${esc(r.source)} · <a href="${safeUrl(r.url)}" target="_blank" rel="noopener" style="color:inherit">${esc(r.title)}</a></li>`}).join(''):'<li style="color:var(--ink2)">해당 공지 없음</li>';
+}
+
+function setStatus(alert){
+  const el=document.getElementById('status');
+  const [c,t]=alert==null?['--muted','데이터 없음']:alert?['--critical','⚠ 경보 '+D.alerts.length+'건']:['--good','✓ 이상 없음'];
+  el.querySelector('.dot').style.background=`var(${c})`; el.lastElementChild.textContent=t;
+}
+
+function init(){
+  document.getElementById('updated').textContent='갱신 '+D.generated_at.replace('T',' ');
+  document.getElementById('minh').textContent=D.config.min_history;
+  setStatus(D.alerts.length>0);
+  const al=document.getElementById('alerts');
+  al.innerHTML=D.alerts.length?D.alerts.map(a=>`<li><span style="color:var(--crit-ink);font-weight:600">⚠</span> ${a}</li>`).join(''):'<li style="color:var(--ink2)">✓ 경보 없음</li>';
+  const tabs=document.getElementById('tabs');
+  tabs.innerHTML=D.config.offsets.map(o=>`<button data-o="${o}">D+${o}</button>`).join('');
+  tabs.onclick=e=>{const o=e.target.dataset.o;if(o){sel=+o;render()}};
+  allTable(); render();
+  addEventListener('resize',()=>{clearTimeout(window._rt);window._rt=setTimeout(render,150)});
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change',render);
+}
+
+function series(o){return D.series.filter(r=>r.offset===o)}
+
+function render(){
+  [...document.querySelectorAll('#tabs button')].forEach(b=>b.setAttribute('aria-pressed',+b.dataset.o===sel));
+  const s=series(sel), last=s[s.length-1];
+  const zr=last.z_ratio, zc=last.z_control, za=D.config.z_alert;
+  const zHint=v=>v==null?`표본 ${last.history_n}/${D.config.min_history} · 보류`:(v>=za?'⚠ 임계치 초과':'정상 범위');
+  document.getElementById('tiles').innerHTML=[
+    ['하얏트 최저가',won(last.target_price),last.target_status==='ok'?`체크인 D+${sel} (${WD[last.weekday]})`:(last.target_status==='no_rate'?'⚠ 요금 미노출':'검색 미검출')],
+    ['대조군 중앙값',won(last.control_median),`${last.control_n}곳 기준`],
+    ['비율',fx(last.ratio),'하얏트 ÷ 대조군'],
+    ['z(비율)',fx(zr,2,true),zHint(zr)],
+    ['z(대조군)',fx(zc,2,true),zHint(zc)],
+  ].map(([k,v,h])=>`<div class="tile"><div class="k">${k}</div><div class="v mono">${v}</div><div class="h">${h}</div></div>`).join('');
+
+  const dates=[...new Set(D.series.map(r=>r.date))].sort();
+  const cols=['--s1','--s2','--s3'];
+  const rs=D.config.offsets.map((o,i)=>{const m=new Map(series(o).map(r=>[r.date,r.ratio]));return{name:'D+'+o,color:css(cols[i%3]),values:dates.map(d=>m.get(d)??null),bold:o===sel}});
+  legend('legRatio',rs);
+  lineChart('chRatio',dates,rs,{fmt:v=>v.toFixed(2),ref:[{y:1,label:'1.0'}],h:240});
+
+  const sd=s.map(r=>r.date);
+  const ps=[{name:'하얏트',color:css('--s1'),values:s.map(r=>r.target_price)},
+            {name:'대조군 중앙값',color:css('--ink2'),values:s.map(r=>r.control_median),dash:true}];
+  document.getElementById('lblPrice').textContent=`· D+${sel}`;
+  legend('legPrice',ps);
+  lineChart('chPrice',sd,ps,{fmt:won,h:220});
+
+  const zs=[{name:'z(비율)',color:css('--s1'),values:s.map(r=>r.z_ratio)},
+            {name:'z(대조군)',color:css('--ink2'),values:s.map(r=>r.z_control),dash:true}];
+  document.getElementById('lblZ').textContent=`· D+${sel} · 임계치 ${za}`;
+  legend('legZ',zs);
+  lineChart('chZ',sd,zs,{fmt:v=>fx(v,2,true),ref:[{y:za,label:'임계 '+za,alert:true},{y:0,label:'0'}],h:220});
+
+  const hs=D.latest_hotels.filter(h=>h.offset===sel);
+  document.getElementById('lblHotels').textContent=hs.length?`· 체크인 ${hs[0].checkin}`:'';
+  document.getElementById('tblHotels').innerHTML='<tr><th>호텔</th><th>구분</th><th>최저가</th><th>상태</th></tr>'+
+    hs.map(h=>`<tr><td>${h.hotel}</td><td>${h.role==='target'?'대상':'대조군'}</td><td class="mono">${won(h.price)}</td><td>${{ok:'정상',no_rate:'⚠ 요금 미노출',missing:'미검출'}[h.status]}</td></tr>`).join('');
+}
+
+function legend(id,ss){document.getElementById(id).innerHTML=ss.map(s=>`<span><i style="background:${s.color};${s.dash?'background:repeating-linear-gradient(90deg,'+s.color+' 0 4px,transparent 4px 7px)':''}"></i>${s.name}</span>`).join('')}
+
+function allTable(){
+  const t=document.getElementById('tblAll');
+  t.innerHTML='<tr><th>수집일</th><th>D+</th><th>요일</th><th>하얏트</th><th>대조군</th><th>비율</th><th>z(비율)</th><th>z(대조군)</th></tr>'+
+   [...D.series].reverse().map(r=>`<tr><td class="mono">${r.date}</td><td class="mono">${r.offset}</td><td>${WD[r.weekday]}</td><td class="mono">${won(r.target_price)}</td><td class="mono">${won(r.control_median)}</td><td class="mono">${fx(r.ratio)}</td><td class="mono">${fx(r.z_ratio,2,true)}</td><td class="mono">${fx(r.z_control,2,true)}</td></tr>`).join('');
+}
+
+function lineChart(id,x,ss,o){
+  const el=document.getElementById(id), W=Math.max(el.clientWidth,280), H=o.h||220;
+  const m={l:58,r:16,t:10,b:26}, iw=W-m.l-m.r, ih=H-m.t-m.b;
+  const vals=ss.flatMap(s=>s.values).concat((o.ref||[]).map(r=>r.y)).filter(v=>v!=null);
+  if(!vals.length){el.innerHTML='<p class="placeholder">아직 계산할 표본이 부족합니다.</p>';return}
+  let lo=Math.min(...vals),hi=Math.max(...vals); const pad=(hi-lo||Math.abs(hi)||1)*.08; lo-=pad;hi+=pad;
+  const n=x.length, X=i=>m.l+(n<2?iw/2:i*iw/(n-1)), Y=v=>m.t+ih-(v-lo)/(hi-lo)*ih;
+  const ticks=nice(lo,hi,4);
+  let g=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${ss.map(s=>s.name).join(', ')} 추이">`;
+  ticks.forEach(t=>{g+=`<line x1="${m.l}" x2="${W-m.r}" y1="${Y(t)}" y2="${Y(t)}" stroke="${css('--grid')}" stroke-width="1"/><text x="${m.l-8}" y="${Y(t)+4}" text-anchor="end" font-size="11" fill="${css('--muted')}" class="mono">${o.fmt(t)}</text>`});
+  (o.ref||[]).forEach(r=>{g+=`<line x1="${m.l}" x2="${W-m.r}" y1="${Y(r.y)}" y2="${Y(r.y)}" stroke="${css(r.alert?'--critical':'--axis')}" stroke-width="1.5" stroke-dasharray="${r.alert?'5 4':''}"/><text x="${W-m.r}" y="${Y(r.y)-5}" text-anchor="end" font-size="11" fill="${css(r.alert?'--crit-ink':'--muted')}">${r.label}</text>`});
+  const step=Math.max(1,Math.ceil(n/Math.floor(iw/70)));
+  x.forEach((d,i)=>{if(i%step===0||i===n-1)g+=`<text x="${X(i)}" y="${H-6}" text-anchor="middle" font-size="11" fill="${css('--muted')}" class="mono">${d.slice(5)}</text>`});
+  ss.forEach(s=>{
+    let p='',on=false; s.values.forEach((v,i)=>{if(v==null){on=false;return}p+=(on?'L':'M')+X(i).toFixed(1)+' '+Y(v).toFixed(1);on=true});
+    g+=`<path d="${p}" fill="none" stroke="${s.color}" stroke-width="${s.bold===false?1.5:2}" stroke-opacity="${s.bold===false?.45:1}" stroke-dasharray="${s.dash?'5 4':''}" stroke-linejoin="round" stroke-linecap="round"/>`;
+  });
+  g+=`<line id="${id}-x" y1="${m.t}" y2="${m.t+ih}" stroke="${css('--axis')}" stroke-width="1" style="display:none"/><g id="${id}-dots"></g><rect x="${m.l}" y="${m.t}" width="${iw}" height="${ih}" fill="transparent"/></svg><div class="tip"></div>`;
+  el.innerHTML=g;
+  const svg=el.querySelector('svg'),tip=el.querySelector('.tip'),cx=el.querySelector(`#${id}-x`),dots=el.querySelector(`#${id}-dots`);
+  const move=e=>{
+    const r=svg.getBoundingClientRect(),px=(e.clientX-r.left)*W/r.width;
+    const i=Math.max(0,Math.min(n-1,Math.round(n<2?0:(px-m.l)/iw*(n-1))));
+    cx.setAttribute('x1',X(i));cx.setAttribute('x2',X(i));cx.style.display='';
+    dots.innerHTML=ss.map(s=>s.values[i]==null?'':`<circle cx="${X(i)}" cy="${Y(s.values[i])}" r="4.5" fill="${s.color}" stroke="${css('--surface')}" stroke-width="2"/>`).join('');
+    tip.innerHTML=`<div class="mono" style="color:var(--ink2);margin-bottom:4px">${x[i]} (${WD[(new Date(x[i]).getDay()+6)%7]})</div>`+ss.map(s=>`<div><i style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${s.color};margin-right:6px"></i>${s.name} <b class="mono" style="margin-left:6px">${s.values[i]==null?'—':o.fmt(s.values[i])}</b></div>`).join('');
+    tip.style.display='block';
+    const lx=X(i)*r.width/W; tip.style.left=Math.min(lx+12,r.width-tip.offsetWidth-4)+'px'; tip.style.top='8px';
+  };
+  svg.addEventListener('pointermove',move);
+  svg.addEventListener('pointerleave',()=>{tip.style.display='none';cx.style.display='none';dots.innerHTML=''});
+}
+function nice(lo,hi,c){const s=Math.pow(10,Math.floor(Math.log10((hi-lo)/c))),e=(hi-lo)/c/s,st=(e>=7?10:e>=3?5:e>=1.5?2:1)*s,out=[];for(let v=Math.ceil(lo/st)*st;v<=hi;v+=st)out.push(+v.toFixed(10));return out}
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+name: daily-monitor
+on:
+  schedule:
+    - cron: "47 23 * * *"   # 매일 KST 08:47
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r requirements.txt
+      - run: python daily_report.py
+        env:
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          MAIL_TO: ${{ secrets.MAIL_TO }}
+      - name: 누적 데이터 저장
+        run: |
+          git config user.name "bot"; git config user.email "bot@users.noreply.github.com"
+          git add data/
+          git commit -m "data $(date -u +%F)" || echo "no change"
+          git push
