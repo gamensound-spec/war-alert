@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-26T20:09+09:00",
+ "generated_at": "2026-10-29T12:01+09:00",
  "query": "(\"north korea\" OR \"korean peninsula\") (war OR missile OR attack OR invasion OR evacuation OR troops)",
  "config": {
   "base_days": 28,
@@ -9,44 +9,18 @@
   "ratio_alert": 2.0
  },
  "alerts": [],
- "watch": [
-  "기사량 증가: 평소의 2.4배 (z +2.6)"
- ],
+ "watch": [],
  "latest": {
   "date": "2026-10-24",
   "share": 31.434,
   "count": 244,
   "tone": null,
   "base_n": 28,
-  "median": 13.309,
-  "ratio": 2.36,
-  "z": 2.62
+  "median": 15.299,
+  "ratio": 2.05,
+  "z": 1.92
  },
  "series": [
-  {
-   "date": "2026-07-29",
-   "count": 113,
-   "total": 162086,
-   "share": 6.972,
-   "tone": null,
-   "partial": false
-  },
-  {
-   "date": "2026-07-30",
-   "count": 158,
-   "total": 168455,
-   "share": 9.379,
-   "tone": null,
-   "partial": false
-  },
-  {
-   "date": "2026-07-31",
-   "count": 186,
-   "total": 149894,
-   "share": 12.409,
-   "tone": null,
-   "partial": false
-  },
   {
    "date": "2026-08-01",
    "count": 130,
@@ -445,7 +419,7 @@
    "total": 58811,
    "share": 25.505,
    "tone": null,
-   "partial": true
+   "partial": false
   },
   {
    "date": "2026-09-27",
@@ -614,104 +588,15 @@
    "share": 13.384,
    "tone": null,
    "partial": true
+  },
+  {
+   "date": "2026-10-27",
+   "count": 4,
+   "total": 2218,
+   "share": 18.034,
+   "tone": null,
+   "partial": true
   }
  ],
- "articles": [
-  {
-   "title": "Seoul  fabricated  landmine blast , North Korea tells UN in letter | Border Disputes News",
-   "url": "https://www.aljazeera.com/news/2026/10/26/seoul-fabricated-landmine-blast-north-korea-tells-un-in-letter",
-   "domain": "aljazeera.com",
-   "language": "English",
-   "country": "United States",
-   "date": "2026-10-26"
-  },
-  {
-   "title": "快評 》 金正恩訪陸 如何影響中美俄三方峰會 - 兩岸",
-   "url": "https://www.chinatimes.com/realtimenews/20261026001883-260409",
-   "domain": "chinatimes.com",
-   "language": "Chinese",
-   "country": "Taiwan",
-   "date": "2026-10-26"
-  },
-  {
-   "title": "Kim Jong Un reist nach Besuch in China zurück nach Nordkorea",
-   "url": "https://www.n-tv.de/politik/Kim-Jong-Un-reist-nach-Besuch-in-China-zurueck-nach-Nordkorea-id31455614.html",
-   "domain": "n-tv.de",
-   "language": "German",
-   "country": "Germany",
-   "date": "2026-10-25"
-  },
-  {
-   "title": "North Korean leader Kim Jong Un visits China to inaugurate a new cross - border bridge",
-   "url": "https://www.wvtm13.com/article/kim-jong-un-china-new-cross-border-bridge/74239967",
-   "domain": "wvtm13.com",
-   "language": "English",
-   "country": "United States",
-   "date": "2026-10-25"
-  },
-  {
-   "title": "Regimul Putin e acuzat că a trimis copii ucraineni într - o tabără de îndoctrinare din Coreea de Nord",
-   "url": "https://ziare.com/razboi-ucraina/rusia-coreea-de-nord-tabara-copii-ucraineni-2043684",
-   "domain": "ziare.com",
-   "language": "Romanian",
-   "country": "Romania",
-   "date": "2026-10-25"
-  },
-  {
-   "title": "與  전작권 조속 환수  野  안보 공백 우려 … 국방위 종감서 정면충돌 [ 국감 ]",
-   "url": "https://www.etoday.co.kr/news/view/2640104",
-   "domain": "etoday.co.kr",
-   "language": "Korean",
-   "country": "South Korea",
-   "date": "2026-10-26"
-  },
-  {
-   "title": "Κιμ Γιονγκ Ουν : Αιφνιδιαστική επίσκεψη στην Κίνα με μήνυμα στενότερης συνεργασίας – Η ιστορική αναφορά στον Πόλεμο της Κορέας",
-   "url": "https://newpost.gr/eidiseis/kim-giongk-oyn-aifnidiastiki-episkepsi-stin-kina-me-minyma-stenoteris-synergasias-i-istoriki-anafora-ston-polemo-tis-koreas/",
-   "domain": "newpost.gr",
-   "language": "Greek",
-   "country": "Greece",
-   "date": "2026-10-25"
-  },
-  {
-   "title": "Кім Чен Ин заявив про зміцнення зв  язків із Китаєм",
-   "url": "https://ua.korrespondent.net/world/4923162-kim-chen-yn-zaiavyv-pro-zmitsnennia-zviazkiv-iz-kytaiem",
-   "domain": "ua.korrespondent.net",
-   "language": "Ukrainian",
-   "country": "Ukraine",
-   "date": "2026-10-25"
-  },
-  {
-   "title": "Gamers can save 33 % on Call of Duty : Modern Warfare 4 in flash deal",
-   "url": "https://www.cambridge-news.co.uk/whats-on/shopping/gamers-can-save-33-call-34811682",
-   "domain": "cambridge-news.co.uk",
-   "language": "English",
-   "country": "United Kingdom",
-   "date": "2026-10-25"
-  },
-  {
-   "title": "Κιμ Γιονγκ Ουν : Επέστρεψε από την Κίνα έπειτα από επίσκεψη σε μνημείο για τον Πόλεμο της Κορέας",
-   "url": "https://www.sofokleousin.gr/epikairotita/diethni/kim-giongk-oun-epestrepse-apo-tin-kina-epeita-apo-episkepsi-se-mn",
-   "domain": "sofokleousin.gr",
-   "language": "Greek",
-   "country": "Greece",
-   "date": "2026-10-25"
-  },
-  {
-   "title": "Ο Κιμ Γιονγκ Ουν επισκέφθηκε την Κίνα αυθημερόν για να καταθέσει στεφάνι για τους πεσόντες στην Κορέα",
-   "url": "https://www.news247.gr/kosmos/o-kim-giongk-oun-episkefthike-tin-kina-afthimeron-gia-na-katathesei-stefani-gia-tous-pesontes-stin-korea/",
-   "domain": "news247.gr",
-   "language": "Greek",
-   "country": "Greece",
-   "date": "2026-10-25"
-  },
-  {
-   "title": "North Korea Kim Jong Un returns from China after war memorial visit , state media says",
-   "url": "https://bworldonline.com/world/2026/10/25/789015/north-koreas-kim-jong-un-returns-from-china-after-war-memorial-visit-state-media-says/",
-   "domain": "bworldonline.com",
-   "language": "English",
-   "country": "Philippines",
-   "date": "2026-10-25"
-  }
- ]
+ "articles": []
 }
