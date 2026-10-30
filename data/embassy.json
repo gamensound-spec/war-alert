@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-10-29T11:54+09:00",
- "today": "2026-10-29",
+ "generated_at": "2026-10-30T11:58+09:00",
+ "today": "2026-10-30",
  "recent_days": 30,
  "norm_labels": {
   "1": "일반 주의",
@@ -65,13 +65,13 @@
    "level": 0,
    "level_norm": 1,
    "level_text": "危険情報なし",
-   "updated": "2026-10-29T11:31+09:00",
+   "updated": "2026-10-30T11:46+09:00",
    "url": "https://www.anzen.mofa.go.jp/od/ryojiMail.html?countryCd=003",
    "changed": null,
    "latest": {
-    "date": "2026-10-23T14:21+09:00",
-    "title": "台風３０号（チャンパー）の接近",
-    "url": "https://www.anzen.mofa.go.jp/od/ryojiMailDetail.html?keyCd=168516"
+    "date": "2026-10-29T14:06+09:00",
+    "title": "北朝鮮によるミサイル発射（第２報）",
+    "url": "https://www.anzen.mofa.go.jp/od/ryojiMailDetail.html?keyCd=168632"
    }
   },
   {
@@ -146,6 +146,13 @@
  "recent": [
   {
    "source": "일본 외무성 위험정보·영사메일",
+   "date": "2026-10-29T14:06+09:00",
+   "title": "北朝鮮によるミサイル発射（第２報）",
+   "url": "https://www.anzen.mofa.go.jp/od/ryojiMailDetail.html?keyCd=168632",
+   "severity": "watch"
+  },
+  {
+   "source": "일본 외무성 위험정보·영사메일",
    "date": "2026-10-12T10:41+09:00",
    "title": "北朝鮮によるミサイル発射について(第2報)",
    "url": "https://www.anzen.mofa.go.jp/od/ryojiMailDetail.html?keyCd=168284",
@@ -161,6 +168,6 @@
  ],
  "counts": {
   "critical": 0,
-  "watch": 2
+  "watch": 3
  }
 }

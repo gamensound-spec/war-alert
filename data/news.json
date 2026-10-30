@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-29T12:01+09:00",
+ "generated_at": "2026-10-30T12:03+09:00",
  "query": "(\"north korea\" OR \"korean peninsula\") (war OR missile OR attack OR invasion OR evacuation OR troops)",
  "config": {
   "base_days": 28,
@@ -14,7 +14,7 @@
   "date": "2026-10-24",
   "share": 31.434,
   "count": 244,
-  "tone": null,
+  "tone": -0.6895,
   "base_n": 28,
   "median": 15.299,
   "ratio": 2.05,
@@ -22,19 +22,11 @@
  },
  "series": [
   {
-   "date": "2026-08-01",
-   "count": 130,
-   "total": 110262,
-   "share": 11.79,
-   "tone": null,
-   "partial": false
-  },
-  {
    "date": "2026-08-02",
    "count": 54,
    "total": 103171,
    "share": 5.234,
-   "tone": null,
+   "tone": -1.7895,
    "partial": false
   },
   {
@@ -42,7 +34,7 @@
    "count": 98,
    "total": 147538,
    "share": 6.642,
-   "tone": null,
+   "tone": -2.464,
    "partial": false
   },
   {
@@ -50,7 +42,7 @@
    "count": 174,
    "total": 157631,
    "share": 11.038,
-   "tone": null,
+   "tone": -2.7754,
    "partial": false
   },
   {
@@ -58,7 +50,7 @@
    "count": 302,
    "total": 175970,
    "share": 17.162,
-   "tone": null,
+   "tone": -3.0128,
    "partial": false
   },
   {
@@ -66,7 +58,7 @@
    "count": 293,
    "total": 159186,
    "share": 18.406,
-   "tone": null,
+   "tone": -2.367,
    "partial": false
   },
   {
@@ -74,7 +66,7 @@
    "count": 125,
    "total": 117971,
    "share": 10.596,
-   "tone": null,
+   "tone": -1.9104,
    "partial": false
   },
   {
@@ -82,7 +74,7 @@
    "count": 133,
    "total": 114555,
    "share": 11.61,
-   "tone": null,
+   "tone": -1.7269,
    "partial": false
   },
   {
@@ -90,7 +82,7 @@
    "count": 173,
    "total": 103098,
    "share": 16.78,
-   "tone": null,
+   "tone": -2.5546,
    "partial": false
   },
   {
@@ -98,7 +90,7 @@
    "count": 192,
    "total": 115167,
    "share": 16.671,
-   "tone": null,
+   "tone": -2.6903,
    "partial": false
   },
   {
@@ -106,7 +98,7 @@
    "count": 309,
    "total": 131138,
    "share": 23.563,
-   "tone": null,
+   "tone": -3.9892,
    "partial": false
   },
   {
@@ -114,7 +106,7 @@
    "count": 320,
    "total": 140458,
    "share": 22.783,
-   "tone": null,
+   "tone": -2.6781,
    "partial": false
   },
   {
@@ -122,7 +114,7 @@
    "count": 326,
    "total": 179907,
    "share": 18.12,
-   "tone": null,
+   "tone": -2.2601,
    "partial": false
   },
   {
@@ -130,7 +122,7 @@
    "count": 193,
    "total": 194350,
    "share": 9.931,
-   "tone": null,
+   "tone": -2.6333,
    "partial": false
   },
   {
@@ -138,7 +130,7 @@
    "count": 220,
    "total": 108259,
    "share": 20.322,
-   "tone": null,
+   "tone": -1.3369,
    "partial": false
   },
   {
@@ -146,7 +138,7 @@
    "count": 380,
    "total": 103863,
    "share": 36.587,
-   "tone": null,
+   "tone": -3.037,
    "partial": false
   },
   {
@@ -154,7 +146,7 @@
    "count": 904,
    "total": 116203,
    "share": 77.795,
-   "tone": null,
+   "tone": -1.9648,
    "partial": false
   },
   {
@@ -162,7 +154,7 @@
    "count": 653,
    "total": 169174,
    "share": 38.599,
-   "tone": null,
+   "tone": -1.4926,
    "partial": false
   },
   {
@@ -170,7 +162,7 @@
    "count": 642,
    "total": 157610,
    "share": 40.733,
-   "tone": null,
+   "tone": -1.6416,
    "partial": false
   },
   {
@@ -178,7 +170,7 @@
    "count": 650,
    "total": 171970,
    "share": 37.797,
-   "tone": null,
+   "tone": -1.2599,
    "partial": false
   },
   {
@@ -186,7 +178,7 @@
    "count": 472,
    "total": 160721,
    "share": 29.368,
-   "tone": null,
+   "tone": -1.9129,
    "partial": false
   },
   {
@@ -194,7 +186,7 @@
    "count": 149,
    "total": 98241,
    "share": 15.167,
-   "tone": null,
+   "tone": -2.67,
    "partial": false
   },
   {
@@ -202,7 +194,7 @@
    "count": 127,
    "total": 88414,
    "share": 14.364,
-   "tone": null,
+   "tone": -2.4968,
    "partial": false
   },
   {
@@ -210,7 +202,7 @@
    "count": 191,
    "total": 117661,
    "share": 16.233,
-   "tone": null,
+   "tone": -2.319,
    "partial": false
   },
   {
@@ -218,7 +210,7 @@
    "count": 138,
    "total": 132186,
    "share": 10.44,
-   "tone": null,
+   "tone": -2.7507,
    "partial": false
   },
   {
@@ -226,7 +218,7 @@
    "count": 135,
    "total": 179831,
    "share": 7.507,
-   "tone": null,
+   "tone": -2.1937,
    "partial": false
   },
   {
@@ -234,7 +226,7 @@
    "count": 128,
    "total": 172877,
    "share": 7.404,
-   "tone": null,
+   "tone": -3.0398,
    "partial": false
   },
   {
@@ -242,7 +234,7 @@
    "count": 169,
    "total": 125894,
    "share": 13.424,
-   "tone": null,
+   "tone": -2.2998,
    "partial": false
   },
   {
@@ -250,7 +242,7 @@
    "count": 54,
    "total": 91911,
    "share": 5.875,
-   "tone": null,
+   "tone": -3.3036,
    "partial": false
   },
   {
@@ -258,7 +250,7 @@
    "count": 90,
    "total": 79465,
    "share": 11.326,
-   "tone": null,
+   "tone": -2.132,
    "partial": false
   },
   {
@@ -266,7 +258,7 @@
    "count": 78,
    "total": 107519,
    "share": 7.255,
-   "tone": null,
+   "tone": -2.7005,
    "partial": false
   },
   {
@@ -274,7 +266,7 @@
    "count": 88,
    "total": 116481,
    "share": 7.555,
-   "tone": null,
+   "tone": -1.385,
    "partial": false
   },
   {
@@ -282,7 +274,7 @@
    "count": 101,
    "total": 105316,
    "share": 9.59,
-   "tone": null,
+   "tone": -2.2152,
    "partial": false
   },
   {
@@ -290,7 +282,7 @@
    "count": 72,
    "total": 120602,
    "share": 5.97,
-   "tone": null,
+   "tone": -2.2347,
    "partial": false
   },
   {
@@ -298,7 +290,7 @@
    "count": 95,
    "total": 156481,
    "share": 6.071,
-   "tone": null,
+   "tone": -0.8379,
    "partial": false
   },
   {
@@ -306,7 +298,7 @@
    "count": 43,
    "total": 102774,
    "share": 4.184,
-   "tone": null,
+   "tone": -2.1451,
    "partial": false
   },
   {
@@ -314,7 +306,7 @@
    "count": 42,
    "total": 98645,
    "share": 4.258,
-   "tone": null,
+   "tone": -4.0756,
    "partial": false
   },
   {
@@ -322,7 +314,7 @@
    "count": 246,
    "total": 118079,
    "share": 20.834,
-   "tone": null,
+   "tone": -1.5563,
    "partial": false
   },
   {
@@ -330,7 +322,7 @@
    "count": 114,
    "total": 77318,
    "share": 14.744,
-   "tone": null,
+   "tone": -0.6972,
    "partial": false
   },
   {
@@ -338,7 +330,7 @@
    "count": 127,
    "total": 158938,
    "share": 7.991,
-   "tone": null,
+   "tone": -2.0538,
    "partial": false
   },
   {
@@ -346,7 +338,7 @@
    "count": 125,
    "total": 155062,
    "share": 8.061,
-   "tone": null,
+   "tone": -1.163,
    "partial": false
   },
   {
@@ -354,7 +346,7 @@
    "count": 118,
    "total": 154253,
    "share": 7.65,
-   "tone": null,
+   "tone": -2.4763,
    "partial": false
   },
   {
@@ -362,7 +354,7 @@
    "count": 195,
    "total": 120863,
    "share": 16.134,
-   "tone": null,
+   "tone": -2.0004,
    "partial": false
   },
   {
@@ -370,7 +362,7 @@
    "count": 20,
    "total": 29203,
    "share": 6.849,
-   "tone": null,
+   "tone": -1.2516,
    "partial": true
   },
   {
@@ -378,7 +370,7 @@
    "count": 292,
    "total": 105485,
    "share": 27.682,
-   "tone": null,
+   "tone": -2.3591,
    "partial": false
   },
   {
@@ -386,7 +378,7 @@
    "count": 175,
    "total": 108510,
    "share": 16.128,
-   "tone": null,
+   "tone": -3.226,
    "partial": false
   },
   {
@@ -394,7 +386,7 @@
    "count": 184,
    "total": 105779,
    "share": 17.395,
-   "tone": null,
+   "tone": -1.401,
    "partial": false
   },
   {
@@ -402,7 +394,7 @@
    "count": 319,
    "total": 149817,
    "share": 21.293,
-   "tone": null,
+   "tone": -1.9387,
    "partial": false
   },
   {
@@ -410,7 +402,7 @@
    "count": 322,
    "total": 155942,
    "share": 20.649,
-   "tone": null,
+   "tone": -2.3174,
    "partial": false
   },
   {
@@ -418,7 +410,7 @@
    "count": 150,
    "total": 58811,
    "share": 25.505,
-   "tone": null,
+   "tone": -1.4612,
    "partial": false
   },
   {
@@ -426,7 +418,7 @@
    "count": 88,
    "total": 77392,
    "share": 11.371,
-   "tone": null,
+   "tone": -3.1422,
    "partial": false
   },
   {
@@ -434,7 +426,7 @@
    "count": 272,
    "total": 121105,
    "share": 22.46,
-   "tone": null,
+   "tone": -3.5538,
    "partial": false
   },
   {
@@ -442,7 +434,7 @@
    "count": 602,
    "total": 134919,
    "share": 44.619,
-   "tone": null,
+   "tone": -4.02,
    "partial": false
   },
   {
@@ -450,7 +442,7 @@
    "count": 193,
    "total": 111356,
    "share": 17.332,
-   "tone": null,
+   "tone": -2.9385,
    "partial": false
   },
   {
@@ -458,7 +450,7 @@
    "count": 168,
    "total": 174731,
    "share": 9.615,
-   "tone": null,
+   "tone": -2.6307,
    "partial": false
   },
   {
@@ -466,7 +458,7 @@
    "count": 136,
    "total": 61712,
    "share": 22.038,
-   "tone": null,
+   "tone": -3.4042,
    "partial": false
   },
   {
@@ -474,7 +466,7 @@
    "count": 2,
    "total": 3958,
    "share": 5.053,
-   "tone": null,
+   "tone": -1.7031,
    "partial": true
   },
   {
@@ -482,7 +474,7 @@
    "count": 1,
    "total": 678,
    "share": 14.749,
-   "tone": null,
+   "tone": -2.8986,
    "partial": true
   },
   {
@@ -490,7 +482,7 @@
    "count": 6,
    "total": 1836,
    "share": 32.68,
-   "tone": null,
+   "tone": -1.2957,
    "partial": true
   },
   {
@@ -498,7 +490,7 @@
    "count": 92,
    "total": 95273,
    "share": 9.656,
-   "tone": null,
+   "tone": -1.76,
    "partial": false
   },
   {
@@ -506,7 +498,7 @@
    "count": 104,
    "total": 150288,
    "share": 6.92,
-   "tone": null,
+   "tone": -1.9895,
    "partial": false
   },
   {
@@ -514,7 +506,7 @@
    "count": 93,
    "total": 94046,
    "share": 9.889,
-   "tone": null,
+   "tone": -2.0199,
    "partial": false
   },
   {
@@ -522,7 +514,7 @@
    "count": 40,
    "total": 76163,
    "share": 5.252,
-   "tone": null,
+   "tone": -1.7025,
    "partial": false
   },
   {
@@ -530,7 +522,7 @@
    "count": 138,
    "total": 146057,
    "share": 9.448,
-   "tone": null,
+   "tone": -3.2167,
    "partial": false
   },
   {
@@ -538,7 +530,7 @@
    "count": 248,
    "total": 156425,
    "share": 15.854,
-   "tone": null,
+   "tone": -3.4316,
    "partial": false
   },
   {
@@ -546,7 +538,7 @@
    "count": 190,
    "total": 166970,
    "share": 11.379,
-   "tone": null,
+   "tone": -3.5409,
    "partial": false
   },
   {
@@ -554,7 +546,7 @@
    "count": 147,
    "total": 123805,
    "share": 11.874,
-   "tone": null,
+   "tone": -4.3495,
    "partial": false
   },
   {
@@ -562,7 +554,7 @@
    "count": 114,
    "total": 69302,
    "share": 16.45,
-   "tone": null,
+   "tone": -2.786,
    "partial": false
   },
   {
@@ -570,7 +562,7 @@
    "count": 244,
    "total": 77623,
    "share": 31.434,
-   "tone": null,
+   "tone": -0.6895,
    "partial": false
   },
   {
@@ -578,7 +570,7 @@
    "count": 66,
    "total": 31912,
    "share": 20.682,
-   "tone": null,
+   "tone": -1.1035,
    "partial": true
   },
   {
@@ -586,7 +578,7 @@
    "count": 6,
    "total": 4483,
    "share": 13.384,
-   "tone": null,
+   "tone": -2.8178,
    "partial": true
   },
   {
@@ -594,7 +586,7 @@
    "count": 4,
    "total": 2218,
    "share": 18.034,
-   "tone": null,
+   "tone": -3.0834,
    "partial": true
   }
  ],
