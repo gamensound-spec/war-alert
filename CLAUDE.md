@@ -21,6 +21,7 @@
   - 출력: `data/embassy.json`(사이트), `data/embassy_state.json`(직전 단계·본 공지 ID), `data/embassy_log.csv`(일별 단계 누적).
 - `news_monitor.py` — 세계 언론 동향(GDELT DOC 2.0, 키 불필요). 지표는 하루 전체 기사 중 관련 기사 비율(만 건당). 직전 28일 중앙값·MAD로 robust z. z≥2 주의, z≥3이면서 2배 이상이면 경보. 덜 수집된 날(전체 기사량이 중앙값의 절반 미만)은 판단·그래프에서 제외. GDELT는 IP당 5초 1회 제한이 엄격해 429 시 15/30/60초 재시도, 논조·기사 목록은 실패해도 생략하고 진행. 출력 data/news.json.
 - `daily_report.py` — 세 모듈(대사관·호텔·언론)을 실행해 Gmail 한 통으로 발송. 제목 [경보]/[점검](모듈 실패)/[일간]. 한 모듈이 실패해도 나머지는 발송. 오류 메시지의 api_key는 가림.
+- `mail_report.py` — 일간 메일 HTML 템플릿. data/*.json을 읽어 판정 배너·요약 카드 3개·섹션별 표를 인라인 스타일 table 레이아웃으로 렌더(메일 앱이 <style> 제거). 호텔 위험도 판정은 index.html의 hotelRisk와 동일하게 유지. GDELT가 3일 넘게 지연되면 경고 표시. 메일은 텍스트+HTML multipart로 발송.
 - `index.html` — GitHub Pages 정적 사이트. `data/metrics.json`(호텔), `data/embassy.json`(대사관)을 따로 읽음. 외부 피드 문자열은 escape 후 출력. 언론 칸은 자리만 있음.
 - `.github/workflows/hotel.yml` — (이름 daily-monitor) 매일 KST 08:47 `daily_report.py` 실행, data/ 전체를 커밋.
 - 환경변수(GitHub Secrets): `SERPAPI_KEY`, `GMAIL_USER`, `GMAIL_APP_PASSWORD`, `MAIL_TO`.

@@ -3,12 +3,16 @@
 한 모듈이 실패해도 나머지는 그대로 보내고, 실패 사실을 본문에 적는다.
 """
 import re
+import smtplib
 import datetime as dt
 import traceback
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
 import hotel_monitor
 import embassy_monitor
 import news_monitor
+import mail_report
 
 
 def section(title, fn):
@@ -46,8 +50,20 @@ def run(mail=True):
     tag = "경보" if alerts else "점검" if fails else "일간"
     subject = f"[{tag}] 전쟁 위험 지표 {today}"
     if mail:
-        hotel_monitor.send_mail(subject, body, hotel_monitor.CHART_FILE)
+        send(subject, body, mail_report.build(today.isoformat(), alerts, fails))
     return subject, body
+
+
+def send(subject, text, html):
+    """HTML 메일. 텍스트 본문을 함께 넣어 HTML을 못 여는 앱에서도 읽히게 한다"""
+    h = hotel_monitor
+    msg = MIMEMultipart("alternative")
+    msg["Subject"], msg["From"], msg["To"] = subject, h.GMAIL_USER, h.MAIL_TO
+    msg.attach(MIMEText(text, "plain", "utf-8"))
+    msg.attach(MIMEText(html, "html", "utf-8"))
+    with smtplib.SMTP_SSL("smtp.gmail.com", 465) as s:
+        s.login(h.GMAIL_USER, h.GMAIL_APP_PASSWORD)
+        s.send_message(msg)
 
 
 if __name__ == "__main__":
