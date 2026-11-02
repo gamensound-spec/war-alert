@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-01T11:41+09:00",
+ "generated_at": "2026-11-02T11:50+09:00",
  "query": "(\"north korea\" OR \"korean peninsula\") (war OR missile OR attack OR invasion OR evacuation OR troops)",
  "config": {
   "base_days": 28,
@@ -21,14 +21,6 @@
   "z": 1.92
  },
  "series": [
-  {
-   "date": "2026-08-04",
-   "count": 174,
-   "total": 157631,
-   "share": 11.038,
-   "tone": -2.7754,
-   "partial": false
-  },
   {
    "date": "2026-08-05",
    "count": 302,
