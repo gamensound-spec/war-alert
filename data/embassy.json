@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-11-04T12:19+09:00",
- "today": "2026-11-04",
+ "generated_at": "2026-11-05T12:45+09:00",
+ "today": "2026-11-05",
  "recent_days": 30,
  "norm_labels": {
   "1": "일반 주의",
@@ -65,7 +65,7 @@
    "level": 0,
    "level_norm": 1,
    "level_text": "危険情報なし",
-   "updated": "2026-11-04T12:05+09:00",
+   "updated": "2026-11-05T12:25+09:00",
    "url": "https://www.anzen.mofa.go.jp/od/ryojiMail.html?countryCd=003",
    "changed": null,
    "latest": {
@@ -81,11 +81,11 @@
    "level": 1,
    "level_norm": 1,
    "level_text": "Keine Reisewarnung (경고 없음)",
-   "updated": "2026-10-13T19:08+09:00",
+   "updated": "2026-11-04T18:05+09:00",
    "url": "https://www.auswaertiges-amt.de/de/service/laender/korearepublik-node/korearepubliksicherheit-216132",
    "changed": null,
    "latest": {
-    "date": "2026-10-13T19:08+09:00",
+    "date": "2026-11-04T18:05+09:00",
     "title": "Redaktionelle Änderungen",
     "url": "https://www.auswaertiges-amt.de/de/service/laender/korearepublik-node/korearepubliksicherheit-216132"
    }
@@ -93,14 +93,13 @@
   {
    "source": "newzealand",
    "name": "뉴질랜드 SafeTravel",
-   "error": null,
+   "error": "HTTPError: 403 Client Error: Forbidden for url: https://www.safetravel.govt.nz/destinations/south-korea",
    "level": 1,
    "level_norm": 1,
    "level_text": "Exercise normal safety and security precautions",
    "updated": "2024-12-15T21:00+09:00",
    "url": "https://www.safetravel.govt.nz/destinations/south-korea",
-   "changed": null,
-   "latest": null
+   "changed": null
   },
   {
    "source": "singapore",

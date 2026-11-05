@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-02T11:50+09:00",
+ "generated_at": "2026-11-05T12:50+09:00",
  "query": "(\"north korea\" OR \"korean peninsula\") (war OR missile OR attack OR invasion OR evacuation OR troops)",
  "config": {
   "base_days": 28,
@@ -21,30 +21,6 @@
   "z": 1.92
  },
  "series": [
-  {
-   "date": "2026-08-05",
-   "count": 302,
-   "total": 175970,
-   "share": 17.162,
-   "tone": -3.0128,
-   "partial": false
-  },
-  {
-   "date": "2026-08-06",
-   "count": 293,
-   "total": 159186,
-   "share": 18.406,
-   "tone": -2.367,
-   "partial": false
-  },
-  {
-   "date": "2026-08-07",
-   "count": 125,
-   "total": 117971,
-   "share": 10.596,
-   "tone": -1.9104,
-   "partial": false
-  },
   {
    "date": "2026-08-08",
    "count": 133,
@@ -563,6 +539,14 @@
    "total": 2218,
    "share": 18.034,
    "tone": -3.0834,
+   "partial": true
+  },
+  {
+   "date": "2026-11-03",
+   "count": 12,
+   "total": 5672,
+   "share": 21.157,
+   "tone": -3.058,
    "partial": true
   }
  ],
