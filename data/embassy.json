@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-11-05T12:45+09:00",
- "today": "2026-11-05",
+ "generated_at": "2026-11-06T12:40+09:00",
+ "today": "2026-11-06",
  "recent_days": 30,
  "norm_labels": {
   "1": "일반 주의",
@@ -65,7 +65,7 @@
    "level": 0,
    "level_norm": 1,
    "level_text": "危険情報なし",
-   "updated": "2026-11-05T12:25+09:00",
+   "updated": "2026-11-06T12:26+09:00",
    "url": "https://www.anzen.mofa.go.jp/od/ryojiMail.html?countryCd=003",
    "changed": null,
    "latest": {
@@ -93,13 +93,14 @@
   {
    "source": "newzealand",
    "name": "뉴질랜드 SafeTravel",
-   "error": "HTTPError: 403 Client Error: Forbidden for url: https://www.safetravel.govt.nz/destinations/south-korea",
+   "error": null,
    "level": 1,
    "level_norm": 1,
    "level_text": "Exercise normal safety and security precautions",
    "updated": "2024-12-15T21:00+09:00",
    "url": "https://www.safetravel.govt.nz/destinations/south-korea",
-   "changed": null
+   "changed": null,
+   "latest": null
   },
   {
    "source": "singapore",
