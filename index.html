@@ -331,6 +331,19 @@ footer a{color:var(--ink2)}
     <p class="note">출처: OpenSky Network 익명 API. 참고 지표 · 신뢰도 낮음 · 경보 없음 · 하루 한 시점 스냅샷. 전체 경보 집계에 포함하지 않습니다.</p>
   </section>
 
+  <section id="sec-usfk">
+    <div class="sec-h">
+      <span class="num">07</span>
+      <div class="grow">
+        <h2>주한미군·공관 관련 공개 보도 신호 <span class="sub">참고 지표</span></h2>
+        <p>비전투원 후송·경계태세·가족 이동 관련 보도의 최근 24시간 건수를 직전 28일 같은 그룹의 하루 건수와 비교합니다. 훈련 제목은 별도로 세며, 보도 건수가 실제 직원·부대 움직임을 직접 보여주지는 않습니다.</p>
+      </div>
+      <span class="trust low">신뢰도 낮음</span>
+    </div>
+    <div id="usfkBody" aria-live="polite"><p class="placeholder">공개 보도 데이터를 불러오는 중입니다.</p></div>
+    <p class="note">출처: Google News RSS 검색 · 하루 1회 수집. 참고 지표 · 신뢰도 낮음 · 경보 없음. 전체 경보 집계에 포함하지 않습니다.</p>
+  </section>
+
   <footer>
     <p>이 사이트는 공개된 정보를 자동으로 모은 참고용 지표이며, 정부의 공식 경보가 아닙니다. 실제 상황은 <a href="https://www.0404.go.kr" target="_blank" rel="noopener">외교부 해외안전여행</a>과 <a href="https://www.safekorea.go.kr" target="_blank" rel="noopener">국민재난안전포털</a>에서 확인하세요.</p>
     <p>출처: 미 국무부 Travel Advisory · 영국 FCDO · 캐나다 Travel Advice · 일본 외무성 해외안전정보 · 독일 외무부 · 뉴질랜드 SafeTravel · 싱가포르 외교부 · 중국 외교부 영사서비스망 · 주한 미국대사관 · Google Hotels(SerpApi) · GDELT Project</p>
@@ -372,14 +385,15 @@ const CC={us_state:'US',uk_fcdo:'UK',canada:'CA',japan:'JP',germany:'DE',newzeal
 const get=u=>fetch(u,{cache:'no-store'}).then(r=>{if(!r.ok)throw 0;return r.json()});
 let D=null,E=null,sel=1;
 
-let N=null,M=null,A=null,F=null;
-Promise.allSettled([get('data/embassy.json'),get('data/metrics.json'),get('data/news.json'),get('data/market.json'),get('data/attention.json'),get('data/air.json')]).then(([e,h,n,m,a,f])=>{
+let N=null,M=null,A=null,F=null,U=null;
+Promise.allSettled([get('data/embassy.json'),get('data/metrics.json'),get('data/news.json'),get('data/market.json'),get('data/attention.json'),get('data/air.json'),get('data/usfk.json')]).then(([e,h,n,m,a,f,u])=>{
   E=e.status==='fulfilled'?e.value:null; D=h.status==='fulfilled'?h.value:null; N=n.status==='fulfilled'?n.value:null;
   M=m.status==='fulfilled'?m.value:null;
   A=a.status==='fulfilled'?a.value:null; F=f.status==='fulfilled'?f.value:null;
+  U=u.status==='fulfilled'?u.value:null;
   hero();
   market();
-  attention(); air();
+  attention(); air(); usfk();
   N?news():empty('newsBody','언론 데이터를 기다리는 중입니다','다음 자동 수집 후 표시됩니다.');
   E?embassy():empty('embBody','아직 수집된 데이터가 없습니다','첫 자동 수집 후 표시됩니다.');
   D?initHotel():empty('hotelBody','호텔 가격 데이터를 기다리는 중입니다','검색 설정을 점검하고 있습니다. 수집이 시작되면 같은 요일 표본이 4개 쌓인 뒤부터 이상치를 판단합니다.');
@@ -541,6 +555,23 @@ function air(){
   if(Array.isArray(l.top_countries))details.push(...l.top_countries.slice(0,3).map(row=>`${row.country||'—'} ${row.count??0}대`));
   if(F.error)details.unshift(`수집 실패: ${F.error}`,Object.keys(l).length?'직전 관측값 유지':'이전 관측값 없음');
   document.getElementById('airBody').innerHTML=`<div class="tiles market-tiles">${referenceTile('OpenSky Network (익명 API)',F.error?'muted':F.status,value,details)}</div>`;
+}
+
+function usfk(){
+  if(!U||typeof U!=='object'){
+    empty('usfkBody','공개 보도 데이터를 기다리는 중입니다','다음 자동 수집 후 표시됩니다.');return;
+  }
+  const cards=[['evac','비전투원 후송'],['readiness','경계태세'],['families','가족·이동']].map(([group,label])=>{
+    const item=U.groups?.[group]||{};
+    const value=Number.isFinite(item.hits_24h)?`24시간 ${item.hits_24h}건`:'이전 관측값 없음';
+    const details=[`${item.date||'—'} · 7일 ${item.hits_7d??'—'}건 · 훈련 ${item.training_7d??'—'}건 제외`,item.note||'판단 보류',`24시간 서로 다른 매체 ${item.sources_24h??'—'}곳`];
+    if(item.error)details.unshift(`수집 실패: ${item.error}`,Number.isFinite(item.hits_24h)?'직전 관측값 유지':'이전 관측값 없음');
+    return referenceTile(label,item.error?'muted':item.status,value,details);
+  });
+  const watch=(Array.isArray(U.watch)?U.watch:[]).map(item=>`<p class="note">${esc(item)}</p>`).join('');
+  const headlines=(Array.isArray(U.headlines)?U.headlines.slice(0,8):[]).map(item=>
+    `<div class="tile"><a href="${safeUrl(item.link)}" target="_blank" rel="noopener noreferrer">${esc(item.title)}</a><div class="h">${esc(item.source)} · ${esc(item.date)}</div></div>`).join('');
+  document.getElementById('usfkBody').innerHTML=`<div class="tiles market-tiles">${cards.join('')}</div>${watch}<div class="tiles market-tiles">${headlines}</div>`;
 }
 
 /* ───── 호텔 ───── */

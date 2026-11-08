@@ -4,6 +4,7 @@
 """
 import json, statistics, datetime as dt
 from html import escape
+from urllib.parse import urlsplit
 
 SITE = "https://reset589.com"
 C = {"crit": "#d03b3b", "warn": "#e3a008", "good": "#1f9d55", "muted": "#8b8982"}
@@ -233,8 +234,37 @@ def air_html(A):
     return reference_box("OpenSky Network (익명 API)", "muted" if A.get("error") else A.get("status"), value, details)
 
 
+def usfk_html(U):
+    if not isinstance(U, dict):
+        return '<p style="font-size:13px;color:#55534e">공개 보도 데이터를 기다리는 중입니다.</p>'
+    cards = []
+    for group, label in (("evac", "비전투원 후송"), ("readiness", "경계태세"), ("families", "가족·이동")):
+        item = (U.get("groups") or {}).get(group) or {}
+        hits = item.get("hits_24h")
+        value = f"24시간 {hits}건" if hits is not None else "이전 관측값 없음"
+        details = [f"{item.get('date') or '—'} · 7일 {item.get('hits_7d', '—')}건 · 훈련 {item.get('training_7d', '—')}건 제외",
+                   item.get("note") or "판단 보류", f"24시간 서로 다른 매체 {item.get('sources_24h', '—')}곳"]
+        if item.get("error"):
+            details = [f"수집 실패: {item['error']}", "직전 관측값 유지" if hits is not None else "이전 관측값 없음", *details]
+        cards.append(reference_box(label, "muted" if item.get("error") else item.get("status"), value, details))
+    cards += [sub(escape(str(item))) for item in (U.get("watch") or [])]
+    for item in (U.get("headlines") or [])[:8]:
+        title = escape(str(item.get("title") or ""))
+        link = str(item.get("link") or "")
+        try:
+            parsed = urlsplit(link)
+            valid = parsed.scheme.lower() in ("http", "https") and bool(parsed.netloc) and not any(c.isspace() for c in link)
+        except ValueError:
+            valid = False
+        if valid:
+            title = f'<a href="{escape(link, quote=True)}" style="color:#141413">{title}</a>'
+        cards.append('<div style="padding:8px 0;font-size:13px">' + title
+                     + sub(escape(str(item.get("source") or "")) + " · " + escape(str(item.get("date") or ""))) + '</div>')
+    return "".join(cards)
+
+
 # ───────── 전체 ─────────
-def render(today, alerts, fails, E, D, N, M=None, A=None, F=None):
+def render(today, alerts, fails, E, D, N, M=None, A=None, F=None, U=None):
     if alerts:
         vk, verdict, lead = "crit", f"경보 {len(alerts)}건", "아래 경보 내용을 먼저 확인하세요."
     elif fails:
@@ -289,6 +319,7 @@ def render(today, alerts, fails, E, D, N, M=None, A=None, F=None):
     body += section("04 시장 스트레스", "참고 지표 · 대리 지표 · 신뢰도 낮음 · 경보 없음 · 출처: Yahoo Finance (비공식 API)", market_html(M, today))
     body += section("05 대중 관심도", "참고 지표 · 신뢰도 낮음 · 경보 없음 · 출처: Wikimedia Pageviews · Google Trends KR RSS", attention_html(A))
     body += section("06 항공 교통", "참고 지표 · 신뢰도 낮음 · 경보 없음 · 출처: OpenSky Network (익명 API) · 하루 한 시점 스냅샷", air_html(F))
+    body += section("07 주한미군·공관 관련 공개 보도 신호", "참고 지표 · 신뢰도 낮음 · 경보 없음 · 출처: Google News RSS · 훈련 보도 제외 · 실제 움직임을 직접 보여주지 않습니다", usfk_html(U))
 
     return f"""<!doctype html><html><body style="margin:0;padding:0;background:#f4f3ef">
 <table width="100%" cellpadding="0" cellspacing="0" style="background:#f4f3ef"><tr><td align="center" style="padding:16px 8px">
@@ -312,4 +343,4 @@ def render(today, alerts, fails, E, D, N, M=None, A=None, F=None):
 
 def build(today, alerts, fails):
     return render(today, alerts, fails, load("data/embassy.json"), load("data/metrics.json"), load("data/news.json"),
-                  load("data/market.json"), load("data/attention.json"), load("data/air.json"))
+                  load("data/market.json"), load("data/attention.json"), load("data/air.json"), load("data/usfk.json"))
