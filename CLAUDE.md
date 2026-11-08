@@ -52,6 +52,6 @@ python -c "import mail_report; open('/tmp/mail.html','w').write(mail_report.buil
 - 실제 수집·발송(`python daily_report.py`)은 환경변수가 필요하고 SerpApi 사용량을 소모하므로 로컬에서는 가급적 돌리지 않는다. GDELT는 로컬 IP에서 429가 잦다.
 
 ## 현황·다음 할 일
-- GDELT DOC API 색인이 2026-10-25경부터 멈춤(원본 15분 파일은 정상 갱신). 일별 수치가 10-27에서 끝나고 기사 목록 0건. 코드 문제 아님, 복구 대기 중. 몇 주 이상 지속되면 원본 GKG 파일 기반 대체 경로 검토.
+- GDELT DOC API 색인은 10-25경 멈췄다가 11-08 수동 실행에서 복구 확인(latest 11-06). 정지 기간 동안 Actions에서 429가 풀리지 않아 11-06~08 언론 모듈이 실패했다. 대비책으로 `gdelt_gkg.py` 폴백 추가: DOC 실패·빈 데이터·3일 초과 지연 시 GKG 15분 원본 파일(하루 96개, 약 265MiB, 약 20초)을 집계해 `data/news_gkg_daily.csv`에 누적(실행당 최대 3일). 매칭 범위가 DOC보다 훨씬 좁아(하루 2건 안팎) 과거 DOC 시리즈는 섞지 않고 GKG 단독 기준선을 쓴다(14일 전까지 판단 보류). news.json에 `source`(gdelt-doc|gdelt-gkg) 필드. Actions에서 폴백 실제 실행은 아직 검증 전 — DOC가 다시 실패하는 날 로그 확인. 인수인계 문서: docs/handoff/gdelt-gkg-fallback/.
 - 호텔 z-score는 표본이 쌓여야 의미 있음(같은 요일 4개 = 약 4주, 임시 기준 7일).
 - SerpApi 무료 250회/월, 현재 하루 4회(약 120회/월).
