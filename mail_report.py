@@ -126,14 +126,23 @@ def embassy_html(E):
 
 
 def hotel_html(D):
+    """폰 메일 앱에서 숫자가 글자 단위로 꺾이지 않도록, 위험도 칩은 행 아래 한 줄로 내리고 숫자 칸은 줄바꿈을 막는다"""
+    th = "".join(f'<th style="text-align:{a};font-size:11.5px;color:#8b8982;font-weight:500;padding:8px 6px;'
+                 f'border-bottom:1px solid #e6e5df;white-space:nowrap">{h}</th>'
+                 for h, a in zip(["체크인", "하얏트", "대조군 중앙", "비율"], ["left", "right", "right", "right"]))
+    cell = 'font-size:13px;color:#141413;padding:8px 6px 2px;vertical-align:top;white-space:nowrap'
     rows = []
     for o in D["config"]["offsets"]:
         s = [r for r in D["series"] if r["offset"] == o]
         l = s[-1] if s else {}
         k, t = hotel_risk(D, o)
-        rows.append([f"D+{o}", won(l.get("target_price")), won(l.get("control_median")),
-                     f'{l["ratio"]:.2f}' if l.get("ratio") is not None else "—", chip(k, t)])
-    return (table(["체크인", "하얏트", "대조군 중앙", "비율", "위험도"], rows, ["left", "right", "right", "right", "left"])
+        ratio = f'{l["ratio"]:.2f}' if l.get("ratio") is not None else "—"
+        rows.append(f'<tr><td style="text-align:left;{cell}">D+{o}</td>'
+                    f'<td style="text-align:right;{cell}">{won(l.get("target_price"))}</td>'
+                    f'<td style="text-align:right;{cell}">{won(l.get("control_median"))}</td>'
+                    f'<td style="text-align:right;{cell}">{ratio}</td></tr>'
+                    f'<tr><td colspan="4" style="text-align:left;padding:0 6px 8px;border-bottom:1px solid #f0efea">{chip(k, t)}</td></tr>')
+    return (f'<table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse">{th}{"".join(rows)}</table>'
             + '<div style="font-size:12px;color:#8b8982;padding:10px 0 6px">비율 = 하얏트 ÷ 대조군(신라·반얀트리·포시즌스·JW메리어트) 중앙값. '
               '평소보다 <b style="color:#55534e">오르면</b> 위험 신호, 내려가는 건 위험 아님.</div>')
 
