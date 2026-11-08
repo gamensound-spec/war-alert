@@ -32,8 +32,26 @@ def gdelt(mode, **extra):
     raise RuntimeError("GDELT 요청 제한(429)이 풀리지 않음")
 
 
-def fetch():
-    vol = gdelt("timelinevolraw", timespan="90d")["timeline"][0]["data"]
+def fetch(today=None):
+    today = today or dt.datetime.now(dt.timezone.utc).date()
+    try:
+        vol = gdelt("timelinevolraw", timespan="90d")["timeline"][0]["data"]
+        days = []
+        for d in vol:
+            k = d["date"][:8]
+            date = dt.datetime.strptime(k, "%Y%m%d").date().isoformat()
+            days.append({"date": date, "count": d["value"], "total": d["norm"],
+                         "share": round(d["value"] / d["norm"] * 1e4, 3) if d["norm"] else None,
+                         "tone": None, "source": "gdelt-doc"})
+        days.sort(key=lambda day: day["date"])
+        # evaluate()와 같은 완전성 기준을 쓰되 원본 series를 변경하지 않는다.
+        latest = evaluate([dict(day) for day in days])[3]
+        if (today - dt.date.fromisoformat(latest["date"])).days > 3:
+            raise RuntimeError(f"GDELT DOC 일별 데이터 지연: {latest['date']}")
+    except (requests.RequestException, RuntimeError, ValueError, KeyError, IndexError, TypeError) as exc:
+        print(f"GDELT DOC → GKG 폴백: {exc}")
+        import gdelt_gkg
+        return gdelt_gkg.fetch(today=today, json_file=JSON_FILE)
     # 논조·기사 목록은 부가 정보. 제한에 걸려도 판단은 계속한다
     try:
         tone = {d["date"][:8]: d["value"] for d in gdelt("timelinetone", timespan="90d")["timeline"][0]["data"]}
@@ -45,12 +63,8 @@ def fetch():
     except Exception as e:
         print(f"GDELT 기사 목록 생략: {e}")
         arts = []
-    days = []
-    for d in vol:
-        k = d["date"][:8]
-        days.append({"date": f"{k[:4]}-{k[4:6]}-{k[6:]}", "count": d["value"], "total": d["norm"],
-                     "share": round(d["value"] / d["norm"] * 1e4, 3) if d["norm"] else None,
-                     "tone": tone.get(k)})
+    for day in days:
+        day["tone"] = tone.get(day["date"].replace("-", ""))
     return days, arts
 
 
@@ -96,7 +110,7 @@ def articles(arts, n=12):
     out, seen = [], set()
     for a in arts:
         t = (a.get("title") or "").strip()
-        key = t.lower()[:60]
+        key = a.get("url") if a.get("source") == "gdelt-gkg" else t.lower()[:60]
         if not t or key in seen:
             continue
         seen.add(key)
@@ -115,6 +129,7 @@ def run(fetcher=fetch):
     os.makedirs("data", exist_ok=True)
     out = {
         "generated_at": dt.datetime.now(KST).isoformat(timespec="minutes"),
+        "source": max(days, key=lambda d: d["date"]).get("source", "gdelt-doc"),
         "query": QUERY,
         "config": {"base_days": BASE_DAYS, "min_base": MIN_BASE, "z_watch": Z_WATCH,
                    "z_alert": Z_ALERT, "ratio_alert": RATIO_ALERT},
