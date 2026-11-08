@@ -80,7 +80,7 @@ class ParsingTests(unittest.TestCase):
         self.assertEqual((result["total"], result["count"]), (6, 3))
         self.assertEqual((result["tone_sum"], result["tone_n"]), (0, 2))
         self.assertEqual(len(result["articles"]), 3)
-        self.assertIn("example.org | https://", result["articles"][0]["title"])
+        self.assertEqual(result["articles"][0]["title"], "North korea missile — example.org")
         fields = record("https://example.org/unrelated").rstrip("\n").split("\t")
         fields[7] = "NORTH_KOREA;WAR;"  # V1Themes는 조회하지 않는다.
         fields[9] = "North Korea war"  # Locations도 조회하지 않는다.
@@ -424,3 +424,21 @@ class FallbackTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class ReadableTitleTests(unittest.TestCase):
+    def test_slug_becomes_sentence_with_domain(self):
+        self.assertEqual(
+            gkg.readable_title("https://www.rappler.com/technology/features/north-korea-army-world-class-hackers-binance-hack-profile/"),
+            "North korea army world class hackers binance hack profile — rappler.com")
+
+    def test_ids_extensions_and_short_slugs(self):
+        self.assertEqual(gkg.readable_title("https://www.northkoreatimes.com/news/279409153/how-north-korea-became-a-world-leader.html"),
+                         "How north korea became a world leader — northkoreatimes.com")
+        self.assertEqual(gkg.readable_title("https://example.org/a/12345"), "example.org")
+        self.assertEqual(gkg.readable_title("https://example.org/"), "example.org")
+
+    def test_long_slug_is_truncated_and_unquoted(self):
+        title = gkg.readable_title("https://example.org/" + "-".join(["word"] * 40))
+        self.assertTrue(title.endswith("… — example.org") and len(title) < 120)
+        self.assertIn("é", gkg.readable_title("https://example.org/caf%C3%A9-au-lait-en-s%C3%A9oul"))

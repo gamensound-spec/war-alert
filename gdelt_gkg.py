@@ -8,7 +8,7 @@ import math
 from pathlib import Path
 import re
 import time
-from urllib.parse import unquote_plus, urlsplit
+from urllib.parse import unquote, unquote_plus, urlsplit
 import zipfile
 
 import requests
@@ -29,6 +29,26 @@ def day_urls(day):
     """masterfilelist 전체를 받지 않고 날짜 규칙으로 96개 URL을 만든다."""
     return [f"{BASE_URL}/{day:%Y%m%d}{hour:02d}{minute:02d}00.gkg.csv.zip"
             for hour in range(24) for minute in range(0, 60, 15)]
+
+
+def readable_title(url):
+    """GKG에는 제목이 없으므로 URL 마지막 경로 슬러그를 문장처럼 풀어 쓴다(원문 요청 없음).
+    슬러그가 의미 없으면 도메인만 쓴다."""
+    parsed = urlsplit(url)
+    domain = parsed.netloc.lower().removeprefix("www.")
+    segments = [unquote(part) for part in parsed.path.split("/") if part]
+    slug = ""
+    for part in reversed(segments):
+        part = re.sub(r"\.(html?|php|aspx?|shtml)$", "", part, flags=re.IGNORECASE)
+        words = [w for w in re.split(r"[-_+\s]+", part) if w and not re.fullmatch(r"[0-9a-fA-F]{6,}|\d+", w)]
+        if len(words) >= 3:
+            slug = " ".join(words)
+            break
+    if not slug:
+        return domain
+    if len(slug) > 90:
+        slug = slug[:90].rsplit(" ", 1)[0] + "…"
+    return f"{slug[0].upper()}{slug[1:]} — {domain}"
 
 
 def aggregate(lines):
@@ -64,7 +84,7 @@ def aggregate(lines):
                 and parsed.scheme in ("http", "https") and parsed.netloc):
             seen.add(url)
             # GKG에는 기사 제목 컬럼이 없다. 원문 사이트에 추가 요청하지 않는다.
-            arts.append({"title": f"{parsed.netloc} | {url}", "url": url,
+            arts.append({"title": readable_title(url), "url": url,
                          "domain": parsed.netloc, "language": "English",
                          "seendate": fields[1], "source": "gdelt-gkg"})
     return {"count": count, "total": total, "tone_sum": tone_sum,
