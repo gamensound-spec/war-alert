@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-08T18:28+09:00",
+ "generated_at": "2026-11-08T23:27+09:00",
  "source": "gdelt-doc",
  "query": "(\"north korea\" OR \"korean peninsula\") (war OR missile OR attack OR invasion OR evacuation OR troops)",
  "config": {
@@ -15,7 +15,7 @@
   "date": "2026-11-06",
   "share": 7.893,
   "count": 44,
-  "tone": null,
+  "tone": -2.9597,
   "base_n": 28,
   "median": 15.991,
   "ratio": 0.49,
@@ -27,7 +27,7 @@
    "count": 309,
    "total": 131138,
    "share": 23.563,
-   "tone": null,
+   "tone": -3.9892,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -36,7 +36,7 @@
    "count": 320,
    "total": 140458,
    "share": 22.783,
-   "tone": null,
+   "tone": -2.6781,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -45,7 +45,7 @@
    "count": 326,
    "total": 179907,
    "share": 18.12,
-   "tone": null,
+   "tone": -2.2601,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -54,7 +54,7 @@
    "count": 193,
    "total": 194350,
    "share": 9.931,
-   "tone": null,
+   "tone": -2.6333,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -63,7 +63,7 @@
    "count": 220,
    "total": 108259,
    "share": 20.322,
-   "tone": null,
+   "tone": -1.3369,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -72,7 +72,7 @@
    "count": 380,
    "total": 103863,
    "share": 36.587,
-   "tone": null,
+   "tone": -3.037,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -81,7 +81,7 @@
    "count": 904,
    "total": 116203,
    "share": 77.795,
-   "tone": null,
+   "tone": -1.9648,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -90,7 +90,7 @@
    "count": 653,
    "total": 169174,
    "share": 38.599,
-   "tone": null,
+   "tone": -1.4926,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -99,7 +99,7 @@
    "count": 642,
    "total": 157610,
    "share": 40.733,
-   "tone": null,
+   "tone": -1.6416,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -108,7 +108,7 @@
    "count": 650,
    "total": 171970,
    "share": 37.797,
-   "tone": null,
+   "tone": -1.2599,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -117,7 +117,7 @@
    "count": 472,
    "total": 160721,
    "share": 29.368,
-   "tone": null,
+   "tone": -1.9129,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -126,7 +126,7 @@
    "count": 149,
    "total": 98241,
    "share": 15.167,
-   "tone": null,
+   "tone": -2.67,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -135,7 +135,7 @@
    "count": 127,
    "total": 88414,
    "share": 14.364,
-   "tone": null,
+   "tone": -2.4968,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -144,7 +144,7 @@
    "count": 191,
    "total": 117661,
    "share": 16.233,
-   "tone": null,
+   "tone": -2.319,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -153,7 +153,7 @@
    "count": 138,
    "total": 132186,
    "share": 10.44,
-   "tone": null,
+   "tone": -2.7507,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -162,7 +162,7 @@
    "count": 135,
    "total": 179831,
    "share": 7.507,
-   "tone": null,
+   "tone": -2.1937,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -171,7 +171,7 @@
    "count": 128,
    "total": 172877,
    "share": 7.404,
-   "tone": null,
+   "tone": -3.0398,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -180,7 +180,7 @@
    "count": 169,
    "total": 125894,
    "share": 13.424,
-   "tone": null,
+   "tone": -2.2998,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -189,7 +189,7 @@
    "count": 54,
    "total": 91911,
    "share": 5.875,
-   "tone": null,
+   "tone": -3.3036,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -198,7 +198,7 @@
    "count": 90,
    "total": 79465,
    "share": 11.326,
-   "tone": null,
+   "tone": -2.132,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -207,7 +207,7 @@
    "count": 78,
    "total": 107519,
    "share": 7.255,
-   "tone": null,
+   "tone": -2.7005,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -216,7 +216,7 @@
    "count": 88,
    "total": 116481,
    "share": 7.555,
-   "tone": null,
+   "tone": -1.385,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -225,7 +225,7 @@
    "count": 101,
    "total": 105316,
    "share": 9.59,
-   "tone": null,
+   "tone": -2.2152,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -234,7 +234,7 @@
    "count": 72,
    "total": 120602,
    "share": 5.97,
-   "tone": null,
+   "tone": -2.2347,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -243,7 +243,7 @@
    "count": 95,
    "total": 156481,
    "share": 6.071,
-   "tone": null,
+   "tone": -0.8379,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -252,7 +252,7 @@
    "count": 43,
    "total": 102774,
    "share": 4.184,
-   "tone": null,
+   "tone": -2.1451,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -261,7 +261,7 @@
    "count": 42,
    "total": 98645,
    "share": 4.258,
-   "tone": null,
+   "tone": -4.0756,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -270,7 +270,7 @@
    "count": 246,
    "total": 118079,
    "share": 20.834,
-   "tone": null,
+   "tone": -1.5563,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -279,7 +279,7 @@
    "count": 114,
    "total": 77318,
    "share": 14.744,
-   "tone": null,
+   "tone": -0.6972,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -288,7 +288,7 @@
    "count": 127,
    "total": 158938,
    "share": 7.991,
-   "tone": null,
+   "tone": -2.0538,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -297,7 +297,7 @@
    "count": 125,
    "total": 155062,
    "share": 8.061,
-   "tone": null,
+   "tone": -1.163,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -306,7 +306,7 @@
    "count": 118,
    "total": 154253,
    "share": 7.65,
-   "tone": null,
+   "tone": -2.4763,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -315,7 +315,7 @@
    "count": 195,
    "total": 120863,
    "share": 16.134,
-   "tone": null,
+   "tone": -2.0004,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -324,7 +324,7 @@
    "count": 20,
    "total": 29203,
    "share": 6.849,
-   "tone": null,
+   "tone": -1.2516,
    "source": "gdelt-doc",
    "partial": true
   },
@@ -333,7 +333,7 @@
    "count": 292,
    "total": 105485,
    "share": 27.682,
-   "tone": null,
+   "tone": -2.3591,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -342,7 +342,7 @@
    "count": 175,
    "total": 108510,
    "share": 16.128,
-   "tone": null,
+   "tone": -3.226,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -351,7 +351,7 @@
    "count": 184,
    "total": 105779,
    "share": 17.395,
-   "tone": null,
+   "tone": -1.401,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -360,7 +360,7 @@
    "count": 319,
    "total": 149817,
    "share": 21.293,
-   "tone": null,
+   "tone": -1.9387,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -369,7 +369,7 @@
    "count": 322,
    "total": 155942,
    "share": 20.649,
-   "tone": null,
+   "tone": -2.3174,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -378,7 +378,7 @@
    "count": 150,
    "total": 58811,
    "share": 25.505,
-   "tone": null,
+   "tone": -1.4612,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -387,7 +387,7 @@
    "count": 88,
    "total": 77392,
    "share": 11.371,
-   "tone": null,
+   "tone": -3.1422,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -396,7 +396,7 @@
    "count": 272,
    "total": 121105,
    "share": 22.46,
-   "tone": null,
+   "tone": -3.5538,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -405,7 +405,7 @@
    "count": 602,
    "total": 134919,
    "share": 44.619,
-   "tone": null,
+   "tone": -4.02,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -414,7 +414,7 @@
    "count": 193,
    "total": 111356,
    "share": 17.332,
-   "tone": null,
+   "tone": -2.9385,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -423,7 +423,7 @@
    "count": 168,
    "total": 174731,
    "share": 9.615,
-   "tone": null,
+   "tone": -2.6307,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -432,7 +432,7 @@
    "count": 136,
    "total": 61712,
    "share": 22.038,
-   "tone": null,
+   "tone": -3.4042,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -441,7 +441,7 @@
    "count": 2,
    "total": 3958,
    "share": 5.053,
-   "tone": null,
+   "tone": -1.7031,
    "source": "gdelt-doc",
    "partial": true
   },
@@ -450,7 +450,7 @@
    "count": 1,
    "total": 678,
    "share": 14.749,
-   "tone": null,
+   "tone": -2.8986,
    "source": "gdelt-doc",
    "partial": true
   },
@@ -459,7 +459,7 @@
    "count": 6,
    "total": 1836,
    "share": 32.68,
-   "tone": null,
+   "tone": -1.2957,
    "source": "gdelt-doc",
    "partial": true
   },
@@ -468,7 +468,7 @@
    "count": 92,
    "total": 95273,
    "share": 9.656,
-   "tone": null,
+   "tone": -1.76,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -477,7 +477,7 @@
    "count": 104,
    "total": 150288,
    "share": 6.92,
-   "tone": null,
+   "tone": -1.9895,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -486,7 +486,7 @@
    "count": 93,
    "total": 94046,
    "share": 9.889,
-   "tone": null,
+   "tone": -2.0199,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -495,7 +495,7 @@
    "count": 40,
    "total": 76163,
    "share": 5.252,
-   "tone": null,
+   "tone": -1.7025,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -504,7 +504,7 @@
    "count": 138,
    "total": 146057,
    "share": 9.448,
-   "tone": null,
+   "tone": -3.2167,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -513,7 +513,7 @@
    "count": 248,
    "total": 156425,
    "share": 15.854,
-   "tone": null,
+   "tone": -3.4316,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -522,7 +522,7 @@
    "count": 190,
    "total": 166970,
    "share": 11.379,
-   "tone": null,
+   "tone": -3.5409,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -531,7 +531,7 @@
    "count": 147,
    "total": 123805,
    "share": 11.874,
-   "tone": null,
+   "tone": -4.3495,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -540,7 +540,7 @@
    "count": 114,
    "total": 69302,
    "share": 16.45,
-   "tone": null,
+   "tone": -2.786,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -549,7 +549,7 @@
    "count": 244,
    "total": 77623,
    "share": 31.434,
-   "tone": null,
+   "tone": -0.6895,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -558,7 +558,7 @@
    "count": 66,
    "total": 31912,
    "share": 20.682,
-   "tone": null,
+   "tone": -1.1035,
    "source": "gdelt-doc",
    "partial": true
   },
@@ -567,7 +567,7 @@
    "count": 6,
    "total": 4483,
    "share": 13.384,
-   "tone": null,
+   "tone": -2.8178,
    "source": "gdelt-doc",
    "partial": true
   },
@@ -576,7 +576,7 @@
    "count": 4,
    "total": 2218,
    "share": 18.034,
-   "tone": null,
+   "tone": -3.0834,
    "source": "gdelt-doc",
    "partial": true
   },
@@ -585,7 +585,7 @@
    "count": 12,
    "total": 5672,
    "share": 21.157,
-   "tone": null,
+   "tone": -3.058,
    "source": "gdelt-doc",
    "partial": true
   },
@@ -594,7 +594,7 @@
    "count": 10,
    "total": 2220,
    "share": 45.045,
-   "tone": null,
+   "tone": -5.1021,
    "source": "gdelt-doc",
    "partial": true
   },
@@ -603,7 +603,7 @@
    "count": 7,
    "total": 7479,
    "share": 9.36,
-   "tone": null,
+   "tone": -4.1554,
    "source": "gdelt-doc",
    "partial": true
   },
@@ -612,7 +612,7 @@
    "count": 44,
    "total": 55749,
    "share": 7.893,
-   "tone": null,
+   "tone": -2.9597,
    "source": "gdelt-doc",
    "partial": false
   },
@@ -621,10 +621,116 @@
    "count": 46,
    "total": 29862,
    "share": 15.404,
-   "tone": null,
+   "tone": -2.0514,
+   "source": "gdelt-doc",
+   "partial": true
+  },
+  {
+   "date": "2026-11-08",
+   "count": 10,
+   "total": 12877,
+   "share": 7.766,
+   "tone": -2.7818,
    "source": "gdelt-doc",
    "partial": true
   }
  ],
- "articles": []
+ "articles": [
+  {
+   "title": "俄羅斯狂轟36彈 ！ 首證實北韓KN - 23 烏克蘭防空僅攔截到4枚 | 國際",
+   "url": "https://newtalk.tw/news/view/2026-11-08/1069950",
+   "domain": "newtalk.tw",
+   "language": "Chinese",
+   "country": "Taiwan",
+   "date": "2026-11-08"
+  },
+  {
+   "title": "زيلينسكي : روسيا كثفت هجماتها على أوكرانيا باستخدام صواريخ كورية شمالية",
+   "url": "https://sana.sy/international/2628678/",
+   "domain": "sana.sy",
+   "language": "Arabic",
+   "country": "Syria",
+   "date": "2026-11-07"
+  },
+  {
+   "title": "Росіяни могли вдарити ракетами КНДР по ключовому енергооб  єкту України – Зеленський",
+   "url": "https://podrobnosti.ua/2522196-rosjani-mogli-vdariti-raketami-kndr-po-kljuchovomu-energoobktu-ukrani-zelenskij.html",
+   "domain": "podrobnosti.ua",
+   "language": "Ukrainian",
+   "country": "Ukraine",
+   "date": "2026-11-07"
+  },
+  {
+   "title": "Ukraina tuding Rusia gunakan rudal Korut dalam serangan ke Kyiv",
+   "url": "https://www.antaranews.com/berita/5839883/ukraina-tuding-rusia-gunakan-rudal-korut-dalam-serangan-ke-kyiv",
+   "domain": "antaranews.com",
+   "language": "Indonesian",
+   "country": "Indonesia",
+   "date": "2026-11-08"
+  },
+  {
+   "title": "Обстріл 7 листопада : росіяни застосували 36 балістичних ракет , у тому числі з КНДР",
+   "url": "https://zaxid.net/vnochi_rosiyani_zastosuvali_dlya_udariv_po_ukrayini_pivnichnokoreyski_balistichni_raketi_n1649630",
+   "domain": "zaxid.net",
+   "language": "Ukrainian",
+   "country": "Ukraine",
+   "date": "2026-11-07"
+  },
+  {
+   "title": "美 육군 새 교리 vs 中 우주력 경쟁 … 韓 종심 방어의 골든타임은 [ 이종윤의 밀리터리 월드 ]",
+   "url": "https://www.fnnews.com/news/202611081851224252",
+   "domain": "fnnews.com",
+   "language": "Korean",
+   "country": "South Korea",
+   "date": "2026-11-08"
+  },
+  {
+   "title": "Zelensky : Rusland gebruikte Noord - Koreaanse raketten",
+   "url": "https://www.dagelijksestandaard.nl/nieuws/zelensky-rusland-gebruikte-noord-koreaanse-raketten",
+   "domain": "dagelijksestandaard.nl",
+   "language": "Dutch",
+   "country": "Netherlands",
+   "date": "2026-11-07"
+  },
+  {
+   "title": "Binance ostao bez finansijskog direktora nakon velike krađe",
+   "url": "https://www.blic.rs/biznis/tech/binance-ostao-bez-finansijskog-direktora-nakon-velike-kradje/h4jnkqb",
+   "domain": "blic.rs",
+   "language": "Serbian",
+   "country": "Serbia",
+   "date": "2026-11-08"
+  },
+  {
+   "title": "Zelenski : Moskva koristila severnokorejske rakete za napade na energetsku mrežu",
+   "url": "https://naslovi.net/2026-11-08/danas/zelenski-moskva-koristila-severnokorejske-rakete-za-napade-na-energetsku-mrezu/42580367",
+   "domain": "naslovi.net",
+   "language": "Serbian",
+   "country": "Serbia",
+   "date": "2026-11-07"
+  },
+  {
+   "title": "Belum Ada Pemenang yang Jelas ! Pemilu Selandia Baru Hadirkan Persaingan Sengit",
+   "url": "https://koran-jakarta.com/2026-11-08/belum-ada-pemenang-yang-jelas-pemilu-selandia-baru-hadirkan-persaingan-sengit",
+   "domain": "koran-jakarta.com",
+   "language": "Indonesian",
+   "country": "Indonesia",
+   "date": "2026-11-07"
+  },
+  {
+   "title": "Украина сбила только 4 ракеты из 36 – Зеленский заявил об ухудшении ситуации",
+   "url": "https://www.dialog.ua/ukraine/ukraina-sbila-tolko-rakety-iz-zelenskiy-zayavil-ob-ukhudshenii-situatsii.html",
+   "domain": "dialog.ua",
+   "language": "Russian",
+   "country": "Ukraine",
+   "date": "2026-11-07"
+  },
+  {
+   "title": "History made in Asia : EB women make AWCL knockouts",
+   "url": "https://timesofindia.indiatimes.com/city/kolkata/history-made-in-asia-eb-women-make-awcl-knockouts/articleshow/135644711.cms",
+   "domain": "timesofindia.indiatimes.com",
+   "language": "English",
+   "country": "India",
+   "date": "2026-11-07"
+  }
+ ]
 }
