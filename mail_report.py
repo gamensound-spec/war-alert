@@ -180,8 +180,61 @@ def market_html(M, today):
             + "".join(sub(escape(str(item))) for item in M.get("watch", [])))
 
 
+def reference_box(title, status, value, details):
+    states = {"normal": ("good", "정상"), "watch": ("warn", "주의"), "muted": ("muted", "판단 보류")}
+    k, text = states.get(status, states["muted"])
+    return (f'<div style="padding:10px 0;border-bottom:1px solid #f0efea">'
+            f'<div style="font-size:13px;font-weight:600">{escape(title)} · {chip(k, text)}</div>'
+            f'<div style="font-size:16px;margin-top:4px">{escape(value)}</div>'
+            + "".join(sub(escape(str(detail))) for detail in details) + '</div>')
+
+
+def attention_html(A):
+    if not isinstance(A, dict):
+        return '<p style="font-size:13px;color:#55534e">관심도 데이터를 기다리는 중입니다.</p>'
+    cards = []
+    for key, title in (("wiki", "Wikimedia Pageviews"), ("trends", "Google Trends KR RSS")):
+        item = A.get(key) or {}
+        if item.get("error") or not item:
+            cards.append(reference_box(title, "muted", "수집 실패", [item.get("error") or "데이터 없음"]))
+            continue
+        if key == "wiki":
+            latest = item.get("latest") or {}
+            total, z = latest.get("total"), latest.get("z")
+            hint = (f"z {z:+.2f}" if z is not None
+                    else f"판단 보류 · 기준선 {latest.get('base_n', 0)}/14일 또는 MAD 0")
+            details = [f"{latest.get('date') or '—'} · {hint}"]
+            details += [f"{name}: {views:,}회" for name, views in (latest.get("documents") or {}).items() if views is not None]
+            if item.get("missing_articles"):
+                details.append("데이터 없는 문서 제외: " + ", ".join(item["missing_articles"]))
+            value = f"합산 일 조회수 {total:,}회" if total is not None else "데이터 없음"
+        else:
+            hits = item.get("hits")
+            value = f"검색어·뉴스 관련 제목 {hits}건" if hits is not None else "데이터 없음"
+            details = [f"{item.get('date') or '—'} · 스냅샷 {item.get('samples', 0)}일", item.get("note") or "판단 보류"]
+            details.append(f"인기 검색어 {item.get('items', 0)}개에서 검색어 제목·뉴스 제목 검사")
+            details += (item.get("titles") or [])[:5]
+        cards.append(reference_box(title, item.get("status"), value, details))
+    return "".join(cards)
+
+
+def air_html(A):
+    if not isinstance(A, dict):
+        return '<p style="font-size:13px;color:#55534e">항공 데이터를 기다리는 중입니다.</p>'
+    latest = A.get("latest") or {}
+    value = f"비행 중 {latest['airborne']:,}대" if latest.get("airborne") is not None else "이전 관측값 없음"
+    z = latest.get("z")
+    hint = (f"하락 방향 z {z:+.2f}" if z is not None
+            else f"판단 보류 · 기준선 {latest.get('base_n', 0)}/14일 또는 MAD 0")
+    details = [f"{latest.get('date') or '—'} · 전체 {latest.get('total_states', '—')}대 · {hint}", "하루 한 시점 스냅샷"]
+    details += [f"{row.get('country') or '—'} {row.get('count', 0)}대" for row in (latest.get("top_countries") or [])[:3]]
+    if A.get("error"):
+        details = [f"수집 실패: {A['error']}", "직전 관측값 유지" if latest else "이전 관측값 없음", *details]
+    return reference_box("OpenSky Network (익명 API)", "muted" if A.get("error") else A.get("status"), value, details)
+
+
 # ───────── 전체 ─────────
-def render(today, alerts, fails, E, D, N, M=None):
+def render(today, alerts, fails, E, D, N, M=None, A=None, F=None):
     if alerts:
         vk, verdict, lead = "crit", f"경보 {len(alerts)}건", "아래 경보 내용을 먼저 확인하세요."
     elif fails:
@@ -234,6 +287,8 @@ def render(today, alerts, fails, E, D, N, M=None):
     if N:
         body += section("03 세계 언론 동향", "전체 기사 중 한반도 분쟁 기사 비율 (GDELT) · 신뢰도 중간", news_html(N, today))
     body += section("04 시장 스트레스", "참고 지표 · 대리 지표 · 신뢰도 낮음 · 경보 없음 · 출처: Yahoo Finance (비공식 API)", market_html(M, today))
+    body += section("05 대중 관심도", "참고 지표 · 신뢰도 낮음 · 경보 없음 · 출처: Wikimedia Pageviews · Google Trends KR RSS", attention_html(A))
+    body += section("06 항공 교통", "참고 지표 · 신뢰도 낮음 · 경보 없음 · 출처: OpenSky Network (익명 API) · 하루 한 시점 스냅샷", air_html(F))
 
     return f"""<!doctype html><html><body style="margin:0;padding:0;background:#f4f3ef">
 <table width="100%" cellpadding="0" cellspacing="0" style="background:#f4f3ef"><tr><td align="center" style="padding:16px 8px">
@@ -256,4 +311,5 @@ def render(today, alerts, fails, E, D, N, M=None):
 
 
 def build(today, alerts, fails):
-    return render(today, alerts, fails, load("data/embassy.json"), load("data/metrics.json"), load("data/news.json"), load("data/market.json"))
+    return render(today, alerts, fails, load("data/embassy.json"), load("data/metrics.json"), load("data/news.json"),
+                  load("data/market.json"), load("data/attention.json"), load("data/air.json"))

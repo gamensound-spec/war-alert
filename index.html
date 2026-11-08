@@ -305,6 +305,32 @@ footer a{color:var(--ink2)}
     <p class="note">출처: Yahoo Finance (비공식 API). 대리 지표 · 신뢰도 낮음 · 경보 없음. 전체 경보 집계에 포함하지 않습니다.</p>
   </section>
 
+  <section id="sec-attention">
+    <div class="sec-h">
+      <span class="num">05</span>
+      <div class="grow">
+        <h2>대중 관심도 <span class="sub">참고 지표</span></h2>
+        <p>한반도 관련 위키피디아 문서의 합산 일 조회수와 한국 인기 검색어·뉴스의 관련 제목 수를 봅니다. 최신 하루 값을 직전 28일과 비교하며, 관심의 증가는 실제 위험과 다를 수 있습니다.</p>
+      </div>
+      <span class="trust low">신뢰도 낮음</span>
+    </div>
+    <div id="attentionBody" aria-live="polite"><p class="placeholder">관심도 데이터를 불러오는 중입니다.</p></div>
+    <p class="note">출처: Wikimedia Pageviews API (영어 위키피디아) · Google Trends 한국 일간 인기 검색어 RSS. 참고 지표 · 신뢰도 낮음 · 경보 없음. 전체 경보 집계에 포함하지 않습니다.</p>
+  </section>
+
+  <section id="sec-air">
+    <div class="sec-h">
+      <span class="num">06</span>
+      <div class="grow">
+        <h2>항공 교통 <span class="sub">참고 지표</span></h2>
+        <p>한반도 상공(북위 33~39도·동경 124~132도)의 비행 중 항공기 수를 봅니다. 하루 한 시점 스냅샷으로, 직전 28일보다 급감할 때 주의로 표시합니다. 수신 범위·날씨·운항 일정에도 영향을 받습니다.</p>
+      </div>
+      <span class="trust low">신뢰도 낮음</span>
+    </div>
+    <div id="airBody" aria-live="polite"><p class="placeholder">항공 데이터를 불러오는 중입니다.</p></div>
+    <p class="note">출처: OpenSky Network 익명 API. 참고 지표 · 신뢰도 낮음 · 경보 없음 · 하루 한 시점 스냅샷. 전체 경보 집계에 포함하지 않습니다.</p>
+  </section>
+
   <footer>
     <p>이 사이트는 공개된 정보를 자동으로 모은 참고용 지표이며, 정부의 공식 경보가 아닙니다. 실제 상황은 <a href="https://www.0404.go.kr" target="_blank" rel="noopener">외교부 해외안전여행</a>과 <a href="https://www.safekorea.go.kr" target="_blank" rel="noopener">국민재난안전포털</a>에서 확인하세요.</p>
     <p>출처: 미 국무부 Travel Advisory · 영국 FCDO · 캐나다 Travel Advice · 일본 외무성 해외안전정보 · 독일 외무부 · 뉴질랜드 SafeTravel · 싱가포르 외교부 · 중국 외교부 영사서비스망 · 주한 미국대사관 · Google Hotels(SerpApi) · GDELT Project</p>
@@ -346,12 +372,14 @@ const CC={us_state:'US',uk_fcdo:'UK',canada:'CA',japan:'JP',germany:'DE',newzeal
 const get=u=>fetch(u,{cache:'no-store'}).then(r=>{if(!r.ok)throw 0;return r.json()});
 let D=null,E=null,sel=1;
 
-let N=null,M=null;
-Promise.allSettled([get('data/embassy.json'),get('data/metrics.json'),get('data/news.json'),get('data/market.json')]).then(([e,h,n,m])=>{
+let N=null,M=null,A=null,F=null;
+Promise.allSettled([get('data/embassy.json'),get('data/metrics.json'),get('data/news.json'),get('data/market.json'),get('data/attention.json'),get('data/air.json')]).then(([e,h,n,m,a,f])=>{
   E=e.status==='fulfilled'?e.value:null; D=h.status==='fulfilled'?h.value:null; N=n.status==='fulfilled'?n.value:null;
   M=m.status==='fulfilled'?m.value:null;
+  A=a.status==='fulfilled'?a.value:null; F=f.status==='fulfilled'?f.value:null;
   hero();
   market();
+  attention(); air();
   N?news():empty('newsBody','언론 데이터를 기다리는 중입니다','다음 자동 수집 후 표시됩니다.');
   E?embassy():empty('embBody','아직 수집된 데이터가 없습니다','첫 자동 수집 후 표시됩니다.');
   D?initHotel():empty('hotelBody','호텔 가격 데이터를 기다리는 중입니다','검색 설정을 점검하고 있습니다. 수집이 시작되면 같은 요일 표본이 4개 쌓인 뒤부터 이상치를 판단합니다.');
@@ -474,6 +502,45 @@ function market(){
   }).join('');
   const watch=Array.isArray(M.watch)?M.watch:[];
   document.getElementById('marketBody').innerHTML=`<div class="risk ${kind}"><span class="dot"></span><div><b>${label} · 참고</b><div class="note">${watch.length?watch.map(esc).join(' · '):'대리 지표 · 신뢰도 낮음 · 경보 없음'}</div></div></div><div class="tiles market-tiles">${cards}</div>`;
+}
+
+/* ───── 관심도·항공 교통 (참고) ───── */
+function referenceTile(title,status,value,details){
+  const states={normal:'정상',watch:'주의',muted:'판단 보류'};
+  return `<div class="tile"><div class="k">${esc(title)} · ${esc(states[status]||states.muted)}</div><div class="v mono">${esc(value)}</div>`+
+    details.map(detail=>`<div class="h">${esc(detail)}</div>`).join('')+'</div>';
+}
+function attention(){
+  if(!A||typeof A!=='object'){
+    empty('attentionBody','관심도 데이터를 기다리는 중입니다','다음 자동 수집 후 표시됩니다.');return;
+  }
+  const cards=[['wiki','Wikimedia Pageviews'],['trends','Google Trends KR RSS']].map(([key,title])=>{
+    const item=A[key]||{};
+    if(item.error||!Object.keys(item).length)return referenceTile(title,'muted','수집 실패',[item.error||'데이터 없음']);
+    let value,details;
+    if(key==='wiki'){
+      const l=item.latest||{},z=Number.isFinite(l.z)?`z ${fx(l.z,2,true)}`:`판단 보류 · 기준선 ${l.base_n??0}/14일 또는 MAD 0`;
+      value=Number.isFinite(l.total)?l.total.toLocaleString('ko-KR')+'회':'—';
+      details=[`합산 일 조회수 · ${l.date||'—'} · ${z}`,...Object.entries(l.documents||{}).map(([name,views])=>`${name}: ${views??'—'}회`)];
+      if(item.missing_articles?.length)details.push('데이터 없는 문서 제외: '+item.missing_articles.join(', '));
+    }else{
+      value=Number.isFinite(item.hits)?item.hits+'건':'—';
+      details=[`${item.date||'—'} · 인기 검색어 ${item.items??0}개의 검색어·뉴스 관련 제목 수`, `스냅샷 ${item.samples??0}일 · ${item.note||'판단 보류'}`,...(Array.isArray(item.titles)?item.titles.slice(0,5):[])];
+    }
+    return referenceTile(title,item.status,value,details);
+  });
+  document.getElementById('attentionBody').innerHTML=`<div class="tiles market-tiles">${cards.join('')}</div>`;
+}
+function air(){
+  if(!F||typeof F!=='object'){
+    empty('airBody','항공 데이터를 기다리는 중입니다','다음 자동 수집 후 표시됩니다.');return;
+  }
+  const l=F.latest||{},value=Number.isFinite(l.airborne)?l.airborne.toLocaleString('ko-KR')+'대':'이전 관측값 없음';
+  const z=Number.isFinite(l.z)?`하락 방향 z ${fx(l.z,2,true)}`:`판단 보류 · 기준선 ${l.base_n??0}/14일 또는 MAD 0`;
+  const details=[`${l.date||'—'} · 전체 ${l.total_states??'—'}대 · ${z}`,'하루 한 시점 스냅샷'];
+  if(Array.isArray(l.top_countries))details.push(...l.top_countries.slice(0,3).map(row=>`${row.country||'—'} ${row.count??0}대`));
+  if(F.error)details.unshift(`수집 실패: ${F.error}`,Object.keys(l).length?'직전 관측값 유지':'이전 관측값 없음');
+  document.getElementById('airBody').innerHTML=`<div class="tiles market-tiles">${referenceTile('OpenSky Network (익명 API)',F.error?'muted':F.status,value,details)}</div>`;
 }
 
 /* ───── 호텔 ───── */

@@ -13,6 +13,8 @@ import hotel_monitor
 import embassy_monitor
 import news_monitor
 import market_monitor
+import attention_monitor
+import air_monitor
 import mail_report
 
 
@@ -37,7 +39,8 @@ def hotel():
 def run(mail=True):
     today = dt.datetime.now(hotel_monitor.KST).date()
     parts = [("대사관·여행경보", embassy_monitor.run), ("남산 하얏트 가격", hotel),
-             ("세계 언론 동향", news_monitor.run), ("시장 스트레스", market_monitor.run)]
+             ("세계 언론 동향", news_monitor.run), ("시장 스트레스", market_monitor.run),
+             ("대중 관심도", attention_monitor.run), ("항공 교통", air_monitor.run)]
     alerts, fails, bodies = [], [], []
     for title, fn in parts:
         a, f, b = section(title, fn)
