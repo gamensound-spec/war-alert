@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-09T00:08+09:00",
+ "generated_at": "2026-11-09T00:51+09:00",
  "source": "gdelt-gkg",
  "query": "(\"north korea\" OR \"korean peninsula\") (war OR missile OR attack OR invasion OR evacuation OR troops)",
  "config": {
@@ -16,12 +16,39 @@
   "share": 0.311,
   "count": 2,
   "tone": -2.954370212367315,
-  "base_n": 2,
+  "base_n": 5,
   "median": null,
   "ratio": null,
   "z": null
  },
  "series": [
+  {
+   "date": "2026-11-02",
+   "count": 97,
+   "total": 102905,
+   "tone": -4.742420332452159,
+   "share": 9.426,
+   "source": "gdelt-gkg",
+   "partial": false
+  },
+  {
+   "date": "2026-11-03",
+   "count": 116,
+   "total": 113571,
+   "tone": -6.244903614093186,
+   "share": 10.214,
+   "source": "gdelt-gkg",
+   "partial": false
+  },
+  {
+   "date": "2026-11-04",
+   "count": 37,
+   "total": 125779,
+   "tone": -4.583770629920415,
+   "share": 2.942,
+   "source": "gdelt-gkg",
+   "partial": false
+  },
   {
    "date": "2026-11-05",
    "count": 21,

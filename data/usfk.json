@@ -1,0 +1,96 @@
+{
+ "generated_at": "2026-11-09T00:51+09:00",
+ "source": "google-news-rss",
+ "config": {
+  "groups": {
+   "evac": {
+    "label": "비전투원 후송",
+    "queries": [
+     {
+      "q": "(\"noncombatant evacuation\" OR \"ordered departure\" OR \"authorized departure\" OR NEO) (Korea OR USFK) when:7d",
+      "hl": "en-US",
+      "gl": "US",
+      "ceid": "US:en"
+     },
+     {
+      "q": "주한미군 (비전투원 OR 소개 OR 철수) when:7d",
+      "hl": "ko",
+      "gl": "KR",
+      "ceid": "KR:ko"
+     }
+    ]
+   },
+   "readiness": {
+    "label": "경계태세",
+    "queries": [
+     {
+      "q": "(\"force protection condition\" OR FPCON OR \"heightened alert\" OR \"alert status\") (USFK OR \"U.S. Forces Korea\") when:7d",
+      "hl": "en-US",
+      "gl": "US",
+      "ceid": "US:en"
+     }
+    ]
+   },
+   "families": {
+    "label": "가족·이동",
+    "queries": [
+     {
+      "q": "(\"military families\" OR dependents OR \"PCS\") Korea (evacuate OR relocate OR suspend OR freeze) when:7d",
+      "hl": "en-US",
+      "gl": "US",
+      "ceid": "US:en"
+     }
+    ]
+   }
+  },
+  "base_days": 28,
+  "min_base": 14,
+  "z_watch": 2.0,
+  "evac_hits": 3,
+  "evac_sources": 2,
+  "group_delay_seconds": 2,
+  "method": "group hits_24h vs preceding 28 calendar days of same group hits_24h; median/MAD * 1.4826"
+ },
+ "status": "muted",
+ "alerts": [],
+ "watch": [],
+ "groups": {
+  "evac": {
+   "hits_24h": 0,
+   "hits_7d": 0,
+   "training_7d": 0,
+   "sources_24h": 0,
+   "date": "2026-11-09",
+   "base_n": 0,
+   "median": null,
+   "z": null,
+   "status": "muted",
+   "note": "판단 보류 · 기준선 0/14일"
+  },
+  "readiness": {
+   "hits_24h": 0,
+   "hits_7d": 0,
+   "training_7d": 0,
+   "sources_24h": 0,
+   "date": "2026-11-09",
+   "base_n": 0,
+   "median": null,
+   "z": null,
+   "status": "muted",
+   "note": "판단 보류 · 기준선 0/14일"
+  },
+  "families": {
+   "hits_24h": 0,
+   "hits_7d": 0,
+   "training_7d": 0,
+   "sources_24h": 0,
+   "date": "2026-11-09",
+   "base_n": 0,
+   "median": null,
+   "z": null,
+   "status": "muted",
+   "note": "판단 보류 · 기준선 0/14일"
+  }
+ },
+ "headlines": []
+}
