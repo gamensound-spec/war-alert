@@ -32,6 +32,25 @@ def gdelt(mode, **extra):
     raise RuntimeError("GDELT 요청 제한(429)이 풀리지 않음")
 
 
+def previous_doc(today):
+    """직전 news.json이 DOC 출처이고 마지막 온전한 날이 3일 이내면 (series, articles), 아니면 None"""
+    try:
+        with open(JSON_FILE, encoding="utf-8") as f:
+            prev = json.load(f)
+        series = prev["series"]
+        if not series or prev.get("source", "gdelt-doc") != "gdelt-doc":
+            return None
+        if any(d.get("source", "gdelt-doc") != "gdelt-doc" for d in series):
+            return None
+        latest = prev["latest"]["date"]
+        if (today - dt.date.fromisoformat(latest)).days > 3:
+            return None
+        arts = [{**a, "seendate": (a.get("date") or "").replace("-", "")} for a in prev.get("articles", [])]
+        return [{**d, "source": "gdelt-doc"} for d in series], arts
+    except (OSError, ValueError, KeyError, TypeError):
+        return None
+
+
 def fetch(today=None):
     today = today or dt.datetime.now(dt.timezone.utc).date()
     try:
@@ -49,8 +68,18 @@ def fetch(today=None):
         if (today - dt.date.fromisoformat(latest["date"])).days > 3:
             raise RuntimeError(f"GDELT DOC 일별 데이터 지연: {latest['date']}")
     except (requests.RequestException, RuntimeError, ValueError, KeyError, IndexError, TypeError) as exc:
-        print(f"GDELT DOC → GKG 폴백: {exc}")
         import gdelt_gkg
+        kept = previous_doc(today)
+        if kept:
+            # DOC가 일시적으로 막혔을 뿐이고 직전 DOC 결과가 최신이면 그대로 유지한다.
+            # GKG는 기준선만 누적해 둔다(실패해도 무시).
+            print(f"GDELT DOC 실패, 직전 DOC 결과 유지(GKG는 누적만): {exc}")
+            try:
+                gdelt_gkg.fetch(today=today, json_file=JSON_FILE)
+            except Exception as e:
+                print(f"GKG 누적 생략: {e}")
+            return kept
+        print(f"GDELT DOC → GKG 폴백: {exc}")
         return gdelt_gkg.fetch(today=today, json_file=JSON_FILE)
     # 논조·기사 목록은 부가 정보. 제한에 걸려도 판단은 계속한다
     try:

@@ -275,6 +275,48 @@ class CacheTests(unittest.TestCase):
 
 
 class FallbackTests(unittest.TestCase):
+    def setUp(self):
+        # 실제 data/news.json 내용에 따라 동작이 달라지지 않도록 임시 경로를 쓴다
+        self.temporary = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temporary.cleanup)
+        self.json = Path(self.temporary.name) / "news.json"
+        patcher = patch.object(news, "JSON_FILE", str(self.json))
+        patcher.start()
+        self.addCleanup(patcher.stop)
+
+    def write_previous(self, latest, source="gdelt-doc", row_source="gdelt-doc"):
+        self.json.write_text(json.dumps({
+            "source": source, "latest": {"date": latest},
+            "series": [{"date": latest, "count": 5, "total": 100, "share": 500, "tone": None, "source": row_source}],
+            "articles": [{"title": "prev", "url": "https://example.org/p", "date": latest}]}))
+
+    def test_doc_429_keeps_recent_previous_doc_and_only_accumulates_gkg(self):
+        self.write_previous("2026-11-05")   # TODAY(11-08) 기준 정확히 3일 → 유지
+        with patch.object(news, "gdelt", side_effect=RuntimeError("429")), \
+                patch.object(gkg, "fetch", return_value=([daily()], [])) as accumulate, patch("builtins.print"):
+            days, arts = news.fetch(today=TODAY)
+        accumulate.assert_called_once()
+        self.assertEqual([d["date"] for d in days], ["2026-11-05"])
+        self.assertEqual(days[0]["source"], "gdelt-doc")
+        self.assertEqual(arts[0]["seendate"], "20261105")
+
+    def test_gkg_accumulation_failure_does_not_break_kept_doc(self):
+        self.write_previous("2026-11-06")
+        with patch.object(news, "gdelt", side_effect=RuntimeError("429")), \
+                patch.object(gkg, "fetch", side_effect=RuntimeError("offline")), patch("builtins.print"):
+            days, _ = news.fetch(today=TODAY)
+        self.assertEqual(days[0]["date"], "2026-11-06")
+
+    def test_stale_or_gkg_previous_falls_back_to_gkg(self):
+        for kwargs in ({"latest": "2026-11-04"}, {"latest": "2026-11-07", "source": "gdelt-gkg"},
+                       {"latest": "2026-11-07", "row_source": "gdelt-gkg"}):
+            with self.subTest(**kwargs):
+                self.write_previous(**kwargs)
+                with patch.object(news, "gdelt", side_effect=RuntimeError("429")), \
+                        patch.object(gkg, "fetch", return_value=([daily()], [])) as fallback, patch("builtins.print"):
+                    self.assertEqual(news.fetch(today=TODAY), ([daily()], []))
+                fallback.assert_called_once()
+
     def test_doc_failures_empty_and_malformed_use_gkg(self):
         for failure in (RuntimeError("429"), requests.ConnectionError("offline"),
                         ValueError("invalid JSON"), {"timeline": [{"data": []}]}, {},
