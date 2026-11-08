@@ -154,8 +154,34 @@ def news_html(N, today):
             + (f'<table width="100%" cellpadding="0" cellspacing="0">{arts}</table>' if arts else ""))
 
 
+def market_html(M, today):
+    if not M or not isinstance(M.get("latest"), dict):
+        return '<p style="font-size:13px;color:#55534e">시장 데이터를 기다리는 중입니다.</p>'
+    states = {"normal": ("good", "정상"), "watch": ("warn", "주의"), "muted": ("muted", "판단 보류")}
+    rows = []
+    for symbol, label in (("KRW=X", "원/달러 환율"), ("^KS11", "코스피")):
+        item = M["latest"].get(symbol) or {}
+        if item.get("error") or item.get("close") is None:
+            rows.append([label + sub(escape(item.get("error") or "데이터 없음")), "—", "—", chip("muted", "수집 실패")])
+            continue
+        k, text = states.get(item.get("status"), states["muted"])
+        try:
+            late = (dt.date.fromisoformat(today) - dt.date.fromisoformat(item["date"])).days > 3
+        except (KeyError, TypeError, ValueError):
+            late = True
+        hint = escape(item.get("date") or "") + (" · 데이터 지연" if late else "")
+        change, z = item.get("change_pct"), item.get("z")
+        score = f"z {z:+.2f}" if z is not None else "z —"
+        rows.append([label + sub(hint), f'{item["close"]:,.2f}',
+                     f"{change:+.2f}%" if change is not None else "—", chip(k, f"{text} · {score}")])
+    k, text = states.get(M.get("status"), states["muted"])
+    return (f'<div style="padding:8px 0">{chip(k, text)}</div>'
+            + table(["지표", "최근 종가", "전일 대비", "참고 판정"], rows, ["left", "right", "right", "left"])
+            + "".join(sub(escape(str(item))) for item in M.get("watch", [])))
+
+
 # ───────── 전체 ─────────
-def render(today, alerts, fails, E, D, N):
+def render(today, alerts, fails, E, D, N, M=None):
     if alerts:
         vk, verdict, lead = "crit", f"경보 {len(alerts)}건", "아래 경보 내용을 먼저 확인하세요."
     elif fails:
@@ -207,6 +233,7 @@ def render(today, alerts, fails, E, D, N):
         body += section("02 남산 그랜드 하얏트 가격", "공개 최저가를 대조군 호텔 4곳과 비교 · 신뢰도 낮음", hotel_html(D))
     if N:
         body += section("03 세계 언론 동향", "전체 기사 중 한반도 분쟁 기사 비율 (GDELT) · 신뢰도 중간", news_html(N, today))
+    body += section("04 시장 스트레스", "참고 지표 · 대리 지표 · 신뢰도 낮음 · 경보 없음 · 출처: Yahoo Finance (비공식 API)", market_html(M, today))
 
     return f"""<!doctype html><html><body style="margin:0;padding:0;background:#f4f3ef">
 <table width="100%" cellpadding="0" cellspacing="0" style="background:#f4f3ef"><tr><td align="center" style="padding:16px 8px">
@@ -229,4 +256,4 @@ def render(today, alerts, fails, E, D, N):
 
 
 def build(today, alerts, fails):
-    return render(today, alerts, fails, load("data/embassy.json"), load("data/metrics.json"), load("data/news.json"))
+    return render(today, alerts, fails, load("data/embassy.json"), load("data/metrics.json"), load("data/news.json"), load("data/market.json"))

@@ -163,6 +163,10 @@ th{font-weight:500;color:var(--muted);font-size:12px}
 details summary{cursor:pointer;color:var(--ink2);font-size:13px}
 .tablewrap{overflow-x:auto}
 .placeholder{color:var(--muted);font-size:13.5px}
+.market-tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
+.market-tiles .tile{min-width:0;overflow-wrap:anywhere}
+.market-tiles .h{color:var(--ink2);font-size:12.5px}
+@media(max-width:560px){.market-tiles{grid-template-columns:1fr}}
 
 /* 빈 상태 */
 .empty{border:1px dashed var(--axis);border-radius:14px;padding:32px 20px;text-align:center;color:var(--ink2);background:transparent}
@@ -288,6 +292,19 @@ footer a{color:var(--ink2)}
     </div>
   </section>
 
+  <section id="sec-market">
+    <div class="sec-h">
+      <span class="num">04</span>
+      <div class="grow">
+        <h2>시장 스트레스 <span class="sub">참고 지표</span></h2>
+        <p>원화 약세와 코스피 하락을 봅니다. 최근 20거래일 변화율(√20으로 보정)을 그 이전 60일 일간 변화율의 중앙값·MAD와 비교합니다. 전쟁 외의 요인에도 크게 움직입니다.</p>
+      </div>
+      <span class="trust low">신뢰도 낮음</span>
+    </div>
+    <div id="marketBody" aria-live="polite"><p class="placeholder">시장 데이터를 불러오는 중입니다.</p></div>
+    <p class="note">출처: Yahoo Finance (비공식 API). 대리 지표 · 신뢰도 낮음 · 경보 없음. 전체 경보 집계에 포함하지 않습니다.</p>
+  </section>
+
   <footer>
     <p>이 사이트는 공개된 정보를 자동으로 모은 참고용 지표이며, 정부의 공식 경보가 아닙니다. 실제 상황은 <a href="https://www.0404.go.kr" target="_blank" rel="noopener">외교부 해외안전여행</a>과 <a href="https://www.safekorea.go.kr" target="_blank" rel="noopener">국민재난안전포털</a>에서 확인하세요.</p>
     <p>출처: 미 국무부 Travel Advisory · 영국 FCDO · 캐나다 Travel Advice · 일본 외무성 해외안전정보 · 독일 외무부 · 뉴질랜드 SafeTravel · 싱가포르 외교부 · 중국 외교부 영사서비스망 · 주한 미국대사관 · Google Hotels(SerpApi) · GDELT Project</p>
@@ -329,10 +346,12 @@ const CC={us_state:'US',uk_fcdo:'UK',canada:'CA',japan:'JP',germany:'DE',newzeal
 const get=u=>fetch(u,{cache:'no-store'}).then(r=>{if(!r.ok)throw 0;return r.json()});
 let D=null,E=null,sel=1;
 
-let N=null;
-Promise.allSettled([get('data/embassy.json'),get('data/metrics.json'),get('data/news.json')]).then(([e,h,n])=>{
+let N=null,M=null;
+Promise.allSettled([get('data/embassy.json'),get('data/metrics.json'),get('data/news.json'),get('data/market.json')]).then(([e,h,n,m])=>{
   E=e.status==='fulfilled'?e.value:null; D=h.status==='fulfilled'?h.value:null; N=n.status==='fulfilled'?n.value:null;
+  M=m.status==='fulfilled'?m.value:null;
   hero();
+  market();
   N?news():empty('newsBody','언론 데이터를 기다리는 중입니다','다음 자동 수집 후 표시됩니다.');
   E?embassy():empty('embBody','아직 수집된 데이터가 없습니다','첫 자동 수집 후 표시됩니다.');
   D?initHotel():empty('hotelBody','호텔 가격 데이터를 기다리는 중입니다','검색 설정을 점검하고 있습니다. 수집이 시작되면 같은 요일 표본이 4개 쌓인 뒤부터 이상치를 판단합니다.');
@@ -429,6 +448,32 @@ function newsChart(){
   document.getElementById('lblNews').textContent=`· 최근 ${s.length}일`;
   legend('legNews',ss);
   lineChart('chNews',x,ss,{fmt:v=>v.toFixed(1),ref:N.latest.median!=null?[{y:N.latest.median,label:'평소 '+N.latest.median.toFixed(1)}]:[],h:240});
+}
+
+/* ───── 시장 스트레스 (참고) ───── */
+function market(){
+  if(!M?.latest||typeof M.latest!=='object'){
+    empty('marketBody','시장 데이터를 기다리는 중입니다','다음 자동 수집 후 표시됩니다.');
+    return;
+  }
+  const states={normal:['good','정상'],watch:['warn','주의'],muted:['muted','판단 보류']};
+  const [kind,label]=states[M.status]||states.muted;
+  const today=new Date().toLocaleDateString('sv-SE',{timeZone:'Asia/Seoul'});
+  const cards=[['KRW=X','원/달러 환율','원'],['^KS11','코스피','pt']].map(([symbol,title,unit])=>{
+    const item=M.latest[symbol]||{}, valid=Number.isFinite(item.close);
+    if(item.error||!valid)return `<div class="tile"><div class="k">${title}</div><div class="v">수집 실패</div><div class="h">${esc(item.error||'데이터 없음')}</div></div>`;
+    const daily=Number.isFinite(item.change_pct)?fx(item.change_pct,2,true)+'%':'—';
+    const z=Number.isFinite(item.z)?fx(item.z,2,true):'—';
+    const [,state]=states[item.status]||states.muted;
+    const date=String(item.date||'');
+    const lag=(Date.parse(today)-Date.parse(date))/864e5;
+    const late=!Number.isFinite(lag)||lag>3;
+    return `<div class="tile"><div class="k">${title}</div><div class="v mono">${item.close.toLocaleString('ko-KR',{maximumFractionDigits:2})} ${unit}</div>`+
+      `<div class="h">전일 대비 ${daily} · 스트레스 z ${z}</div><div class="h">${esc(state)}${z==='—'?` · 기준선 ${esc(item.base_n??0)}/${esc(M.config?.min_base??30)}일 또는 MAD 0`:''}</div>`+
+      `<div class="h mono">${esc(date)}${late?' · 데이터 지연':''}</div></div>`;
+  }).join('');
+  const watch=Array.isArray(M.watch)?M.watch:[];
+  document.getElementById('marketBody').innerHTML=`<div class="risk ${kind}"><span class="dot"></span><div><b>${label} · 참고</b><div class="note">${watch.length?watch.map(esc).join(' · '):'대리 지표 · 신뢰도 낮음 · 경보 없음'}</div></div></div><div class="tiles market-tiles">${cards}</div>`;
 }
 
 /* ───── 호텔 ───── */
