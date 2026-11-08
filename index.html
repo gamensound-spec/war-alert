@@ -158,6 +158,7 @@ section{margin-top:44px;scroll-margin-top:16px}
 table{width:100%;border-collapse:collapse;font-size:13px}
 th,td{text-align:right;padding:8px;border-bottom:1px solid var(--grid);white-space:nowrap}
 td:first-child{white-space:normal}
+td.nw{white-space:nowrap}
 th:first-child,td:first-child{text-align:left}
 th{font-weight:500;color:var(--muted);font-size:12px}
 details summary{cursor:pointer;color:var(--ink2);font-size:13px}
@@ -166,7 +167,10 @@ details summary{cursor:pointer;color:var(--ink2);font-size:13px}
 .market-tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
 .market-tiles .tile{min-width:0;overflow-wrap:anywhere}
 .market-tiles .h{color:var(--ink2);font-size:12.5px}
-@media(max-width:560px){.market-tiles{grid-template-columns:1fr}}
+@media(max-width:560px){.market-tiles{grid-template-columns:1fr}
+  .tiles{gap:8px}.tiles .tile{padding:10px 12px}.tiles .tile .v{font-size:18px}
+  .tiles:not(.market-tiles) .tile:last-child:nth-child(odd){grid-column:1/-1}
+  #tblAll th,#tblAll td{font-size:12px;padding:6px 4px}}
 
 /* 빈 상태 */
 .empty{border:1px dashed var(--axis);border-radius:14px;padding:32px 20px;text-align:center;color:var(--ink2);background:transparent}
@@ -257,7 +261,7 @@ footer a{color:var(--ink2)}
       </div>
       <div class="card">
         <details>
-          <summary>전체 데이터 표 보기</summary>
+          <summary id="allSum">수집 이력 표 보기</summary>
           <div class="tablewrap" style="margin-top:10px"><table id="tblAll"></table></div>
         </details>
       </div>
@@ -584,7 +588,7 @@ function initHotel(){
   const tabs=document.getElementById('tabs');
   tabs.innerHTML=D.config.offsets.map(o=>`<button data-o="${o}"><i style="background:var(${RISK_COLOR[hotelRisk(o).k]})"></i><span class="tw">체크인 </span>D+${o}</button>`).join('');
   tabs.onclick=e=>{const o=e.target.closest('button')?.dataset.o;if(o){sel=+o;render()}};
-  allTable(); render();
+  render();
   addEventListener('resize',()=>{clearTimeout(window._rt);window._rt=setTimeout(render,150)});
   matchMedia('(prefers-color-scheme: dark)').addEventListener('change',render);
 }
@@ -592,6 +596,7 @@ function initHotel(){
 function series(o){return D.series.filter(r=>r.offset===o)}
 
 function render(){
+  allTable();
   [...document.querySelectorAll('#tabs button')].forEach(b=>b.setAttribute('aria-pressed',+b.dataset.o===sel));
   const s=series(sel), last=s[s.length-1];
   if(!last)return;
@@ -638,8 +643,9 @@ function legend(id,ss){document.getElementById(id).innerHTML=ss.map(s=>`<span><i
 
 function allTable(){
   const t=document.getElementById('tblAll');
-  t.innerHTML='<tr><th>수집일</th><th>D+</th><th>요일</th><th>하얏트</th><th>대조군</th><th>비율</th><th>z(비율)</th><th>z(대조군)</th></tr>'+
-   [...D.series].reverse().map(r=>`<tr><td class="mono">${r.date}</td><td class="mono">${r.offset}</td><td>${WD[r.weekday]}</td><td class="mono">${won(r.target_price)}</td><td class="mono">${won(r.control_median)}</td><td class="mono">${fx(r.ratio)}</td><td class="mono">${fx(r.z_ratio,2,true)}</td><td class="mono">${fx(r.z_control,2,true)}</td></tr>`).join('');
+  document.getElementById('allSum').textContent=`D+${sel} 수집 이력 표 보기`;
+  t.innerHTML='<tr><th>수집일</th><th>요일</th><th>하얏트</th><th>대조군</th><th>비율</th><th>z(비율)</th><th>z(대조군)</th></tr>'+
+   [...series(sel)].reverse().map(r=>`<tr><td class="mono nw">${String(r.date).slice(5)}</td><td>${WD[r.weekday]}</td><td class="mono">${won(r.target_price)}</td><td class="mono">${won(r.control_median)}</td><td class="mono">${fx(r.ratio)}</td><td class="mono">${fx(r.z_ratio,2,true)}</td><td class="mono">${fx(r.z_control,2,true)}</td></tr>`).join('');
 }
 
 function lineChart(id,x,ss,o){
