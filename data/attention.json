@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-09T00:51+09:00",
+ "generated_at": "2026-11-09T12:06+09:00",
  "source": [
   "wikimedia-pageviews",
   "google-trends-kr-rss"
@@ -48,16 +48,6 @@
    "status": "normal"
   },
   "series": [
-   {
-    "date": "2026-09-09",
-    "total": 18074,
-    "documents": {
-     "North_Korea": 7038,
-     "Korean_War": 4619,
-     "Korean_Demilitarized_Zone": 1114,
-     "Kim_Jong_Un": 5303
-    }
-   },
    {
     "date": "2026-09-10",
     "total": 18177,
