@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-09T12:06+09:00",
+ "generated_at": "2026-11-10T13:51+09:00",
  "source": "google-news-rss",
  "config": {
   "groups": {
@@ -60,36 +60,36 @@
    "hits_7d": 0,
    "training_7d": 0,
    "sources_24h": 0,
-   "date": "2026-11-09",
-   "base_n": 0,
+   "date": "2026-11-10",
+   "base_n": 1,
    "median": null,
    "z": null,
    "status": "muted",
-   "note": "판단 보류 · 기준선 0/14일"
+   "note": "판단 보류 · 기준선 1/14일"
   },
   "readiness": {
    "hits_24h": 0,
    "hits_7d": 0,
    "training_7d": 0,
    "sources_24h": 0,
-   "date": "2026-11-09",
-   "base_n": 0,
+   "date": "2026-11-10",
+   "base_n": 1,
    "median": null,
    "z": null,
    "status": "muted",
-   "note": "판단 보류 · 기준선 0/14일"
+   "note": "판단 보류 · 기준선 1/14일"
   },
   "families": {
    "hits_24h": 0,
    "hits_7d": 0,
    "training_7d": 0,
    "sources_24h": 0,
-   "date": "2026-11-09",
-   "base_n": 0,
+   "date": "2026-11-10",
+   "base_n": 1,
    "median": null,
    "z": null,
    "status": "muted",
-   "note": "판단 보류 · 기준선 0/14일"
+   "note": "판단 보류 · 기준선 1/14일"
   }
  },
  "headlines": []

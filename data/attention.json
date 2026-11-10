@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-09T12:06+09:00",
+ "generated_at": "2026-11-10T13:51+09:00",
  "source": [
   "wikimedia-pageviews",
   "google-trends-kr-rss"
@@ -34,30 +34,20 @@
  "wiki": {
   "status": "normal",
   "latest": {
-   "date": "2026-11-06",
-   "total": 27342,
+   "date": "2026-11-09",
+   "total": 22942,
    "documents": {
-    "North_Korea": 7369,
-    "Korean_War": 9465,
-    "Korean_Demilitarized_Zone": 1259,
-    "Kim_Jong_Un": 9249
+    "North_Korea": 6888,
+    "Korean_War": 5787,
+    "Korean_Demilitarized_Zone": 1093,
+    "Kim_Jong_Un": 9174
    },
    "base_n": 28,
    "median": 30622.0,
-   "z": -0.16420468277913103,
+   "z": -0.5744803185960132,
    "status": "normal"
   },
   "series": [
-   {
-    "date": "2026-09-10",
-    "total": 18177,
-    "documents": {
-     "North_Korea": 6409,
-     "Korean_War": 4511,
-     "Korean_Demilitarized_Zone": 1153,
-     "Kim_Jong_Un": 6104
-    }
-   },
    {
     "date": "2026-09-11",
     "total": 17089,
@@ -627,6 +617,36 @@
      "Korean_Demilitarized_Zone": 1259,
      "Kim_Jong_Un": 9249
     }
+   },
+   {
+    "date": "2026-11-07",
+    "total": 21949,
+    "documents": {
+     "North_Korea": 6611,
+     "Korean_War": 4868,
+     "Korean_Demilitarized_Zone": 984,
+     "Kim_Jong_Un": 9486
+    }
+   },
+   {
+    "date": "2026-11-08",
+    "total": 21883,
+    "documents": {
+     "North_Korea": 6342,
+     "Korean_War": 5287,
+     "Korean_Demilitarized_Zone": 1064,
+     "Kim_Jong_Un": 9190
+    }
+   },
+   {
+    "date": "2026-11-09",
+    "total": 22942,
+    "documents": {
+     "North_Korea": 6888,
+     "Korean_War": 5787,
+     "Korean_Demilitarized_Zone": 1093,
+     "Kim_Jong_Un": 9174
+    }
    }
   ],
   "missing_articles": []
@@ -635,12 +655,12 @@
   "hits": 0,
   "items": 10,
   "titles": [],
-  "date": "2026-11-09",
-  "samples": 1,
-  "base_n": 0,
+  "date": "2026-11-10",
+  "samples": 2,
+  "base_n": 1,
   "median": null,
   "z": null,
   "status": "muted",
-  "note": "판단 보류(기준선 0/14일)"
+  "note": "판단 보류(기준선 1/14일)"
  }
 }
