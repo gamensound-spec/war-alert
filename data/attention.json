@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-10T13:51+09:00",
+ "generated_at": "2026-11-11T12:06+09:00",
  "source": [
   "wikimedia-pageviews",
   "google-trends-kr-rss"
@@ -48,16 +48,6 @@
    "status": "normal"
   },
   "series": [
-   {
-    "date": "2026-09-11",
-    "total": 17089,
-    "documents": {
-     "North_Korea": 5995,
-     "Korean_War": 4535,
-     "Korean_Demilitarized_Zone": 1226,
-     "Kim_Jong_Un": 5333
-    }
-   },
    {
     "date": "2026-09-12",
     "total": 16076,
@@ -655,12 +645,12 @@
   "hits": 0,
   "items": 10,
   "titles": [],
-  "date": "2026-11-10",
-  "samples": 2,
-  "base_n": 1,
+  "date": "2026-11-11",
+  "samples": 3,
+  "base_n": 2,
   "median": null,
   "z": null,
   "status": "muted",
-  "note": "판단 보류(기준선 1/14일)"
+  "note": "판단 보류(기준선 2/14일)"
  }
 }

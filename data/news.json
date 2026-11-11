@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-10T13:51+09:00",
+ "generated_at": "2026-11-11T12:06+09:00",
  "source": "gdelt-gkg",
  "query": "(\"north korea\" OR \"korean peninsula\") (war OR missile OR attack OR invasion OR evacuation OR troops)",
  "config": {
@@ -12,16 +12,34 @@
  "alerts": [],
  "watch": [],
  "latest": {
-  "date": "2026-11-09",
-  "share": 0.206,
-  "count": 2,
-  "tone": -4.71865755815191,
-  "base_n": 8,
+  "date": "2026-11-10",
+  "share": 0.787,
+  "count": 9,
+  "tone": -4.159863659275877,
+  "base_n": 10,
   "median": null,
   "ratio": null,
   "z": null
  },
  "series": [
+  {
+   "date": "2026-10-30",
+   "count": 378,
+   "total": 108415,
+   "tone": -5.187408651368851,
+   "share": 34.866,
+   "source": "gdelt-gkg",
+   "partial": false
+  },
+  {
+   "date": "2026-10-31",
+   "count": 35,
+   "total": 62008,
+   "tone": -4.63208791165485,
+   "share": 5.644,
+   "source": "gdelt-gkg",
+   "partial": false
+  },
   {
    "date": "2026-11-01",
    "count": 79,
@@ -92,7 +110,7 @@
    "tone": -1.73460537727667,
    "share": 0.192,
    "source": "gdelt-gkg",
-   "partial": false
+   "partial": true
   },
   {
    "date": "2026-11-09",
@@ -102,24 +120,89 @@
    "share": 0.206,
    "source": "gdelt-gkg",
    "partial": false
+  },
+  {
+   "date": "2026-11-10",
+   "count": 9,
+   "total": 114410,
+   "tone": -4.159863659275877,
+   "share": 0.787,
+   "source": "gdelt-gkg",
+   "partial": false
   }
  ],
  "articles": [
   {
-   "title": "The billion dollar hac the fbi blames on north korea — abc.net.au",
-   "url": "https://www.abc.net.au/listen/programs/global-roaming/the-6-billion-dollar-hac-the-fbi-blames-on-north-korea/107290524",
-   "domain": "www.abc.net.au",
+   "title": "North korea accuses un chief of siding with south korea over border tensions — ksevradio.com",
+   "url": "https://ksevradio.com/north-korea-accuses-un-chief-of-siding-with-south-korea-over-border-tensions/",
+   "domain": "ksevradio.com",
    "language": "English",
    "country": null,
-   "date": "2026-11-09"
+   "date": "2026-11-10"
   },
   {
-   "title": "North korea is using elon musk themed memecoins to launder crypto from the binance hack — gizmodo.com",
-   "url": "https://gizmodo.com/north-korea-is-using-elon-musk-themed-memecoins-to-launder-crypto-from-the-binance-hack-2000837160",
-   "domain": "gizmodo.com",
+   "title": "North korea accuses un chief of siding with south korea over border tensions — freemalaysiatoday.com",
+   "url": "https://www.freemalaysiatoday.com/category/world/2026/11/10/north-korea-accuses-un-chief-of-siding-with-south-korea-over-border-tensions",
+   "domain": "www.freemalaysiatoday.com",
    "language": "English",
    "country": null,
-   "date": "2026-11-09"
+   "date": "2026-11-10"
+  },
+  {
+   "title": "North korea accuses un chief siding south korea over border tensions — asiaone.com",
+   "url": "https://www.asiaone.com/asia/north-korea-accuses-un-chief-siding-south-korea-over-border-tensions",
+   "domain": "www.asiaone.com",
+   "language": "English",
+   "country": null,
+   "date": "2026-11-10"
+  },
+  {
+   "title": "North korea accuses un chief siding south korea over border tensions — asiaone.com:443",
+   "url": "https://www.asiaone.com:443/asia/north-korea-accuses-un-chief-siding-south-korea-over-border-tensions",
+   "domain": "www.asiaone.com:443",
+   "language": "English",
+   "country": null,
+   "date": "2026-11-10"
+  },
+  {
+   "title": "North korea accuses un chief of siding with south korea over border tensions — dailymaverick.co.za",
+   "url": "https://www.dailymaverick.co.za/article/2026-11-10-north-korea-accuses-un-chief-of-siding-with-south-korea-over-border-tensions/",
+   "domain": "www.dailymaverick.co.za",
+   "language": "English",
+   "country": null,
+   "date": "2026-11-10"
+  },
+  {
+   "title": "North korea high speed torpedo test — stripes.com",
+   "url": "https://www.stripes.com/theaters/asia_pacific/2026-11-10/north-korea-high-speed-torpedo-test-23419901.html",
+   "domain": "www.stripes.com",
+   "language": "English",
+   "country": null,
+   "date": "2026-11-10"
+  },
+  {
+   "title": "North korea tests high speed torpedo plans deployment n2209242 — redstate.com",
+   "url": "https://redstate.com/wardclark/2026/11/10/north-korea-tests-high-speed-torpedo-plans-2027-deployment-n2209242",
+   "domain": "redstate.com",
+   "language": "English",
+   "country": null,
+   "date": "2026-11-10"
+  },
+  {
+   "title": "Kim jong un daughter kim jue ae heir north korea — independent.co.uk",
+   "url": "https://www.independent.co.uk/asia/east-asia/kim-jong-un-daughter-kim-jue-ae-heir-north-korea-b3082138.html",
+   "domain": "www.independent.co.uk",
+   "language": "English",
+   "country": null,
+   "date": "2026-11-10"
+  },
+  {
+   "title": "North korea un antonio guterres seoul — independent.co.uk",
+   "url": "https://www.independent.co.uk/asia/east-asia/north-korea-un-antonio-guterres-seoul-b3082208.html",
+   "domain": "www.independent.co.uk",
+   "language": "English",
+   "country": null,
+   "date": "2026-11-10"
   }
  ]
 }
