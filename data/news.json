@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-11T12:06+09:00",
+ "generated_at": "2026-11-12T13:21+09:00",
  "source": "gdelt-gkg",
  "query": "(\"north korea\" OR \"korean peninsula\") (war OR missile OR attack OR invasion OR evacuation OR troops)",
  "config": {
@@ -12,16 +12,34 @@
  "alerts": [],
  "watch": [],
  "latest": {
-  "date": "2026-11-10",
-  "share": 0.787,
-  "count": 9,
-  "tone": -4.159863659275877,
-  "base_n": 10,
+  "date": "2026-11-11",
+  "share": 0.183,
+  "count": 2,
+  "tone": -1.45985401459854,
+  "base_n": 12,
   "median": null,
   "ratio": null,
   "z": null
  },
  "series": [
+  {
+   "date": "2026-10-28",
+   "count": 2,
+   "total": 120123,
+   "tone": -3.564504830327615,
+   "share": 0.166,
+   "source": "gdelt-gkg",
+   "partial": false
+  },
+  {
+   "date": "2026-10-29",
+   "count": 54,
+   "total": 119299,
+   "tone": -4.151493123446605,
+   "share": 4.526,
+   "source": "gdelt-gkg",
+   "partial": false
+  },
   {
    "date": "2026-10-30",
    "count": 378,
@@ -47,7 +65,7 @@
    "tone": -4.490585802526435,
    "share": 14.532,
    "source": "gdelt-gkg",
-   "partial": false
+   "partial": true
   },
   {
    "date": "2026-11-02",
@@ -129,80 +147,33 @@
    "share": 0.787,
    "source": "gdelt-gkg",
    "partial": false
+  },
+  {
+   "date": "2026-11-11",
+   "count": 2,
+   "total": 109390,
+   "tone": -1.45985401459854,
+   "share": 0.183,
+   "source": "gdelt-gkg",
+   "partial": false
   }
  ],
  "articles": [
   {
-   "title": "North korea accuses un chief of siding with south korea over border tensions — ksevradio.com",
-   "url": "https://ksevradio.com/north-korea-accuses-un-chief-of-siding-with-south-korea-over-border-tensions/",
-   "domain": "ksevradio.com",
+   "title": "Steubenville honors homecoming of 1st lt raymond banker gilbert steubenville homecoming… — wtov9.com",
+   "url": "https://wtov9.com/news/local/steubenville-honors-homecoming-of-1st-lt-raymond-banker-gilbert-steubenville-homecoming-raymond-banker-gilbert-north-korea-missing-in-action-remains-identified-world-war-ii-vinson-mortuary",
+   "domain": "wtov9.com",
    "language": "English",
    "country": null,
-   "date": "2026-11-10"
+   "date": "2026-11-11"
   },
   {
-   "title": "North korea accuses un chief of siding with south korea over border tensions — freemalaysiatoday.com",
-   "url": "https://www.freemalaysiatoday.com/category/world/2026/11/10/north-korea-accuses-un-chief-of-siding-with-south-korea-over-border-tensions",
-   "domain": "www.freemalaysiatoday.com",
+   "title": "North korea hacker binance crypto theft heist — channelnewsasia.com",
+   "url": "https://www.channelnewsasia.com/east-asia/north-korea-hacker-binance-crypto-theft-heist-6541766",
+   "domain": "www.channelnewsasia.com",
    "language": "English",
    "country": null,
-   "date": "2026-11-10"
-  },
-  {
-   "title": "North korea accuses un chief siding south korea over border tensions — asiaone.com",
-   "url": "https://www.asiaone.com/asia/north-korea-accuses-un-chief-siding-south-korea-over-border-tensions",
-   "domain": "www.asiaone.com",
-   "language": "English",
-   "country": null,
-   "date": "2026-11-10"
-  },
-  {
-   "title": "North korea accuses un chief siding south korea over border tensions — asiaone.com:443",
-   "url": "https://www.asiaone.com:443/asia/north-korea-accuses-un-chief-siding-south-korea-over-border-tensions",
-   "domain": "www.asiaone.com:443",
-   "language": "English",
-   "country": null,
-   "date": "2026-11-10"
-  },
-  {
-   "title": "North korea accuses un chief of siding with south korea over border tensions — dailymaverick.co.za",
-   "url": "https://www.dailymaverick.co.za/article/2026-11-10-north-korea-accuses-un-chief-of-siding-with-south-korea-over-border-tensions/",
-   "domain": "www.dailymaverick.co.za",
-   "language": "English",
-   "country": null,
-   "date": "2026-11-10"
-  },
-  {
-   "title": "North korea high speed torpedo test — stripes.com",
-   "url": "https://www.stripes.com/theaters/asia_pacific/2026-11-10/north-korea-high-speed-torpedo-test-23419901.html",
-   "domain": "www.stripes.com",
-   "language": "English",
-   "country": null,
-   "date": "2026-11-10"
-  },
-  {
-   "title": "North korea tests high speed torpedo plans deployment n2209242 — redstate.com",
-   "url": "https://redstate.com/wardclark/2026/11/10/north-korea-tests-high-speed-torpedo-plans-2027-deployment-n2209242",
-   "domain": "redstate.com",
-   "language": "English",
-   "country": null,
-   "date": "2026-11-10"
-  },
-  {
-   "title": "Kim jong un daughter kim jue ae heir north korea — independent.co.uk",
-   "url": "https://www.independent.co.uk/asia/east-asia/kim-jong-un-daughter-kim-jue-ae-heir-north-korea-b3082138.html",
-   "domain": "www.independent.co.uk",
-   "language": "English",
-   "country": null,
-   "date": "2026-11-10"
-  },
-  {
-   "title": "North korea un antonio guterres seoul — independent.co.uk",
-   "url": "https://www.independent.co.uk/asia/east-asia/north-korea-un-antonio-guterres-seoul-b3082208.html",
-   "domain": "www.independent.co.uk",
-   "language": "English",
-   "country": null,
-   "date": "2026-11-10"
+   "date": "2026-11-11"
   }
  ]
 }
