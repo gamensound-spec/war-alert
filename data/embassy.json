@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-11-12T13:18+09:00",
- "today": "2026-11-12",
+ "generated_at": "2026-11-13T12:36+09:00",
+ "today": "2026-11-13",
  "recent_days": 30,
  "norm_labels": {
   "1": "일반 주의",
@@ -65,7 +65,7 @@
    "level": 0,
    "level_norm": 1,
    "level_text": "危険情報なし",
-   "updated": "2026-11-12T12:55+09:00",
+   "updated": "2026-11-13T12:20+09:00",
    "url": "https://www.anzen.mofa.go.jp/od/ryojiMail.html?countryCd=003",
    "changed": null,
    "latest": {

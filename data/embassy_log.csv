@@ -221,3 +221,12 @@ date,source,level,level_norm,level_text,updated,error
 2026-11-12,singapore,1,1,No travel advisory,,
 2026-11-12,china,,,,,
 2026-11-12,us_embassy,,,,2026-08-19T15:56+09:00,HTTPError: 405 Client Error: Not Allowed for url: https://kr.usembassy.gov/category/alert/feed/
+2026-11-13,us_state,1,1,Exercise Normal Precautions,2025-05-28T09:00+09:00,
+2026-11-13,uk_fcdo,1,1,No FCDO travel warning,2026-05-14T19:06+09:00,
+2026-11-13,canada,0,1,Exercise normal security precautions,2026-10-15T21:53+09:00,
+2026-11-13,japan,0,1,危険情報なし,2026-11-13T12:20+09:00,
+2026-11-13,germany,1,1,Keine Reisewarnung (경고 없음),2026-11-04T18:05+09:00,
+2026-11-13,newzealand,1,1,Exercise normal safety and security precautions,2024-12-15T21:00+09:00,
+2026-11-13,singapore,1,1,No travel advisory,,
+2026-11-13,china,,,,,
+2026-11-13,us_embassy,,,,2026-08-19T15:56+09:00,HTTPError: 405 Client Error: Not Allowed for url: https://kr.usembassy.gov/category/alert/feed/

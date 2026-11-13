@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-12T13:21+09:00",
+ "generated_at": "2026-11-13T12:40+09:00",
  "source": [
   "wikimedia-pageviews",
   "google-trends-kr-rss"
@@ -34,30 +34,20 @@
  "wiki": {
   "status": "normal",
   "latest": {
-   "date": "2026-11-11",
-   "total": 30428,
+   "date": "2026-11-12",
+   "total": 25999,
    "documents": {
-    "North_Korea": 7358,
-    "Korean_War": 7953,
-    "Korean_Demilitarized_Zone": 1299,
-    "Kim_Jong_Un": 13818
+    "North_Korea": 7460,
+    "Korean_War": 7642,
+    "Korean_Demilitarized_Zone": 1213,
+    "Kim_Jong_Un": 9684
    },
    "base_n": 28,
-   "median": 30622.0,
-   "z": -0.016003327504245025,
+   "median": 30996.0,
+   "z": -0.44000395889093297,
    "status": "normal"
   },
   "series": [
-   {
-    "date": "2026-09-13",
-    "total": 16408,
-    "documents": {
-     "North_Korea": 5822,
-     "Korean_War": 4442,
-     "Korean_Demilitarized_Zone": 1199,
-     "Kim_Jong_Un": 4945
-    }
-   },
    {
     "date": "2026-09-14",
     "total": 16982,
@@ -647,24 +637,32 @@
      "Korean_Demilitarized_Zone": 1299,
      "Kim_Jong_Un": 13818
     }
+   },
+   {
+    "date": "2026-11-12",
+    "total": 25999,
+    "documents": {
+     "North_Korea": 7460,
+     "Korean_War": 7642,
+     "Korean_Demilitarized_Zone": 1213,
+     "Kim_Jong_Un": 9684
+    }
    }
   ],
   "missing_articles": []
  },
  "trends": {
-  "hits": 3,
+  "hits": 1,
   "items": 10,
   "titles": [
-   "이란, ‘미사일 도시’ 공개…트럼프 “전쟁 곧 끝날 것”",
-   "\"이란전 곧 끝날 것\"‥보란 듯 '미사일 기지' 과시",
-   "이란 혁명수비대, 첨단 무기 가득한 ’지하 미사일 도시’ 공개"
+   "한화, 美 핵잠 모듈 기지 ‘오스탈USA’ 인수 가능성은[이현호의 방산!톡]"
   ],
-  "date": "2026-11-12",
-  "samples": 4,
-  "base_n": 3,
+  "date": "2026-11-13",
+  "samples": 5,
+  "base_n": 4,
   "median": null,
   "z": null,
   "status": "muted",
-  "note": "판단 보류(기준선 3/14일)"
+  "note": "판단 보류(기준선 4/14일)"
  }
 }

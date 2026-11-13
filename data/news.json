@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-12T13:21+09:00",
+ "generated_at": "2026-11-13T12:40+09:00",
  "source": "gdelt-gkg",
  "query": "(\"north korea\" OR \"korean peninsula\") (war OR missile OR attack OR invasion OR evacuation OR troops)",
  "config": {
@@ -9,19 +9,39 @@
   "z_alert": 3.0,
   "ratio_alert": 2.0
  },
- "alerts": [],
+ "alerts": [
+  "한반도 분쟁 기사량 급증: 평소의 8.7배 (z +5.8)"
+ ],
  "watch": [],
  "latest": {
-  "date": "2026-11-11",
-  "share": 0.183,
-  "count": 2,
-  "tone": -1.45985401459854,
-  "base_n": 12,
-  "median": null,
-  "ratio": null,
-  "z": null
+  "date": "2026-11-12",
+  "share": 6.874,
+  "count": 75,
+  "tone": -4.6452034060563046,
+  "base_n": 15,
+  "median": 0.79,
+  "ratio": 8.7,
+  "z": 5.82
  },
  "series": [
+  {
+   "date": "2026-10-26",
+   "count": 8,
+   "total": 101215,
+   "tone": -6.544866103093045,
+   "share": 0.79,
+   "source": "gdelt-gkg",
+   "partial": false
+  },
+  {
+   "date": "2026-10-27",
+   "count": 1,
+   "total": 117445,
+   "tone": -7.65124555160142,
+   "share": 0.085,
+   "source": "gdelt-gkg",
+   "partial": false
+  },
   {
    "date": "2026-10-28",
    "count": 2,
@@ -156,24 +176,113 @@
    "share": 0.183,
    "source": "gdelt-gkg",
    "partial": false
+  },
+  {
+   "date": "2026-11-12",
+   "count": 75,
+   "total": 109111,
+   "tone": -4.6452034060563046,
+   "share": 6.874,
+   "source": "gdelt-gkg",
+   "partial": false
   }
  ],
  "articles": [
   {
-   "title": "Steubenville honors homecoming of 1st lt raymond banker gilbert steubenville homecoming… — wtov9.com",
-   "url": "https://wtov9.com/news/local/steubenville-honors-homecoming-of-1st-lt-raymond-banker-gilbert-steubenville-homecoming-raymond-banker-gilbert-north-korea-missing-in-action-remains-identified-world-war-ii-vinson-mortuary",
-   "domain": "wtov9.com",
+   "title": "North korea s kim yo jong criticizes un over border blast — californiatelegraph.com",
+   "url": "http://www.californiatelegraph.com/news/279424224/north-korea-s-kim-yo-jong-criticizes-un-over-border-blast",
+   "domain": "www.californiatelegraph.com",
    "language": "English",
    "country": null,
-   "date": "2026-11-11"
+   "date": "2026-11-12"
   },
   {
-   "title": "North korea hacker binance crypto theft heist — channelnewsasia.com",
-   "url": "https://www.channelnewsasia.com/east-asia/north-korea-hacker-binance-crypto-theft-heist-6541766",
-   "domain": "www.channelnewsasia.com",
+   "title": "North korea s kim yo jong criticizes un over border blast — utahindependent.com",
+   "url": "http://www.utahindependent.com/news/279424224/north-korea-s-kim-yo-jong-criticizes-un-over-border-blast",
+   "domain": "www.utahindependent.com",
    "language": "English",
    "country": null,
-   "date": "2026-11-11"
+   "date": "2026-11-12"
+  },
+  {
+   "title": "North korea s kim yo jong criticizes un over border blast — brazilsun.com",
+   "url": "http://www.brazilsun.com/news/279424224/north-korea-s-kim-yo-jong-criticizes-un-over-border-blast",
+   "domain": "www.brazilsun.com",
+   "language": "English",
+   "country": null,
+   "date": "2026-11-12"
+  },
+  {
+   "title": "North korea s kim yo jong criticizes un over border blast — newyorkstatesman.com",
+   "url": "http://www.newyorkstatesman.com/news/279424224/north-korea-s-kim-yo-jong-criticizes-un-over-border-blast",
+   "domain": "www.newyorkstatesman.com",
+   "language": "English",
+   "country": null,
+   "date": "2026-11-12"
+  },
+  {
+   "title": "North korea rejects un call to ease border tensions — thailandnews.net",
+   "url": "http://www.thailandnews.net/news/279424224/north-korea-rejects-un-call-to-ease-border-tensions",
+   "domain": "www.thailandnews.net",
+   "language": "English",
+   "country": null,
+   "date": "2026-11-12"
+  },
+  {
+   "title": "North korea s kim yo jong criticizes un over border blast — saltlakecitysun.com",
+   "url": "http://www.saltlakecitysun.com/news/279424224/north-korea-s-kim-yo-jong-criticizes-un-over-border-blast",
+   "domain": "www.saltlakecitysun.com",
+   "language": "English",
+   "country": null,
+   "date": "2026-11-12"
+  },
+  {
+   "title": "North korea s kim yo jong criticizes un over border blast — oklahomacitysun.com",
+   "url": "http://www.oklahomacitysun.com/news/279424224/north-korea-s-kim-yo-jong-criticizes-un-over-border-blast",
+   "domain": "www.oklahomacitysun.com",
+   "language": "English",
+   "country": null,
+   "date": "2026-11-12"
+  },
+  {
+   "title": "North korea rejects un call to ease border tensions — bruneinews.net",
+   "url": "http://www.bruneinews.net/news/279424224/north-korea-rejects-un-call-to-ease-border-tensions",
+   "domain": "www.bruneinews.net",
+   "language": "English",
+   "country": null,
+   "date": "2026-11-12"
+  },
+  {
+   "title": "North korea s kim yo jong criticizes un over border blast — ohiostandard.com",
+   "url": "http://www.ohiostandard.com/news/279424224/north-korea-s-kim-yo-jong-criticizes-un-over-border-blast",
+   "domain": "www.ohiostandard.com",
+   "language": "English",
+   "country": null,
+   "date": "2026-11-12"
+  },
+  {
+   "title": "North korea s kim yo jong criticizes un over border blast — orlandoecho.com",
+   "url": "http://www.orlandoecho.com/news/279424224/north-korea-s-kim-yo-jong-criticizes-un-over-border-blast",
+   "domain": "www.orlandoecho.com",
+   "language": "English",
+   "country": null,
+   "date": "2026-11-12"
+  },
+  {
+   "title": "North korea s kim yo jong criticizes un over border blast — cambodiantimes.com",
+   "url": "http://www.cambodiantimes.com/news/279424224/north-korea-s-kim-yo-jong-criticizes-un-over-border-blast",
+   "domain": "www.cambodiantimes.com",
+   "language": "English",
+   "country": null,
+   "date": "2026-11-12"
+  },
+  {
+   "title": "North korea s kim yo jong criticizes un over border blast — nigeriasun.com",
+   "url": "http://www.nigeriasun.com/news/279424224/north-korea-s-kim-yo-jong-criticizes-un-over-border-blast",
+   "domain": "www.nigeriasun.com",
+   "language": "English",
+   "country": null,
+   "date": "2026-11-12"
   }
  ]
 }
