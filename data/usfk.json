@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-13T12:40+09:00",
+ "generated_at": "2026-11-14T12:38+09:00",
  "source": "google-news-rss",
  "config": {
   "groups": {
@@ -56,41 +56,90 @@
  "watch": [],
  "groups": {
   "evac": {
-   "hits_24h": 0,
-   "hits_7d": 0,
+   "hits_24h": 17,
+   "hits_7d": 17,
    "training_7d": 0,
-   "sources_24h": 0,
-   "date": "2026-11-13",
-   "base_n": 4,
+   "sources_24h": 16,
+   "date": "2026-11-14",
+   "base_n": 5,
    "median": null,
    "z": null,
    "status": "muted",
-   "note": "판단 보류 · 기준선 4/14일"
+   "note": "판단 보류 · 기준선 5/14일"
   },
   "readiness": {
    "hits_24h": 0,
    "hits_7d": 0,
    "training_7d": 0,
    "sources_24h": 0,
-   "date": "2026-11-13",
-   "base_n": 4,
+   "date": "2026-11-14",
+   "base_n": 5,
    "median": null,
    "z": null,
    "status": "muted",
-   "note": "판단 보류 · 기준선 4/14일"
+   "note": "판단 보류 · 기준선 5/14일"
   },
   "families": {
    "hits_24h": 0,
    "hits_7d": 0,
    "training_7d": 0,
    "sources_24h": 0,
-   "date": "2026-11-13",
-   "base_n": 4,
+   "date": "2026-11-14",
+   "base_n": 5,
    "median": null,
    "z": null,
    "status": "muted",
-   "note": "판단 보류 · 기준선 4/14일"
+   "note": "판단 보류 · 기준선 5/14일"
   }
  },
- "headlines": []
+ "headlines": [
+  {
+   "title": "美 전문가들 \"트럼프, 전작권 전환 미군 철수 방법으로 보고 있다\" - 펜앤마이크",
+   "source": "펜앤마이크",
+   "date": "2026-11-14T11:53:32+09:00",
+   "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5uU3dONDIzSGd6QUJXN2F3dHMzeFhtMUxiRU1Gem51VmdGOXpWMTNfTWR2VEVSajdrUGdVWEdNVlM4TGZXTWdEdzcxaVVEUGtxZHNJNTZ6bFpkd1FLUnNJbVp4OUR3WjhTQjAw0gFvQVVfeXFMT1VGOExHaTQ3LWRtdDJpX0dPNlN1UEg5Nnl2aG9ha1hsRjRnNHFrVEZNdVprZ3RzcV90Y0Z0QzNRdzlrZFduZ0IzYUM3bERTRUgwaVRKLW4wTXRIVjdmY0Vaak91bTByaFlQcjJSRlhz?oc=5"
+  },
+  {
+   "title": "팩트N｜미군 철수?…빅터 차의 경고에 빠진 5가지 사실 - OBC 뉴스",
+   "source": "OBC 뉴스",
+   "date": "2026-11-14T11:44:13+09:00",
+   "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5OQ0JkYVdCTkV0V2ttQkVFeVJmTmlKSkZqcmJCUmRwV3VHZUthOWRyWnpuaWRvSjUydy1XZ2ZSZmxlYVpTX09heW8zQUlOSEtpSG9XMUFUVGVGakpGYWlCbENzSU9ONkxtckE?oc=5"
+  },
+  {
+   "title": "\"전작권 전환, 주한미군 철수 계기로 삼을 수도\" - 연합뉴스TV",
+   "source": "연합뉴스TV",
+   "date": "2026-11-14T10:53:00+09:00",
+   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5Ia2hIS0dPalhFQVBwbUZYdlAxVzR0dVBfNjN5RUFRZGZGd0RkT2FUY2VIcEh0N0kzbk9iTVFGMy1TQVljVVg1bFNNNDJvOG1MZ28zX2VWWGNuU0xPSmxOcFowR3VNQ2M?oc=5"
+  },
+  {
+   "title": "빅터 차 “트럼프, 전작권 전환을 주한미군 철수 수단으로”…브룩스 “강신철 ‘즉시 전환’ 발언 실망” - 아시아투데이",
+   "source": "아시아투데이",
+   "date": "2026-11-14T10:36:34+09:00",
+   "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5XS0M2TElJVFVUYXNDdU1GNjNQS0o3UTVQalp0dUFRYkRZX3FQWWtnYjl6RmF4WHFVRUttMUhEeEV0MUh2aVFmaFhHOWpmdDVLeS02UDdVejNRMkR3UURwZFl4V1kydUcwN3AxUTNn?oc=5"
+  },
+  {
+   "title": "\"트럼프, 전작권 전환을 미군 철수 수단으로\" … 美 전문가들 잇단 경고 - 뉴데일리",
+   "source": "뉴데일리",
+   "date": "2026-11-14T10:20:00+09:00",
+   "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE43MC1KXzYtQnNNVDVxdG9TZE1zdFdzMEhCZDlyVkxkRW1ob2JLb1RiaFlHRWxWNDNUeEZad1ZhdlF5cWVlVXNlaENvb2RFLTc1eUJTa0gzVjcwLVpxRGFObHNQNDNQMDNmVTdzTGtKMUtQOUtiTjIyem9VRdIBgAFBVV95cUxQRkd4cEdPNUt5NnhRQThDVllNY1o3UlZ5NGxjWHF4NGxOMFNPS2d6Q2tsS1N0OUlvRnBSRXN5a0N3SmFpUTlLRGEyOExQcF8wcGhLTV9NVEEtXzJBMi1NWTBXa3hHYmhaUUpjVVhJcVpudDFMcHV3bGRmUXd5VUFyTQ?oc=5"
+  },
+  {
+   "title": "美전문가들 \"트럼프, 전작권 전환 계기로 주한미군 철수 추진 가능성\" - 위키리크스한국",
+   "source": "위키리크스한국",
+   "date": "2026-11-14T09:54:15+09:00",
+   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9Wcmo3UGp2YlZ2eDllTTBNQnhmelFoNTRnelJvQVBVOXlTOFhJT3hfbXVFaHBKTzVwZUl3Ny01M05VVzExejRCd2RRVURPQ0NWd0gwRUplTnRmQUMzdWp5Y1pVWXR6Ul9ndEUybV9XU2o?oc=5"
+  },
+  {
+   "title": "트럼프의 한반도 전략, 전시작전권 전환이 미군 철수 신호탄 되나? - 공감신문",
+   "source": "공감신문",
+   "date": "2026-11-14T09:40:13+09:00",
+   "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5XTWpySm9NcGVPS3N4R2xGSDUwVk9ZMXBMMFU5RWdxcS1DZEZKTjBQVFVnRjgwSmJQZ1NXdXl1NVpaNElVbTRpdzdyLTZoZmhVeW5PZkEwUE1fTWpsb1BCTE56MVBsMllK?oc=5"
+  },
+  {
+   "title": "미 전문가들 “트럼프, 전작권 전환을 주한미군 철수 기회로 봐” - 채널A",
+   "source": "채널A",
+   "date": "2026-11-14T09:18:00+09:00",
+   "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE14ZTJ5SUZreUZLLVFSU0kteUhsWFdmdzF0emZGMGpnU3U0cDdpbTNsZWNOMFl6Q2gwc1Fwell5WkxzUGpFTFo4RUdhRk9CX3JaMElSNWhNZ3hHSGVJTWfSAWNBVV95cUxOdjc2WU1GNW9DOHR6WTBDT1g2Tk9nTGxrRy1EczFRTmNxMzJyTW9KVFVZemIxZnR5aVFTLUlZRFdHaXZJR0RpRUVqQVpUdDVkcGhfdnBTdmhuLXJqY3F5OHRwMlk?oc=5"
+  }
+ ]
 }

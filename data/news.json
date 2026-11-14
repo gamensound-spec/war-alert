@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-13T12:40+09:00",
+ "generated_at": "2026-11-14T12:38+09:00",
  "source": "gdelt-gkg",
  "query": "(\"north korea\" OR \"korean peninsula\") (war OR missile OR attack OR invasion OR evacuation OR troops)",
  "config": {
@@ -9,21 +9,37 @@
   "z_alert": 3.0,
   "ratio_alert": 2.0
  },
- "alerts": [
-  "한반도 분쟁 기사량 급증: 평소의 8.7배 (z +5.8)"
- ],
+ "alerts": [],
  "watch": [],
  "latest": {
-  "date": "2026-11-12",
-  "share": 6.874,
-  "count": 75,
-  "tone": -4.6452034060563046,
-  "base_n": 15,
-  "median": 0.79,
-  "ratio": 8.7,
-  "z": 5.82
+  "date": "2026-11-13",
+  "share": 2.765,
+  "count": 29,
+  "tone": -6.63717848306172,
+  "base_n": 18,
+  "median": 1.611,
+  "ratio": 1.72,
+  "z": 0.54
  },
  "series": [
+  {
+   "date": "2026-10-24",
+   "count": 9,
+   "total": 63438,
+   "tone": -0.661791751755179,
+   "share": 1.419,
+   "source": "gdelt-gkg",
+   "partial": false
+  },
+  {
+   "date": "2026-10-25",
+   "count": 10,
+   "total": 53112,
+   "tone": -2.3520719246432753,
+   "share": 1.883,
+   "source": "gdelt-gkg",
+   "partial": true
+  },
   {
    "date": "2026-10-26",
    "count": 8,
@@ -85,7 +101,7 @@
    "tone": -4.490585802526435,
    "share": 14.532,
    "source": "gdelt-gkg",
-   "partial": true
+   "partial": false
   },
   {
    "date": "2026-11-02",
@@ -185,104 +201,113 @@
    "share": 6.874,
    "source": "gdelt-gkg",
    "partial": false
+  },
+  {
+   "date": "2026-11-13",
+   "count": 29,
+   "total": 104883,
+   "tone": -6.63717848306172,
+   "share": 2.765,
+   "source": "gdelt-gkg",
+   "partial": false
   }
  ],
  "articles": [
   {
-   "title": "North korea s kim yo jong criticizes un over border blast — californiatelegraph.com",
-   "url": "http://www.californiatelegraph.com/news/279424224/north-korea-s-kim-yo-jong-criticizes-un-over-border-blast",
-   "domain": "www.californiatelegraph.com",
+   "title": "Us details billion freeze after north korea s binance hack — livemint.com",
+   "url": "https://www.livemint.com/news/us-news/us-details-2-7-billion-freeze-after-north-korea-s-binance-hack-11794521427219.html",
+   "domain": "www.livemint.com",
    "language": "English",
    "country": null,
-   "date": "2026-11-12"
+   "date": "2026-11-13"
   },
   {
-   "title": "North korea s kim yo jong criticizes un over border blast — utahindependent.com",
-   "url": "http://www.utahindependent.com/news/279424224/north-korea-s-kim-yo-jong-criticizes-un-over-border-blast",
-   "domain": "www.utahindependent.com",
+   "title": "North korea binance crypto hack seizure — mynbc5.com",
+   "url": "https://www.mynbc5.com/article/north-korea-binance-crypto-hack-seizure/74417146",
+   "domain": "www.mynbc5.com",
    "language": "English",
    "country": null,
-   "date": "2026-11-12"
+   "date": "2026-11-13"
   },
   {
-   "title": "North korea s kim yo jong criticizes un over border blast — brazilsun.com",
-   "url": "http://www.brazilsun.com/news/279424224/north-korea-s-kim-yo-jong-criticizes-un-over-border-blast",
-   "domain": "www.brazilsun.com",
+   "title": "North korea binance crypto hack seizure — wyff4.com",
+   "url": "https://www.wyff4.com/article/north-korea-binance-crypto-hack-seizure/74417146",
+   "domain": "www.wyff4.com",
    "language": "English",
    "country": null,
-   "date": "2026-11-12"
+   "date": "2026-11-13"
   },
   {
-   "title": "North korea s kim yo jong criticizes un over border blast — newyorkstatesman.com",
-   "url": "http://www.newyorkstatesman.com/news/279424224/north-korea-s-kim-yo-jong-criticizes-un-over-border-blast",
-   "domain": "www.newyorkstatesman.com",
+   "title": "North korea binance crypto hack seizure — wgal.com",
+   "url": "https://www.wgal.com/article/north-korea-binance-crypto-hack-seizure/74417146",
+   "domain": "www.wgal.com",
    "language": "English",
    "country": null,
-   "date": "2026-11-12"
+   "date": "2026-11-13"
   },
   {
-   "title": "North korea rejects un call to ease border tensions — thailandnews.net",
-   "url": "http://www.thailandnews.net/news/279424224/north-korea-rejects-un-call-to-ease-border-tensions",
-   "domain": "www.thailandnews.net",
+   "title": "North korea binance crypto hack seizure — ksbw.com",
+   "url": "https://www.ksbw.com/article/north-korea-binance-crypto-hack-seizure/74417146",
+   "domain": "www.ksbw.com",
    "language": "English",
    "country": null,
-   "date": "2026-11-12"
+   "date": "2026-11-13"
   },
   {
-   "title": "North korea s kim yo jong criticizes un over border blast — saltlakecitysun.com",
-   "url": "http://www.saltlakecitysun.com/news/279424224/north-korea-s-kim-yo-jong-criticizes-un-over-border-blast",
-   "domain": "www.saltlakecitysun.com",
+   "title": "North korea binance crypto hack seizure — koco.com",
+   "url": "https://www.koco.com/article/north-korea-binance-crypto-hack-seizure/74417146",
+   "domain": "www.koco.com",
    "language": "English",
    "country": null,
-   "date": "2026-11-12"
+   "date": "2026-11-13"
   },
   {
-   "title": "North korea s kim yo jong criticizes un over border blast — oklahomacitysun.com",
-   "url": "http://www.oklahomacitysun.com/news/279424224/north-korea-s-kim-yo-jong-criticizes-un-over-border-blast",
-   "domain": "www.oklahomacitysun.com",
+   "title": "North korea binance crypto hack seizure — wmtw.com",
+   "url": "https://www.wmtw.com/article/north-korea-binance-crypto-hack-seizure/74417146",
+   "domain": "www.wmtw.com",
    "language": "English",
    "country": null,
-   "date": "2026-11-12"
+   "date": "2026-11-13"
   },
   {
-   "title": "North korea rejects un call to ease border tensions — bruneinews.net",
-   "url": "http://www.bruneinews.net/news/279424224/north-korea-rejects-un-call-to-ease-border-tensions",
-   "domain": "www.bruneinews.net",
+   "title": "North korea binance crypto hack seizure — kmbc.com",
+   "url": "https://www.kmbc.com/article/north-korea-binance-crypto-hack-seizure/74417146",
+   "domain": "www.kmbc.com",
    "language": "English",
    "country": null,
-   "date": "2026-11-12"
+   "date": "2026-11-13"
   },
   {
-   "title": "North korea s kim yo jong criticizes un over border blast — ohiostandard.com",
-   "url": "http://www.ohiostandard.com/news/279424224/north-korea-s-kim-yo-jong-criticizes-un-over-border-blast",
-   "domain": "www.ohiostandard.com",
+   "title": "North korea binance crypto hack seizure — koat.com",
+   "url": "https://www.koat.com/article/north-korea-binance-crypto-hack-seizure/74417146",
+   "domain": "www.koat.com",
    "language": "English",
    "country": null,
-   "date": "2026-11-12"
+   "date": "2026-11-13"
   },
   {
-   "title": "North korea s kim yo jong criticizes un over border blast — orlandoecho.com",
-   "url": "http://www.orlandoecho.com/news/279424224/north-korea-s-kim-yo-jong-criticizes-un-over-border-blast",
-   "domain": "www.orlandoecho.com",
+   "title": "North korea binance crypto hack seizure — gulfcoastnewsnow.com",
+   "url": "https://www.gulfcoastnewsnow.com/article/north-korea-binance-crypto-hack-seizure/74417146",
+   "domain": "www.gulfcoastnewsnow.com",
    "language": "English",
    "country": null,
-   "date": "2026-11-12"
+   "date": "2026-11-13"
   },
   {
-   "title": "North korea s kim yo jong criticizes un over border blast — cambodiantimes.com",
-   "url": "http://www.cambodiantimes.com/news/279424224/north-korea-s-kim-yo-jong-criticizes-un-over-border-blast",
-   "domain": "www.cambodiantimes.com",
+   "title": "North korea binance crypto hack seizure — wisn.com",
+   "url": "https://www.wisn.com/article/north-korea-binance-crypto-hack-seizure/74417146",
+   "domain": "www.wisn.com",
    "language": "English",
    "country": null,
-   "date": "2026-11-12"
+   "date": "2026-11-13"
   },
   {
-   "title": "North korea s kim yo jong criticizes un over border blast — nigeriasun.com",
-   "url": "http://www.nigeriasun.com/news/279424224/north-korea-s-kim-yo-jong-criticizes-un-over-border-blast",
-   "domain": "www.nigeriasun.com",
+   "title": "Doj north korea crypto theft binance hack — washingtonexaminer.com",
+   "url": "http://www.washingtonexaminer.com/news/justice/4802216/doj-north-korea-crypto-theft-binance-hack/",
+   "domain": "www.washingtonexaminer.com",
    "language": "English",
    "country": null,
-   "date": "2026-11-12"
+   "date": "2026-11-13"
   }
  ]
 }

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-13T12:40+09:00",
+ "generated_at": "2026-11-14T12:38+09:00",
  "source": [
   "wikimedia-pageviews",
   "google-trends-kr-rss"
@@ -48,16 +48,6 @@
    "status": "normal"
   },
   "series": [
-   {
-    "date": "2026-09-14",
-    "total": 16982,
-    "documents": {
-     "North_Korea": 6157,
-     "Korean_War": 4725,
-     "Korean_Demilitarized_Zone": 1218,
-     "Kim_Jong_Un": 4882
-    }
-   },
    {
     "date": "2026-09-15",
     "total": 16947,
@@ -652,17 +642,15 @@
   "missing_articles": []
  },
  "trends": {
-  "hits": 1,
+  "hits": 0,
   "items": 10,
-  "titles": [
-   "한화, 美 핵잠 모듈 기지 ‘오스탈USA’ 인수 가능성은[이현호의 방산!톡]"
-  ],
-  "date": "2026-11-13",
-  "samples": 5,
-  "base_n": 4,
+  "titles": [],
+  "date": "2026-11-14",
+  "samples": 6,
+  "base_n": 5,
   "median": null,
   "z": null,
   "status": "muted",
-  "note": "판단 보류(기준선 4/14일)"
+  "note": "판단 보류(기준선 5/14일)"
  }
 }
