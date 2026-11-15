@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-14T12:38+09:00",
+ "generated_at": "2026-11-15T12:10+09:00",
  "source": "google-news-rss",
  "config": {
   "groups": {
@@ -56,90 +56,90 @@
  "watch": [],
  "groups": {
   "evac": {
-   "hits_24h": 17,
-   "hits_7d": 17,
+   "hits_24h": 9,
+   "hits_7d": 26,
    "training_7d": 0,
-   "sources_24h": 16,
-   "date": "2026-11-14",
-   "base_n": 5,
+   "sources_24h": 9,
+   "date": "2026-11-15",
+   "base_n": 6,
    "median": null,
    "z": null,
    "status": "muted",
-   "note": "판단 보류 · 기준선 5/14일"
+   "note": "판단 보류 · 기준선 6/14일"
   },
   "readiness": {
    "hits_24h": 0,
    "hits_7d": 0,
    "training_7d": 0,
    "sources_24h": 0,
-   "date": "2026-11-14",
-   "base_n": 5,
+   "date": "2026-11-15",
+   "base_n": 6,
    "median": null,
    "z": null,
    "status": "muted",
-   "note": "판단 보류 · 기준선 5/14일"
+   "note": "판단 보류 · 기준선 6/14일"
   },
   "families": {
    "hits_24h": 0,
    "hits_7d": 0,
    "training_7d": 0,
    "sources_24h": 0,
-   "date": "2026-11-14",
-   "base_n": 5,
+   "date": "2026-11-15",
+   "base_n": 6,
    "median": null,
    "z": null,
    "status": "muted",
-   "note": "판단 보류 · 기준선 5/14일"
+   "note": "판단 보류 · 기준선 6/14일"
   }
  },
  "headlines": [
   {
-   "title": "美 전문가들 \"트럼프, 전작권 전환 미군 철수 방법으로 보고 있다\" - 펜앤마이크",
-   "source": "펜앤마이크",
-   "date": "2026-11-14T11:53:32+09:00",
-   "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5uU3dONDIzSGd6QUJXN2F3dHMzeFhtMUxiRU1Gem51VmdGOXpWMTNfTWR2VEVSajdrUGdVWEdNVlM4TGZXTWdEdzcxaVVEUGtxZHNJNTZ6bFpkd1FLUnNJbVp4OUR3WjhTQjAw0gFvQVVfeXFMT1VGOExHaTQ3LWRtdDJpX0dPNlN1UEg5Nnl2aG9ha1hsRjRnNHFrVEZNdVprZ3RzcV90Y0Z0QzNRdzlrZFduZ0IzYUM3bERTRUgwaVRKLW4wTXRIVjdmY0Vaak91bTByaFlQcjJSRlhz?oc=5"
+   "title": "이용철, 미군 철수 시위 대학생·문성근 변호 이력 논란 - 이데일리",
+   "source": "이데일리",
+   "date": "2026-11-15T09:30:45+09:00",
+   "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPNTlZQzNQcXN1ZkJiZ2pUdWdqSEE2a2RQeVBCcDFDZVMwa1VaMEtpVjFzMnAybkFJSFQtdGNTd0Q5SHFvZEx2ZWkzSlpiOFNpS3ByZFlSY01sQ0d0SzBobndJMjRSR1JnVzMzNHN1NEdsVThkbDkwUHdyTDFEZER4dQ?oc=5"
   },
   {
-   "title": "팩트N｜미군 철수?…빅터 차의 경고에 빠진 5가지 사실 - OBC 뉴스",
-   "source": "OBC 뉴스",
-   "date": "2026-11-14T11:44:13+09:00",
-   "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5OQ0JkYVdCTkV0V2ttQkVFeVJmTmlKSkZqcmJCUmRwV3VHZUthOWRyWnpuaWRvSjUydy1XZ2ZSZmxlYVpTX09heW8zQUlOSEtpSG9XMUFUVGVGakpGYWlCbENzSU9ONkxtckE?oc=5"
+   "title": "브룩스 “전작권 전환 당장 가능하다는 강신철 발언에 매우 실망”… 트럼프, 주한미군 철수할 수도 - 트루스데일리",
+   "source": "트루스데일리",
+   "date": "2026-11-15T03:27:44+09:00",
+   "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTFB3dTlaLU1OcVEzUFFaSVhhemVrbWU5Zkpmc2o1RTRlQnJlUDVTOUtxNU14dHJNTFNhQTJzeFB1Tl82RDVETEpuWk5XMXVHN2N2b09fVTBHRGRiZE1va2llRXYxWWZET3pPVW9EZ3Jn?oc=5"
   },
   {
-   "title": "\"전작권 전환, 주한미군 철수 계기로 삼을 수도\" - 연합뉴스TV",
-   "source": "연합뉴스TV",
-   "date": "2026-11-14T10:53:00+09:00",
-   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5Ia2hIS0dPalhFQVBwbUZYdlAxVzR0dVBfNjN5RUFRZGZGd0RkT2FUY2VIcEh0N0kzbk9iTVFGMy1TQVljVVg1bFNNNDJvOG1MZ28zX2VWWGNuU0xPSmxOcFowR3VNQ2M?oc=5"
+   "title": "美 전문가들 “전작권 전환, 주한미군 철수 명분 될 수도”… 한미동맹 안보 경고등 - 독립신문",
+   "source": "독립신문",
+   "date": "2026-11-14T21:09:37+09:00",
+   "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTFA1RXo3R0JWc0w3TzU2WEQ3ZkhkY2ZFdi01cDZNbWVHbDZIYzJzdC1TWGFELVBER29IdXdjbFZ0MHpjZndpYnBRT0N4OHVSQmZnZFhvaTVhMEJvZW1QWkdZNlRZa2xJalZBSGdn?oc=5"
   },
   {
-   "title": "빅터 차 “트럼프, 전작권 전환을 주한미군 철수 수단으로”…브룩스 “강신철 ‘즉시 전환’ 발언 실망” - 아시아투데이",
-   "source": "아시아투데이",
-   "date": "2026-11-14T10:36:34+09:00",
-   "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5XS0M2TElJVFVUYXNDdU1GNjNQS0o3UTVQalp0dUFRYkRZX3FQWWtnYjl6RmF4WHFVRUttMUhEeEV0MUh2aVFmaFhHOWpmdDVLeS02UDdVejNRMkR3UURwZFl4V1kydUcwN3AxUTNn?oc=5"
+   "title": "전작권 넘기면 주한미군 철수?…브룩스, 강신철에 매우 실망 - 매일경제",
+   "source": "매일경제",
+   "date": "2026-11-14T19:51:00+09:00",
+   "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE9fRzJneG5fcmY5c254QmVMa29hSS1vQVRfVW4tV1NtelpjOWZKeTA3TTlQMEN3NGJ0WEtCYkdZS1FGbDZXblNEZU9nazHSAUxBVV95cUxPX0cyZ3huX3JmOXNueEJlTGtvYUktb0FUX1VuLVdTbXpaYzlmSnkwN005UDBDdzRidFhLQmJHWUtRRmw2V25TRGVPZ2sx?oc=5"
   },
   {
-   "title": "\"트럼프, 전작권 전환을 미군 철수 수단으로\" … 美 전문가들 잇단 경고 - 뉴데일리",
-   "source": "뉴데일리",
-   "date": "2026-11-14T10:20:00+09:00",
-   "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE43MC1KXzYtQnNNVDVxdG9TZE1zdFdzMEhCZDlyVkxkRW1ob2JLb1RiaFlHRWxWNDNUeEZad1ZhdlF5cWVlVXNlaENvb2RFLTc1eUJTa0gzVjcwLVpxRGFObHNQNDNQMDNmVTdzTGtKMUtQOUtiTjIyem9VRdIBgAFBVV95cUxQRkd4cEdPNUt5NnhRQThDVllNY1o3UlZ5NGxjWHF4NGxOMFNPS2d6Q2tsS1N0OUlvRnBSRXN5a0N3SmFpUTlLRGEyOExQcF8wcGhLTV9NVEEtXzJBMi1NWTBXa3hHYmhaUUpjVVhJcVpudDFMcHV3bGRmUXd5VUFyTQ?oc=5"
+   "title": "美 전문가들 “트럼프, 전작권 전환을 주한미군 철수 수단으로 인식” - 타임뉴스",
+   "source": "타임뉴스",
+   "date": "2026-11-14T18:30:51+09:00",
+   "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5fQnEtZmtyM0hTXy1VVDlaWXhZZEp2VW54TGNWSFZTOXQ2T3ZacV90c1I0X01EbDVIZW1BeWtveHAwQnh6c1JJWkI1cHBYWkRxTHdsUA?oc=5"
   },
   {
-   "title": "美전문가들 \"트럼프, 전작권 전환 계기로 주한미군 철수 추진 가능성\" - 위키리크스한국",
-   "source": "위키리크스한국",
-   "date": "2026-11-14T09:54:15+09:00",
-   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9Wcmo3UGp2YlZ2eDllTTBNQnhmelFoNTRnelJvQVBVOXlTOFhJT3hfbXVFaHBKTzVwZUl3Ny01M05VVzExejRCd2RRVURPQ0NWd0gwRUplTnRmQUMzdWp5Y1pVWXR6Ul9ndEUybV9XU2o?oc=5"
+   "title": "전작권 전환이 주한미군 철수 수단? 미국 전문가들이 경고한 이유 🔍 - 뉴닉",
+   "source": "뉴닉",
+   "date": "2026-11-14T15:16:17+09:00",
+   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5lOEp4Um5ZSnVWbzNqQWhOWTBnN3h6N2JHeUNFSkVKRlh1TExHRVFRbnRZN1haOG8wZ1BLaFdqSmZyX1ZCWVBrTld4LVh1UUI4SUNz?oc=5"
   },
   {
-   "title": "트럼프의 한반도 전략, 전시작전권 전환이 미군 철수 신호탄 되나? - 공감신문",
-   "source": "공감신문",
-   "date": "2026-11-14T09:40:13+09:00",
-   "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5XTWpySm9NcGVPS3N4R2xGSDUwVk9ZMXBMMFU5RWdxcS1DZEZKTjBQVFVnRjgwSmJQZ1NXdXl1NVpaNElVbTRpdzdyLTZoZmhVeW5PZkEwUE1fTWpsb1BCTE56MVBsMllK?oc=5"
+   "title": "\"트럼프, 전작권 전환을 주한미군 철수 수단으로\"⋯美 전문가들 경고 - 아이뉴스24",
+   "source": "아이뉴스24",
+   "date": "2026-11-14T15:00:00+09:00",
+   "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1TMm1GdUphUTd1T1NEYkFraWxJOGRVRWIzYU1kSldRbFpWUjYxaWcydnJWMmpvazFZVkQyNEd6WnVPVzNPdGNOb184Zw?oc=5"
   },
   {
-   "title": "미 전문가들 “트럼프, 전작권 전환을 주한미군 철수 기회로 봐” - 채널A",
-   "source": "채널A",
-   "date": "2026-11-14T09:18:00+09:00",
-   "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE14ZTJ5SUZreUZLLVFSU0kteUhsWFdmdzF0emZGMGpnU3U0cDdpbTNsZWNOMFl6Q2gwc1Fwell5WkxzUGpFTFo4RUdhRk9CX3JaMElSNWhNZ3hHSGVJTWfSAWNBVV95cUxOdjc2WU1GNW9DOHR6WTBDT1g2Tk9nTGxrRy1EczFRTmNxMzJyTW9KVFVZemIxZnR5aVFTLUlZRFdHaXZJR0RpRUVqQVpUdDVkcGhfdnBTdmhuLXJqY3F5OHRwMlk?oc=5"
+   "title": "美전문가들 \"트럼프, 전작권 전환을 주한미군 철수 수단으로 봐” - 한국일보",
+   "source": "한국일보",
+   "date": "2026-11-14T14:35:00+09:00",
+   "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1CVE1tYW92ZFhBNlhvaHpyNnhYd2VSeXE1SHVHWDd1MmdsRHNPN3FEcDJTMkwzVmd5NC02ekxCOUFoS2NwS0JtQjRiSFB1V1NNaDNOTDFQNXV0dXFtVUNINk1scHFKQUxZemR6MER30gFzQVVfeXFMUGhSeExMTmxUZ25FZ1hpNW1nUnpuaDRJMFo5NF9yMy1Pdld2TDQ2TU5HS0FHZlFJTk1SSnE4UnRjcEljVWZiNjFNaGNGMjZkN3cyZ285TXpjbWowTmYwTFpSckZKaVdRcURfWmZaVnpGdDZacw?oc=5"
   }
  ]
 }
