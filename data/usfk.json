@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T12:10+09:00",
+ "generated_at": "2026-11-16T12:12+09:00",
  "source": "google-news-rss",
  "config": {
   "groups": {
@@ -56,43 +56,61 @@
  "watch": [],
  "groups": {
   "evac": {
-   "hits_24h": 9,
-   "hits_7d": 26,
+   "hits_24h": 3,
+   "hits_7d": 29,
    "training_7d": 0,
-   "sources_24h": 9,
-   "date": "2026-11-15",
-   "base_n": 6,
+   "sources_24h": 3,
+   "date": "2026-11-16",
+   "base_n": 7,
    "median": null,
    "z": null,
    "status": "muted",
-   "note": "판단 보류 · 기준선 6/14일"
+   "note": "판단 보류 · 기준선 7/14일"
   },
   "readiness": {
    "hits_24h": 0,
    "hits_7d": 0,
    "training_7d": 0,
    "sources_24h": 0,
-   "date": "2026-11-15",
-   "base_n": 6,
+   "date": "2026-11-16",
+   "base_n": 7,
    "median": null,
    "z": null,
    "status": "muted",
-   "note": "판단 보류 · 기준선 6/14일"
+   "note": "판단 보류 · 기준선 7/14일"
   },
   "families": {
    "hits_24h": 0,
    "hits_7d": 0,
    "training_7d": 0,
    "sources_24h": 0,
-   "date": "2026-11-15",
-   "base_n": 6,
+   "date": "2026-11-16",
+   "base_n": 7,
    "median": null,
    "z": null,
    "status": "muted",
-   "note": "판단 보류 · 기준선 6/14일"
+   "note": "판단 보류 · 기준선 7/14일"
   }
  },
  "headlines": [
+  {
+   "title": "트럼프 전 대통령, 전시작전통제권 전환이 주한미군 철수의 신호탄 될까? - 공감신문",
+   "source": "공감신문",
+   "date": "2026-11-15T18:59:07+09:00",
+   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5TQnFmQW5IWWpLMW9kampUMmk0NnRnWDJNSWFBS2NORmZ6NGMzR2I0eWNQUEdTdHRfMVI2eHhRNXYwalZxNm1nT19QbWlTNDd3Ymx3eU1IVnFIN0w3Z3BhXzRxNnR1OFk?oc=5"
+  },
+  {
+   "title": "진보당, 전작권 환수와 주한미군 철수 협박 비판 - 한국사회복지저널",
+   "source": "한국사회복지저널",
+   "date": "2026-11-15T18:01:13+09:00",
+   "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE0xSXZaWGxyVWsxanlfQWN4RGRUUXQyT3M1dWo1dm1XemR2OUdUWlZOY190VldCeWZmcE1abkc1anpZQ3d2OXpqSUQwTXZNR0ZsLUZTa0xsSXFOQ29paURsR20wOWdPamtGYm9F?oc=5"
+  },
+  {
+   "title": "전작권 전환, 주한미군 철수로 이어질 수 있다?…\"실행 쉽지 않아\" - 뉴스1",
+   "source": "뉴스1",
+   "date": "2026-11-15T15:04:50+09:00",
+   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFB4RndQYTJCbVYtelVvMGlfeENrZmlMc0NuLWwxbnBPbl96THhOeElRWklfZThTRmtLTzF3Wkgxc2lFUjl0X0Q4aTdwU1lPZGE4cVQ3Z004ZmdHTW1qeFJmN1JPNWNvTGs?oc=5"
+  },
   {
    "title": "이용철, 미군 철수 시위 대학생·문성근 변호 이력 논란 - 이데일리",
    "source": "이데일리",
@@ -114,32 +132,14 @@
   {
    "title": "전작권 넘기면 주한미군 철수?…브룩스, 강신철에 매우 실망 - 매일경제",
    "source": "매일경제",
-   "date": "2026-11-14T19:51:00+09:00",
-   "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE9fRzJneG5fcmY5c254QmVMa29hSS1vQVRfVW4tV1NtelpjOWZKeTA3TTlQMEN3NGJ0WEtCYkdZS1FGbDZXblNEZU9nazHSAUxBVV95cUxPX0cyZ3huX3JmOXNueEJlTGtvYUktb0FUX1VuLVdTbXpaYzlmSnkwN005UDBDdzRidFhLQmJHWUtRRmw2V25TRGVPZ2sx?oc=5"
+   "date": "2026-11-14T19:30:35+09:00",
+   "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5QU1NoVGY5a3FVM3hLWUdNWVRfMHpmUEEybXQ0WlZwVzJ2dHBpR19mNXF0d1dxOUdGRTY0LXNIQ3JXYXp6UDdMTTAyWUZlMDlIZmVneGF30gFMQVVfeXFMT19HMmd4bl9yZjlzbnhCZUxrb2FJLW9BVF9Vbi1XU216WmM5Zkp5MDdNOVAwQ3c0YnRYS0JiR1lLUUZsNlduU0RlT2drMQ?oc=5"
   },
   {
    "title": "美 전문가들 “트럼프, 전작권 전환을 주한미군 철수 수단으로 인식” - 타임뉴스",
    "source": "타임뉴스",
    "date": "2026-11-14T18:30:51+09:00",
    "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5fQnEtZmtyM0hTXy1VVDlaWXhZZEp2VW54TGNWSFZTOXQ2T3ZacV90c1I0X01EbDVIZW1BeWtveHAwQnh6c1JJWkI1cHBYWkRxTHdsUA?oc=5"
-  },
-  {
-   "title": "전작권 전환이 주한미군 철수 수단? 미국 전문가들이 경고한 이유 🔍 - 뉴닉",
-   "source": "뉴닉",
-   "date": "2026-11-14T15:16:17+09:00",
-   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5lOEp4Um5ZSnVWbzNqQWhOWTBnN3h6N2JHeUNFSkVKRlh1TExHRVFRbnRZN1haOG8wZ1BLaFdqSmZyX1ZCWVBrTld4LVh1UUI4SUNz?oc=5"
-  },
-  {
-   "title": "\"트럼프, 전작권 전환을 주한미군 철수 수단으로\"⋯美 전문가들 경고 - 아이뉴스24",
-   "source": "아이뉴스24",
-   "date": "2026-11-14T15:00:00+09:00",
-   "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1TMm1GdUphUTd1T1NEYkFraWxJOGRVRWIzYU1kSldRbFpWUjYxaWcydnJWMmpvazFZVkQyNEd6WnVPVzNPdGNOb184Zw?oc=5"
-  },
-  {
-   "title": "美전문가들 \"트럼프, 전작권 전환을 주한미군 철수 수단으로 봐” - 한국일보",
-   "source": "한국일보",
-   "date": "2026-11-14T14:35:00+09:00",
-   "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1CVE1tYW92ZFhBNlhvaHpyNnhYd2VSeXE1SHVHWDd1MmdsRHNPN3FEcDJTMkwzVmd5NC02ekxCOUFoS2NwS0JtQjRiSFB1V1NNaDNOTDFQNXV0dXFtVUNINk1scHFKQUxZemR6MER30gFzQVVfeXFMUGhSeExMTmxUZ25FZ1hpNW1nUnpuaDRJMFo5NF9yMy1Pdld2TDQ2TU5HS0FHZlFJTk1SSnE4UnRjcEljVWZiNjFNaGNGMjZkN3cyZ285TXpjbWowTmYwTFpSckZKaVdRcURfWmZaVnpGdDZacw?oc=5"
   }
  ]
 }

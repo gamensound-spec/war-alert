@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T12:10+09:00",
+ "generated_at": "2026-11-16T12:12+09:00",
  "source": "gdelt-gkg",
  "query": "(\"north korea\" OR \"korean peninsula\") (war OR missile OR attack OR invasion OR evacuation OR troops)",
  "config": {
@@ -16,12 +16,30 @@
   "share": 0.0,
   "count": 0,
   "tone": null,
-  "base_n": 20,
+  "base_n": 22,
   "median": 2.064,
   "ratio": 0.0,
-  "z": -0.74
+  "z": -0.77
  },
  "series": [
+  {
+   "date": "2026-10-20",
+   "count": 39,
+   "total": 113378,
+   "tone": -5.021874031106995,
+   "share": 3.44,
+   "source": "gdelt-gkg",
+   "partial": false
+  },
+  {
+   "date": "2026-10-21",
+   "count": 14,
+   "total": 117927,
+   "tone": -4.547432271558916,
+   "share": 1.187,
+   "source": "gdelt-gkg",
+   "partial": false
+  },
   {
    "date": "2026-10-22",
    "count": 82,
@@ -237,7 +255,41 @@
    "share": 0.0,
    "source": "gdelt-gkg",
    "partial": false
+  },
+  {
+   "date": "2026-11-15",
+   "count": 3,
+   "total": 50459,
+   "tone": -3.21583487864458,
+   "share": 0.595,
+   "source": "gdelt-gkg",
+   "partial": true
   }
  ],
- "articles": []
+ "articles": [
+  {
+   "title": "North korea linked hackers target south korean servers report — koreatimes.co.kr",
+   "url": "https://www.koreatimes.co.kr/foreignaffairs/northkorea/20261115/north-korea-linked-hackers-target-30-south-korean-servers-report",
+   "domain": "www.koreatimes.co.kr",
+   "language": "English",
+   "country": null,
+   "date": "2026-11-15"
+  },
+  {
+   "title": "North korea changes national flag for first time in years under kim jong un world war ii — hindustantimes.com",
+   "url": "https://www.hindustantimes.com/world-news/north-korea-changes-national-flag-for-first-time-in-78-years-under-kim-jong-un-world-war-ii-101794725314504.html",
+   "domain": "www.hindustantimes.com",
+   "language": "English",
+   "country": null,
+   "date": "2026-11-15"
+  },
+  {
+   "title": "Binance bitcoin hack cryptocurrency north korea — crikey.com.au",
+   "url": "https://www.crikey.com.au/2026/11/16/binance-bitcoin-hack-cryptocurrency-north-korea/",
+   "domain": "www.crikey.com.au",
+   "language": "English",
+   "country": null,
+   "date": "2026-11-15"
+  }
+ ]
 }
