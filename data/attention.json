@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-16T12:13+09:00",
+ "generated_at": "2026-11-17T14:19+09:00",
  "source": [
   "wikimedia-pageviews",
   "google-trends-kr-rss"
@@ -34,30 +34,20 @@
  "wiki": {
   "status": "normal",
   "latest": {
-   "date": "2026-11-14",
-   "total": 28302,
+   "date": "2026-11-16",
+   "total": 23770,
    "documents": {
-    "North_Korea": 14075,
-    "Korean_War": 4867,
-    "Korean_Demilitarized_Zone": 1022,
-    "Kim_Jong_Un": 8338
+    "North_Korea": 9011,
+    "Korean_War": 5122,
+    "Korean_Demilitarized_Zone": 1069,
+    "Kim_Jong_Un": 8568
    },
    "base_n": 28,
    "median": 30996.0,
-   "z": -0.30021943098388226,
+   "z": -0.8052656303970057,
    "status": "normal"
   },
   "series": [
-   {
-    "date": "2026-09-17",
-    "total": 17196,
-    "documents": {
-     "North_Korea": 6269,
-     "Korean_War": 4793,
-     "Korean_Demilitarized_Zone": 1043,
-     "Kim_Jong_Un": 5091
-    }
-   },
    {
     "date": "2026-09-18",
     "total": 17031,
@@ -637,23 +627,40 @@
      "Korean_Demilitarized_Zone": 1022,
      "Kim_Jong_Un": 8338
     }
+   },
+   {
+    "date": "2026-11-15",
+    "total": 23945,
+    "documents": {
+     "North_Korea": 9899,
+     "Korean_War": 4908,
+     "Korean_Demilitarized_Zone": 981,
+     "Kim_Jong_Un": 8157
+    }
+   },
+   {
+    "date": "2026-11-16",
+    "total": 23770,
+    "documents": {
+     "North_Korea": 9011,
+     "Korean_War": 5122,
+     "Korean_Demilitarized_Zone": 1069,
+     "Kim_Jong_Un": 8568
+    }
    }
   ],
   "missing_articles": []
  },
  "trends": {
-  "hits": 2,
+  "hits": 0,
   "items": 10,
-  "titles": [
-   "[특별기고] 태권도 문화유산 북한 등재가 남긴 교훈",
-   "\"엔비디아 칩 막으면 美中 무역전쟁\"…1년 휴전 깨질까"
-  ],
-  "date": "2026-11-16",
-  "samples": 8,
-  "base_n": 7,
+  "titles": [],
+  "date": "2026-11-17",
+  "samples": 9,
+  "base_n": 8,
   "median": null,
   "z": null,
   "status": "muted",
-  "note": "판단 보류(기준선 7/14일)"
+  "note": "판단 보류(기준선 8/14일)"
  }
 }
