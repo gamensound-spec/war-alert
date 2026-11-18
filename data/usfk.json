@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-17T14:19+09:00",
+ "generated_at": "2026-11-18T13:46+09:00",
  "source": "google-news-rss",
  "config": {
   "groups": {
@@ -56,40 +56,40 @@
  "watch": [],
  "groups": {
   "evac": {
-   "hits_24h": 1,
-   "hits_7d": 31,
+   "hits_24h": 0,
+   "hits_7d": 27,
    "training_7d": 0,
-   "sources_24h": 1,
-   "date": "2026-11-17",
-   "base_n": 8,
+   "sources_24h": 0,
+   "date": "2026-11-18",
+   "base_n": 9,
    "median": null,
    "z": null,
    "status": "muted",
-   "note": "판단 보류 · 기준선 8/14일"
+   "note": "판단 보류 · 기준선 9/14일"
   },
   "readiness": {
    "hits_24h": 0,
    "hits_7d": 0,
    "training_7d": 0,
    "sources_24h": 0,
-   "date": "2026-11-17",
-   "base_n": 8,
+   "date": "2026-11-18",
+   "base_n": 9,
    "median": null,
    "z": null,
    "status": "muted",
-   "note": "판단 보류 · 기준선 8/14일"
+   "note": "판단 보류 · 기준선 9/14일"
   },
   "families": {
    "hits_24h": 0,
    "hits_7d": 0,
    "training_7d": 0,
    "sources_24h": 0,
-   "date": "2026-11-17",
-   "base_n": 8,
+   "date": "2026-11-18",
+   "base_n": 9,
    "median": null,
    "z": null,
    "status": "muted",
-   "note": "판단 보류 · 기준선 8/14일"
+   "note": "판단 보류 · 기준선 9/14일"
   }
  },
  "headlines": [
@@ -109,7 +109,7 @@
    "title": "진보당, 전작권 환수와 주한미군 철수 협박 비판 - 한국사회복지저널",
    "source": "한국사회복지저널",
    "date": "2026-11-15T18:01:13+09:00",
-   "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5FblhEamM3M0FoUnEzZ0pUNEIzTEsyMy1jYjV5c21Dc2Uxa1J4N1pvMkpjbDFvcGxtVEd5RUNKZFlLWVVKcThNTU5pem9vX3UwQ2F0RnFoMTA0LUtqVXY4M01DQklyMjVRUE5zUA?oc=5"
+   "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE0xSXZaWGxyVWsxanlfQWN4RGRUUXQyT3M1dWo1dm1XemR2OUdUWlZOY190VldCeWZmcE1abkc1anpZQ3d2OXpqSUQwTXZNR0ZsLUZTa0xsSXFOQ29paURsR20wOWdPamtGYm9F?oc=5"
   },
   {
    "title": "전작권 전환, 주한미군 철수로 이어질 수 있다?…\"실행 쉽지 않아\" - 뉴스1",
@@ -124,22 +124,22 @@
    "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPNTlZQzNQcXN1ZkJiZ2pUdWdqSEE2a2RQeVBCcDFDZVMwa1VaMEtpVjFzMnAybkFJSFQtdGNTd0Q5SHFvZEx2ZWkzSlpiOFNpS3ByZFlSY01sQ0d0SzBobndJMjRSR1JnVzMzNHN1NEdsVThkbDkwUHdyTDFEZER4dQ?oc=5"
   },
   {
-   "title": "브룩스 “전작권 전환 당장 가능하다는 강신철 발언에 매우 실망”… 트럼프, 주한미군 철수할 수도 - 트루스데일리",
-   "source": "트루스데일리",
-   "date": "2026-11-15T03:27:44+09:00",
-   "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTFB3dTlaLU1OcVEzUFFaSVhhemVrbWU5Zkpmc2o1RTRlQnJlUDVTOUtxNU14dHJNTFNhQTJzeFB1Tl82RDVETEpuWk5XMXVHN2N2b09fVTBHRGRiZE1va2llRXYxWWZET3pPVW9EZ3Jn?oc=5"
-  },
-  {
-   "title": "美 전문가들 “전작권 전환, 주한미군 철수 명분 될 수도”… 한미동맹 안보 경고등 - 독립신문",
-   "source": "독립신문",
-   "date": "2026-11-14T21:09:37+09:00",
-   "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTFA1RXo3R0JWc0w3TzU2WEQ3ZkhkY2ZFdi01cDZNbWVHbDZIYzJzdC1TWGFELVBER29IdXdjbFZ0MHpjZndpYnBRT0N4OHVSQmZnZFhvaTVhMEJvZW1QWkdZNlRZa2xJalZBSGdn?oc=5"
-  },
-  {
    "title": "전작권 넘기면 주한미군 철수?…브룩스, 강신철에 매우 실망 - MBN 홈페이지",
    "source": "MBN 홈페이지",
    "date": "2026-11-14T19:30:35+09:00",
    "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5QU1NoVGY5a3FVM3hLWUdNWVRfMHpmUEEybXQ0WlZwVzJ2dHBpR19mNXF0d1dxOUdGRTY0LXNIQ3JXYXp6UDdMTTAyWUZlMDlIZmVneGF30gFMQVVfeXFMT19HMmd4bl9yZjlzbnhCZUxrb2FJLW9BVF9Vbi1XU216WmM5Zkp5MDdNOVAwQ3c0YnRYS0JiR1lLUUZsNlduU0RlT2drMQ?oc=5"
+  },
+  {
+   "title": "美 전문가들 “트럼프, 전작권 전환을 주한미군 철수 수단으로 인식” - 타임뉴스",
+   "source": "타임뉴스",
+   "date": "2026-11-14T18:30:51+09:00",
+   "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5fQnEtZmtyM0hTXy1VVDlaWXhZZEp2VW54TGNWSFZTOXQ2T3ZacV90c1I0X01EbDVIZW1BeWtveHAwQnh6c1JJWkI1cHBYWkRxTHdsUA?oc=5"
+  },
+  {
+   "title": "전작권 전환이 주한미군 철수 수단? 미국 전문가들이 경고한 이유 🔍 - 뉴닉",
+   "source": "뉴닉",
+   "date": "2026-11-14T15:16:17+09:00",
+   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5lOEp4Um5ZSnVWbzNqQWhOWTBnN3h6N2JHeUNFSkVKRlh1TExHRVFRbnRZN1haOG8wZ1BLaFdqSmZyX1ZCWVBrTld4LVh1UUI4SUNz?oc=5"
   }
  ]
 }

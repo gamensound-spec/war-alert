@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-17T14:19+09:00",
+ "generated_at": "2026-11-18T13:46+09:00",
  "source": [
   "wikimedia-pageviews",
   "google-trends-kr-rss"
@@ -48,16 +48,6 @@
    "status": "normal"
   },
   "series": [
-   {
-    "date": "2026-09-18",
-    "total": 17031,
-    "documents": {
-     "North_Korea": 6238,
-     "Korean_War": 4817,
-     "Korean_Demilitarized_Zone": 1008,
-     "Kim_Jong_Un": 4968
-    }
-   },
    {
     "date": "2026-09-19",
     "total": 15913,
@@ -652,15 +642,20 @@
   "missing_articles": []
  },
  "trends": {
-  "hits": 0,
+  "hits": 4,
   "items": 10,
-  "titles": [],
-  "date": "2026-11-17",
-  "samples": 9,
-  "base_n": 8,
+  "titles": [
+   "추미애, ’최민희 징계’ 갈등 참전…“김민석 문제부터 엄중 판단해야“",
+   "북한이탈주민",
+   "북한이탈주민 겨울나기 돕는다…시흥서 김장김치 100통 나눔",
+   "달성군자원봉사센터·대구하나센터, 북한이탈주민 위해 김장 나눔"
+  ],
+  "date": "2026-11-18",
+  "samples": 10,
+  "base_n": 9,
   "median": null,
   "z": null,
   "status": "muted",
-  "note": "판단 보류(기준선 8/14일)"
+  "note": "판단 보류(기준선 9/14일)"
  }
 }
