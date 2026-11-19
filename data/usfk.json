@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-18T13:46+09:00",
+ "generated_at": "2026-11-19T13:34+09:00",
  "source": "google-news-rss",
  "config": {
   "groups": {
@@ -56,43 +56,49 @@
  "watch": [],
  "groups": {
   "evac": {
-   "hits_24h": 0,
-   "hits_7d": 27,
+   "hits_24h": 1,
+   "hits_7d": 26,
    "training_7d": 0,
-   "sources_24h": 0,
-   "date": "2026-11-18",
-   "base_n": 9,
+   "sources_24h": 1,
+   "date": "2026-11-19",
+   "base_n": 10,
    "median": null,
    "z": null,
    "status": "muted",
-   "note": "판단 보류 · 기준선 9/14일"
+   "note": "판단 보류 · 기준선 10/14일"
   },
   "readiness": {
    "hits_24h": 0,
    "hits_7d": 0,
    "training_7d": 0,
    "sources_24h": 0,
-   "date": "2026-11-18",
-   "base_n": 9,
+   "date": "2026-11-19",
+   "base_n": 10,
    "median": null,
    "z": null,
    "status": "muted",
-   "note": "판단 보류 · 기준선 9/14일"
+   "note": "판단 보류 · 기준선 10/14일"
   },
   "families": {
    "hits_24h": 0,
    "hits_7d": 0,
    "training_7d": 0,
    "sources_24h": 0,
-   "date": "2026-11-18",
-   "base_n": 9,
+   "date": "2026-11-19",
+   "base_n": 10,
    "median": null,
    "z": null,
    "status": "muted",
-   "note": "판단 보류 · 기준선 9/14일"
+   "note": "판단 보류 · 기준선 10/14일"
   }
  },
  "headlines": [
+  {
+   "title": "[이한구칼럼] 주한미군 철수·통합사관학교를 반대하는 바보(?) 군인들 - 트루스데일리",
+   "source": "트루스데일리",
+   "date": "2026-11-18T16:04:41+09:00",
+   "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1ob1YzT0NYa29xVXV5R3VaY09scTZvM1Fab1YxenVHUjRWUndfaUExdW5KYXFQUGFwaWs1dWtoRW9ITXRnd2tzZ3NqT1d0bVNIcEJsaVpyY3NaaVdBcFJ6SDdPaXc1ZGdPQ0ZNTF9B?oc=5"
+  },
   {
    "title": "전작권 전환 뒤 주한미군 철수?…전문가들 우려 - 데일리안",
    "source": "데일리안",
@@ -118,18 +124,6 @@
    "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFB4RndQYTJCbVYtelVvMGlfeENrZmlMc0NuLWwxbnBPbl96THhOeElRWklfZThTRmtLTzF3Wkgxc2lFUjl0X0Q4aTdwU1lPZGE4cVQ3Z004ZmdHTW1qeFJmN1JPNWNvTGs?oc=5"
   },
   {
-   "title": "이용철, 미군 철수 시위 대학생·문성근 변호 이력 논란 - 이데일리",
-   "source": "이데일리",
-   "date": "2026-11-15T09:30:45+09:00",
-   "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPNTlZQzNQcXN1ZkJiZ2pUdWdqSEE2a2RQeVBCcDFDZVMwa1VaMEtpVjFzMnAybkFJSFQtdGNTd0Q5SHFvZEx2ZWkzSlpiOFNpS3ByZFlSY01sQ0d0SzBobndJMjRSR1JnVzMzNHN1NEdsVThkbDkwUHdyTDFEZER4dQ?oc=5"
-  },
-  {
-   "title": "전작권 넘기면 주한미군 철수?…브룩스, 강신철에 매우 실망 - MBN 홈페이지",
-   "source": "MBN 홈페이지",
-   "date": "2026-11-14T19:30:35+09:00",
-   "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5QU1NoVGY5a3FVM3hLWUdNWVRfMHpmUEEybXQ0WlZwVzJ2dHBpR19mNXF0d1dxOUdGRTY0LXNIQ3JXYXp6UDdMTTAyWUZlMDlIZmVneGF30gFMQVVfeXFMT19HMmd4bl9yZjlzbnhCZUxrb2FJLW9BVF9Vbi1XU216WmM5Zkp5MDdNOVAwQ3c0YnRYS0JiR1lLUUZsNlduU0RlT2drMQ?oc=5"
-  },
-  {
    "title": "美 전문가들 “트럼프, 전작권 전환을 주한미군 철수 수단으로 인식” - 타임뉴스",
    "source": "타임뉴스",
    "date": "2026-11-14T18:30:51+09:00",
@@ -140,6 +134,12 @@
    "source": "뉴닉",
    "date": "2026-11-14T15:16:17+09:00",
    "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5lOEp4Um5ZSnVWbzNqQWhOWTBnN3h6N2JHeUNFSkVKRlh1TExHRVFRbnRZN1haOG8wZ1BLaFdqSmZyX1ZCWVBrTld4LVh1UUI4SUNz?oc=5"
+  },
+  {
+   "title": "\"트럼프, 전작권 전환을 주한미군 철수 수단으로\"⋯美 전문가들 경고 - 아이뉴스24",
+   "source": "아이뉴스24",
+   "date": "2026-11-14T15:00:00+09:00",
+   "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1TMm1GdUphUTd1T1NEYkFraWxJOGRVRWIzYU1kSldRbFpWUjYxaWcydnJWMmpvazFZVkQyNEd6WnVPVzNPdGNOb184Zw?oc=5"
   }
  ]
 }

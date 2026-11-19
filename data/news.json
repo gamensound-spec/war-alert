@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-18T13:46+09:00",
+ "generated_at": "2026-11-19T13:34+09:00",
  "source": "gdelt-gkg",
  "query": "(\"north korea\" OR \"korean peninsula\") (war OR missile OR attack OR invasion OR evacuation OR troops)",
  "config": {
@@ -12,14 +12,14 @@
  "alerts": [],
  "watch": [],
  "latest": {
-  "date": "2026-11-17",
-  "share": 0.434,
-  "count": 5,
-  "tone": 1.2642622405818789,
-  "base_n": 25,
-  "median": 1.419,
-  "ratio": 0.31,
-  "z": -0.5
+  "date": "2026-11-18",
+  "share": 0.254,
+  "count": 3,
+  "tone": -4.317385078753763,
+  "base_n": 26,
+  "median": 1.303,
+  "ratio": 0.19,
+  "z": -0.6
  },
  "series": [
   {
@@ -291,48 +291,41 @@
    "share": 0.434,
    "source": "gdelt-gkg",
    "partial": false
+  },
+  {
+   "date": "2026-11-18",
+   "count": 3,
+   "total": 118241,
+   "tone": -4.317385078753763,
+   "share": 0.254,
+   "source": "gdelt-gkg",
+   "partial": false
   }
  ],
  "articles": [
   {
-   "title": "Trump meet north korea kim jong un china — rappler.com",
-   "url": "https://www.rappler.com/world/asia-pacific/trump-meet-north-korea-kim-jong-un-china/",
-   "domain": "www.rappler.com",
+   "title": "North korea expanded uranium enrichment plant says iaea head — dw.com",
+   "url": "https://www.dw.com/en/north-korea-expanded-uranium-enrichment-plant-says-iaea-head/a-79982758",
+   "domain": "www.dw.com",
    "language": "English",
    "country": null,
-   "date": "2026-11-17"
+   "date": "2026-11-18"
   },
   {
-   "title": "Trump says he might meet with north korea s kim in china — freemalaysiatoday.com",
-   "url": "https://www.freemalaysiatoday.com/category/world/2026/11/17/trump-says-he-might-meet-with-north-korea-s-kim-in-china",
-   "domain": "www.freemalaysiatoday.com",
+   "title": "Un nuclear watchdog voices serious concern as north korea expands uranium enrichment — theepochtimes.com",
+   "url": "https://www.theepochtimes.com/world/un-nuclear-watchdog-voices-serious-concern-as-north-korea-expands-uranium-enrichment-6126410",
+   "domain": "www.theepochtimes.com",
    "language": "English",
    "country": null,
-   "date": "2026-11-17"
+   "date": "2026-11-18"
   },
   {
-   "title": "North Korea is honing its ballistic missiles in Ukraine with — article.wn.com",
-   "url": "https://article.wn.com/view/2026/11/17/North_Korea_is_honing_its_ballistic_missiles_in_Ukraine_with/",
-   "domain": "article.wn.com",
+   "title": "Us threats iran china north korea russia — rferl.org",
+   "url": "https://www.rferl.org/a/us-threats-iran-china-north-korea-russia/33901327.html",
+   "domain": "www.rferl.org",
    "language": "English",
    "country": null,
-   "date": "2026-11-17"
-  },
-  {
-   "title": "Putin kim jong un north korea china meeting — nytimes.com",
-   "url": "https://www.nytimes.com/2026/11/17/world/asia/putin-kim-jong-un-north-korea-china-meeting.html",
-   "domain": "www.nytimes.com",
-   "language": "English",
-   "country": null,
-   "date": "2026-11-17"
-  },
-  {
-   "title": "Us congressman elect dan koh has a message for north korea — voanews.com",
-   "url": "https://www.voanews.com/a/us-congressman-elect-dan-koh-has-a-message-for-north-korea/8224740.html",
-   "domain": "www.voanews.com",
-   "language": "English",
-   "country": null,
-   "date": "2026-11-17"
+   "date": "2026-11-18"
   }
  ]
 }
