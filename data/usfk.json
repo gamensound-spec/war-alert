@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-19T13:34+09:00",
+ "generated_at": "2026-11-20T13:22+09:00",
  "source": "google-news-rss",
  "config": {
   "groups": {
@@ -56,40 +56,40 @@
  "watch": [],
  "groups": {
   "evac": {
-   "hits_24h": 1,
-   "hits_7d": 26,
+   "hits_24h": 0,
+   "hits_7d": 25,
    "training_7d": 0,
-   "sources_24h": 1,
-   "date": "2026-11-19",
-   "base_n": 10,
+   "sources_24h": 0,
+   "date": "2026-11-20",
+   "base_n": 11,
    "median": null,
    "z": null,
    "status": "muted",
-   "note": "판단 보류 · 기준선 10/14일"
+   "note": "판단 보류 · 기준선 11/14일"
   },
   "readiness": {
    "hits_24h": 0,
    "hits_7d": 0,
    "training_7d": 0,
    "sources_24h": 0,
-   "date": "2026-11-19",
-   "base_n": 10,
+   "date": "2026-11-20",
+   "base_n": 11,
    "median": null,
    "z": null,
    "status": "muted",
-   "note": "판단 보류 · 기준선 10/14일"
+   "note": "판단 보류 · 기준선 11/14일"
   },
   "families": {
    "hits_24h": 0,
    "hits_7d": 0,
    "training_7d": 0,
    "sources_24h": 0,
-   "date": "2026-11-19",
-   "base_n": 10,
+   "date": "2026-11-20",
+   "base_n": 11,
    "median": null,
    "z": null,
    "status": "muted",
-   "note": "판단 보류 · 기준선 10/14일"
+   "note": "판단 보류 · 기준선 11/14일"
   }
  },
  "headlines": [
@@ -115,7 +115,7 @@
    "title": "진보당, 전작권 환수와 주한미군 철수 협박 비판 - 한국사회복지저널",
    "source": "한국사회복지저널",
    "date": "2026-11-15T18:01:13+09:00",
-   "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE0xSXZaWGxyVWsxanlfQWN4RGRUUXQyT3M1dWo1dm1XemR2OUdUWlZOY190VldCeWZmcE1abkc1anpZQ3d2OXpqSUQwTXZNR0ZsLUZTa0xsSXFOQ29paURsR20wOWdPamtGYm9F?oc=5"
+   "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5FblhEamM3M0FoUnEzZ0pUNEIzTEsyMy1jYjV5c21Dc2Uxa1J4N1pvMkpjbDFvcGxtVEd5RUNKZFlLWVVKcThNTU5pem9vX3UwQ2F0RnFoMTA0LUtqVXY4M01DQklyMjVRUE5zUA?oc=5"
   },
   {
    "title": "전작권 전환, 주한미군 철수로 이어질 수 있다?…\"실행 쉽지 않아\" - 뉴스1",

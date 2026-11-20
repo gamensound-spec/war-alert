@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-19T13:34+09:00",
+ "generated_at": "2026-11-20T13:22+09:00",
  "source": "gdelt-gkg",
  "query": "(\"north korea\" OR \"korean peninsula\") (war OR missile OR attack OR invasion OR evacuation OR troops)",
  "config": {
@@ -12,14 +12,14 @@
  "alerts": [],
  "watch": [],
  "latest": {
-  "date": "2026-11-18",
-  "share": 0.254,
-  "count": 3,
-  "tone": -4.317385078753763,
-  "base_n": 26,
-  "median": 1.303,
-  "ratio": 0.19,
-  "z": -0.6
+  "date": "2026-11-19",
+  "share": 0.42,
+  "count": 5,
+  "tone": -1.1134928416776695,
+  "base_n": 27,
+  "median": 1.187,
+  "ratio": 0.35,
+  "z": -0.47
  },
  "series": [
   {
@@ -300,32 +300,57 @@
    "share": 0.254,
    "source": "gdelt-gkg",
    "partial": false
+  },
+  {
+   "date": "2026-11-19",
+   "count": 5,
+   "total": 119181,
+   "tone": -1.1134928416776695,
+   "share": 0.42,
+   "source": "gdelt-gkg",
+   "partial": false
   }
  ],
  "articles": [
   {
-   "title": "North korea expanded uranium enrichment plant says iaea head — dw.com",
-   "url": "https://www.dw.com/en/north-korea-expanded-uranium-enrichment-plant-says-iaea-head/a-79982758",
-   "domain": "www.dw.com",
+   "title": "Lee putin agree to strengthen cooperation work to ease tensions on korean peninsula — mangalorean.com",
+   "url": "https://www.mangalorean.com/lee-putin-agree-to-strengthen-cooperation-work-to-ease-tensions-on-korean-peninsula/",
+   "domain": "www.mangalorean.com",
    "language": "English",
    "country": null,
-   "date": "2026-11-18"
+   "date": "2026-11-19"
   },
   {
-   "title": "Un nuclear watchdog voices serious concern as north korea expands uranium enrichment — theepochtimes.com",
-   "url": "https://www.theepochtimes.com/world/un-nuclear-watchdog-voices-serious-concern-as-north-korea-expands-uranium-enrichment-6126410",
-   "domain": "www.theepochtimes.com",
+   "title": "Lee putin agree to strengthen cooperation work to ease tensions on korean peninsula — morungexpress.com",
+   "url": "https://www.morungexpress.com/lee-putin-agree-to-strengthen-cooperation-work-to-ease-tensions-on-korean-peninsula",
+   "domain": "www.morungexpress.com",
    "language": "English",
    "country": null,
-   "date": "2026-11-18"
+   "date": "2026-11-19"
   },
   {
-   "title": "Us threats iran china north korea russia — rferl.org",
-   "url": "https://www.rferl.org/a/us-threats-iran-china-north-korea-russia/33901327.html",
-   "domain": "www.rferl.org",
+   "title": "Lee putin agree to pursue cooperation where possible work to ease tensions on korean… — koreatimes.co.kr",
+   "url": "https://www.koreatimes.co.kr/foreignaffairs/20261119/lee-putin-agree-to-pursue-cooperation-where-possible-work-to-ease-tensions-on-korean-peninsula",
+   "domain": "www.koreatimes.co.kr",
    "language": "English",
    "country": null,
-   "date": "2026-11-18"
+   "date": "2026-11-19"
+  },
+  {
+   "title": "Nuclear risk reduction on the korean peninsula — armscontrolwonk.com",
+   "url": "https://www.armscontrolwonk.com/archive/1206072/nuclear-risk-reduction-on-the-korean-peninsula/",
+   "domain": "www.armscontrolwonk.com",
+   "language": "English",
+   "country": null,
+   "date": "2026-11-19"
+  },
+  {
+   "title": "Kim ju ae skiing gear north korea china border — independent.co.uk",
+   "url": "https://www.independent.co.uk/asia/east-asia/kim-ju-ae-skiing-gear-north-korea-china-border-b3086899.html",
+   "domain": "www.independent.co.uk",
+   "language": "English",
+   "country": null,
+   "date": "2026-11-19"
   }
  ]
 }

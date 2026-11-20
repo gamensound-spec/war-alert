@@ -1,28 +1,28 @@
 {
- "generated_at": "2026-11-19T13:34+09:00",
+ "generated_at": "2026-11-20T13:22+09:00",
  "source": "opensky-anonymous",
  "status": "muted",
  "alerts": [],
  "watch": [],
  "latest": {
-  "airborne": 71,
-  "total_states": 72,
+  "airborne": 105,
+  "total_states": 113,
   "top_countries": [
    {
     "country": "Republic of Korea",
-    "count": 41
-   },
-   {
-    "country": "Japan",
-    "count": 16
+    "count": 54
    },
    {
     "country": "China",
-    "count": 10
+    "count": 22
+   },
+   {
+    "country": "Japan",
+    "count": 11
    }
   ],
-  "date": "2026-11-19",
-  "base_n": 10,
+  "date": "2026-11-20",
+  "base_n": 11,
   "median": null,
   "z": null,
   "status": "muted"
@@ -82,6 +82,11 @@
    "date": "2026-11-19",
    "airborne": 71,
    "total_states": 72
+  },
+  {
+   "date": "2026-11-20",
+   "airborne": 105,
+   "total_states": 113
   }
  ],
  "config": {
