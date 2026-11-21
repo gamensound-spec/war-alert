@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-20T13:22+09:00",
+ "generated_at": "2026-11-21T13:19+09:00",
  "source": [
   "wikimedia-pageviews",
   "google-trends-kr-rss"
@@ -34,30 +34,20 @@
  "wiki": {
   "status": "normal",
   "latest": {
-   "date": "2026-11-19",
-   "total": 24975,
+   "date": "2026-11-20",
+   "total": 21577,
    "documents": {
-    "North_Korea": 7313,
-    "Korean_War": 5041,
-    "Korean_Demilitarized_Zone": 953,
-    "Kim_Jong_Un": 11668
+    "North_Korea": 7031,
+    "Korean_War": 4393,
+    "Korean_Demilitarized_Zone": 935,
+    "Kim_Jong_Un": 9218
    },
    "base_n": 28,
-   "median": 29593.0,
-   "z": -0.5700060988677677,
+   "median": 29337.5,
+   "z": -1.0128454990166635,
    "status": "normal"
   },
   "series": [
-   {
-    "date": "2026-09-21",
-    "total": 18668,
-    "documents": {
-     "North_Korea": 6748,
-     "Korean_War": 4838,
-     "Korean_Demilitarized_Zone": 1711,
-     "Kim_Jong_Un": 5371
-    }
-   },
    {
     "date": "2026-09-22",
     "total": 18555,
@@ -360,62 +350,62 @@
    },
    {
     "date": "2026-10-22",
-    "total": 84608,
+    "total": 87938,
     "documents": {
-     "North_Korea": 12194,
-     "Korean_War": 6568,
-     "Korean_Demilitarized_Zone": 2267,
-     "Kim_Jong_Un": 63579
+     "North_Korea": 12715,
+     "Korean_War": 6713,
+     "Korean_Demilitarized_Zone": 2340,
+     "Kim_Jong_Un": 66170
     }
    },
    {
     "date": "2026-10-23",
-    "total": 70052,
+    "total": 73175,
     "documents": {
-     "North_Korea": 11414,
-     "Korean_War": 6465,
-     "Korean_Demilitarized_Zone": 2138,
-     "Kim_Jong_Un": 50035
+     "North_Korea": 11979,
+     "Korean_War": 6683,
+     "Korean_Demilitarized_Zone": 2209,
+     "Kim_Jong_Un": 52304
     }
    },
    {
     "date": "2026-10-24",
-    "total": 57824,
+    "total": 60279,
     "documents": {
-     "North_Korea": 11726,
-     "Korean_War": 6921,
-     "Korean_Demilitarized_Zone": 1960,
-     "Kim_Jong_Un": 37217
+     "North_Korea": 12301,
+     "Korean_War": 7104,
+     "Korean_Demilitarized_Zone": 2005,
+     "Kim_Jong_Un": 38869
     }
    },
    {
     "date": "2026-10-25",
-    "total": 50063,
+    "total": 52107,
     "documents": {
-     "North_Korea": 11011,
-     "Korean_War": 6861,
-     "Korean_Demilitarized_Zone": 1953,
-     "Kim_Jong_Un": 30238
+     "North_Korea": 11513,
+     "Korean_War": 6997,
+     "Korean_Demilitarized_Zone": 2004,
+     "Kim_Jong_Un": 31593
     }
    },
    {
     "date": "2026-10-26",
-    "total": 42421,
+    "total": 43044,
     "documents": {
-     "North_Korea": 10696,
-     "Korean_War": 6460,
-     "Korean_Demilitarized_Zone": 2022,
-     "Kim_Jong_Un": 23243
+     "North_Korea": 10855,
+     "Korean_War": 6531,
+     "Korean_Demilitarized_Zone": 2046,
+     "Kim_Jong_Un": 23612
     }
    },
    {
     "date": "2026-10-27",
-    "total": 36315,
+    "total": 36281,
     "documents": {
-     "North_Korea": 9755,
-     "Korean_War": 6336,
-     "Korean_Demilitarized_Zone": 2192,
-     "Kim_Jong_Un": 18032
+     "North_Korea": 9745,
+     "Korean_War": 6330,
+     "Korean_Demilitarized_Zone": 2195,
+     "Kim_Jong_Un": 18011
     }
    },
    {
@@ -647,22 +637,30 @@
      "Korean_Demilitarized_Zone": 953,
      "Kim_Jong_Un": 11668
     }
+   },
+   {
+    "date": "2026-11-20",
+    "total": 21577,
+    "documents": {
+     "North_Korea": 7031,
+     "Korean_War": 4393,
+     "Korean_Demilitarized_Zone": 935,
+     "Kim_Jong_Un": 9218
+    }
    }
   ],
   "missing_articles": []
  },
  "trends": {
-  "hits": 1,
+  "hits": 0,
   "items": 10,
-  "titles": [
-   "\"조희대 탄핵, 오늘 당론 채택\"‥\"탄핵은 광기\""
-  ],
-  "date": "2026-11-20",
-  "samples": 12,
-  "base_n": 11,
+  "titles": [],
+  "date": "2026-11-21",
+  "samples": 13,
+  "base_n": 12,
   "median": null,
   "z": null,
   "status": "muted",
-  "note": "판단 보류(기준선 11/14일)"
+  "note": "판단 보류(기준선 12/14일)"
  }
 }
