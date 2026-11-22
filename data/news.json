@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-21T13:19+09:00",
+ "generated_at": "2026-11-22T12:33+09:00",
  "source": "gdelt-gkg",
  "query": "(\"north korea\" OR \"korean peninsula\") (war OR missile OR attack OR invasion OR evacuation OR troops)",
  "config": {
@@ -12,14 +12,14 @@
  "alerts": [],
  "watch": [],
  "latest": {
-  "date": "2026-11-20",
-  "share": 0.538,
-  "count": 6,
-  "tone": -3.5533965112662123,
+  "date": "2026-11-21",
+  "share": 1.101,
+  "count": 7,
+  "tone": -2.9219705875861526,
   "base_n": 28,
   "median": 0.989,
-  "ratio": 0.54,
-  "z": -0.35
+  "ratio": 1.11,
+  "z": 0.09
  },
  "series": [
   {
@@ -318,56 +318,73 @@
    "share": 0.538,
    "source": "gdelt-gkg",
    "partial": false
+  },
+  {
+   "date": "2026-11-21",
+   "count": 7,
+   "total": 63550,
+   "tone": -2.9219705875861526,
+   "share": 1.101,
+   "source": "gdelt-gkg",
+   "partial": false
   }
  ],
  "articles": [
   {
-   "title": "Un nuclear watchdog voices serious concern north korea expands uranium enrichment — zerohedge.com",
-   "url": "https://www.zerohedge.com/geopolitical/un-nuclear-watchdog-voices-serious-concern-north-korea-expands-uranium-enrichment",
-   "domain": "www.zerohedge.com",
+   "title": "Uk confirms offensive cyber operations targeting russia china iran north korea — aa.com.tr",
+   "url": "https://aa.com.tr/en/middle-east/uk-confirms-offensive-cyber-operations-targeting-russia-china-iran-north-korea/4132616",
+   "domain": "aa.com.tr",
    "language": "English",
    "country": null,
-   "date": "2026-11-20"
+   "date": "2026-11-21"
   },
   {
-   "title": "Un nuclear watchdog voices serious concern north korea expands uranium enrichment — zerohedge.com",
-   "url": "http://www.zerohedge.com/geopolitical/un-nuclear-watchdog-voices-serious-concern-north-korea-expands-uranium-enrichment",
-   "domain": "www.zerohedge.com",
+   "title": "North korea s kim visits factory sites after apparent trump snub — freemalaysiatoday.com",
+   "url": "https://www.freemalaysiatoday.com/category/world/2026/11/21/north-korea-s-kim-visits-factory-sites-after-apparent-trump-snub",
+   "domain": "www.freemalaysiatoday.com",
    "language": "English",
    "country": null,
-   "date": "2026-11-20"
+   "date": "2026-11-21"
   },
   {
-   "title": "Uk conducts offensive cyber operations against russia china iran north korea top commander — news.az",
-   "url": "https://news.az/news/uk-conducts-offensive-cyber-operations-against-russia-china-iran-north-korea-top-commander",
-   "domain": "news.az",
+   "title": "Uk confirms offensive cyber operations targeting russia china iran north korea — freemalaysiatoday.com",
+   "url": "https://www.freemalaysiatoday.com/category/world/2026/11/21/uk-confirms-offensive-cyber-operations-targeting-russia-china-iran-north-korea",
+   "domain": "www.freemalaysiatoday.com",
    "language": "English",
    "country": null,
-   "date": "2026-11-20"
+   "date": "2026-11-21"
   },
   {
-   "title": "Trump vows to meet north korea s kim at some point — samaa.tv",
-   "url": "https://www.samaa.tv/2087360647-trump-vows-to-meet-north-korea-s-kim-at-some-point",
-   "domain": "www.samaa.tv",
+   "title": "Chinas korean peninsula diplomacy oped — eurasiareview.com",
+   "url": "https://www.eurasiareview.com/21112026-chinas-korean-peninsula-diplomacy-oped/",
+   "domain": "www.eurasiareview.com",
    "language": "English",
    "country": null,
-   "date": "2026-11-20"
+   "date": "2026-11-21"
   },
   {
-   "title": "Britain offensive cyber operations russia china iran north korea — ibtimes.com",
-   "url": "https://www.ibtimes.com/britain-offensive-cyber-operations-russia-china-iran-north-korea-3810002",
-   "domain": "www.ibtimes.com",
+   "title": "North korea kim jong un donald trump snub — channelnewsasia.com",
+   "url": "https://www.channelnewsasia.com/east-asia/north-korea-kim-jong-un-donald-trump-snub-6571201",
+   "domain": "www.channelnewsasia.com",
    "language": "English",
    "country": null,
-   "date": "2026-11-20"
+   "date": "2026-11-21"
   },
   {
-   "title": "Britain offensive cyber operations russia china north korea — dailymail.com",
-   "url": "https://www.dailymail.com/news/article-16309027/britain-offensive-cyber-operations-russia-china-north-korea.html",
+   "title": "North Korea dictator Kim Jong appears public inspect factory days apparent snub Donald… — dailymail.com",
+   "url": "https://www.dailymail.com/news/article-16311787/North-Korea-dictator-Kim-Jong-appears-public-inspect-factory-days-apparent-snub-Donald-Trump-speculation-health.html",
    "domain": "www.dailymail.com",
    "language": "English",
    "country": null,
-   "date": "2026-11-20"
+   "date": "2026-11-21"
+  },
+  {
+   "title": "North korea says nuclear weapons are a shield for its sovereignty — garoweonline.com",
+   "url": "https://garoweonline.com/en/news/world/north-korea-says-nuclear-weapons-are-a-shield-for-its-sovereignty",
+   "domain": "garoweonline.com",
+   "language": "English",
+   "country": null,
+   "date": "2026-11-21"
   }
  ]
 }
