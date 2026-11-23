@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-22T12:33+09:00",
+ "generated_at": "2026-11-23T13:01+09:00",
  "source": "gdelt-gkg",
  "query": "(\"north korea\" OR \"korean peninsula\") (war OR missile OR attack OR invasion OR evacuation OR troops)",
  "config": {
@@ -327,64 +327,41 @@
    "share": 1.101,
    "source": "gdelt-gkg",
    "partial": false
+  },
+  {
+   "date": "2026-11-22",
+   "count": 3,
+   "total": 52109,
+   "tone": -1.5441974130065532,
+   "share": 0.576,
+   "source": "gdelt-gkg",
+   "partial": true
   }
  ],
  "articles": [
   {
-   "title": "Uk confirms offensive cyber operations targeting russia china iran north korea — aa.com.tr",
-   "url": "https://aa.com.tr/en/middle-east/uk-confirms-offensive-cyber-operations-targeting-russia-china-iran-north-korea/4132616",
-   "domain": "aa.com.tr",
+   "title": "Trump cant get his calls returned kim jong un ignores us president as north korea expands… — timesofindia.indiatimes.com",
+   "url": "https://timesofindia.indiatimes.com/world/us/trump-cant-get-his-calls-returned-kim-jong-un-ignores-us-president-as-north-korea-expands-nuclear-arsenal-capable-of-striking-us-cities/articleshow/136068829.cms",
+   "domain": "timesofindia.indiatimes.com",
    "language": "English",
    "country": null,
-   "date": "2026-11-21"
+   "date": "2026-11-22"
   },
   {
-   "title": "North korea s kim visits factory sites after apparent trump snub — freemalaysiatoday.com",
-   "url": "https://www.freemalaysiatoday.com/category/world/2026/11/21/north-korea-s-kim-visits-factory-sites-after-apparent-trump-snub",
-   "domain": "www.freemalaysiatoday.com",
+   "title": "Artc north korea kim jong un ignores trump despite his attempts to resume dialogue — i24news.tv",
+   "url": "https://www.i24news.tv/en/news/international/americas/artc-north-korea-kim-jong-un-ignores-trump-despite-his-attempts-to-resume-dialogue",
+   "domain": "www.i24news.tv",
    "language": "English",
    "country": null,
-   "date": "2026-11-21"
+   "date": "2026-11-22"
   },
   {
-   "title": "Uk confirms offensive cyber operations targeting russia china iran north korea — freemalaysiatoday.com",
-   "url": "https://www.freemalaysiatoday.com/category/world/2026/11/21/uk-confirms-offensive-cyber-operations-targeting-russia-china-iran-north-korea",
-   "domain": "www.freemalaysiatoday.com",
+   "title": "Trump s attempts to reach kim jong un go unanswered as north korea expands nuclear… — moneycontrol.com",
+   "url": "https://www.moneycontrol.com/world/trump-s-attempts-to-reach-kim-jong-un-go-unanswered-as-north-korea-expands-nuclear-arsenal-report-article-14086564.html",
+   "domain": "www.moneycontrol.com",
    "language": "English",
    "country": null,
-   "date": "2026-11-21"
-  },
-  {
-   "title": "Chinas korean peninsula diplomacy oped — eurasiareview.com",
-   "url": "https://www.eurasiareview.com/21112026-chinas-korean-peninsula-diplomacy-oped/",
-   "domain": "www.eurasiareview.com",
-   "language": "English",
-   "country": null,
-   "date": "2026-11-21"
-  },
-  {
-   "title": "North korea kim jong un donald trump snub — channelnewsasia.com",
-   "url": "https://www.channelnewsasia.com/east-asia/north-korea-kim-jong-un-donald-trump-snub-6571201",
-   "domain": "www.channelnewsasia.com",
-   "language": "English",
-   "country": null,
-   "date": "2026-11-21"
-  },
-  {
-   "title": "North Korea dictator Kim Jong appears public inspect factory days apparent snub Donald… — dailymail.com",
-   "url": "https://www.dailymail.com/news/article-16311787/North-Korea-dictator-Kim-Jong-appears-public-inspect-factory-days-apparent-snub-Donald-Trump-speculation-health.html",
-   "domain": "www.dailymail.com",
-   "language": "English",
-   "country": null,
-   "date": "2026-11-21"
-  },
-  {
-   "title": "North korea says nuclear weapons are a shield for its sovereignty — garoweonline.com",
-   "url": "https://garoweonline.com/en/news/world/north-korea-says-nuclear-weapons-are-a-shield-for-its-sovereignty",
-   "domain": "garoweonline.com",
-   "language": "English",
-   "country": null,
-   "date": "2026-11-21"
+   "date": "2026-11-22"
   }
  ]
 }
