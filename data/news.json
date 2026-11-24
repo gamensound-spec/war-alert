@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-23T13:01+09:00",
+ "generated_at": "2026-11-24T16:09+09:00",
  "source": "gdelt-gkg",
  "query": "(\"north korea\" OR \"korean peninsula\") (war OR missile OR attack OR invasion OR evacuation OR troops)",
  "config": {
@@ -12,14 +12,14 @@
  "alerts": [],
  "watch": [],
  "latest": {
-  "date": "2026-11-21",
-  "share": 1.101,
-  "count": 7,
-  "tone": -2.9219705875861526,
+  "date": "2026-11-23",
+  "share": 0.399,
+  "count": 4,
+  "tone": 0.2999601969650525,
   "base_n": 28,
-  "median": 0.989,
-  "ratio": 1.11,
-  "z": 0.09
+  "median": 0.946,
+  "ratio": 0.42,
+  "z": -0.45
  },
  "series": [
   {
@@ -336,32 +336,49 @@
    "share": 0.576,
    "source": "gdelt-gkg",
    "partial": true
+  },
+  {
+   "date": "2026-11-23",
+   "count": 4,
+   "total": 100164,
+   "tone": 0.2999601969650525,
+   "share": 0.399,
+   "source": "gdelt-gkg",
+   "partial": false
   }
  ],
  "articles": [
   {
-   "title": "Trump cant get his calls returned kim jong un ignores us president as north korea expands… — timesofindia.indiatimes.com",
-   "url": "https://timesofindia.indiatimes.com/world/us/trump-cant-get-his-calls-returned-kim-jong-un-ignores-us-president-as-north-korea-expands-nuclear-arsenal-capable-of-striking-us-cities/articleshow/136068829.cms",
-   "domain": "timesofindia.indiatimes.com",
+   "title": "North korea s kim says country seeks security not supremacy — freemalaysiatoday.com",
+   "url": "https://www.freemalaysiatoday.com/category/world/2026/11/23/north-korea-s-kim-says-country-seeks-security-not-supremacy",
+   "domain": "www.freemalaysiatoday.com",
    "language": "English",
    "country": null,
-   "date": "2026-11-22"
+   "date": "2026-11-23"
   },
   {
-   "title": "Artc north korea kim jong un ignores trump despite his attempts to resume dialogue — i24news.tv",
-   "url": "https://www.i24news.tv/en/news/international/americas/artc-north-korea-kim-jong-un-ignores-trump-despite-his-attempts-to-resume-dialogue",
-   "domain": "www.i24news.tv",
+   "title": "North korea s kim says country seeks security not supremacy — hindustantimes.com",
+   "url": "https://www.hindustantimes.com/world-news/us-news/north-korea-s-kim-says-country-seeks-security-not-supremacy-101795388534935.html",
+   "domain": "www.hindustantimes.com",
    "language": "English",
    "country": null,
-   "date": "2026-11-22"
+   "date": "2026-11-23"
   },
   {
-   "title": "Trump s attempts to reach kim jong un go unanswered as north korea expands nuclear… — moneycontrol.com",
-   "url": "https://www.moneycontrol.com/world/trump-s-attempts-to-reach-kim-jong-un-go-unanswered-as-north-korea-expands-nuclear-arsenal-report-article-14086564.html",
-   "domain": "www.moneycontrol.com",
+   "title": "rte.ie",
+   "url": "https://www.rte.ie/news/2026/1123/1600245-north-korea/",
+   "domain": "www.rte.ie",
    "language": "English",
    "country": null,
-   "date": "2026-11-22"
+   "date": "2026-11-23"
+  },
+  {
+   "title": "Us senator warns north korea growing more lethal due to ukraine war — nknews.org",
+   "url": "https://www.nknews.org/2026/11/us-senator-warns-north-korea-growing-more-lethal-due-to-ukraine-war/",
+   "domain": "www.nknews.org",
+   "language": "English",
+   "country": null,
+   "date": "2026-11-23"
   }
  ]
 }
