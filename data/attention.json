@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-24T16:09+09:00",
+ "generated_at": "2026-11-25T14:44+09:00",
  "source": [
   "wikimedia-pageviews",
   "google-trends-kr-rss"
@@ -48,16 +48,6 @@
    "status": "normal"
   },
   "series": [
-   {
-    "date": "2026-09-25",
-    "total": 18200,
-    "documents": {
-     "North_Korea": 6678,
-     "Korean_War": 4856,
-     "Korean_Demilitarized_Zone": 1096,
-     "Kim_Jong_Un": 5570
-    }
-   },
    {
     "date": "2026-09-26",
     "total": 15941,
@@ -652,15 +642,18 @@
   "missing_articles": []
  },
  "trends": {
-  "hits": 0,
+  "hits": 2,
   "items": 10,
-  "titles": [],
-  "date": "2026-11-24",
-  "samples": 16,
-  "base_n": 15,
-  "median": 0,
+  "titles": [
+   "美 국제정세 전문가 “대만 포기 땐 세계 질서 붕괴…한·일 핵무장 검토할 것”",
+   "‘거북이는오른다’, 북한산 둘레길 21코스 완주"
+  ],
+  "date": "2026-11-25",
+  "samples": 17,
+  "base_n": 16,
+  "median": 0.0,
   "z": null,
   "status": "normal",
-  "note": "평소 0건 대비 0건 · MAD 0"
+  "note": "평소 0건 대비 2건 · MAD 0"
  }
 }

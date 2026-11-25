@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-11-24T16:06+09:00",
- "today": "2026-11-24",
+ "generated_at": "2026-11-25T14:41+09:00",
+ "today": "2026-11-25",
  "recent_days": 30,
  "norm_labels": {
   "1": "일반 주의",
@@ -49,12 +49,12 @@
    "level": 0,
    "level_norm": 1,
    "level_text": "Exercise normal security precautions",
-   "updated": "2026-10-15T21:53+09:00",
+   "updated": "2026-11-25T01:38+09:00",
    "url": "https://travel.gc.ca/destinations/south-korea",
    "changed": null,
    "latest": {
-    "date": "2026-10-15T21:53+09:00",
-    "title": "Natural disasters and climate section – added information on El Niño",
+    "date": "2026-11-25T01:38+09:00",
+    "title": "Entry and exit requirements section – updated information on exemption from the Korea Electronic Travel Authority (K-ETA)",
     "url": "https://travel.gc.ca/destinations/south-korea"
    }
   },
@@ -65,7 +65,7 @@
    "level": 0,
    "level_norm": 1,
    "level_text": "危険情報なし",
-   "updated": "2026-11-24T15:40+09:00",
+   "updated": "2026-11-25T14:20+09:00",
    "url": "https://www.anzen.mofa.go.jp/od/ryojiMail.html?countryCd=003",
    "changed": null,
    "latest": {

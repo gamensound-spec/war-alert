@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-24T16:09+09:00",
+ "generated_at": "2026-11-25T14:44+09:00",
  "source": "google-news-rss",
  "config": {
   "groups": {
@@ -60,9 +60,9 @@
    "hits_7d": 2,
    "training_7d": 0,
    "sources_24h": 0,
-   "date": "2026-11-24",
-   "base_n": 14,
-   "median": 0.0,
+   "date": "2026-11-25",
+   "base_n": 15,
+   "median": 0,
    "z": null,
    "status": "normal",
    "note": "평소 0건 대비 0건 · MAD 0"
@@ -72,9 +72,9 @@
    "hits_7d": 0,
    "training_7d": 0,
    "sources_24h": 0,
-   "date": "2026-11-24",
-   "base_n": 14,
-   "median": 0.0,
+   "date": "2026-11-25",
+   "base_n": 15,
+   "median": 0,
    "z": null,
    "status": "muted",
    "note": "평소 0건 대비 0건 · MAD 0"
@@ -84,9 +84,9 @@
    "hits_7d": 0,
    "training_7d": 0,
    "sources_24h": 0,
-   "date": "2026-11-24",
-   "base_n": 15,
-   "median": 0,
+   "date": "2026-11-25",
+   "base_n": 16,
+   "median": 0.0,
    "z": null,
    "status": "muted",
    "note": "평소 0건 대비 0건 · MAD 0"
@@ -94,16 +94,16 @@
  },
  "headlines": [
   {
+   "title": "[이한구칼럼] 주한미군 철수·통합사관학교를 반대하는 바보(?) 군인들 - 트루스데일리",
+   "source": "트루스데일리",
+   "date": "2026-11-21T17:00:00+09:00",
+   "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1ob1YzT0NYa29xVXV5R3VaY09scTZvM1Fab1YxenVHUjRWUndfaUExdW5KYXFQUGFwaWs1dWtoRW9ITXRnd2tzZ3NqT1d0bVNIcEJsaVpyY3NaaVdBcFJ6SDdPaXc1ZGdPQ0ZNTF9B?oc=5"
+  },
+  {
    "title": "[이한구칼럼] 주한미군 철수·통합사관학교를 반대하는 바보(?) 군인들2 - 트루스데일리",
    "source": "트루스데일리",
    "date": "2026-11-21T07:23:09+09:00",
    "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE0yYmhkWGV3Vl9zOUZ2aEVVcjU4YndUU21NN0FtYlh1RHJ5NTVFMF9uSTN4Ri0xRC1DR3Q3ZF93M21zVmJWSHRXZ0JEaVRKdTEtN29neDFJUTZzeFZwOHV1NHN3VUVaN0FEaWY0SUxn?oc=5"
-  },
-  {
-   "title": "[이한구칼럼] 주한미군 철수·통합사관학교를 반대하는 바보(?) 군인들 - 트루스데일리",
-   "source": "트루스데일리",
-   "date": "2026-11-18T16:04:41+09:00",
-   "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1ob1YzT0NYa29xVXV5R3VaY09scTZvM1Fab1YxenVHUjRWUndfaUExdW5KYXFQUGFwaWs1dWtoRW9ITXRnd2tzZ3NqT1d0bVNIcEJsaVpyY3NaaVdBcFJ6SDdPaXc1ZGdPQ0ZNTF9B?oc=5"
   }
  ]
 }
