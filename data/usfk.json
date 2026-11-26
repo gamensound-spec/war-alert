@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-25T14:44+09:00",
+ "generated_at": "2026-11-26T14:34+09:00",
  "source": "google-news-rss",
  "config": {
   "groups": {
@@ -57,12 +57,12 @@
  "groups": {
   "evac": {
    "hits_24h": 0,
-   "hits_7d": 2,
+   "hits_7d": 3,
    "training_7d": 0,
    "sources_24h": 0,
-   "date": "2026-11-25",
-   "base_n": 15,
-   "median": 0,
+   "date": "2026-11-26",
+   "base_n": 16,
+   "median": 0.0,
    "z": null,
    "status": "normal",
    "note": "평소 0건 대비 0건 · MAD 0"
@@ -72,9 +72,9 @@
    "hits_7d": 0,
    "training_7d": 0,
    "sources_24h": 0,
-   "date": "2026-11-25",
-   "base_n": 15,
-   "median": 0,
+   "date": "2026-11-26",
+   "base_n": 16,
+   "median": 0.0,
    "z": null,
    "status": "muted",
    "note": "평소 0건 대비 0건 · MAD 0"
@@ -84,9 +84,9 @@
    "hits_7d": 0,
    "training_7d": 0,
    "sources_24h": 0,
-   "date": "2026-11-25",
-   "base_n": 16,
-   "median": 0.0,
+   "date": "2026-11-26",
+   "base_n": 17,
+   "median": 0,
    "z": null,
    "status": "muted",
    "note": "평소 0건 대비 0건 · MAD 0"
@@ -104,6 +104,12 @@
    "source": "트루스데일리",
    "date": "2026-11-21T07:23:09+09:00",
    "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE0yYmhkWGV3Vl9zOUZ2aEVVcjU4YndUU21NN0FtYlh1RHJ5NTVFMF9uSTN4Ri0xRC1DR3Q3ZF93M21zVmJWSHRXZ0JEaVRKdTEtN29neDFJUTZzeFZwOHV1NHN3VUVaN0FEaWY0SUxn?oc=5"
+  },
+  {
+   "title": "“평택 미군기지 수상하게 바쁘네”…철수설 속 올해만 세 번째 대규모 입주 준비에 ‘철렁’ - 더위드카",
+   "source": "더위드카",
+   "date": "2026-11-20T20:00:00+09:00",
+   "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE04Z2FjMUdDNzZCcEdpbGNLdVRmLUlDQmtWQWoxT2JHeWdvREg2R0N6dFNQblJSaFRKQ2JMaGNrSkE0bE5kWUttUUNBaDNvUHVZZW4tSFVtajlya2J0M0xQNmFwZzFNcUhCelNEZ09fMGpSOUhyeE9vc3pn0gGCAUFVX3lxTE5uOGRWSExXaFFZckpTdXVGazFNVDVRV0xEU2ZxM2Y4OW1ueVBkRVpyTi1KZlZsTVVpZ0kyQlNIZ3p2bXZLRzZ4RDBQMU13NHE5MWFSVlJvVUdYcDRTdHg5VGNnV05VdlFRNXVNdEFYQk9jRXVtZ05ZY1BkS1FnWm5zV3c?oc=5"
   }
  ]
 }

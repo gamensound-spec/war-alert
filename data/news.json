@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-11-25T14:44+09:00",
- "source": "gdelt-gkg",
+ "generated_at": "2026-11-26T14:34+09:00",
+ "source": "gdelt-doc",
  "query": "(\"north korea\" OR \"korean peninsula\") (war OR missile OR attack OR invasion OR evacuation OR troops)",
  "config": {
   "base_days": 28,
@@ -9,451 +9,719 @@
   "z_alert": 3.0,
   "ratio_alert": 2.0
  },
- "alerts": [
-  "한반도 분쟁 기사량 급증: 평소의 6.4배 (z +4.3)"
- ],
+ "alerts": [],
  "watch": [],
  "latest": {
-  "date": "2026-11-24",
-  "share": 5.021,
-  "count": 56,
-  "tone": -2.768325843249161,
+  "date": "2026-11-25",
+  "share": 8.702,
+  "count": 35,
+  "tone": -2.9606,
   "base_n": 28,
-  "median": 0.788,
-  "ratio": 6.37,
-  "z": 4.28
+  "median": 15.991,
+  "ratio": 0.54,
+  "z": -0.79
  },
  "series": [
   {
+   "date": "2026-08-29",
+   "count": 54,
+   "total": 91911,
+   "share": 5.875,
+   "tone": -3.3036,
+   "source": "gdelt-doc",
+   "partial": false
+  },
+  {
+   "date": "2026-08-30",
+   "count": 90,
+   "total": 79465,
+   "share": 11.326,
+   "tone": -2.132,
+   "source": "gdelt-doc",
+   "partial": false
+  },
+  {
+   "date": "2026-08-31",
+   "count": 78,
+   "total": 107519,
+   "share": 7.255,
+   "tone": -2.7005,
+   "source": "gdelt-doc",
+   "partial": false
+  },
+  {
+   "date": "2026-09-01",
+   "count": 88,
+   "total": 116481,
+   "share": 7.555,
+   "tone": -1.385,
+   "source": "gdelt-doc",
+   "partial": false
+  },
+  {
+   "date": "2026-09-02",
+   "count": 101,
+   "total": 105316,
+   "share": 9.59,
+   "tone": -2.2152,
+   "source": "gdelt-doc",
+   "partial": false
+  },
+  {
+   "date": "2026-09-03",
+   "count": 72,
+   "total": 120602,
+   "share": 5.97,
+   "tone": -2.2347,
+   "source": "gdelt-doc",
+   "partial": false
+  },
+  {
+   "date": "2026-09-04",
+   "count": 95,
+   "total": 156481,
+   "share": 6.071,
+   "tone": -0.8379,
+   "source": "gdelt-doc",
+   "partial": false
+  },
+  {
+   "date": "2026-09-05",
+   "count": 43,
+   "total": 102774,
+   "share": 4.184,
+   "tone": -2.1451,
+   "source": "gdelt-doc",
+   "partial": false
+  },
+  {
+   "date": "2026-09-06",
+   "count": 42,
+   "total": 98645,
+   "share": 4.258,
+   "tone": -4.0756,
+   "source": "gdelt-doc",
+   "partial": false
+  },
+  {
+   "date": "2026-09-07",
+   "count": 246,
+   "total": 118079,
+   "share": 20.834,
+   "tone": -1.5563,
+   "source": "gdelt-doc",
+   "partial": false
+  },
+  {
+   "date": "2026-09-08",
+   "count": 114,
+   "total": 77318,
+   "share": 14.744,
+   "tone": -0.6972,
+   "source": "gdelt-doc",
+   "partial": false
+  },
+  {
+   "date": "2026-09-09",
+   "count": 127,
+   "total": 158938,
+   "share": 7.991,
+   "tone": -2.0538,
+   "source": "gdelt-doc",
+   "partial": false
+  },
+  {
+   "date": "2026-09-10",
+   "count": 125,
+   "total": 155062,
+   "share": 8.061,
+   "tone": -1.163,
+   "source": "gdelt-doc",
+   "partial": false
+  },
+  {
+   "date": "2026-09-11",
+   "count": 118,
+   "total": 154253,
+   "share": 7.65,
+   "tone": -2.4763,
+   "source": "gdelt-doc",
+   "partial": false
+  },
+  {
+   "date": "2026-09-12",
+   "count": 195,
+   "total": 120863,
+   "share": 16.134,
+   "tone": -2.0004,
+   "source": "gdelt-doc",
+   "partial": false
+  },
+  {
+   "date": "2026-09-13",
+   "count": 20,
+   "total": 29203,
+   "share": 6.849,
+   "tone": -1.2516,
+   "source": "gdelt-doc",
+   "partial": true
+  },
+  {
+   "date": "2026-09-20",
+   "count": 292,
+   "total": 105485,
+   "share": 27.682,
+   "tone": -2.3591,
+   "source": "gdelt-doc",
+   "partial": false
+  },
+  {
+   "date": "2026-09-21",
+   "count": 175,
+   "total": 108510,
+   "share": 16.128,
+   "tone": -3.226,
+   "source": "gdelt-doc",
+   "partial": false
+  },
+  {
+   "date": "2026-09-22",
+   "count": 184,
+   "total": 105779,
+   "share": 17.395,
+   "tone": -1.401,
+   "source": "gdelt-doc",
+   "partial": false
+  },
+  {
+   "date": "2026-09-23",
+   "count": 319,
+   "total": 149817,
+   "share": 21.293,
+   "tone": -1.9387,
+   "source": "gdelt-doc",
+   "partial": false
+  },
+  {
+   "date": "2026-09-24",
+   "count": 322,
+   "total": 155942,
+   "share": 20.649,
+   "tone": -2.3174,
+   "source": "gdelt-doc",
+   "partial": false
+  },
+  {
+   "date": "2026-09-25",
+   "count": 150,
+   "total": 58811,
+   "share": 25.505,
+   "tone": -1.4612,
+   "source": "gdelt-doc",
+   "partial": false
+  },
+  {
+   "date": "2026-09-27",
+   "count": 88,
+   "total": 77392,
+   "share": 11.371,
+   "tone": -3.1422,
+   "source": "gdelt-doc",
+   "partial": false
+  },
+  {
+   "date": "2026-09-28",
+   "count": 272,
+   "total": 121105,
+   "share": 22.46,
+   "tone": -3.5538,
+   "source": "gdelt-doc",
+   "partial": false
+  },
+  {
+   "date": "2026-09-29",
+   "count": 602,
+   "total": 134919,
+   "share": 44.619,
+   "tone": -4.02,
+   "source": "gdelt-doc",
+   "partial": false
+  },
+  {
+   "date": "2026-09-30",
+   "count": 193,
+   "total": 111356,
+   "share": 17.332,
+   "tone": -2.9385,
+   "source": "gdelt-doc",
+   "partial": false
+  },
+  {
+   "date": "2026-10-01",
+   "count": 168,
+   "total": 174731,
+   "share": 9.615,
+   "tone": -2.6307,
+   "source": "gdelt-doc",
+   "partial": false
+  },
+  {
+   "date": "2026-10-02",
+   "count": 136,
+   "total": 61712,
+   "share": 22.038,
+   "tone": -3.4042,
+   "source": "gdelt-doc",
+   "partial": false
+  },
+  {
+   "date": "2026-10-06",
+   "count": 2,
+   "total": 3958,
+   "share": 5.053,
+   "tone": -1.7031,
+   "source": "gdelt-doc",
+   "partial": true
+  },
+  {
+   "date": "2026-10-08",
+   "count": 1,
+   "total": 678,
+   "share": 14.749,
+   "tone": -2.8986,
+   "source": "gdelt-doc",
+   "partial": true
+  },
+  {
+   "date": "2026-10-10",
+   "count": 6,
+   "total": 1836,
+   "share": 32.68,
+   "tone": -1.2957,
+   "source": "gdelt-doc",
+   "partial": true
+  },
+  {
+   "date": "2026-10-15",
+   "count": 92,
+   "total": 95273,
+   "share": 9.656,
+   "tone": -1.76,
+   "source": "gdelt-doc",
+   "partial": false
+  },
+  {
+   "date": "2026-10-16",
+   "count": 104,
+   "total": 150288,
+   "share": 6.92,
+   "tone": -1.9895,
+   "source": "gdelt-doc",
+   "partial": false
+  },
+  {
+   "date": "2026-10-17",
+   "count": 93,
+   "total": 94046,
+   "share": 9.889,
+   "tone": -2.0199,
+   "source": "gdelt-doc",
+   "partial": false
+  },
+  {
+   "date": "2026-10-18",
+   "count": 40,
+   "total": 76163,
+   "share": 5.252,
+   "tone": -1.7025,
+   "source": "gdelt-doc",
+   "partial": false
+  },
+  {
    "date": "2026-10-19",
-   "count": 5,
-   "total": 101974,
-   "tone": -5.746916924147274,
-   "share": 0.49,
-   "source": "gdelt-gkg",
+   "count": 138,
+   "total": 146057,
+   "share": 9.448,
+   "tone": -3.2167,
+   "source": "gdelt-doc",
    "partial": false
   },
   {
    "date": "2026-10-20",
-   "count": 39,
-   "total": 113378,
-   "tone": -5.021874031106995,
-   "share": 3.44,
-   "source": "gdelt-gkg",
+   "count": 248,
+   "total": 156425,
+   "share": 15.854,
+   "tone": -3.4316,
+   "source": "gdelt-doc",
    "partial": false
   },
   {
    "date": "2026-10-21",
-   "count": 14,
-   "total": 117927,
-   "tone": -4.547432271558916,
-   "share": 1.187,
-   "source": "gdelt-gkg",
+   "count": 190,
+   "total": 166970,
+   "share": 11.379,
+   "tone": -3.5409,
+   "source": "gdelt-doc",
    "partial": false
   },
   {
    "date": "2026-10-22",
-   "count": 82,
-   "total": 118762,
-   "tone": -5.182761127491281,
-   "share": 6.905,
-   "source": "gdelt-gkg",
+   "count": 147,
+   "total": 123805,
+   "share": 11.874,
+   "tone": -4.3495,
+   "source": "gdelt-doc",
    "partial": false
   },
   {
    "date": "2026-10-23",
-   "count": 26,
-   "total": 111810,
-   "tone": -5.443420175789056,
-   "share": 2.325,
-   "source": "gdelt-gkg",
+   "count": 114,
+   "total": 69302,
+   "share": 16.45,
+   "tone": -2.786,
+   "source": "gdelt-doc",
    "partial": false
   },
   {
    "date": "2026-10-24",
-   "count": 9,
-   "total": 63438,
-   "tone": -0.661791751755179,
-   "share": 1.419,
-   "source": "gdelt-gkg",
+   "count": 244,
+   "total": 77623,
+   "share": 31.434,
+   "tone": -0.6895,
+   "source": "gdelt-doc",
    "partial": false
   },
   {
    "date": "2026-10-25",
-   "count": 10,
-   "total": 53112,
-   "tone": -2.3520719246432753,
-   "share": 1.883,
-   "source": "gdelt-gkg",
+   "count": 66,
+   "total": 31912,
+   "share": 20.682,
+   "tone": -1.1035,
+   "source": "gdelt-doc",
    "partial": true
   },
   {
    "date": "2026-10-26",
-   "count": 8,
-   "total": 101215,
-   "tone": -6.544866103093045,
-   "share": 0.79,
-   "source": "gdelt-gkg",
-   "partial": false
-  },
-  {
-   "date": "2026-10-27",
-   "count": 1,
-   "total": 117445,
-   "tone": -7.65124555160142,
-   "share": 0.085,
-   "source": "gdelt-gkg",
-   "partial": false
-  },
-  {
-   "date": "2026-10-28",
-   "count": 2,
-   "total": 120123,
-   "tone": -3.564504830327615,
-   "share": 0.166,
-   "source": "gdelt-gkg",
-   "partial": false
-  },
-  {
-   "date": "2026-10-29",
-   "count": 54,
-   "total": 119299,
-   "tone": -4.151493123446605,
-   "share": 4.526,
-   "source": "gdelt-gkg",
-   "partial": false
-  },
-  {
-   "date": "2026-10-30",
-   "count": 378,
-   "total": 108415,
-   "tone": -5.187408651368851,
-   "share": 34.866,
-   "source": "gdelt-gkg",
-   "partial": false
-  },
-  {
-   "date": "2026-10-31",
-   "count": 35,
-   "total": 62008,
-   "tone": -4.63208791165485,
-   "share": 5.644,
-   "source": "gdelt-gkg",
-   "partial": false
-  },
-  {
-   "date": "2026-11-01",
-   "count": 79,
-   "total": 54361,
-   "tone": -4.490585802526435,
-   "share": 14.532,
-   "source": "gdelt-gkg",
+   "count": 6,
+   "total": 4483,
+   "share": 13.384,
+   "tone": -2.8178,
+   "source": "gdelt-doc",
    "partial": true
   },
   {
-   "date": "2026-11-02",
-   "count": 97,
-   "total": 102905,
-   "tone": -4.742420332452159,
-   "share": 9.426,
-   "source": "gdelt-gkg",
-   "partial": false
+   "date": "2026-10-27",
+   "count": 4,
+   "total": 2218,
+   "share": 18.034,
+   "tone": -3.0834,
+   "source": "gdelt-doc",
+   "partial": true
   },
   {
    "date": "2026-11-03",
-   "count": 116,
-   "total": 113571,
-   "tone": -6.244903614093186,
-   "share": 10.214,
-   "source": "gdelt-gkg",
-   "partial": false
+   "count": 12,
+   "total": 5672,
+   "share": 21.157,
+   "tone": -3.058,
+   "source": "gdelt-doc",
+   "partial": true
   },
   {
    "date": "2026-11-04",
-   "count": 37,
-   "total": 125779,
-   "tone": -4.583770629920415,
-   "share": 2.942,
-   "source": "gdelt-gkg",
-   "partial": false
+   "count": 10,
+   "total": 2220,
+   "share": 45.045,
+   "tone": -5.1021,
+   "source": "gdelt-doc",
+   "partial": true
   },
   {
    "date": "2026-11-05",
-   "count": 21,
-   "total": 116472,
-   "tone": -2.0321454840234794,
-   "share": 1.803,
-   "source": "gdelt-gkg",
-   "partial": false
+   "count": 7,
+   "total": 7479,
+   "share": 9.36,
+   "tone": -4.1554,
+   "source": "gdelt-doc",
+   "partial": true
   },
   {
    "date": "2026-11-06",
-   "count": 8,
-   "total": 112318,
-   "tone": -3.096758946836438,
-   "share": 0.712,
-   "source": "gdelt-gkg",
+   "count": 44,
+   "total": 55749,
+   "share": 7.893,
+   "tone": -2.9597,
+   "source": "gdelt-doc",
    "partial": false
   },
   {
    "date": "2026-11-07",
-   "count": 2,
-   "total": 64211,
-   "tone": -2.954370212367315,
-   "share": 0.311,
-   "source": "gdelt-gkg",
-   "partial": false
+   "count": 46,
+   "total": 29862,
+   "share": 15.404,
+   "tone": -2.0514,
+   "source": "gdelt-doc",
+   "partial": true
   },
   {
    "date": "2026-11-08",
-   "count": 1,
-   "total": 52071,
-   "tone": -1.73460537727667,
-   "share": 0.192,
-   "source": "gdelt-gkg",
+   "count": 18,
+   "total": 28220,
+   "share": 6.378,
+   "tone": -2.9068,
+   "source": "gdelt-doc",
    "partial": true
   },
   {
    "date": "2026-11-09",
-   "count": 2,
-   "total": 97057,
-   "tone": -4.71865755815191,
-   "share": 0.206,
-   "source": "gdelt-gkg",
-   "partial": false
+   "count": 18,
+   "total": 13394,
+   "share": 13.439,
+   "tone": -1.1308,
+   "source": "gdelt-doc",
+   "partial": true
   },
   {
    "date": "2026-11-10",
-   "count": 9,
-   "total": 114410,
-   "tone": -4.159863659275877,
-   "share": 0.787,
-   "source": "gdelt-gkg",
-   "partial": false
+   "count": 34,
+   "total": 27148,
+   "share": 12.524,
+   "tone": -2.6507,
+   "source": "gdelt-doc",
+   "partial": true
   },
   {
    "date": "2026-11-11",
-   "count": 2,
-   "total": 109390,
-   "tone": -1.45985401459854,
-   "share": 0.183,
-   "source": "gdelt-gkg",
-   "partial": false
+   "count": 20,
+   "total": 21325,
+   "share": 9.379,
+   "tone": -2.763,
+   "source": "gdelt-doc",
+   "partial": true
   },
   {
    "date": "2026-11-12",
-   "count": 75,
-   "total": 109111,
-   "tone": -4.6452034060563046,
-   "share": 6.874,
-   "source": "gdelt-gkg",
-   "partial": false
+   "count": 39,
+   "total": 21707,
+   "share": 17.967,
+   "tone": -3.2425,
+   "source": "gdelt-doc",
+   "partial": true
   },
   {
    "date": "2026-11-13",
-   "count": 29,
-   "total": 104883,
-   "tone": -6.63717848306172,
-   "share": 2.765,
-   "source": "gdelt-gkg",
-   "partial": false
+   "count": 6,
+   "total": 5213,
+   "share": 11.51,
+   "tone": -2.7208,
+   "source": "gdelt-doc",
+   "partial": true
   },
   {
    "date": "2026-11-14",
-   "count": 0,
-   "total": 62192,
-   "tone": null,
-   "share": 0.0,
-   "source": "gdelt-gkg",
-   "partial": false
+   "count": 5,
+   "total": 3545,
+   "share": 14.104,
+   "tone": -3.7387,
+   "source": "gdelt-doc",
+   "partial": true
   },
   {
    "date": "2026-11-15",
-   "count": 3,
-   "total": 50459,
-   "tone": -3.21583487864458,
-   "share": 0.595,
-   "source": "gdelt-gkg",
+   "count": 0,
+   "total": 1819,
+   "share": 0.0,
+   "tone": 0,
+   "source": "gdelt-doc",
    "partial": true
   },
   {
    "date": "2026-11-16",
-   "count": 0,
-   "total": 96610,
-   "tone": null,
-   "share": 0.0,
-   "source": "gdelt-gkg",
-   "partial": false
-  },
-  {
-   "date": "2026-11-17",
-   "count": 5,
-   "total": 115340,
-   "tone": 1.2642622405818789,
-   "share": 0.434,
-   "source": "gdelt-gkg",
-   "partial": false
+   "count": 3,
+   "total": 2280,
+   "share": 13.158,
+   "tone": -3.3985,
+   "source": "gdelt-doc",
+   "partial": true
   },
   {
    "date": "2026-11-18",
-   "count": 3,
-   "total": 118241,
-   "tone": -4.317385078753763,
-   "share": 0.254,
-   "source": "gdelt-gkg",
-   "partial": false
+   "count": 6,
+   "total": 3083,
+   "share": 19.462,
+   "tone": -1.6417,
+   "source": "gdelt-doc",
+   "partial": true
   },
   {
    "date": "2026-11-19",
-   "count": 5,
-   "total": 119181,
-   "tone": -1.1134928416776695,
-   "share": 0.42,
-   "source": "gdelt-gkg",
-   "partial": false
+   "count": 8,
+   "total": 7959,
+   "share": 10.052,
+   "tone": -2.6567,
+   "source": "gdelt-doc",
+   "partial": true
   },
   {
    "date": "2026-11-20",
-   "count": 6,
-   "total": 111526,
-   "tone": -3.5533965112662123,
-   "share": 0.538,
-   "source": "gdelt-gkg",
-   "partial": false
+   "count": 24,
+   "total": 29934,
+   "share": 8.018,
+   "tone": -0.7901,
+   "source": "gdelt-doc",
+   "partial": true
   },
   {
    "date": "2026-11-21",
-   "count": 7,
-   "total": 63550,
-   "tone": -2.9219705875861526,
-   "share": 1.101,
-   "source": "gdelt-gkg",
-   "partial": false
+   "count": 5,
+   "total": 15238,
+   "share": 3.281,
+   "tone": -1.9237,
+   "source": "gdelt-doc",
+   "partial": true
   },
   {
    "date": "2026-11-22",
-   "count": 3,
-   "total": 52109,
-   "tone": -1.5441974130065532,
-   "share": 0.576,
-   "source": "gdelt-gkg",
+   "count": 26,
+   "total": 17835,
+   "share": 14.578,
+   "tone": -1.3409,
+   "source": "gdelt-doc",
    "partial": true
   },
   {
    "date": "2026-11-23",
-   "count": 4,
-   "total": 100164,
-   "tone": 0.2999601969650525,
-   "share": 0.399,
-   "source": "gdelt-gkg",
-   "partial": false
+   "count": 12,
+   "total": 8004,
+   "share": 14.993,
+   "tone": -2.8245,
+   "source": "gdelt-doc",
+   "partial": true
   },
   {
    "date": "2026-11-24",
-   "count": 56,
-   "total": 111522,
-   "tone": -2.768325843249161,
-   "share": 5.021,
-   "source": "gdelt-gkg",
+   "count": 89,
+   "total": 53231,
+   "share": 16.72,
+   "tone": -4.0741,
+   "source": "gdelt-doc",
    "partial": false
+  },
+  {
+   "date": "2026-11-25",
+   "count": 35,
+   "total": 40220,
+   "share": 8.702,
+   "tone": -2.9606,
+   "source": "gdelt-doc",
+   "partial": false
+  },
+  {
+   "date": "2026-11-26",
+   "count": 74,
+   "total": 22449,
+   "share": 32.964,
+   "tone": -1.7525,
+   "source": "gdelt-doc",
+   "partial": true
   }
  ],
  "articles": [
   {
-   "title": "Us seeks 11b crypto stolen north korea binance hack — cointelegraph.com",
-   "url": "https://cointelegraph.com/news/us-seeks-11b-crypto-stolen-north-korea-binance-hack",
-   "domain": "cointelegraph.com",
+   "title": "Kim Jong Un calls tactical nuclear weapons deployment across multiple domains  urgent ; vows to expand nuclear arsenal",
+   "url": "https://news.webindia123.com/news/Articles/World/20261126/4524598.html",
+   "domain": "news.webindia123.com",
    "language": "English",
-   "country": null,
-   "date": "2026-11-24"
+   "country": "India",
+   "date": "2026-11-26"
   },
   {
-   "title": "North korea to consider shutting down swiss diplomatic office in pyongyang kcna says — straitstimes.com",
-   "url": "https://www.straitstimes.com/asia/east-asia/north-korea-to-consider-shutting-down-swiss-diplomatic-office-in-pyongyang-kcna-says",
-   "domain": "www.straitstimes.com",
+   "title": "North Korea demands closure of Switzerland new diplomatic office and orders diplomat to leave",
+   "url": "http://www.thegazette.com/news/world/north-korea-demands-closure-of-switzerlands-new-diplomatic-office-and-orders-diplomat-to-leave/article_0442c405-e858-5f8b-8d28-28931ba9e579.html",
+   "domain": "thegazette.com",
    "language": "English",
-   "country": null,
-   "date": "2026-11-24"
+   "country": "United States",
+   "date": "2026-11-25"
   },
   {
-   "title": "North korea to consider shutting down swiss diplomatic office in pyongyang kcna says — dailymaverick.co.za",
-   "url": "https://www.dailymaverick.co.za/article/2026-11-24-north-korea-to-consider-shutting-down-swiss-diplomatic-office-in-pyongyang-kcna-says/",
-   "domain": "www.dailymaverick.co.za",
+   "title": "Kim Jong - un urges wider tactical nuclear weapons use",
+   "url": "https://www.inquisitr.com/kim-jong-un-nuclear-weapons-use/",
+   "domain": "inquisitr.com",
    "language": "English",
-   "country": null,
-   "date": "2026-11-24"
+   "country": "United States",
+   "date": "2026-11-26"
   },
   {
-   "title": "North korea reviews switzerland relations after sanctions on youth camp linked to russia… — winnipegfreepress.com",
-   "url": "https://www.winnipegfreepress.com/business/2026/11/24/north-korea-reviews-switzerland-relations-after-sanctions-on-youth-camp-linked-to-russia-ukraine-war",
-   "domain": "www.winnipegfreepress.com",
+   "title": "North Korea Kim urges wider tactical nuclear weapons deployment on facility tour , KCNA says",
+   "url": "https://www.asiaone.com:443/asia/north-koreas-kim-urges-wider-tactical-nuclear-weapons-deployment-facility-tour-kcna-says",
+   "domain": "asiaone.com",
    "language": "English",
-   "country": null,
-   "date": "2026-11-24"
+   "country": "Singapore",
+   "date": "2026-11-26"
   },
   {
-   "title": "Article d2d9 53ea b14b — goskagit.com",
-   "url": "http://www.goskagit.com/news/ap_business/north-korea-reviews-switzerland-relations-after-sanctions-on-youth-camp-linked-to-russia-ukraine-war/article_acf161be-d2d9-53ea-b14b-14193bb7d16a.html",
-   "domain": "www.goskagit.com",
+   "title": "North Korea Kim vows to build more nuclear weapons after ignoring Trump overture",
+   "url": "https://www.wral.com/news/ap/78d66-north-koreas-kim-vows-to-build-more-nuclear-weapons-after-ignoring-trumps-overture/",
+   "domain": "wral.com",
    "language": "English",
-   "country": null,
-   "date": "2026-11-24"
+   "country": "United States",
+   "date": "2026-11-26"
   },
   {
-   "title": "North korea reviews switzerland relations after sanctions on youth camp linked to russia… — clickondetroit.com",
-   "url": "https://www.clickondetroit.com/business/2026/11/24/north-korea-reviews-switzerland-relations-after-sanctions-on-youth-camp-linked-to-russia-ukraine-war/",
-   "domain": "www.clickondetroit.com",
-   "language": "English",
-   "country": null,
-   "date": "2026-11-24"
+   "title": "Korut Tutup Kantor Diplomatik Swiss , Usir Kepala Perwakilan",
+   "url": "https://koran-jakarta.com/2026-11-26/korut-tutup-kantor-diplomatik-swiss-usir-kepala-perwakilan",
+   "domain": "koran-jakarta.com",
+   "language": "Indonesian",
+   "country": "Indonesia",
+   "date": "2026-11-26"
   },
   {
-   "title": "Article 2d82 57c4 add0 — thepeterboroughexaminer.com",
-   "url": "https://www.thepeterboroughexaminer.com/business/north-korea-reviews-switzerland-relations-after-sanctions-on-youth-camp-linked-to-russia-ukraine-war/article_c4ebd1ec-2d82-57c4-add0-c57ea8166566.html",
-   "domain": "www.thepeterboroughexaminer.com",
-   "language": "English",
-   "country": null,
-   "date": "2026-11-24"
+   "title": "Лидер КНДР посетил заводы и НИИ , связанные с производством ядерных материалов",
+   "url": "https://www.interfax.ru/world/1131466",
+   "domain": "interfax.ru",
+   "language": "Russian",
+   "country": "Russia",
+   "date": "2026-11-26"
   },
   {
-   "title": "Lees new security team faces strains with us tensions with north korea — koreatimes.co.kr",
-   "url": "https://www.koreatimes.co.kr/southkorea/politics/20261124/lees-new-security-team-faces-strains-with-us-tensions-with-north-korea",
-   "domain": "www.koreatimes.co.kr",
-   "language": "English",
-   "country": null,
-   "date": "2026-11-24"
+   "title": "용장 없는 군대에 안보 맡길 수 있나 [ 시평 ]",
+   "url": "https://www.munhwa.com:443/article/11634340",
+   "domain": "munhwa.com",
+   "language": "Korean",
+   "country": "",
+   "date": "2026-11-26"
   },
   {
-   "title": "North korea reviews switzerland relations after sanctions on youth camp linked to russia… — clickorlando.com",
-   "url": "https://www.clickorlando.com/business/2026/11/24/north-korea-reviews-switzerland-relations-after-sanctions-on-youth-camp-linked-to-russia-ukraine-war/",
-   "domain": "www.clickorlando.com",
-   "language": "English",
-   "country": null,
-   "date": "2026-11-24"
+   "title": "[ 뉴스분석 ] 북한 송도원에서 무슨 일이 ... 우크라이나 전쟁고아 끔찍한 세뇌작업 중",
+   "url": "https://www.newspim.com/news/view/20261125000863",
+   "domain": "newspim.com",
+   "language": "Korean",
+   "country": "South Korea",
+   "date": "2026-11-25"
   },
   {
-   "title": "Article 74cf 533d be5e — reflector.com",
-   "url": "http://www.reflector.com/news/national/north-korea-reviews-switzerland-relations-after-sanctions-on-youth-camp-linked-to-russia-ukraine-war/article_71488fb0-74cf-533d-be5e-de89ed69ff39.html",
-   "domain": "www.reflector.com",
-   "language": "English",
-   "country": null,
-   "date": "2026-11-24"
+   "title": "Ukraine - Krieg im Liveticker : +++ 14 : 38 Kreml : Europäer haben Einladung zu Ukraine - Gesprächen nicht abgelehnt +++",
+   "url": "https://www.n-tv.de/politik/14-38-Kreml-Europaeer-haben-Einladung-zu-Ukraine-Gespraechen-nicht-abgelehnt-id30859357.html",
+   "domain": "n-tv.de",
+   "language": "German",
+   "country": "Germany",
+   "date": "2026-11-25"
   },
   {
-   "title": "North korea reviews switzerland relations after sanctions youth — abcnews.com",
-   "url": "https://abcnews.com/International/wireStory/north-korea-reviews-switzerland-relations-after-sanctions-youth-138402640",
-   "domain": "abcnews.com",
+   "title": "North Korea Kim vows to build more nuclear weapons",
+   "url": "https://www.wgauradio.com/news/world/north-koreas-kim/7SXMBO5LT4YBDLVSBE4YKXW5YU/",
+   "domain": "wgauradio.com",
    "language": "English",
-   "country": null,
-   "date": "2026-11-24"
+   "country": "United States",
+   "date": "2026-11-26"
   },
   {
-   "title": "North korea reviews switzerland relations after sanctions on youth camp linked to russia… — wsls.com",
-   "url": "https://www.wsls.com/business/2026/11/24/north-korea-reviews-switzerland-relations-after-sanctions-on-youth-camp-linked-to-russia-ukraine-war/",
-   "domain": "www.wsls.com",
-   "language": "English",
-   "country": null,
-   "date": "2026-11-24"
+   "title": "한반도 비핵화 선언  고수하는 정부 … 美 전술핵도 못 들여와",
+   "url": "https://www.munhwa.com:443/article/11634369",
+   "domain": "munhwa.com",
+   "language": "Korean",
+   "country": "",
+   "date": "2026-11-26"
   }
  ]
 }

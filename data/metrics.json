@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-11-25T14:41+09:00",
- "today": "2026-11-25",
+ "generated_at": "2026-11-26T14:29+09:00",
+ "today": "2026-11-26",
  "config": {
   "z_alert": 2.5,
   "min_history": 4,
@@ -424,6 +424,19 @@
    "history_n": 4
   },
   {
+   "date": "2026-11-26",
+   "offset": 1,
+   "weekday": 4,
+   "target_price": 543206.0,
+   "target_status": "ok",
+   "control_median": 929633.0,
+   "control_n": 4,
+   "ratio": 0.5843,
+   "z_ratio": -1.7017,
+   "z_control": -1.7878,
+   "history_n": 4
+  },
+  {
    "date": "2026-10-26",
    "offset": 3,
    "weekday": 3,
@@ -824,6 +837,19 @@
    "ratio": 0.5084,
    "z_ratio": -1.4931,
    "z_control": -12.8191,
+   "history_n": 4
+  },
+  {
+   "date": "2026-11-26",
+   "offset": 3,
+   "weekday": 6,
+   "target_price": 477773.0,
+   "target_status": "ok",
+   "control_median": 865375.5,
+   "control_n": 4,
+   "ratio": 0.5521,
+   "z_ratio": -2.1469,
+   "z_control": 0.8112,
    "history_n": 4
   },
   {
@@ -1230,6 +1256,19 @@
    "history_n": 4
   },
   {
+   "date": "2026-11-26",
+   "offset": 7,
+   "weekday": 3,
+   "target_price": 467098.0,
+   "target_status": "ok",
+   "control_median": 750363.0,
+   "control_n": 4,
+   "ratio": 0.6225,
+   "z_ratio": -0.9881,
+   "z_control": -1.2538,
+   "history_n": 4
+  },
+  {
    "date": "2026-10-26",
    "offset": 14,
    "weekday": 0,
@@ -1631,124 +1670,137 @@
    "z_ratio": -0.7996,
    "z_control": 0.6221,
    "history_n": 4
+  },
+  {
+   "date": "2026-11-26",
+   "offset": 14,
+   "weekday": 3,
+   "target_price": 543939.0,
+   "target_status": "ok",
+   "control_median": 677651.5,
+   "control_n": 4,
+   "ratio": 0.8027,
+   "z_ratio": -0.3109,
+   "z_control": -1.2838,
+   "history_n": 4
   }
  ],
  "latest_hotels": [
   {
    "offset": 1,
-   "checkin": "2026-11-26",
+   "checkin": "2026-11-27",
    "hotel": "Grand Hyatt Seoul",
    "role": "target",
-   "price": 540634.0,
+   "price": 543206.0,
    "status": "ok"
   },
   {
    "offset": 1,
-   "checkin": "2026-11-26",
+   "checkin": "2026-11-27",
    "hotel": "The Shilla Seoul",
    "role": "control",
-   "price": 800236.0,
+   "price": 828702.0,
    "status": "ok"
   },
   {
    "offset": 1,
-   "checkin": "2026-11-26",
+   "checkin": "2026-11-27",
    "hotel": "Banyan Tree Seoul",
    "role": "control",
-   "price": 10743002.0,
+   "price": 1030564.0,
    "status": "ok"
   },
   {
    "offset": 1,
-   "checkin": "2026-11-26",
+   "checkin": "2026-11-27",
    "hotel": "Four Seasons Seoul",
    "role": "control",
-   "price": 1264960.0,
+   "price": 1308992.0,
    "status": "ok"
   },
   {
    "offset": 1,
-   "checkin": "2026-11-26",
+   "checkin": "2026-11-27",
    "hotel": "JW Marriott Seoul",
    "role": "control",
-   "price": 718720.0,
+   "price": 814560.0,
    "status": "ok"
   },
   {
    "offset": 3,
-   "checkin": "2026-11-28",
+   "checkin": "2026-11-29",
    "hotel": "Grand Hyatt Seoul",
    "role": "target",
-   "price": 486567.0,
+   "price": 477773.0,
    "status": "ok"
   },
   {
    "offset": 3,
-   "checkin": "2026-11-28",
+   "checkin": "2026-11-29",
    "hotel": "The Shilla Seoul",
    "role": "control",
-   "price": 910216.0,
+   "price": 610425.0,
    "status": "ok"
   },
   {
    "offset": 3,
-   "checkin": "2026-11-28",
+   "checkin": "2026-11-29",
    "hotel": "Banyan Tree Seoul",
    "role": "control",
-   "price": null,
-   "status": "no_rate"
-  },
-  {
-   "offset": 3,
-   "checkin": "2026-11-28",
-   "hotel": "Four Seasons Seoul",
-   "role": "control",
-   "price": 1209984.0,
+   "price": 1071935.0,
    "status": "ok"
   },
   {
    "offset": 3,
-   "checkin": "2026-11-28",
+   "checkin": "2026-11-29",
+   "hotel": "Four Seasons Seoul",
+   "role": "control",
+   "price": 1132992.0,
+   "status": "ok"
+  },
+  {
+   "offset": 3,
+   "checkin": "2026-11-29",
    "hotel": "JW Marriott Seoul",
    "role": "control",
-   "price": 957026.0,
+   "price": 658816.0,
    "status": "ok"
   },
   {
    "offset": 7,
-   "checkin": "2026-12-02",
+   "checkin": "2026-12-03",
    "hotel": "Grand Hyatt Seoul",
    "role": "target",
-   "price": 486567.0,
+   "price": 467098.0,
    "status": "ok"
   },
   {
    "offset": 7,
-   "checkin": "2026-12-02",
+   "checkin": "2026-12-03",
    "hotel": "The Shilla Seoul",
    "role": "control",
-   "price": 460530.0,
+   "price": 564647.0,
    "status": "ok"
   },
   {
    "offset": 7,
-   "checkin": "2026-12-02",
+   "checkin": "2026-12-03",
    "hotel": "Banyan Tree Seoul",
    "role": "control",
-   "price": 780721.0,
+   "price": 877846.0,
    "status": "ok"
   },
   {
    "offset": 7,
-   "checkin": "2026-12-02",
+   "checkin": "2026-12-03",
    "hotel": "Four Seasons Seoul",
    "role": "control",
-   "price": 1044992.0,
+   "price": 1065180.0,
    "status": "ok"
   },
   {
    "offset": 7,
-   "checkin": "2026-12-02",
+   "checkin": "2026-12-03",
    "hotel": "JW Marriott Seoul",
    "role": "control",
    "price": 622880.0,
@@ -1756,42 +1808,42 @@
   },
   {
    "offset": 14,
-   "checkin": "2026-12-09",
+   "checkin": "2026-12-10",
    "hotel": "Grand Hyatt Seoul",
    "role": "target",
-   "price": 594700.0,
+   "price": 543939.0,
    "status": "ok"
   },
   {
    "offset": 14,
-   "checkin": "2026-12-09",
+   "checkin": "2026-12-10",
    "hotel": "The Shilla Seoul",
    "role": "control",
-   "price": 482458.0,
+   "price": 589949.0,
    "status": "ok"
   },
   {
    "offset": 14,
-   "checkin": "2026-12-09",
+   "checkin": "2026-12-10",
    "hotel": "Banyan Tree Seoul",
    "role": "control",
-   "price": 739635.0,
+   "price": 756359.0,
    "status": "ok"
   },
   {
    "offset": 14,
-   "checkin": "2026-12-09",
+   "checkin": "2026-12-10",
    "hotel": "Four Seasons Seoul",
    "role": "control",
-   "price": 1068624.0,
+   "price": 1098569.0,
    "status": "ok"
   },
   {
    "offset": 14,
-   "checkin": "2026-12-09",
+   "checkin": "2026-12-10",
    "hotel": "JW Marriott Seoul",
    "role": "control",
-   "price": 646848.0,
+   "price": 598944.0,
    "status": "ok"
   }
  ]

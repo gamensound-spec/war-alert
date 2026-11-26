@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-25T14:44+09:00",
+ "generated_at": "2026-11-26T14:34+09:00",
  "source": [
   "wikimedia-pageviews",
   "google-trends-kr-rss"
@@ -34,30 +34,20 @@
  "wiki": {
   "status": "normal",
   "latest": {
-   "date": "2026-11-23",
-   "total": 20914,
+   "date": "2026-11-25",
+   "total": 18138,
    "documents": {
-    "North_Korea": 6853,
-    "Korean_War": 4554,
-    "Korean_Demilitarized_Zone": 859,
-    "Kim_Jong_Un": 8648
+    "North_Korea": 6228,
+    "Korean_War": 4264,
+    "Korean_Demilitarized_Zone": 807,
+    "Kim_Jong_Un": 6839
    },
    "base_n": 28,
-   "median": 27822.0,
-   "z": -1.1822842340685917,
+   "median": 25787.0,
+   "z": -1.3369214354072239,
    "status": "normal"
   },
   "series": [
-   {
-    "date": "2026-09-26",
-    "total": 15941,
-    "documents": {
-     "North_Korea": 6040,
-     "Korean_War": 4408,
-     "Korean_Demilitarized_Zone": 928,
-     "Kim_Jong_Un": 4565
-    }
-   },
    {
     "date": "2026-09-27",
     "total": 17127,
@@ -637,23 +627,40 @@
      "Korean_Demilitarized_Zone": 859,
      "Kim_Jong_Un": 8648
     }
+   },
+   {
+    "date": "2026-11-24",
+    "total": 19963,
+    "documents": {
+     "North_Korea": 6508,
+     "Korean_War": 4432,
+     "Korean_Demilitarized_Zone": 849,
+     "Kim_Jong_Un": 8174
+    }
+   },
+   {
+    "date": "2026-11-25",
+    "total": 18138,
+    "documents": {
+     "North_Korea": 6228,
+     "Korean_War": 4264,
+     "Korean_Demilitarized_Zone": 807,
+     "Kim_Jong_Un": 6839
+    }
    }
   ],
   "missing_articles": []
  },
  "trends": {
-  "hits": 2,
+  "hits": 0,
   "items": 10,
-  "titles": [
-   "美 국제정세 전문가 “대만 포기 땐 세계 질서 붕괴…한·일 핵무장 검토할 것”",
-   "‘거북이는오른다’, 북한산 둘레길 21코스 완주"
-  ],
-  "date": "2026-11-25",
-  "samples": 17,
-  "base_n": 16,
-  "median": 0.0,
+  "titles": [],
+  "date": "2026-11-26",
+  "samples": 18,
+  "base_n": 17,
+  "median": 0,
   "z": null,
   "status": "normal",
-  "note": "평소 0건 대비 2건 · MAD 0"
+  "note": "평소 0건 대비 0건 · MAD 0"
  }
 }
