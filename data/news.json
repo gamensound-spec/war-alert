@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-26T14:34+09:00",
+ "generated_at": "2026-11-27T14:26+09:00",
  "source": "gdelt-doc",
  "query": "(\"north korea\" OR \"korean peninsula\") (war OR missile OR attack OR invasion OR evacuation OR troops)",
  "config": {
@@ -632,7 +632,7 @@
    "url": "https://news.webindia123.com/news/Articles/World/20261126/4524598.html",
    "domain": "news.webindia123.com",
    "language": "English",
-   "country": "India",
+   "country": null,
    "date": "2026-11-26"
   },
   {
@@ -640,7 +640,7 @@
    "url": "http://www.thegazette.com/news/world/north-korea-demands-closure-of-switzerlands-new-diplomatic-office-and-orders-diplomat-to-leave/article_0442c405-e858-5f8b-8d28-28931ba9e579.html",
    "domain": "thegazette.com",
    "language": "English",
-   "country": "United States",
+   "country": null,
    "date": "2026-11-25"
   },
   {
@@ -648,7 +648,7 @@
    "url": "https://www.inquisitr.com/kim-jong-un-nuclear-weapons-use/",
    "domain": "inquisitr.com",
    "language": "English",
-   "country": "United States",
+   "country": null,
    "date": "2026-11-26"
   },
   {
@@ -656,7 +656,7 @@
    "url": "https://www.asiaone.com:443/asia/north-koreas-kim-urges-wider-tactical-nuclear-weapons-deployment-facility-tour-kcna-says",
    "domain": "asiaone.com",
    "language": "English",
-   "country": "Singapore",
+   "country": null,
    "date": "2026-11-26"
   },
   {
@@ -664,7 +664,7 @@
    "url": "https://www.wral.com/news/ap/78d66-north-koreas-kim-vows-to-build-more-nuclear-weapons-after-ignoring-trumps-overture/",
    "domain": "wral.com",
    "language": "English",
-   "country": "United States",
+   "country": null,
    "date": "2026-11-26"
   },
   {
@@ -672,7 +672,7 @@
    "url": "https://koran-jakarta.com/2026-11-26/korut-tutup-kantor-diplomatik-swiss-usir-kepala-perwakilan",
    "domain": "koran-jakarta.com",
    "language": "Indonesian",
-   "country": "Indonesia",
+   "country": null,
    "date": "2026-11-26"
   },
   {
@@ -680,7 +680,7 @@
    "url": "https://www.interfax.ru/world/1131466",
    "domain": "interfax.ru",
    "language": "Russian",
-   "country": "Russia",
+   "country": null,
    "date": "2026-11-26"
   },
   {
@@ -688,7 +688,7 @@
    "url": "https://www.munhwa.com:443/article/11634340",
    "domain": "munhwa.com",
    "language": "Korean",
-   "country": "",
+   "country": null,
    "date": "2026-11-26"
   },
   {
@@ -696,7 +696,7 @@
    "url": "https://www.newspim.com/news/view/20261125000863",
    "domain": "newspim.com",
    "language": "Korean",
-   "country": "South Korea",
+   "country": null,
    "date": "2026-11-25"
   },
   {
@@ -704,7 +704,7 @@
    "url": "https://www.n-tv.de/politik/14-38-Kreml-Europaeer-haben-Einladung-zu-Ukraine-Gespraechen-nicht-abgelehnt-id30859357.html",
    "domain": "n-tv.de",
    "language": "German",
-   "country": "Germany",
+   "country": null,
    "date": "2026-11-25"
   },
   {
@@ -712,7 +712,7 @@
    "url": "https://www.wgauradio.com/news/world/north-koreas-kim/7SXMBO5LT4YBDLVSBE4YKXW5YU/",
    "domain": "wgauradio.com",
    "language": "English",
-   "country": "United States",
+   "country": null,
    "date": "2026-11-26"
   },
   {
@@ -720,7 +720,7 @@
    "url": "https://www.munhwa.com:443/article/11634369",
    "domain": "munhwa.com",
    "language": "Korean",
-   "country": "",
+   "country": null,
    "date": "2026-11-26"
   }
  ]
