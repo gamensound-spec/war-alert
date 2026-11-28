@@ -42,9 +42,10 @@
   "level": 0,
   "level_norm": 1,
   "level_text": "Exercise normal security precautions",
-  "updated": "2026-11-25T01:38+09:00",
+  "updated": "2026-11-27T20:45+09:00",
   "url": "https://travel.gc.ca/destinations/south-korea",
   "seen": [
+   "2026-11-27 07:45:00",
    "2026-11-24 12:38:04",
    "2026-10-15 08:53:15"
   ]
@@ -53,7 +54,7 @@
   "level": 0,
   "level_norm": 1,
   "level_text": "危険情報なし",
-  "updated": "2026-11-27T14:05+09:00",
+  "updated": "2026-11-28T13:45+09:00",
   "url": "https://www.anzen.mofa.go.jp/od/ryojiMail.html?countryCd=003",
   "seen": [
    "169084",
@@ -182,9 +183,10 @@
   "level": 1,
   "level_norm": 1,
   "level_text": "Keine Reisewarnung (경고 없음)",
-  "updated": "2026-11-04T18:05+09:00",
+  "updated": "2026-11-27T18:39+09:00",
   "url": "https://www.auswaertiges-amt.de/de/service/laender/korearepublik-node/korearepubliksicherheit-216132",
   "seen": [
+   1795772350,
    1793783152,
    1791886104
   ]

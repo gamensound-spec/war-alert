@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-27T14:26+09:00",
+ "generated_at": "2026-11-28T14:01+09:00",
  "source": "gdelt-doc",
  "query": "(\"north korea\" OR \"korean peninsula\") (war OR missile OR attack OR invasion OR evacuation OR troops)",
  "config": {
@@ -12,34 +12,16 @@
  "alerts": [],
  "watch": [],
  "latest": {
-  "date": "2026-11-25",
-  "share": 8.702,
-  "count": 35,
-  "tone": -2.9606,
+  "date": "2026-11-26",
+  "share": 32.231,
+  "count": 140,
+  "tone": -2.7639,
   "base_n": 28,
-  "median": 15.991,
-  "ratio": 0.54,
-  "z": -0.79
+  "median": 16.131,
+  "ratio": 2.0,
+  "z": 1.79
  },
  "series": [
-  {
-   "date": "2026-08-29",
-   "count": 54,
-   "total": 91911,
-   "share": 5.875,
-   "tone": -3.3036,
-   "source": "gdelt-doc",
-   "partial": false
-  },
-  {
-   "date": "2026-08-30",
-   "count": 90,
-   "total": 79465,
-   "share": 11.326,
-   "tone": -2.132,
-   "source": "gdelt-doc",
-   "partial": false
-  },
   {
    "date": "2026-08-31",
    "count": 78,
@@ -398,7 +380,7 @@
    "share": 20.682,
    "tone": -1.1035,
    "source": "gdelt-doc",
-   "partial": true
+   "partial": false
   },
   {
    "date": "2026-10-26",
@@ -618,110 +600,128 @@
   },
   {
    "date": "2026-11-26",
-   "count": 74,
-   "total": 22449,
-   "share": 32.964,
-   "tone": -1.7525,
+   "count": 140,
+   "total": 43436,
+   "share": 32.231,
+   "tone": -2.7639,
+   "source": "gdelt-doc",
+   "partial": false
+  },
+  {
+   "date": "2026-11-27",
+   "count": 66,
+   "total": 27412,
+   "share": 24.077,
+   "tone": -4.2902,
+   "source": "gdelt-doc",
+   "partial": true
+  },
+  {
+   "date": "2026-11-28",
+   "count": 3,
+   "total": 8061,
+   "share": 3.722,
+   "tone": 0.6625,
    "source": "gdelt-doc",
    "partial": true
   }
  ],
  "articles": [
   {
-   "title": "Kim Jong Un calls tactical nuclear weapons deployment across multiple domains  urgent ; vows to expand nuclear arsenal",
-   "url": "https://news.webindia123.com/news/Articles/World/20261126/4524598.html",
-   "domain": "news.webindia123.com",
+   "title": "Kyiv Says North Korea Paused Missile Deliveries to Russia Over Seoul Outreach",
+   "url": "https://www.hngn.com/articles/273978/20261127/kyiv-says-north-korea-paused-missile-deliveries-russia-over-seoul-outreach.htm",
+   "domain": "hngn.com",
    "language": "English",
-   "country": null,
-   "date": "2026-11-26"
+   "country": "United States",
+   "date": "2026-11-28"
   },
   {
-   "title": "North Korea demands closure of Switzerland new diplomatic office and orders diplomat to leave",
-   "url": "http://www.thegazette.com/news/world/north-korea-demands-closure-of-switzerlands-new-diplomatic-office-and-orders-diplomat-to-leave/article_0442c405-e858-5f8b-8d28-28931ba9e579.html",
+   "title": "What to know about North Korean move to shut down Swiss diplomatic office",
+   "url": "http://www.thegazette.com/news/world/what-to-know-about-north-korean-move-to-shut-down-swiss-diplomatic-office/article_f84012fa-40b6-5173-8460-0ddcef0e4e7b.html",
    "domain": "thegazette.com",
    "language": "English",
-   "country": null,
-   "date": "2026-11-25"
+   "country": "United States",
+   "date": "2026-11-27"
   },
   {
-   "title": "Kim Jong - un urges wider tactical nuclear weapons use",
-   "url": "https://www.inquisitr.com/kim-jong-un-nuclear-weapons-use/",
-   "domain": "inquisitr.com",
-   "language": "English",
-   "country": null,
-   "date": "2026-11-26"
+   "title": "Krievija ziņo par desmitiem notriektu dronu ; sprādzieni arī militāri nozīmīgā rūpnīcā",
+   "url": "https://www.lsm.lv/raksts/zinas/arzemes/27.11.2026-krievija-zino-par-desmitiem-notriektu-dronu-spradzieni-ari-militari-nozimiga-rupnica.a673691/",
+   "domain": "lsm.lv",
+   "language": "Latvian",
+   "country": "Latvia",
+   "date": "2026-11-27"
   },
   {
-   "title": "North Korea Kim urges wider tactical nuclear weapons deployment on facility tour , KCNA says",
-   "url": "https://www.asiaone.com:443/asia/north-koreas-kim-urges-wider-tactical-nuclear-weapons-deployment-facility-tour-kcna-says",
-   "domain": "asiaone.com",
-   "language": "English",
-   "country": null,
-   "date": "2026-11-26"
-  },
-  {
-   "title": "North Korea Kim vows to build more nuclear weapons after ignoring Trump overture",
-   "url": "https://www.wral.com/news/ap/78d66-north-koreas-kim-vows-to-build-more-nuclear-weapons-after-ignoring-trumps-overture/",
-   "domain": "wral.com",
-   "language": "English",
-   "country": null,
-   "date": "2026-11-26"
-  },
-  {
-   "title": "Korut Tutup Kantor Diplomatik Swiss , Usir Kepala Perwakilan",
-   "url": "https://koran-jakarta.com/2026-11-26/korut-tutup-kantor-diplomatik-swiss-usir-kepala-perwakilan",
-   "domain": "koran-jakarta.com",
-   "language": "Indonesian",
-   "country": null,
-   "date": "2026-11-26"
-  },
-  {
-   "title": "Лидер КНДР посетил заводы и НИИ , связанные с производством ядерных материалов",
-   "url": "https://www.interfax.ru/world/1131466",
-   "domain": "interfax.ru",
-   "language": "Russian",
-   "country": null,
-   "date": "2026-11-26"
-  },
-  {
-   "title": "용장 없는 군대에 안보 맡길 수 있나 [ 시평 ]",
-   "url": "https://www.munhwa.com:443/article/11634340",
-   "domain": "munhwa.com",
+   "title": "[ VOA 인터뷰 ] 올브라이트  북한 영변 증축동 , 무기급 우라늄 생산 땐 연간 핵무기 4~5기분 가능",
+   "url": "https://www.voakorea.com/a/8228714.html",
+   "domain": "voakorea.com",
    "language": "Korean",
-   "country": null,
-   "date": "2026-11-26"
+   "country": "South Korea",
+   "date": "2026-11-27"
   },
   {
-   "title": "[ 뉴스분석 ] 북한 송도원에서 무슨 일이 ... 우크라이나 전쟁고아 끔찍한 세뇌작업 중",
-   "url": "https://www.newspim.com/news/view/20261125000863",
-   "domain": "newspim.com",
-   "language": "Korean",
-   "country": null,
-   "date": "2026-11-25"
-  },
-  {
-   "title": "Ukraine - Krieg im Liveticker : +++ 14 : 38 Kreml : Europäer haben Einladung zu Ukraine - Gesprächen nicht abgelehnt +++",
-   "url": "https://www.n-tv.de/politik/14-38-Kreml-Europaeer-haben-Einladung-zu-Ukraine-Gespraechen-nicht-abgelehnt-id30859357.html",
-   "domain": "n-tv.de",
-   "language": "German",
-   "country": null,
-   "date": "2026-11-25"
-  },
-  {
-   "title": "North Korea Kim vows to build more nuclear weapons",
-   "url": "https://www.wgauradio.com/news/world/north-koreas-kim/7SXMBO5LT4YBDLVSBE4YKXW5YU/",
-   "domain": "wgauradio.com",
+   "title": "US military flew food to war zones to make sure troops had Thanksgiving meals",
+   "url": "https://www.foxnews.com/politics/turkey-shortages-helicopter-deliveries-extraordinary-history-thanksgiving-war",
+   "domain": "foxnews.com",
    "language": "English",
-   "country": null,
-   "date": "2026-11-26"
+   "country": "United States",
+   "date": "2026-11-27"
   },
   {
-   "title": "한반도 비핵화 선언  고수하는 정부 … 美 전술핵도 못 들여와",
-   "url": "https://www.munhwa.com:443/article/11634369",
-   "domain": "munhwa.com",
+   "title": "北 , 지뢰 도발 이후 두 달간 MDL 40번 침범",
+   "url": "https://www.insight.co.kr/news/583796",
+   "domain": "insight.co.kr",
    "language": "Korean",
-   "country": null,
-   "date": "2026-11-26"
+   "country": "South Korea",
+   "date": "2026-11-27"
+  },
+  {
+   "title": "[ VOA 인터뷰 ] 우크라 전문가  송도원 야영소 ,  우크라 아동 세뇌 · 군사화 과정  관여",
+   "url": "https://www.voakorea.com/a/8228718.html",
+   "domain": "voakorea.com",
+   "language": "Korean",
+   "country": "South Korea",
+   "date": "2026-11-27"
+  },
+  {
+   "title": "South Korea lets a North Korean fisherman resettle in South and returns six others",
+   "url": "http://www.thegazette.com/news/world/south-korea-lets-a-north-korean-fisherman-resettle-in-south-and-returns-six-others/article_93d81aea-c737-5614-bb92-f2b963fb5fbd.html",
+   "domain": "thegazette.com",
+   "language": "English",
+   "country": "United States",
+   "date": "2026-11-27"
+  },
+  {
+   "title": "كوريا الجنوبية تسمح لصياد كوري شمالي بالبقاء في الجنوب وتعيد 6 آخرين",
+   "url": "https://www.shorouknews.com/news/view.aspx?cdate=27112026&id=88a81764-2335-4fdd-9092-685c47e6b39a",
+   "domain": "shorouknews.com",
+   "language": "Arabic",
+   "country": "Egypt",
+   "date": "2026-11-27"
+  },
+  {
+   "title": "Ziņas vieglajā valodā 27 . novembrī",
+   "url": "https://www.lsm.lv/raksts/zinas/zinas-vieglaja-valoda/27.11.2026-zinas-vieglaja-valoda-27-novembri.a673840/",
+   "domain": "lsm.lv",
+   "language": "Latvian",
+   "country": "Latvia",
+   "date": "2026-11-27"
+  },
+  {
+   "title": "Najvažnije vesti iz sveta za 26 . novembar 2026 . - Vesti",
+   "url": "https://www.telegraf.rs/vesti/svet/4440318-najvaznije-vesti-iz-sveta-za-26-novembar-2026",
+   "domain": "telegraf.rs",
+   "language": "Serbian",
+   "country": "Serbia",
+   "date": "2026-11-27"
+  },
+  {
+   "title": "Shenzhen summit 3 - way style offensive : But world top leaders tangled on issues of substance – World Tribune : U . S . Politics and Culture , Geostrategy , China , North Korea , Corporate Watch , Media Watch",
+   "url": "https://worldtribune.com/shenzhen-summits-3-way-style-offensive-but-worlds-top-leaders-tangled-on-issues-of-substance/",
+   "domain": "worldtribune.com",
+   "language": "English",
+   "country": "United States",
+   "date": "2026-11-27"
   }
  ]
 }
